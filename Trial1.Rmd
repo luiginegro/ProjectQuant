@@ -26,7 +26,8 @@ install.packages("readxl")
 library(readxl)
 ```
 
-## try to second subtitle
+```{r}
+elon =  read.csv("elon")
+dim(elon)
 
-
-
+```
