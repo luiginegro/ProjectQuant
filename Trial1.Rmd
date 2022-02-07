@@ -29,5 +29,6 @@ library(readxl)
 ```{r}
 elon =  read.csv("elon")
 dim(elon)
+head(elon)
 
 ```
