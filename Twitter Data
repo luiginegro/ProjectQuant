@@ -1,0 +1,33 @@
+import twint
+import datetime
+
+def delist(x):
+    df = x[0]
+    for i in range(1, len(x)):
+        df = df.append(x[i])
+    return df
+
+def ElonPaginated():
+    data = []
+    start = datetime.datetime.strptime("2011-01-01", "%Y-%m-%d")
+    end = datetime.datetime.strptime("2022-02-01", "%Y-%m-%d")
+    date_generated = [start + datetime.timedelta(days=x) for x in range(0, (end - start).days)]
+    date_generated = date_generated[::7]
+    date_generated = [date_obj.strftime("%Y-%m-%d") for date_obj in date_generated]
+    for i in range(0, len(date_generated) - 1):
+        c = twint.Config()
+        c.Username = "elonmusk"
+        c.Since = date_generated[i]
+        c.Until = date_generated[i + 1]
+        c.Pandas = True
+        twint.run.Search(c)
+        Tweets_df = twint.storage.panda.Tweets_df
+        if Tweets_df.empty:
+            pass
+        else: data.append((Tweets_df))
+    return data
+
+data = ElonPaginated()
+data = delist(data)
+print(data)
+data.to_csv('/Users/federicopiazza/Desktop/MONTREAL/QM/elon.csv')
