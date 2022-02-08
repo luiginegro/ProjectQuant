@@ -2,7 +2,7 @@
 title: "Prova"
 author: "GG"
 date: "12/07/2019"
-bibliography: ref1.bib
+bibliography: references/ref1.bib
 output:
   pdf_document:
     citation_package: biblatex
