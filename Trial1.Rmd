@@ -3,26 +3,11 @@ title: "Prova"
 author: "GG"
 date: "12/07/2019"
 bibliography: 
-  -references/ref1.bib
-  -references/elon_artc1.bib
 output:
   pdf_document:
     citation_package: biblatex
 --- 
 
-# Try
-
-Fede is stupid because 
-
-## To
-
-
-### do
-
-#### titles
-
-
-Try to insert c  [@commissionPublicNoticeTerms2008]
 
 ```{r}
 install.packages("dplyr")
@@ -36,6 +21,54 @@ library(readxl)
 elon =  read.csv("elon.csv")
 dim(elon)
 head(elon)
+
+#create a dataset for analysing popularity
+
+popularity = as.data.frame(cbind(elon$tweet, elon$nlikes, elon$nreplies, elon$nretweets, elon$date))
+#change the col names
+colnames(popularity) = c("tweet", "nlikes","nreplies", "nretweets", "date")
+
+#Showing summaries of each variable
+
+library(ggplot2)
+library(dplyr)
+install.packages("hrbrthemes")
+
+popularity$date <- format(as.POSIXct(popularity$date,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
+ 
+
+popularity$date <- as.Date(as.character(popularity$date), format='%m/%d/%Y')
+
+#grouping by year 
+
+library(dplyr)
+
+likes_year <- popularity %>%
+mutate(dates = as.Date(popularity$date)) %>%
+mutate(yr = format(dates, '%Y')) %>%
+group_by(yr) %>%
+summarise(nlikes)
+
+retweet_year <- popularity %>%
+mutate(dates = as.Date(popularity$date)) %>%
+mutate(yr = format(dates, '%Y')) %>%
+group_by(yr) %>%
+summarise(nretweets)
+
+nreplies_year <- popularity %>%
+mutate(dates = as.Date(popularity$date)) %>%
+mutate(yr = format(dates, '%Y')) %>%
+group_by(yr) %>%
+summarise(nreplies)
+
+# plot
+
+
+```
+
+Plots
+
+```{r}
 
 ```
 
