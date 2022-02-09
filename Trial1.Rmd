@@ -55,7 +55,7 @@ btc_hist$timestamp <- format(as.POSIXct(btc_hist$timestamp,format="%Y-%m-%d %H:%
 btc_hist$timestamp <- as.Date(as.character(btc_hist$timestamp), format='%m/%d/%Y')
 
 #subset tweets keeping those that contains ("bitcoin","crypto")
-eloncrypto <- elon[grepl("crypto", elon[["tweet"]]),]
+eloncrypto <- elon[grepl("crypto", elon[["tweet"]]) | grepl("BTC", elon[["tweet"]]),]
 as.data.frame(eloncrypto)
 eloncrypto$date <- format(as.POSIXct(eloncrypto$date,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
 eloncrypto$date <- as.Date(as.character(eloncrypto$date), format='%m/%d/%Y')
