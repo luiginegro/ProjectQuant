@@ -38,6 +38,10 @@ popularity$date <- format(as.POSIXct(popularity$date,format="%Y-%m-%d %H:%M:%OS"
  
 
 popularity$date <- as.Date(as.character(popularity$date), format='%m/%d/%Y')
+popularity$nreplies= as.numeric(popularity$nreplies)
+popularity$nretweets= as.numeric(popularity$nretweets)
+popularity$nlikes= as.numeric(popularity$nlikes)
+
 
 #grouping by year 
 
@@ -47,29 +51,86 @@ likes_year <- popularity %>%
 mutate(dates = as.Date(popularity$date)) %>%
 mutate(yr = format(dates, '%Y')) %>%
 group_by(yr) %>%
-summarise(nlikes)
+summarise(nlikes=sum(nlikes))
 
 retweet_year <- popularity %>%
 mutate(dates = as.Date(popularity$date)) %>%
 mutate(yr = format(dates, '%Y')) %>%
 group_by(yr) %>%
-summarise(nretweets)
+summarise(nretweets = sum(nretweets))
 
 nreplies_year <- popularity %>%
 mutate(dates = as.Date(popularity$date)) %>%
 mutate(yr = format(dates, '%Y')) %>%
 group_by(yr) %>%
-summarise(nreplies)
+summarise(nreplies = sum(nreplies))
 
-# plot
+#removing year 2022 
+
+nreplies_year= nreplies_year[-c(12), ]
+retweet_year= retweet_year[-c(12), ]
+likes_year= likes_year[-c(12), ]
+
 
 
 ```
 
-Plots
+
+Plotting 
 
 ```{r}
+library(ggplot2)
+library(dplyr)
+library(hrbrthemes)
 
+#numeric 
+
+nreplies_year$nreplies= as.numeric(nreplies_year$nreplies)
+nreplies_year$yr= as.numeric(nreplies_year$yr)
+
+retweet_year$yr = as.numeric(retweet_year$yr)
+retweet_year$nretweets = as.numeric(retweet_year$nretweets)
+
+likes_year$yr = as.numeric(likes_year$yr)
+likes_year$nlikes = as.numeric(likes_year$nlikes)
+
+
+#plot
+
+library(ggplot2)
+install.packages("ggthemes")
+library(ggthemes)
+
+# Produce a bar chart
+library(ggplot2)
+library(ggthemes)
+
+
+ggplot(data = likes_year, aes(x = yr, y = nlikes)) + 
+  geom_bar(stat = "identity", width = 0.5, position = "dodge") + 
+  xlab("Year") +
+  ylab("Number of likes")  +
+  labs(fill = "Isic Code")  +  
+  theme_minimal() + 
+  scale_fill_brewer(direction = -1)
+
+
+```
+```{r}
+ggplot(data =retweet_year, aes(x = yr, y = nretweets)) + 
+  geom_bar(stat = "identity", width = 0.5, position = "dodge") + 
+  xlab("Year") +
+  ylab("Number of retweets") +  
+  theme_minimal() + 
+  scale_fill_brewer(direction = -1)
+```
+```{r}
+ggplot(data = nreplies_year, aes(x = yr, y = nreplies)) + 
+  geom_bar(stat = "identity", width = 0.5, position = "dodge") + 
+  xlab("Year") +
+  ylab("Number of replies")  +  
+  theme_minimal() + 
+  scale_fill_brewer(direction = -1)
 ```
 
 
