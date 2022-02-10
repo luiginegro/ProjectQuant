@@ -10,11 +10,11 @@ output:
 
 
 ```{r}
-install.packages("dplyr")
-install.packages("tidyverse")
-install.packages("readxl")
+#install.packages("dplyr")
+#install.packages("tidyverse")
+#install.packages("readxl")
 
-library(readxl)
+#library(readxl)
 ```
 
 ```{r}
@@ -32,7 +32,7 @@ colnames(popularity) = c("tweet", "nlikes","nreplies", "nretweets", "date")
 
 library(ggplot2)
 library(dplyr)
-install.packages("hrbrthemes")
+#install.packages("hrbrthemes")
 
 popularity$date <- format(as.POSIXct(popularity$date,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
  
@@ -98,7 +98,7 @@ likes_year$nlikes = as.numeric(likes_year$nlikes)
 #plot
 
 library(ggplot2)
-install.packages("ggthemes")
+#install.packages("ggthemes")
 library(ggthemes)
 
 # Produce a bar chart
@@ -138,7 +138,7 @@ Take crypto data
 
 ```{r}
 # install.packages("devtools")
-devtools::install_github("sstoeckl/crypto2", force=TRUE)
+#devtools::install_github("sstoeckl/crypto2", force=TRUE)
 library(crypto2)
 library(dplyr)
 library(lubridate)
