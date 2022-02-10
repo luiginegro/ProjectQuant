@@ -162,7 +162,7 @@ btc_hist['tweet'] <- btc_hist$timestamp %in% eloncrypto$date
 
 ```
 
-graph try
+graph try a
 
 ```{r}
 library(ggplot2)
