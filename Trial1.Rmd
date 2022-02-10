@@ -76,7 +76,7 @@ likes_year= likes_year[-c(12), ]
 ```
 
 
-Plotting 
+Plotting  a
 
 ```{r}
 library(ggplot2)
