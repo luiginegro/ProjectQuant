@@ -267,6 +267,7 @@ wordcloud2(w,
            rotateRatio = 0.5,
            minSize = 1)
 ```
+a
 ```{r}
 library(syuzhet)
 library(lubridate)
