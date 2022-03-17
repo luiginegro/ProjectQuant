@@ -10,9 +10,9 @@ output:
 
 
 ```{r}
-#install.packages("dplyr")
-#install.packages("tidyverse")
-#install.packages("readxl")
+if(!require(dplyr)) install.packages("dplyr")
+if(!require(tidyverse)) install.packages("tidyverse")
+if(!require(readxl)) install.packages("readxl")
 
 #library(readxl)
 ```
@@ -81,6 +81,8 @@ Plotting  a
 ```{r}
 library(ggplot2)
 library(dplyr)
+
+if(!require(hrbrthemes)) install.packages("hrbrthemes")
 library(hrbrthemes)
 
 #numeric 
@@ -124,6 +126,7 @@ ggplot(data =retweet_year, aes(x = yr, y = nretweets)) +
   theme_minimal() + 
   scale_fill_brewer(direction = -1)
 ```
+
 ```{r}
 ggplot(data = nreplies_year, aes(x = yr, y = nreplies)) + 
   geom_bar(stat = "identity", width = 0.5, position = "dodge") + 
@@ -171,6 +174,113 @@ ggplot(aes(x = timestamp, y = open)) +
   geom_line() + 
   geom_point(data = . %>% filter(tweet == TRUE), color = "deeppink", size = 3)
 ```
+Sentiment Analysis Time
 
 
+```{r}
+if(!require(SentimentAnalysis)) install.packages("SentimentAnalysis")
+library(SentimentAnalysis)
+library(RColorBrewer)
+library(wordcloud)
+txt <- elon$tweet
+#txt cleaning
+
+txt <- sapply(txt, function(x) iconv(x, to='UTF-8-MAC', sub='byte'))
+#for Windows based OS
+#txt <- sapply(txt,function(row) iconv(row, "latin1", "ASCII", sub=""))
+#remove punctuation
+txt = gsub("(RT|via)((?:\\b\\W*@\\w+)+)", "", txt)
+# remove at people
+txt = gsub("@\\w+", "", txt)
+# remove punctuation
+txt = gsub("[[:punct:]]", "", txt)
+# remove numbers
+txt = gsub("[[:digit:]]", "", txt)
+# remove html links
+txt = gsub("http\\w+", "", txt)
+# remove unnecessary spaces
+txt = gsub("[ \t]{2,}", "", txt)
+txt = gsub("^\\s+|\\s+$", "", txt)
+txt = txt[!is.na(txt)]
+names(txt) = NULL
+
+# classify emotion
+class_emo = classify_emotion(some_txt, algorithm="bayes", prior=1.0)
+# get emotion best fit
+emotion = class_emo[,7]
+# substitute NA's by "unknown"
+emotion[is.na(emotion)] = "unknown"
+
+```
+
+```{r}
+if(!require(tm)) install.packages("tm")
+library(tm)
+corpus <- iconv(elon$tweet)
+corpus <- Corpus(VectorSource(corpus))
+inspect(corpus[1:5])
+#clean
+corpus <- tm_map(corpus, tolower)
+corpus <- tm_map(corpus, removePunctuation)
+corpus <- tm_map(corpus, removeNumbers)
+cleanset <- tm_map(corpus, removeWords, stopwords('english'))
+removeURL <- function(x) gsub('http[[:alnum:]]*', '', x)
+cleanset <- tm_map(cleanset, content_transformer(removeURL))
+inspect(cleanset[1:10])
+#stemming = reduce to root form
+cleanset <- tm_map(cleanset, stripWhitespace)
+inspect(cleanset[1:5])
+```
+
+```{r}
+tdm <- TermDocumentMatrix(cleanset)
+tdm <- as.matrix(tdm)
+tdm[1:10, 1:20]
+words <- rowSums(tdm)
+words <- subset(words, words>=100)
+barplot(words,
+        las = 2,
+        col = rainbow(50))
+```
+
+```{r}
+library(wordcloud)
+w <- sort(rowSums(tdm), decreasing = TRUE)
+set.seed(222)
+wordcloud(words = names(w),
+          freq = w,
+          max.words = 150,
+          random.order = F,
+          min.freq = 5,
+          colors = brewer.pal(8, 'Dark2'),
+          scale = c(5, 0.3),
+          rot.per = 0.7)
+```
+```{r}
+if(!require(wordcloud2)) install.packages("wordcloud2")
+library(wordcloud2)
+w <- data.frame(names(w), w)
+colnames(w) <- c('word', 'freq')
+wordcloud2(w,
+           size = 0.7,
+           shape = 'rectangle',
+           rotateRatio = 0.5,
+           minSize = 1)
+```
+```{r}
+library(syuzhet)
+library(lubridate)
+library(ggplot2)
+library(scales)
+library(reshape2)
+library(dplyr)
+
+s <- get_nrc_sentiment(elon$tweet)
+head(s)
+barplot(colSums(s),
+        las = 2,
+        col = rainbow(10),
+        ylab = 'Count',
+        main = 'Sentiment Scores Tweets')
+```
 
