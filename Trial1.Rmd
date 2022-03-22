@@ -1,15 +1,30 @@
 ---
-title: "Prova"
-author: "GG"
-date: "12/07/2019"
+title: "Does Elon Musk's tweets influence Bitcoin market value? : A sentiment anaylsis approach"
+author: "Beatrice Stocco - Federico Piazza - Luigi Negro"
+date: "04/04/2022"
 bibliography: 
 output:
   pdf_document:
     citation_package: biblatex
 --- 
 
+# Abstract
 
-```{r}
+
+When Elon Musk speaks, bitcoin investors listen. The Tesla chief executive’s often-cryptic messages have sent bitcoin’s price on a roller-coaster during past years. Prices soared nearly 20% one January morning when he added “#bitcoin” to his Twitter biography. They jumped 16% in a single day the following month after Tesla Inc. revealed it bought $1.5 billion worth of the cryptocurrency. We present a textual analysis that explains how Elon Musk’s sentiments in his Twitter content correlates with price and volatility in the Bitcoin market using sentiment analysis and Augmented Dickey–Fuller (ADF) t-statistic test, allowing us to understand the (non-)stationarity of the bitcoin trends. After examining 4787 tweets containing 68676 words, posted from December 2011 to January 2021, and rigorously controlling other determinants, we found that the tone of the world’s wealthiest person can drive the Bitcoin market. In addition, Musk is likely to use positive words in his tweets, with great “trust” and “anticipation” as the most frequent sentiments expressed. However, we did not find evidence to support linkage between Musk’s sentiments and Bitcoin volatility.
+
+
+# Literature review
+
+
+
+
+
+# Exploratory Data Analysis 
+
+
+
+```{r, echo = FALSE}
 if(!require(dplyr)) install.packages("dplyr")
 if(!require(tidyverse)) install.packages("tidyverse")
 if(!require(readxl)) install.packages("readxl")
@@ -174,49 +189,12 @@ ggplot(aes(x = timestamp, y = open)) +
   geom_line() + 
   geom_point(data = . %>% filter(tweet == TRUE), color = "deeppink", size = 3)
 ```
+
+
 Sentiment Analysis Time
 
 
 ```{r}
-<<<<<<< HEAD
-if(!require(SentimentAnalysis)) install.packages("SentimentAnalysis")
-library(SentimentAnalysis)
-library(RColorBrewer)
-library(wordcloud)
-txt <- elon$tweet
-#txt cleaning
-
-#txt <- sapply(txt, function(x) iconv(x, to='UTF-8-MAC', sub='byte'))
-#for Windows based OS
-txt <- sapply(txt,function(row) iconv(row, "latin1", "ASCII", sub=""))
-#remove punctuation
-txt = gsub("(RT|via)((?:\\b\\W*@\\w+)+)", "", txt)
-# remove at people
-txt = gsub("@\\w+", "", txt)
-# remove punctuation
-txt = gsub("[[:punct:]]", "", txt)
-# remove numbers
-txt = gsub("[[:digit:]]", "", txt)
-# remove html links
-txt = gsub("http\\w+", "", txt)
-# remove unnecessary spaces
-txt = gsub("[ \t]{2,}", "", txt)
-txt = gsub("^\\s+|\\s+$", "", txt)
-txt = txt[!is.na(txt)]
-names(txt) = NULL
-
-# classify emotion
-#class_emo = classify_emotion(some_txt, algorithm="bayes", prior=1.0)
-# get emotion best fit
-#emotion = class_emo[,7]
-# substitute NA's by "unknown"
-#emotion[is.na(emotion)] = "unknown"
-
-```
-
-```{r}
-=======
->>>>>>> 0a8e862c5cab8f99f5728069a928eb1ddc9eac7c
 if(!require(tm)) install.packages("tm")
 library(tm)
 library(RColorBrewer)
@@ -273,7 +251,10 @@ wordcloud2(w,
            rotateRatio = 0.5,
            minSize = 1)
 ```
-a
+
+# Models and Results 
+*da separare nel report*
+
 
 ```{r}
 library(syuzhet)
@@ -301,7 +282,7 @@ txt <- elon$tweet
 
 txt <- sapply(txt, function(x) iconv(x, to='UTF-8-MAC', sub='byte'))
 #for Windows based OS
-#txt <- sapply(txt,function(row) iconv(row, "latin1", "ASCII", sub=""))
+txt <- sapply(txt,function(row) iconv(row, "latin1", "ASCII", sub=""))
 #remove punctuation
 txt = gsub("(RT|via)((?:\\b\\W*@\\w+)+)", "", txt)
 # remove at people
@@ -322,6 +303,8 @@ library(sentimentr)
 sentiment_by(txt) 
 
 t = extract_sentiment_terms(txt) 
+
+
 attributes(t)$count
 ```
 ```{r}
@@ -365,6 +348,10 @@ plot(btc_hist$timestamp,btc_hist$open,
      xlab = "time (t)",
      ylab = "Y(t)",
      main = "Trend signal")
+
+```
+
+```{r}
 acf(btc_hist$open,lag.max = length(btc_hist$open),
          xlab = "lag #", ylab = 'ACF', main=' ')
 ```
@@ -379,6 +366,7 @@ library(tseries)
 adf.test(btc_hist$open)
 #data non stationary as high p-value
 ```
+
 try to go from non-stationarity to stationarity: different techniques we use ln
 
 Transformations such as logarithms can help to stabilise the variance of a time series. Differencing can help stabilise the mean of a time series by removing changes in the level of a time series, and therefore eliminating (or reducing) trend and seasonality.
@@ -414,12 +402,15 @@ plot(btc_hist$timestamp[2:3200],logdiff,
      main = "Trend signal")
 acf(logdiff,lag.max = length(btc_hist$open),
          xlab = "lag #", ylab = 'ACF', main=' ')
+```
 
+
+```{r}
 adf.test(diff)
 adf.test(logdiff)
 
 ```
-Differencing we find non stationary data, in other word, itappears that the daily difference in btc value is random
+Differencing we find non stationary data, in other word, it appears that the daily difference in btc value is random
 
 try to find change points in the data, I use diff for now not sure tho
 
@@ -429,9 +420,15 @@ if(!require(sarbcurrent)) install.packages("sarbcurrent")
 library(tidyverse)
 library(lubridate)
 m_binseg <- cpt.mean(diff, penalty = "BIC", method = "BinSeg", Q = 15)
-plot(m_binseg, type = "l", xlab = "Index", cpt.width = 4)
-cpts(m_binseg) 
 
+plot(m_binseg, type = "l", xlab = "Index", cpt.width = 4)
+```
+
+```{r}
+cpts(m_binseg) 
+```
+
+```{r}
 #all the changes happen from 2500 onwards approx, try to subset plot
 m_binseg <- cpt.mean(diff[2500:3199], penalty = "BIC", method = "BinSeg", Q = 15)
 plot(m_binseg, type = "l", xlab = "Index", cpt.width = 4)
@@ -443,7 +440,13 @@ try with differend methods:
 #segmented neighbout
 m_segneigh <- cpt.mean(diff[2500:3199], penalty = "BIC", method = "SegNeigh", Q = 50)
 plot(m_segneigh, type = "l", xlab = "Index", cpt.width = 4)
-cpts(m_binseg) 
+ 
+```
+
+
+```{r}
+cpts(m_binseg)
+
 ```
 
 ```{r}
@@ -452,10 +455,15 @@ plot(m_pelt, type = "l", cpt.col = "blue", xlab = "Index", cpt.width = 4)
 
 #maybe not best method lol
 
+
+```
+
+```{r}
 m_pm <- cpt.mean(diff[2500:3199], penalty = "Manual", pen.value = "1.5 * log(n)",
                       method = "PELT")
 plot(m_pm, type = "l", cpt.col = "blue", xlab = "Index", cpt.width = 4)
 ```
+
 Those were only taking into consideration the mean, let's see the results for mean and variance all together
 
 ```{r}
@@ -466,6 +474,15 @@ cpt_date = btc_hist$timestamp[2499] + cpts(m_binseg)
 tweet_date = btc_hist %>% filter(tweet == TRUE) %>% select(timestamp)
 as.data.frame(cpt_date)
 ```
+
+
+```{r}
+library(stringr)
+sum(str_count(elon$tweet, "\\w+"))
+```
+
+# Conclusion
+
 
 
 
