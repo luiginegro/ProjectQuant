@@ -185,9 +185,9 @@ library(wordcloud)
 txt <- elon$tweet
 #txt cleaning
 
-txt <- sapply(txt, function(x) iconv(x, to='UTF-8-MAC', sub='byte'))
+#txt <- sapply(txt, function(x) iconv(x, to='UTF-8-MAC', sub='byte'))
 #for Windows based OS
-#txt <- sapply(txt,function(row) iconv(row, "latin1", "ASCII", sub=""))
+txt <- sapply(txt,function(row) iconv(row, "latin1", "ASCII", sub=""))
 #remove punctuation
 txt = gsub("(RT|via)((?:\\b\\W*@\\w+)+)", "", txt)
 # remove at people
@@ -205,11 +205,11 @@ txt = txt[!is.na(txt)]
 names(txt) = NULL
 
 # classify emotion
-class_emo = classify_emotion(some_txt, algorithm="bayes", prior=1.0)
+#class_emo = classify_emotion(some_txt, algorithm="bayes", prior=1.0)
 # get emotion best fit
-emotion = class_emo[,7]
+#emotion = class_emo[,7]
 # substitute NA's by "unknown"
-emotion[is.na(emotion)] = "unknown"
+#emotion[is.na(emotion)] = "unknown"
 
 ```
 
@@ -256,6 +256,7 @@ wordcloud(words = names(w),
           scale = c(5, 0.3),
           rot.per = 0.7)
 ```
+
 ```{r}
 if(!require(wordcloud2)) install.packages("wordcloud2")
 library(wordcloud2)
@@ -268,6 +269,7 @@ wordcloud2(w,
            minSize = 1)
 ```
 a
+
 ```{r}
 library(syuzhet)
 library(lubridate)
