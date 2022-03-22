@@ -178,6 +178,7 @@ Sentiment Analysis Time
 
 
 ```{r}
+<<<<<<< HEAD
 if(!require(SentimentAnalysis)) install.packages("SentimentAnalysis")
 library(SentimentAnalysis)
 library(RColorBrewer)
@@ -214,8 +215,12 @@ names(txt) = NULL
 ```
 
 ```{r}
+=======
+>>>>>>> 0a8e862c5cab8f99f5728069a928eb1ddc9eac7c
 if(!require(tm)) install.packages("tm")
 library(tm)
+library(RColorBrewer)
+library(wordcloud)
 corpus <- iconv(elon$tweet)
 corpus <- Corpus(VectorSource(corpus))
 inspect(corpus[1:5])
@@ -286,4 +291,181 @@ barplot(colSums(s),
         ylab = 'Count',
         main = 'Sentiment Scores Tweets')
 ```
+
+```{r}
+library(devtools) 
+install_github("trinker/sentimentr") 
+
+txt <- elon$tweet
+#txt cleaning
+
+txt <- sapply(txt, function(x) iconv(x, to='UTF-8-MAC', sub='byte'))
+#for Windows based OS
+#txt <- sapply(txt,function(row) iconv(row, "latin1", "ASCII", sub=""))
+#remove punctuation
+txt = gsub("(RT|via)((?:\\b\\W*@\\w+)+)", "", txt)
+# remove at people
+txt = gsub("@\\w+", "", txt)
+# remove punctuation
+txt = gsub("[[:punct:]]", "", txt)
+# remove numbers
+txt = gsub("[[:digit:]]", "", txt)
+# remove html links
+txt = gsub("http\\w+", "", txt)
+# remove unnecessary spaces
+txt = gsub("[ \t]{2,}", "", txt)
+txt = gsub("^\\s+|\\s+$", "", txt)
+txt = txt[!is.na(txt)]
+names(txt) = NULL
+
+library(sentimentr)
+sentiment_by(txt) 
+
+t = extract_sentiment_terms(txt) 
+attributes(t)$count
+```
+```{r}
+#Sentiment density plot
+library(e1071)
+
+txt %>%
+get_sentences() %>%
+sentiment() %>%
+filter(sentiment!=0) -> senti
+
+densitySentiments <- density(senti$sentiment) 
+mean(senti$sentiment)
+skewness(senti$sentiment)
+plot(densitySentiments,main='Density of sentiments') 
+polygon(densitySentiments,col='red')        
+```
+
+```{r}
+e<-emotion_by(get_sentences(txt),drop.unused.emotions=TRUE)
+plot(e)
+```
+Try to check if it is possible to ty to assess whether there is an influence in tweets
+
+Our time series data can have a trend or not. It is of the utmost importance to determine how the series is behaving before applying any model to it.
+
+Augmented Dicky Fuller test: it determines how strongly a time series is defined by a trend.
+
+Hypothesis:
+
+Null Hypothesis (H0): Null hypothesis of the test is that the time series can be represented by a unit root that is not stationary.
+Alternative Hypothesis (H1): Alternative Hypothesis of the test is that the time series is stationary.
+Why is Stationarity Important?
+For data to be stationary, the statistical properties of a system do not change over time. This does not mean that the values for each data point have to be the same, but the overall behavior of the data should remain constant.
+
+If the data is non-stationary (meaning it has a trend), we need to remove it in order to proceed with the analysis.
+
+```{r}
+plot(btc_hist$timestamp,btc_hist$open,
+     type='l',col='red',
+     xlab = "time (t)",
+     ylab = "Y(t)",
+     main = "Trend signal")
+acf(btc_hist$open,lag.max = length(btc_hist$open),
+         xlab = "lag #", ylab = 'ACF', main=' ')
+```
+Augmented Dickey–Fuller (ADF) t-statistic test for unit root
+Another test we can conduct is the Augmented Dickey–Fuller (ADF) t-statistic test to find if the series has a unit root (a series with a trend line will have a unit root and result in a large p-value).
+
+```{r}
+if(!require(tseries)) install.packages("tseries")
+options(warn=-1)
+library(tseries)
+
+adf.test(btc_hist$open)
+#data non stationary as high p-value
+```
+try to go from non-stationarity to stationarity: different techniques we use ln
+
+Transformations such as logarithms can help to stabilise the variance of a time series. Differencing can help stabilise the mean of a time series by removing changes in the level of a time series, and therefore eliminating (or reducing) trend and seasonality.
+```{r}
+btc_hist['log'] = log(btc_hist$open)
+plot(btc_hist$timestamp,btc_hist$log,
+     type='l',col='red',
+     xlab = "time (t)",
+     ylab = "Y(t)",
+     main = "Trend signal")
+acf(btc_hist$log,lag.max = length(btc_hist$log),
+         xlab = "lag #", ylab = 'ACF', main=' ')
+adf.test(btc_hist$log)
+```
+diff() function in R Language is used to find the difference between each consecutive pair of elements of a vector.
+
+```{r}
+diff = diff(btc_hist$open)
+logdiff = diff(btc_hist$log)
+
+plot(btc_hist$timestamp[2:3200],diff,
+     type='l',col='red',
+     xlab = "time (t)",
+     ylab = "Y(t)",
+     main = "Trend signal")
+acf(diff,lag.max = length(btc_hist$open),
+         xlab = "lag #", ylab = 'ACF', main=' ')
+
+plot(btc_hist$timestamp[2:3200],logdiff,
+     type='l',col='red',
+     xlab = "time (t)",
+     ylab = "Y(t)",
+     main = "Trend signal")
+acf(logdiff,lag.max = length(btc_hist$open),
+         xlab = "lag #", ylab = 'ACF', main=' ')
+
+adf.test(diff)
+adf.test(logdiff)
+
+```
+Differencing we find non stationary data, in other word, itappears that the daily difference in btc value is random
+
+try to find change points in the data, I use diff for now not sure tho
+
+```{r}
+if(!require(changepoint)) install.packages("changepoint")
+if(!require(sarbcurrent)) install.packages("sarbcurrent")
+library(tidyverse)
+library(lubridate)
+m_binseg <- cpt.mean(diff, penalty = "BIC", method = "BinSeg", Q = 15)
+plot(m_binseg, type = "l", xlab = "Index", cpt.width = 4)
+cpts(m_binseg) 
+
+#all the changes happen from 2500 onwards approx, try to subset plot
+m_binseg <- cpt.mean(diff[2500:3199], penalty = "BIC", method = "BinSeg", Q = 15)
+plot(m_binseg, type = "l", xlab = "Index", cpt.width = 4)
+
+```
+try with differend methods: 
+
+```{r}
+#segmented neighbout
+m_segneigh <- cpt.mean(diff[2500:3199], penalty = "BIC", method = "SegNeigh", Q = 50)
+plot(m_segneigh, type = "l", xlab = "Index", cpt.width = 4)
+cpts(m_binseg) 
+```
+
+```{r}
+m_pelt <- cpt.mean(diff[2500:3199], penalty = "BIC", method = "PELT")
+plot(m_pelt, type = "l", cpt.col = "blue", xlab = "Index", cpt.width = 4)
+
+#maybe not best method lol
+
+m_pm <- cpt.mean(diff[2500:3199], penalty = "Manual", pen.value = "1.5 * log(n)",
+                      method = "PELT")
+plot(m_pm, type = "l", cpt.col = "blue", xlab = "Index", cpt.width = 4)
+```
+Those were only taking into consideration the mean, let's see the results for mean and variance all together
+
+```{r}
+#transform changepoints in dates
+#we just sum it from the first day
+
+cpt_date = btc_hist$timestamp[2499] + cpts(m_binseg) 
+tweet_date = btc_hist %>% filter(tweet == TRUE) %>% select(timestamp)
+as.data.frame(cpt_date)
+```
+
+
 
