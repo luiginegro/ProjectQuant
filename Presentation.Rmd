@@ -1,0 +1,97 @@
+---
+title: "Does Elon Musk's tweets influence Bitcoin market value? : A sentiment anaylsis approach"
+output: beamer_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Agenda
+
+- Literature Review
+- Explanatory Data Analysis
+- Sentiment Analysis
+- Results
+- Conclusion
+
+## Elon Musk's tweets make Bitcoin price skyrocket
+
+" Bitcoin’s structure is very ingenious. The paper money disappears, and crypto-currencies are a much better way to transfer values than a piece of paper, that’s for sure "
+
+""I think bitcoin is on the verge of getting broad acceptance by conventional finance people"
+
+image: ![](C:/Users/luigi/OneDrive - Politecnico di Milano/HEC/QuantMethod/Project/projjj/ProjectQuant/imageBitcoinMask.jpg)
+
+## ..as well as going down
+
+image: ![](C:/Users/luigi/OneDrive - Politecnico di Milano/HEC/QuantMethod/Project/projjj/ProjectQuant/notTesla.jpg)
+
+
+
+## Indeed
+
+image: ![](C:/Users/luigi/OneDrive - Politecnico di Milano/HEC/QuantMethod/Project/projjj/ProjectQuant/events_image.jpg)
+
+
+## Dive deep into data
+
+We recovered data from API tweets and obtained this
+
+Table nlikes,nreplies,rretwets
+
+## Slide 2
+
+As we can see there is an increasing trend throughout the years in Elon Musks's popularity, as the numbers of likes, retweeets and replies increased by a factor of 18 in 10 years.
+
+
+```{r, echo=FALSE}
+library(ggplot2)
+par(mfrow=c(3,1))
+ggplot(data = likes_year, aes(x = yr, y = nlikes)) + 
+  geom_bar(stat = "identity", width = 0.5, position = "dodge", fill = "darkorange") + 
+  xlab("Year") +
+  ylab("Number of likes")  +
+  labs(fill = "Isic Code")  +  
+  theme_minimal() + 
+  scale_fill_brewer(direction = -1)
+ggplot(data =retweet_year, aes(x = yr, y = nretweets), color ="darkorange") + 
+  geom_bar(stat = "identity", width = 0.5, position = "dodge", fill = "chartreuse") + 
+  xlab("Year") +
+  ylab("Number of retweets") +  
+  theme_minimal() + 
+  scale_fill_brewer(direction = -1)
+ggplot(data = nreplies_year, aes(x = yr, y = nreplies)) + 
+  geom_bar(stat = "identity", width = 0.5, position = "dodge", fill ="red") + 
+  xlab("Year") +
+  ylab("Number of replies")  +  
+  theme_minimal() + 
+  scale_fill_brewer(direction = -1)
+```
+
+
+## Slide with Bullets
+Subsetting the tweets in the ones containing crpyo and bitcoin and connecting them to the bitcoin value trend we obtain: 
+
+```{r, echo = FALSE}
+library(ggplot2)
+btc_hist %>%
+ggplot(aes(x = timestamp, y = open)) +
+  geom_line() + 
+  geom_point(data = . %>% filter(tweet == TRUE), color = "deeppink", size = 3)
+
+```
+
+
+## Slide with R Output
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+## Slide with Plot
+
+```{r pressure}
+plot(pressure)
+```
+
