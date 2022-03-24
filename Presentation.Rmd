@@ -36,9 +36,16 @@ image: ![](C:/Users/luigi/OneDrive - Politecnico di Milano/HEC/QuantMethod/Proje
 
 ## Dive deep into data
 
-We recovered data from API tweets and obtained this
+Exploiting twitter APIs, Tesla's CEO tweets from 2011 to 2021 were extracted. A dataframe has been built with number of *retweets*, *likes* and *replies* per year in order to understand the growing trend of Elon Musk's popularity and therefore its influence. 
 
-Table nlikes,nreplies,rretwets
+```{r,echo=FALSE}
+library(dplyr)
+table = cbind(retweet_year, nreplies_year$nreplies, likes_year$nlikes)
+table
+colnames(table)= c("Year", "Retweets", "Replies", "Likes")
+table
+```
+
 
 ## Slide 2
 
@@ -48,21 +55,25 @@ As we can see there is an increasing trend throughout the years in Elon Musks's 
 ```{r, echo=FALSE}
 library(ggplot2)
 par(mfrow=c(3,1))
+
 ggplot(data = likes_year, aes(x = yr, y = nlikes)) + 
-  geom_bar(stat = "identity", width = 0.5, position = "dodge", fill = "darkorange") + 
+  geom_bar(stat = "identity", width = 0.5, position = "dodge", fill = "darkorange", color = "black") + 
   xlab("Year") +
   ylab("Number of likes")  +
   labs(fill = "Isic Code")  +  
   theme_minimal() + 
   scale_fill_brewer(direction = -1)
+
 ggplot(data =retweet_year, aes(x = yr, y = nretweets), color ="darkorange") + 
-  geom_bar(stat = "identity", width = 0.5, position = "dodge", fill = "chartreuse") + 
+  geom_bar(stat = "identity", width = 0.5, position = "dodge", fill = "dark green", color = "black") + 
   xlab("Year") +
   ylab("Number of retweets") +  
   theme_minimal() + 
   scale_fill_brewer(direction = -1)
+
+
 ggplot(data = nreplies_year, aes(x = yr, y = nreplies)) + 
-  geom_bar(stat = "identity", width = 0.5, position = "dodge", fill ="red") + 
+  geom_bar(stat = "identity", width = 0.5, position = "dodge", fill ="dark red", color ="black") + 
   xlab("Year") +
   ylab("Number of replies")  +  
   theme_minimal() + 

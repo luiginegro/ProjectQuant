@@ -17,11 +17,87 @@ When Elon Musk speaks, bitcoin investors listen. The Tesla chief executive’s o
 # Literature review
 
 
+# Introduction
+
+On January 29, 2021, Elon Musk, at that time the richest person in the world (Klebnikov, 2021), unexpectedly changed the bio1 of his Twitter account to #bitcoin. The price of Bitcoin rose from about 32,000\$  to over 38,000\$ in a matter of hours, increasing the asset’s market capitalization by 111 billion \$ The relevance of Musk's tweets for financial markets has already become apparent in other contexts. Musk’s endorsement of the encrypted messaging service Signal (Musk, 2021a) led to investors purchasing the unrelated Signal Advance stock, increasing the latter’s market valuation from 55\$ million  to over 3\$ billion (DeCambre, 2021). These events clearly show the impact that leadership in social networks can have on financial markets and the decision-making behavior of (individual) investors.
+While the market may read Musk's tweets on Tesla as "true news," his tweets regarding cryptocurrency reflect moods or personal sentiment, which have been shown to influence financial market pricing (Bollen et al., 2011; Gabrovek et al., 2017; Schumaker and Chen, 2009).
+Musk declared that Bitcoin is "on the threshold of gaining broad acceptability" in a talk on social media site Clubhouse, and admitted that he is "late to the party but[...] a fan of Bitcoin." He also said in the event that his tweets about the cryptocurrency Dogecoin are just jokes (Krishnan et al., 2021). This is consistent with Musk's tweet from May 2020, in which he stated that he "only own[ed] 0.25 Bitcoins" (Musk, 2020). Tesla, on the other hand, spent $1.5 billion in Bitcoin between January and March 2021 (US Securities and Exchange Commission, 2021), implying that the Bitcoin-related tweets were more than "just jokes."
+Musk's tweets appear to effect the cryptocurrency market, regardless of whether they are meant in fun or in earnest, which is our incentive to look into the topic further and analyse its consequences. While Musk is far from the only public figure to speak out on social media regarding cryptocurrency or financial markets, he is undoubtedly one of the most influential.
+In strategic contacts between prominent individuals such as managers, journalists, or financial analysts and stakeholder groups, social media plays a key role (Heavey et al., 2020; Pfarrer et al., 2010). By communicating directly with customers (Alghawi et al., 2014), controlling the timing of disclosure (Jung et al., 2017), or establishing trust with investors or communities, these individuals can use their social networks to shape their own reputation and identity, or that of a related company (Deephouse, 2000; Zavyalova et al., 2012). (Elliott et al., 2018; Grant et al., 2018). Strategic leaders' social media activities, on the other hand, can generate a lot of ambiguity. For example, it may be difficult to tell whether a message is simply expressing a mood or conveying specific company-related information.
+It could be hard to ascertain whether a message is merely expressing a mood or conveying specific company-related information. Furthermore, stakeholders may be overwhelmed with irrelevant information that diverts their attention away from the main concerns (Huang and Yeo, 2018). A person's or a company's reputation might be harmed as a result of critical behaviour. Because of the extremely quickly nature of social media, any such harm can occur in an instant (Wang et al., 2019).
+Several research have looked into the relationship between cryptocurrency markets and social media activity, particularly on Twitter. Short-term Bitcoin liquidity is increased by an increase in the number of Bitcoin-related tweets (Choi, 2020), the number of Bitcoin-related tweets can explain Bitcoin trading volume and returns (Philippas et al., 2019; Shen et al., 2019), and Twitter sentiment can predict cryptocurrency returns (Philippas et al., 2019). (Kraaijeveld and De Smedt, 2020; Naeem et al., 2020; Steinert and Herff, 2018). According to Mai et al. (2018), social media users with less prior cryptocurrency-related involvement drive cryptocurrency effects, which makes sense because their actions are uncommon or unexpected. If Elon Musk tweeted about cryptocurrencies multiple times a day, the market would most certainly treat it as noise.
+While several studies have looked into the impact of individual tweets on stock market returns (Brans and Scholtens, 2020; Ge et al., 2019—both relating to stock market-related tweets by Donald Trump), to our knowledge, very few researchers have examined into the impact of individual tweets on cryptocurrency returns and trading volume.
+
+This research seeks to determine how one of the world's most powerful persons' social media activities affects cryptocurrency price levels. We take Elon Musk's cryptocurrency-related tweets and categorise them as unanticipated happenings. It is conceivable to evaluate the amount of any effect Musk's tweets had on the market by comparing past cryptocurrency market data to data surrounding these occurrences. The research looks at how leadership, engagement, and information via social media, particularly Twitter, influence investor attention and behaviour in cryptocurrency markets. Of course, Elon Musk is an outlier, which is why our approach might almost be termed a case study. In an ideal world, the findings and implications could be applied to other people and markets, allowing us to better understand the likelihood of social media personalities influencing cryptocurrency markets and whether or not this is a problem.
+
+## Conceptual background: Financial market efficiency
+
+"Prices fully represent all available information," according to the efficient market hypothesis (EMH) (Fama, 1970). The price of an item is determined by the intersection of a supply and demand curve, which satisfies both consumers (such as Bitcoin investors) and producers (e.g. Bitcoin miners). As additional relevant information becomes available, the curves adjust. A tweet from Elon Musk could be considered such new knowledge, and is priced appropriately if it is deemed important. However, the EMH's validity has been questioned because it is primarily reliant on market players' preferences and conduct. The adaptive markets hypothesis (AMH), a variant of the EMH, claims that the degree to which information is represented in prices is determined by market conditions as well as the quantity and characteristics of market participants: market effiency is context-dependent.
+The quality of the information provided is a critical part of the impact of individuals on financial markets. According to signalling theory, an actor can employ high-quality signals to reduce market information uncertainty (Spence, 1973). While such signals are typically used in an agent's own interest, such as when applying for a job (Spence, 1973) or seeking entrepreneurial financing (Ante et al., 2018), it appears possible that a tweet from a very influential or reputable person is interpreted by a significant number of market participants as a signal of the quality of the object of the tweet, even without an ulterior motive or even unintentionally. Every tweet is motivated by something, even if it's just a passing mood. 
+In this situation, having faith in the signal and its quality is critical. A signal must usually be coupled with direct or indirect expenses in order to be trustworthy or credible (Connelly et al., 2011). The costs in the instance of Elon Musk's tweets are indirect, and they include the potential damage to his reputation as a technological innovator and successful entrepreneur (i.e. his influencer status) or the reputation of the companies with which he is connected (Wang et al., 2019). There's also the possibility of counter-signaling, in which other agents broadcast contradictory or critical messages. If the market discovers, for example, that Musk's tweets are noise rather than quality signals, it should disregard the information as unimportant.
 
 
+## Research questions
 
-# Exploratory Data Analysis 
+We raise the following research questions to address the issue of effciency in cryptocurrency markets and the attention their participants devote to influencers since Elon Musk and other influential individuals are likely to continue publicly commenting on cryptocurrency for the foreseeable future.
 
+
+*RQ1: DO Elon Musk’s cryptocurrency-related tweets sentiments  have an effect on the pricing and trading volume of cryptocurrency?*
+
+The answer to this issue can reveal whether tweets can be considered quality signals in general or whether the market effects seen were purely coincidental. Second, the AMH predicts that a cryptocurrency that is less efficient or liquid will be more affected by Musk's tweets.
+
+*RQ2: Do sentiments and polarity of Musk’s cryptocurrency-related tweets differs by considering different time-frames?*
+
+By answering these two study questions, we will be able to measure and better understand the impact of social media influencers on cryptocurrency markets, as well as draw some implications about how to interpret future events. Market participants will be able to better assess the significance of Musk's tweets and possibly other (social media) influencers in this way. Furthermore, the findings may contribute to broader study on the function of social media leaders in influencing investor behaviour, determining the quality of influencer content in the context of signalling theory, and determining influencer relevance for financial market efficiency.
+
+
+# Data and methods 
+
+## Popularity analysis 
+
+The analysis is based on tweets by Elon Musk (twitter.com/elonmusk) between Jan 2011 to 2022. A data extraction has been conducted via python since some of its functions were more suitable for our purposes. The code used can be seen in the **Annex** section. Our dataframe resulted in total of 4787 tweets containing 68676 words over a time-span of 10 years.
+As stated in the previous section, popularity and influence are critical factors to be assessed from market participants in order to assign a certain degree of reliability to the information they receive. That's why a first investigation has been conducted in this direction. Elon Musk's influece has been skyrocketing throughout the years, mainly due to the achievements linked  to his companies (namely Space X and Tesla) proving wrong many opponents who considered his goals too ambitious to be reached. On top of his professional achievements, his uncommon behavior, his funny character and his inspiring vision and leadership made his influence to grow sistematically. We used three proxies to quantify his popularity: namely, the *numbers of likes*, *number of replies* and *number of retweets* on Musk's tweets. These variables has been grouped by year in order to identify the trend clearly. As expected, his popularity has gained momentum especially after *2016*, when Tesla Model 3 was launched, some companies were renovated and gained momentum (i.e. SolarCity embedded in Tesla itself) and others were founded (i.e. Neuralink). 
+
+## Bitcoin-related tweets
+
+In a second step, a subset of the total population of tweets was made, in order to extract only tweets containing the word *bitcoin* and *cypto* so to direct our focus to Musk's influence on cryptomarkets Bitcoin-related. Exploiting the embedded time-stamp of these peculiar type of tweets, it could be possible to visualize in time when his tweets (events of interest) were located in respect to the Bitcoin market capitalization trend. At first sight, considerable variations can be highlighted after these events and further considerations will be found in the **Result** section. 
+
+## Sentiment Analysis
+
+Once obtained these data, they represented the input for our models: Sentiment Analysis and Polarization analysis were conducted, supported by wordclouds (in order to determine which were the most tweeted words). Through score assignment it has been possible to detect which were the most frequent sentiments in Musks's tweets, as well as the duration of these emotions. The results obtained through this first model helped us to understand the gradient of emotions provoked by Tesla CEO's tweets and therefore assessing those as drivers to his popularity and eventually his influence on cryptomarkets. 
+
+## Testing for stationarity 
+
+Finally, we wanted to investigate the presence of linkages between Elon Musk's sentiment and Bitcoin volatility: which means testing for stationarity. First of all, it is utmost important to determine how the series is behaving before applying any model to it: an Augmented Dicky Fuller test was used to evaluate how strongly a time series is defined by a trend. Results showed
+
+### Hypothesis
+
+*Null Hypothesis (H0)* : Null hypothesis of the test is that the time series can be represented by a unit root that is not stationary.
+*Alternative Hypothesis (H1)*: Alternative Hypothesis of the test is that the time series is stationary.
+
+**Why is Stationarity Important?**
+
+Stationarity can be defined in precise mathematical terms, but for our purpose we mean a flat looking series, without trend, constant variance over time, a constant autocorrelation structure over time and no periodic fluctuations (seasonality).
+For data to be stationary, the statistical properties of a system do not change over time. This does not mean that the values for each data point have to be the same, but the overall behavior of the data should remain constant.
+If the data is non-stationary (meaning it has a trend), we need to remove it in order to proceed with the analysis. Various tecniques can be used to solve the issue of non-stationarity: after some attempts, the most succesful one has been to rely on the *log difference* of time values in Bitcoin price. 
+
+[da concludere]
+
+
+# Results
+
+
+## Elon Musk's influence
+
+As can be seen in the summary table below, Elon Musk's influnece has grown widely over the years. In 10 years, **number of replies** per tweet has grown up to more than 3 million, **number of retweets** up to more than 4 million and **number of likes** up to the astonishing numbers of more than 50 million. As of December 31st 2021, Elon Musk's follower amounted to 71.5 mln, which means a very high coverage of  $72,2%$. 
+
+```{r, echo = FALSE}
+
+Replies = nreplies_year$nreplies
+Likes =  likes_year$nlikes
+Retweets = retweet_year$nretweets
+summary(cbind(Replies, Retweets, Likes))
+```
 
 
 ```{r, echo = FALSE}
@@ -32,7 +108,7 @@ if(!require(readxl)) install.packages("readxl")
 #library(readxl)
 ```
 
-```{r}
+```{r, echo = FALSE}
 elon =  read.csv("elon.csv")
 dim(elon)
 head(elon)
@@ -90,10 +166,9 @@ likes_year= likes_year[-c(12), ]
 
 ```
 
+We can visually understand the exponential trend in the growing popularity of Tesla CEO's. It comes as no surprise that when *"Elon Musk speaks, investors listen"*. His influence derives from his large audience, prone to process the majority of the information coming from him as good quality information, influencing their (financial) decision-making process.
 
-Plotting  a
-
-```{r}
+```{r, echo=FALSE}
 library(ggplot2)
 library(dplyr)
 
@@ -124,37 +199,35 @@ library(ggthemes)
 
 
 ggplot(data = likes_year, aes(x = yr, y = nlikes)) + 
-  geom_bar(stat = "identity", width = 0.5, position = "dodge") + 
+  geom_bar(stat = "identity", width = 0.5, position = "dodge", fill = "darkorange", color = "black") + 
   xlab("Year") +
   ylab("Number of likes")  +
-  labs(fill = "Isic Code")  +  
-  theme_minimal() + 
-  scale_fill_brewer(direction = -1)
-
+  ggtitle("Likes per year") +
+  theme(plot.title = element_text(hjust = 0.5))
 
 ```
-```{r}
-ggplot(data =retweet_year, aes(x = yr, y = nretweets)) + 
-  geom_bar(stat = "identity", width = 0.5, position = "dodge") + 
+
+```{r, echo = FALSE}
+ggplot(data =retweet_year, aes(x = yr, y = nretweets), color ="darkorange") + 
+  geom_bar(stat = "identity", width = 0.5, position = "dodge", fill = "dark green", color = "black") + 
   xlab("Year") +
   ylab("Number of retweets") +  
-  theme_minimal() + 
-  scale_fill_brewer(direction = -1)
+   ggtitle("Retweets per year") +
+  theme(plot.title = element_text(hjust = 0.5))
 ```
 
-```{r}
+
+```{r, echo=FALSE}
 ggplot(data = nreplies_year, aes(x = yr, y = nreplies)) + 
-  geom_bar(stat = "identity", width = 0.5, position = "dodge") + 
+  geom_bar(stat = "identity", width = 0.5, position = "dodge", fill ="dark red", color ="black") + 
   xlab("Year") +
   ylab("Number of replies")  +  
-  theme_minimal() + 
-  scale_fill_brewer(direction = -1)
+   ggtitle("Replies per year") +
+  theme(plot.title = element_text(hjust = 0.5))
 ```
 
 
-Take crypto data
-
-```{r}
+```{r, echo = FALSE, eval=FALSE}
 # install.packages("devtools")
 #devtools::install_github("sstoeckl/crypto2", force=TRUE)
 library(crypto2)
@@ -180,21 +253,26 @@ btc_hist['tweet'] <- btc_hist$timestamp %in% eloncrypto$date
 
 ```
 
-graph try a
+## When Elon Musks tweets, investors listen
 
-```{r}
+Once quantified Elon Musk's influence, it is essential to understand the extent of this influence on the cryptomarket. Which is the width of Bitcoin price volatility once a crypto-related tweets is published? We managed to extract the tweets which only cointained the words *bitcoin* and *crypto* and connected their time-stamp to the Bitcoin market capitalization trend. The pink points on the graphic represent the moment in time when a crpyto-related tweet was published: there is clear evidence suggesting a relationship between the Bitcoin volatility and Musk's trend however, it is still unclear at this stage whether it's Elon Musk's direct influence on Bitcoin price change or the other way round. It cannot be assessed a clear causality relatioship. This issue will be further addressed in this paper.
+
+```{r, echo=FALSE}
 library(ggplot2)
 btc_hist %>%
 ggplot(aes(x = timestamp, y = open)) +
   geom_line() + 
-  geom_point(data = . %>% filter(tweet == TRUE), color = "deeppink", size = 3)
+  geom_point(data = . %>% filter(tweet == TRUE), color = "deeppink", size = 3) +
+ ggtitle("Elon Musk's Tweets and Bitcoin Volatility") +
+  theme(plot.title = element_text(hjust = 0.5))
 ```
 
 
-Sentiment Analysis Time
+## Sentiment Analysis
 
+While the market may interpret Musk's tweets about Tesla as “accurate news”, his tweets about cryptocurrency at least to some degree represent moods or personal sentiment. In this section we want to further analyze the nature of this sentiments, the most frequent words and the emotions associated to them.
 
-```{r}
+```{r, echo=FALSE, eval= FALSE}
 if(!require(tm)) install.packages("tm")
 library(tm)
 library(RColorBrewer)
@@ -214,8 +292,15 @@ inspect(cleanset[1:10])
 cleanset <- tm_map(cleanset, stripWhitespace)
 inspect(cleanset[1:5])
 ```
+The graphs below shows the most used word and their frequency.
+It appears that the three most used words are *amp*, *tesla* and *will*. 
 
-```{r}
+- AMP DESCRIPTION
+
+
+
+
+```{r, echo = FALSE}
 tdm <- TermDocumentMatrix(cleanset)
 tdm <- as.matrix(tdm)
 tdm[1:10, 1:20]
@@ -482,6 +567,48 @@ sum(str_count(elon$tweet, "\\w+"))
 ```
 
 # Conclusion
+
+
+
+# Annex
+
+*Python code to extract Elon Musks's tweets via Twitter API*
+
+```{python, echo = TRUE, eval=FALSE }
+import twint
+import datetime
+
+def delist(x):
+    df = x[0]
+    for i in range(1, len(x)):
+        df = df.append(x[i])
+    return df
+
+def ElonPaginated():
+    data = []
+    start = datetime.datetime.strptime("2011-01-01", "%Y-%m-%d")
+    end = datetime.datetime.strptime("2022-02-01", "%Y-%m-%d")
+    date_generated = [start + datetime.timedelta(days=x) for x in range(0, (end - start).days)]
+    date_generated = date_generated[::7]
+    date_generated = [date_obj.strftime("%Y-%m-%d") for date_obj in date_generated]
+    for i in range(0, len(date_generated) - 1):
+        c = twint.Config()
+        c.Username = "elonmusk"
+        c.Since = date_generated[i]
+        c.Until = date_generated[i + 1]
+        c.Pandas = True
+        twint.run.Search(c)
+        Tweets_df = twint.storage.panda.Tweets_df
+        if Tweets_df.empty:
+            pass
+        else: data.append((Tweets_df))
+    return data
+
+data = ElonPaginated()
+data = delist(data)
+print(data)
+data.to_csv('/Users/federicopiazza/Desktop/MONTREAL/QM/elon.csv')
+```
 
 
 
