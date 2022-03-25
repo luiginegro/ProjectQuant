@@ -258,69 +258,7 @@ btc_hist['tweet'] <- btc_hist$timestamp %in% eloncrypto$date
 
 ```
 
-
-
-```{r}
-library(ggplot2)
-
-#subsetting in order to undersand tweet share
-
-
-elondoge = elon[grepl("doge", elon[["tweet"]]),]
-elonCryptoOnly = elon[grepl("crypto", elon[["tweet"]]),]
-elonBTC = elon[grepl("BTC", elon[["tweet"]]),]
-
-n_doge = length(elondoge$tweet)
-n_onlycrypto = length(elonCryptoOnly$tweet)
-n_BTC = length(elonCryptoOnly$tweet)
-n_totaltweet = n_doge + n_onlycrypto + n_BTC
-
-#vector 
-
-vectorshare = c(n_doge, n_onlycrypto, n_BTC)
-vectorshare= as.data.frame(vectorshare)
-dim(vectorshare)
-colnames(vectorshare) = c("tweet number")
-rownames(vectorshare) = c("doge", "crypto", "BTC")
-
-# piechart or stackbar
-
-
-
-
-
-
-#counting total nlikes, nreplies, nretweet per each keyword to understand where is the maximum activity
-## like
-n_dogelikes = sum(elondoge$nlikes)/n_doge
-n_onlycrptolikes = sum(elonCryptoOnly$nlikes)/n_onlycrypto
-n_BTClike = sum(elonBTC$nlikes)/n_BTC
-##retweet
-n_dogeretweet = sum(elondoge$nretweets)/n_doge
-n_onlycrptoretweet = sum(elonCryptoOnly$nretweets)/n_onlycrypto
-n_BTCretweet = sum(elonBTC$nretweets)/n_BTC
-##reply
-n_dogereply = sum(elondoge$nreplies)/n_doge
-n_onlycrptoreply = sum(elonCryptoOnly$nreplies)/n_onlycrypto
-n_BTClreply= sum(elonBTC$nreplies)/n_BTC
-
-
-
-
-#dataframe activity
-vectoractivity_doge= c(n_dogelikes, n_dogereply, n_dogeretweet)
-vectoractivity_BTC= c(n_BTClike, n_BTClreply, n_BTCretweet)
-vectoractivity_crypto = c(n_onlycrptolikes, n_onlycrptoreply, n_onlycrptoretweet)
-dfactivity = cbind(vectoractivity_doge, vectoractivity_crypto, vectoractivity_BTC)
-dfactivity= as.data.frame(dfactivity)
-rownames(dfactivity) = c("Like", "Replies", "Retweets")
-colnames(dfactivity) = c("Activity Doge", "Activity Crypto", "Activity BTC")
-
-#plotting da capire
-
-
-
-```
+GRAFICO CHE CONTA QUANTITTA DI TWEET CHE CONTENGONO DETERMINATE KEYWORD CRYPTO-RELATED E PERCENTUALE SUL TOTALE DEI TWEET
 
 ## When Elon Musks tweets, investors listen
 
@@ -440,7 +378,7 @@ library(devtools)
 txt <- elon$tweet
 #txt cleaning
 
-#txt <- sapply(txt, function(x) iconv(x, to='UTF-8-MAC', sub='byte'))
+txt <- sapply(txt, function(x) iconv(x, to='UTF-8-MAC', sub='byte'))
 #for Windows based OS
 txt <- sapply(txt,function(row) iconv(row, "latin1", "ASCII", sub=""))
 #remove punctuation
@@ -496,158 +434,7 @@ The following analysis detects the rate of emotion at the sentence level. This m
 e<-emotion_by(get_sentences(txt),drop.unused.emotions=TRUE)
 plot(e)
 ```
-
-## Subsetting sentiment from Jan 2020 without "AMP" word
-
-```{r}
-if(!require(tm)) install.packages("tm")
-library(tm)
-library(RColorBrewer)
-library(wordcloud)
-
-#subset after Jan 2020
-
-tweet2020 = elon
-tweet2020 = tweet2020[-c(1:2762),]
-
-#eliminate tweet containing "amp" with grepl
-tweet2020 = tweet2020[!grepl("amp", tweet2020[["tweet"]]),]
-
-
-corpus1 <- iconv(tweet2020$tweet)
-corpus1 <- Corpus(VectorSource(corpus1))
-inspect(corpus1[1:6])
-#clean
-corpus1 <- tm_map(corpus1, tolower)
-corpus1<- tm_map(corpus1, removePunctuation)
-corpus1 <- tm_map(corpus1, removeNumbers)
-cleanset1 <- tm_map(corpus1, removeWords, stopwords('english'))
-removeURL1 <- function(x) gsub('http[[:alnum:]]*', '', x)
-cleanset1 <- tm_map(cleanset1, content_transformer(removeURL1))
-inspect(cleanset1[1:10])
-#stemming = reduce to root form
-cleanset1 <- tm_map(cleanset1, stripWhitespace)
-inspect(cleanset1[1:5])
-```
-
-
-
-```{r}
-tdm1 <- TermDocumentMatrix(cleanset1)
-tdm1 <- as.matrix(tdm1)
-tdm1[1:10, 1:20]
-words1 <- rowSums(tdm1)
-words1 <- subset(words1, words1>=100)
-barplot(words1,
-        las = 2,
-        col = rainbow(50))
-
-```
-
-```{r, echo = FALSE}
-library(wordcloud)
-w1 <- sort(rowSums(tdm1), decreasing = TRUE)
-set.seed(222)
-wordcloud(words = names(w1),
-          freq = w1,
-          max.words = 150,
-          random.order = F,
-          min.freq = 5,
-          colors = brewer.pal(8, 'Dark2'),
-          scale = c(5, 0.3),
-          rot.per = 0.7)
-```
-
-```{r}
-if(!require(wordcloud2)) install.packages("wordcloud2")
-library(wordcloud2)
-w1 <- data.frame(names(w1), w1)
-colnames(w1) <- c('word', 'freq')
-wordcloud2(w1,
-           size = 0.7,
-           shape = 'rectangle',
-           rotateRatio = 0.5,
-           minSize = 1)
-```
-### Sentiment scores and density
-
-```{r, echo= FALSE}
-library(syuzhet)
-library(lubridate)
-library(ggplot2)
-library(scales)
-library(reshape2)
-library(dplyr)
-
-s1 <- get_nrc_sentiment(tweet2020$tweet)
-head(s1)
-barplot(colSums(s1),
-        las = 2,
-        col = rainbow(10),
-        ylab = 'Count',
-        main = 'Sentiment Scores Tweets')
-```
-
-```{r, echo=F, results = FALSE}
-library(devtools) 
-#install_github("trinker/sentimentr") 
-
-txt1 <- tweet2020$tweet
-#txt cleaning
-
-#txt <- sapply(txt, function(x) iconv(x, to='UTF-8-MAC', sub='byte'))
-#for Windows based OS
-txt1 <- sapply(txt1,function(row) iconv(row, "latin1", "ASCII", sub=""))
-#remove punctuation
-txt1 = gsub("(RT|via)((?:\\b\\W*@\\w+)+)", "", txt1)
-# remove at people
-txt1 = gsub("@\\w+", "", txt1)
-# remove punctuation
-txt1 = gsub("[[:punct:]]", "", txt1)
-# remove numbers
-txt1 = gsub("[[:digit:]]", "", txt1)
-# remove html links
-txt1 = gsub("http\\w+", "", txt1)
-# remove unnecessary spaces
-txt1 = gsub("[ \t]{2,}", "", txt1)
-txt1 = gsub("^\\s+|\\s+$", "", txt1)
-txt1 = txt1[!is.na(txt1)]
-names(txt1) = NULL
-
-library(sentimentr)
-sentiment_by(txt1) 
-
-t1 = extract_sentiment_terms(txt1) 
-
-
-attributes(t1)$count
-
-```
-
-
-```{r}
-library(e1071)
-
-txt1 %>%
-get_sentences() %>%
-sentiment() %>%
-filter(sentiment!=0) -> senti1
-
-densitySentiments1 <- density(senti1$sentiment) 
-mean(senti1$sentiment)
-sd(senti1$sentiment)
-skewness(senti1$sentiment)
-plot(densitySentiments1,main='Density of sentiments') 
-polygon(densitySentiments1,col='green')  
-```
-
-
-
-```{r}
-e1<-emotion_by(get_sentences(txt1),drop.unused.emotions=TRUE)
-plot(e1)
-```
-
+DO THE SAME WITH A SUBSET CONSIDERING ONLY FROM A SPECIFIC POINT ONWARD AND WITHOUT AMP, compare and see if there is any difference.
 
 ## Testing for stationarity 
 
@@ -664,6 +451,7 @@ plot(btc_hist$timestamp,btc_hist$open,
      main = "Trend signal")
 
 ```
+
 ### Autocorrelation Function
 
 The autocorrelation function (ACF) defines how data points in a time series are related, on average, to the preceding data points (Box, Jenkins, & Reinsel, 1994). In other words, it measures the self-similarity of the signal over different delay times. An autocorrelation plot shows the value of the autocorrelation function (ACF) on the vertical axis. It can range from –1 to 1. We use autocorrelation plot to assess wether the elements of a time series randomly oscilates around zero.
@@ -705,12 +493,12 @@ Differencing log values can help stabilise the mean of a time series by removing
 diff = diff(btc_hist$open)
 logdiff = diff(btc_hist$log)
 
-plot(btc_hist$timestamp[2:3200],diff,
+plot(btc_hist$timestamp[2:3200],logdiff,
      type='l',col='red',
      xlab = "time (t)",
      ylab = "Y(t)",
      main = "Trend signal")
-acf(diff,lag.max = length(btc_hist$open),
+acf(logdiff,lag.max = length(btc_hist$open),
          xlab = "lag #", ylab = 'ACF', main=' ')
 
 ```
@@ -749,14 +537,7 @@ m_binseg <- cpt.mean(diff[2500:3199], penalty = "BIC", method = "BinSeg", Q = 15
 plot(m_binseg, type = "l", xlab = "Index", cpt.width = 4)
 
 ```
-try with differend methods: 
-
-```{r}
-#segmented neighbout
-m_segneigh <- cpt.mean(diff[2500:3199], penalty = "BIC", method = "SegNeigh", Q = 50)
-plot(m_segneigh, type = "l", xlab = "Index", cpt.width = 4)
- 
-```
+tried with differend methods (segmented neighbour and PELT, but Binseg most effective): 
 
 
 ```{r}
@@ -764,20 +545,7 @@ cpts(m_binseg)
 
 ```
 
-```{r}
-m_pelt <- cpt.mean(diff[2500:3199], penalty = "BIC", method = "PELT")
-plot(m_pelt, type = "l", cpt.col = "blue", xlab = "Index", cpt.width = 4)
 
-#maybe not best method lol
-
-
-```
-
-```{r}
-m_pm <- cpt.mean(diff[2500:3199], penalty = "Manual", pen.value = "1.5 * log(n)",
-                      method = "PELT")
-plot(m_pm, type = "l", cpt.col = "blue", xlab = "Index", cpt.width = 4)
-```
 
 Those were only taking into consideration the mean, let's see the results for mean and variance all together
 
@@ -787,7 +555,6 @@ Those were only taking into consideration the mean, let's see the results for me
 
 cpt_date = btc_hist$timestamp[2499] + cpts(m_binseg) 
 tweet_date = btc_hist %>% filter(tweet == TRUE) %>% select(timestamp)
-as.data.frame(cpt_date)
 ```
 
 
@@ -795,6 +562,90 @@ as.data.frame(cpt_date)
 library(stringr)
 sum(str_count(elon$tweet, "\\w+"))
 ```
+
+```{r}
+eloncrypto <- elon[grepl("crypto", elon[["tweet"]]) | grepl("BTC", elon[["tweet"]]),]
+as.data.frame(eloncrypto)
+cpt_date <- format(as.POSIXct(cpt_date,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
+cpt_date <- as.Date(as.character(cpt_date), format='%m/%d/%Y')
+
+btc_hist['breakpoint'] <- btc_hist$timestamp %in% cpt_date
+
+
+library(ggplot2)
+colors <- c("tweets" = "deeppink",  "breaking points" = "blue")
+btc_hist[2750:3200,] %>%
+ggplot(aes(x = timestamp, y = open)) +
+geom_line() + 
+geom_point(data = . %>% filter(tweet == TRUE), aes(color = "tweets"), size = 3) +
+geom_point(data = . %>% filter(breakpoint == TRUE), aes(color = "breaking points"), size = 3) +  
+ggtitle("Elon Musk's Tweets and Breaking Points") +
+theme(plot.title = element_text(hjust = 0.5)) +
+labs(x = "timestamp",
+         y = "BTC value",
+         color = "Legend") + scale_color_manual(values = colors)
+```
+Do the same with Doge
+
+```{r}
+doge <- crypto_list(only_active=TRUE)
+doge <- subset(doge, doge$slug == "dogecoin")
+doge_hist <- crypto_history(doge, limit=1, start_date="20200101", end_date="20220131")
+
+library(stringr)
+
+as.data.frame(doge_hist)
+doge_hist$timestamp <- format(as.POSIXct(doge_hist$timestamp,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
+doge_hist$timestamp <- as.Date(as.character(doge_hist$timestamp), format='%m/%d/%Y')
+
+plot(doge_hist$timestamp,doge_hist$open,
+     type='l',col='red',
+     xlab = "time (t)",
+     ylab = "Y(t)",
+     main = "Trend signal")
+
+dogelogdiff = diff(log(doge_hist$open))
+
+plot(doge_hist$timestamp[2:760],dogelogdiff,
+     type='l',col='red',
+     xlab = "time (t)",
+     ylab = "Y(t)",
+     main = "Trend signal")
+acf(dogelogdiff,lag.max = length(doge_hist$timestamp),
+         xlab = "lag #", ylab = 'ACF', main=' ')
+adf.test(dogelogdiff)
+```
+
+```{r}
+doge_m_binseg <- cpt.mean(dogelogdiff, penalty = "None", method = "BinSeg", Q = 15)
+plot(doge_m_binseg, type = "l", xlab = "Index", cpt.width = 4)
+```
+```{r}
+doge_cpt_date = doge_hist$timestamp[1] + cpts(doge_m_binseg) 
+doge_cpt_date <- format(as.POSIXct(doge_cpt_date,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
+doge_cpt_date <- as.Date(as.character(doge_cpt_date), format='%m/%d/%Y')
+
+doge_hist['breakpoint'] <- doge_hist$timestamp %in% doge_cpt_date
+
+dogecrypto <- elon[grepl("Doge", elon[["tweet"]]) | grepl("dogecoin", elon[["tweet"]]),]
+as.data.frame(dogecrypto)
+dogecrypto$date <- format(as.POSIXct(dogecrypto$date,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
+dogecrypto$date <- as.Date(as.character(dogecrypto$date), format='%m/%d/%Y')
+doge_hist['tweet'] <- doge_hist$timestamp %in% dogecrypto$date
+
+colorsD <- c("tweets" = "green",  "breaking points" = "orange")
+doge_hist[300:760,] %>%
+ggplot(aes(x = timestamp, y = open)) +
+geom_line() + 
+geom_point(data = . %>% filter(tweet == TRUE), aes(color = "tweets"), size = 3) +
+geom_point(data = . %>% filter(breakpoint == TRUE), aes(color = "breaking points"), size = 3) +  
+ggtitle("Elon Musk's Tweets and Breaking Points") +
+theme(plot.title = element_text(hjust = 0.5)) +
+labs(x = "timestamp",
+         y = "DOGE value",
+         color = "Legend") + scale_color_manual(values = colorsD)
+```
+
 
 # Conclusion
 
