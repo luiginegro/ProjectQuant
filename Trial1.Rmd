@@ -493,12 +493,12 @@ Differencing log values can help stabilise the mean of a time series by removing
 diff = diff(btc_hist$open)
 logdiff = diff(btc_hist$log)
 
-plot(btc_hist$timestamp[2:3200],diff,
+plot(btc_hist$timestamp[2:3200],logdiff,
      type='l',col='red',
      xlab = "time (t)",
      ylab = "Y(t)",
      main = "Trend signal")
-acf(diff,lag.max = length(btc_hist$open),
+acf(logdiff,lag.max = length(btc_hist$open),
          xlab = "lag #", ylab = 'ACF', main=' ')
 
 ```
@@ -537,14 +537,7 @@ m_binseg <- cpt.mean(diff[2500:3199], penalty = "BIC", method = "BinSeg", Q = 15
 plot(m_binseg, type = "l", xlab = "Index", cpt.width = 4)
 
 ```
-try with differend methods: 
-
-```{r}
-#segmented neighbout
-m_segneigh <- cpt.mean(diff[2500:3199], penalty = "BIC", method = "SegNeigh", Q = 50)
-plot(m_segneigh, type = "l", xlab = "Index", cpt.width = 4)
- 
-```
+tried with differend methods (segmented neighbour and PELT, but Binseg most effective): 
 
 
 ```{r}
@@ -552,20 +545,7 @@ cpts(m_binseg)
 
 ```
 
-```{r}
-m_pelt <- cpt.mean(diff[2500:3199], penalty = "BIC", method = "PELT")
-plot(m_pelt, type = "l", cpt.col = "blue", xlab = "Index", cpt.width = 4)
 
-#maybe not best method lol
-
-
-```
-
-```{r}
-m_pm <- cpt.mean(diff[2500:3199], penalty = "Manual", pen.value = "1.5 * log(n)",
-                      method = "PELT")
-plot(m_pm, type = "l", cpt.col = "blue", xlab = "Index", cpt.width = 4)
-```
 
 Those were only taking into consideration the mean, let's see the results for mean and variance all together
 
@@ -575,7 +555,6 @@ Those were only taking into consideration the mean, let's see the results for me
 
 cpt_date = btc_hist$timestamp[2499] + cpts(m_binseg) 
 tweet_date = btc_hist %>% filter(tweet == TRUE) %>% select(timestamp)
-as.data.frame(cpt_date)
 ```
 
 
@@ -587,20 +566,86 @@ sum(str_count(elon$tweet, "\\w+"))
 ```{r}
 eloncrypto <- elon[grepl("crypto", elon[["tweet"]]) | grepl("BTC", elon[["tweet"]]),]
 as.data.frame(eloncrypto)
-eloncrypto$date <- format(as.POSIXct(eloncrypto$date,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
-eloncrypto$date <- as.Date(as.character(eloncrypto$date), format='%m/%d/%Y')
+cpt_date <- format(as.POSIXct(cpt_date,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
+cpt_date <- as.Date(as.character(cpt_date), format='%m/%d/%Y')
 
-btc_hist['tweet'] <- btc_hist$timestamp %in% eloncrypto$date
+btc_hist['breakpoint'] <- btc_hist$timestamp %in% cpt_date
 
 
 library(ggplot2)
-btc_hist %>%
+colors <- c("tweets" = "deeppink",  "breaking points" = "blue")
+btc_hist[2750:3200,] %>%
 ggplot(aes(x = timestamp, y = open)) +
 geom_line() + 
-geom_point(data = . %>% filter(tweet == TRUE), color = "deeppink", size = 3) +
-ggtitle("Elon Musk's Tweets and Bitcoin Volatility") +
-theme(plot.title = element_text(hjust = 0.5))
+geom_point(data = . %>% filter(tweet == TRUE), aes(color = "tweets"), size = 3) +
+geom_point(data = . %>% filter(breakpoint == TRUE), aes(color = "breaking points"), size = 3) +  
+ggtitle("Elon Musk's Tweets and Breaking Points") +
+theme(plot.title = element_text(hjust = 0.5)) +
+labs(x = "timestamp",
+         y = "BTC value",
+         color = "Legend") + scale_color_manual(values = colors)
 ```
+Do the same with Doge
+
+```{r}
+doge <- crypto_list(only_active=TRUE)
+doge <- subset(doge, doge$slug == "dogecoin")
+doge_hist <- crypto_history(doge, limit=1, start_date="20200101", end_date="20220131")
+
+library(stringr)
+
+as.data.frame(doge_hist)
+doge_hist$timestamp <- format(as.POSIXct(doge_hist$timestamp,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
+doge_hist$timestamp <- as.Date(as.character(doge_hist$timestamp), format='%m/%d/%Y')
+
+plot(doge_hist$timestamp,doge_hist$open,
+     type='l',col='red',
+     xlab = "time (t)",
+     ylab = "Y(t)",
+     main = "Trend signal")
+
+dogelogdiff = diff(log(doge_hist$open))
+
+plot(doge_hist$timestamp[2:760],dogelogdiff,
+     type='l',col='red',
+     xlab = "time (t)",
+     ylab = "Y(t)",
+     main = "Trend signal")
+acf(dogelogdiff,lag.max = length(doge_hist$timestamp),
+         xlab = "lag #", ylab = 'ACF', main=' ')
+adf.test(dogelogdiff)
+```
+
+```{r}
+doge_m_binseg <- cpt.mean(dogelogdiff, penalty = "None", method = "BinSeg", Q = 15)
+plot(doge_m_binseg, type = "l", xlab = "Index", cpt.width = 4)
+```
+```{r}
+doge_cpt_date = doge_hist$timestamp[1] + cpts(doge_m_binseg) 
+doge_cpt_date <- format(as.POSIXct(doge_cpt_date,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
+doge_cpt_date <- as.Date(as.character(doge_cpt_date), format='%m/%d/%Y')
+
+doge_hist['breakpoint'] <- doge_hist$timestamp %in% doge_cpt_date
+
+dogecrypto <- elon[grepl("Doge", elon[["tweet"]]) | grepl("dogecoin", elon[["tweet"]]),]
+as.data.frame(dogecrypto)
+dogecrypto$date <- format(as.POSIXct(dogecrypto$date,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
+dogecrypto$date <- as.Date(as.character(dogecrypto$date), format='%m/%d/%Y')
+doge_hist['tweet'] <- doge_hist$timestamp %in% dogecrypto$date
+
+colorsD <- c("tweets" = "green",  "breaking points" = "orange")
+doge_hist[300:760,] %>%
+ggplot(aes(x = timestamp, y = open)) +
+geom_line() + 
+geom_point(data = . %>% filter(tweet == TRUE), aes(color = "tweets"), size = 3) +
+geom_point(data = . %>% filter(breakpoint == TRUE), aes(color = "breaking points"), size = 3) +  
+ggtitle("Elon Musk's Tweets and Breaking Points") +
+theme(plot.title = element_text(hjust = 0.5)) +
+labs(x = "timestamp",
+         y = "DOGE value",
+         color = "Legend") + scale_color_manual(values = colorsD)
+```
+
 
 # Conclusion
 
