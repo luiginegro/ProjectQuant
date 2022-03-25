@@ -2,10 +2,12 @@
 title: "Does Elon Musk's tweets influence Bitcoin market value? : A sentiment anaylsis approach"
 author: "Beatrice Stocco - Federico Piazza - Luigi Negro"
 date: "04/04/2022"
-bibliography: 
+bibliography: allreferences.bib
+always_allow_html: true
 output:
   pdf_document:
     citation_package: biblatex
+    latex_engine: xelatex
 --- 
 
 # Abstract
@@ -91,19 +93,13 @@ If the data is non-stationary (meaning it has a trend), we need to remove it in 
 
 As can be seen in the summary table below, Elon Musk's influnece has grown widely over the years. In 10 years, **number of replies** per tweet has grown up to more than 3 million, **number of retweets** up to more than 4 million and **number of likes** up to the astonishing numbers of more than 50 million. As of December 31st 2021, Elon Musk's follower amounted to 71.5 mln, which means a very high coverage of  $72,2%$. 
 
-```{r, echo = FALSE}
-
-Replies = nreplies_year$nreplies
-Likes =  likes_year$nlikes
-Retweets = retweet_year$nretweets
-summary(cbind(Replies, Retweets, Likes))
-```
-
 
 ```{r, echo = FALSE}
 if(!require(dplyr)) install.packages("dplyr")
 if(!require(tidyverse)) install.packages("tidyverse")
 if(!require(readxl)) install.packages("readxl")
+library(dplyr)
+library(tidyverse)
 
 #library(readxl)
 ```
@@ -164,6 +160,15 @@ likes_year= likes_year[-c(12), ]
 
 
 
+```
+
+
+```{r, echo = FALSE}
+
+Replies = nreplies_year$nreplies
+Likes =  likes_year$nlikes
+Retweets = retweet_year$nretweets
+summary(cbind(Replies, Retweets, Likes))
 ```
 
 We can visually understand the exponential trend in the growing popularity of Tesla CEO's. It comes as no surprise that when *"Elon Musk speaks, investors listen"*. His influence derives from his large audience, prone to process the majority of the information coming from him as good quality information, influencing their (financial) decision-making process.
@@ -227,7 +232,7 @@ ggplot(data = nreplies_year, aes(x = yr, y = nreplies)) +
 ```
 
 
-```{r, echo = FALSE, eval=FALSE}
+```{r, echo = FALSE, results=FALSE}
 # install.packages("devtools")
 #devtools::install_github("sstoeckl/crypto2", force=TRUE)
 library(crypto2)
@@ -261,10 +266,10 @@ Once quantified Elon Musk's influence, it is essential to understand the extent 
 library(ggplot2)
 btc_hist %>%
 ggplot(aes(x = timestamp, y = open)) +
-  geom_line() + 
-  geom_point(data = . %>% filter(tweet == TRUE), color = "deeppink", size = 3) +
- ggtitle("Elon Musk's Tweets and Bitcoin Volatility") +
-  theme(plot.title = element_text(hjust = 0.5))
+geom_line() + 
+geom_point(data = . %>% filter(tweet == TRUE), color = "deeppink", size = 3) +
+ggtitle("Elon Musk's Tweets and Bitcoin Volatility") +
+theme(plot.title = element_text(hjust = 0.5))
 ```
 
 
@@ -272,7 +277,7 @@ ggplot(aes(x = timestamp, y = open)) +
 
 While the market may interpret Musk's tweets about Tesla as “accurate news”, his tweets about cryptocurrency at least to some degree represent moods or personal sentiment. In this section we want to further analyze the nature of this sentiments, the most frequent words and the emotions associated to them.
 
-```{r, echo=FALSE, eval= FALSE}
+```{r, echo=FALSE, results= FALSE}
 if(!require(tm)) install.packages("tm")
 library(tm)
 library(RColorBrewer)
@@ -312,7 +317,7 @@ barplot(words,
 Amp is a universal collateral token designed to facilitate fast and efficient transfers for any real-world application. When using Amp as collateral, transfers of value are guaranteed and can settle instantly. While the underlying asset reaches final settlement, a process that can take anywhere from seconds to days, Amp is held in escrow by a collateral manager. Once the transaction successfully settles, the Amp collateral is released and made available to collateralize another transfer. Amp exists to serve as universal collateral for anyone and any project. (*Source [(https://docs.amptoken.org/)]* ).
 Besides being a collateral for individuals and DeFi platforms, Amp is used as a collateral for payment networks: Flexa uses Amp to enable instant, fraud-free payments to merchants across its digital payment network. Apps that integrate Flexa stake Amp to ensure all payments can be settled in real-time regardless of the asset or protocol used. Since AMP Token was to be integrated with Tesla's payment rail for crypto, it is understandable why it's been one of the most tweeted words by Elon Musk, being this news shocking the crypto-lovers panorama and the future of Tesla. The news of Tesla about the willing to accept crypto as payments and the investment in over 1.5 BLN USD in Bitcoin  (February 2021), made the price of Bitcoin to skyrocket. On the other hand, a plethora of enviromental activists opposed this decision due to the high levels of electric energy which are used to mine and sustain the crypto network and highlighted the controversial nature of the Tesla CEO's choice: this led Elon Musk to no longer accept payments in Bitcoin. The impact on the crypto-currency value has been devastating has shown in the following graphic showing once again, how much "investors listen to Elon Musk".
 
-image: ![](C:/Users/luigi/OneDrive - Politecnico di Milano/HEC/QuantMethod/Project/projjj/ProjectQuant/events_image.jpg)
+image: ![](events_image.jpg)
 
 
 Here follows a wordcloud which helped us to visualize the most frequent words in Elon Musk's tweets. The higher the word's size displayed, the most frequent the word would appear in his tweets.
@@ -364,9 +369,9 @@ barplot(colSums(s),
         main = 'Sentiment Scores Tweets')
 ```
 
-```{r, echo=F, eval = FALSE}
+```{r, echo=F, results = FALSE}
 library(devtools) 
-install_github("trinker/sentimentr") 
+#install_github("trinker/sentimentr") 
 
 txt <- elon$tweet
 #txt cleaning
@@ -400,10 +405,6 @@ attributes(t)$count
 ```
 
 Another important result is outlined by the following graphs. It shows the density of sentiment: as it can be noticed it follows a normal-like distribution ($\mu = 0.18$, $\sigma = 0.36 $), slightly positevely skewed. This result is line with the previous results, highlighting the positive polarity of the sentiments. Here follows a brief statistical summary of the density plot, followed by the plot itself.
-
-```{r, echo=FALSE}
-summary(senti$sentiment)
-```
 
 
 
@@ -513,7 +514,7 @@ try to find change points in the data, I use diff for now not sure tho
 
 ```{r}
 if(!require(changepoint)) install.packages("changepoint")
-if(!require(sarbcurrent)) install.packages("sarbcurrent")
+library(changepoint)
 library(tidyverse)
 library(lubridate)
 m_binseg <- cpt.mean(diff, penalty = "BIC", method = "BinSeg", Q = 15)
@@ -588,7 +589,7 @@ dfihdfhdhfidf
 
 *Python code to extract Elon Musks's tweets via Twitter API*
 
-```{python, echo = TRUE, eval=FALSE }
+```{r, echo = TRUE, eval=FALSE }
 import twint
 import datetime
 
