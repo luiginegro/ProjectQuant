@@ -1,9 +1,9 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
-[1] Config.pm:310> INFO - Logfile is 'Trial1.blg'
-[134] biber-darwin:340> INFO - === Thu Mar 24, 2022, 21:06:27
-[174] Biber.pm:418> INFO - Reading 'Trial1.bcf'
-[346] Biber.pm:972> INFO - Found 0 citekeys in bib section 0
-[373] bbl.pm:654> INFO - Writing 'Trial1.bbl' with encoding 'UTF-8'
-[374] bbl.pm:757> INFO - Output to Trial1.bbl
-[375] Biber.pm:130> WARN - The file 'Trial1.bcf' does not contain any citations!
-[375] Biber.pm:132> INFO - WARNINGS: 1
+[0] Config.pm:310> INFO - Logfile is 'Trial1.blg'
+[183] biber-darwin:340> INFO - === Fri Mar 25, 2022, 18:21:12
+[227] Biber.pm:418> INFO - Reading 'Trial1.bcf'
+[418] Biber.pm:972> INFO - Found 0 citekeys in bib section 0
+[444] bbl.pm:654> INFO - Writing 'Trial1.bbl' with encoding 'UTF-8'
+[444] bbl.pm:757> INFO - Output to Trial1.bbl
+[445] Biber.pm:130> WARN - The file 'Trial1.bcf' does not contain any citations!
+[445] Biber.pm:132> INFO - WARNINGS: 1

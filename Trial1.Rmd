@@ -550,7 +550,7 @@ tdm1 <- TermDocumentMatrix(cleanset1)
 tdm1 <- as.matrix(tdm1)
 tdm1[1:10, 1:20]
 words1 <- rowSums(tdm1)
-words1 <- subset(words1, words1>=100)
+words1 <- subset(words1, words1>=60)
 barplot(words1,
         las = 2,
         col = rainbow(50))
