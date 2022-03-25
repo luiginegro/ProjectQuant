@@ -585,6 +585,14 @@ sum(str_count(elon$tweet, "\\w+"))
 ```
 
 ```{r}
+eloncrypto <- elon[grepl("crypto", elon[["tweet"]]) | grepl("BTC", elon[["tweet"]]),]
+as.data.frame(eloncrypto)
+eloncrypto$date <- format(as.POSIXct(eloncrypto$date,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
+eloncrypto$date <- as.Date(as.character(eloncrypto$date), format='%m/%d/%Y')
+
+btc_hist['tweet'] <- btc_hist$timestamp %in% eloncrypto$date
+
+
 library(ggplot2)
 btc_hist %>%
 ggplot(aes(x = timestamp, y = open)) +
