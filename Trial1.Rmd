@@ -294,10 +294,7 @@ inspect(cleanset[1:5])
 ```
 The graphs below shows the most used word and their frequency.
 It appears that the three most used words are *amp*, *tesla* and *will*. 
-
-- AMP DESCRIPTION
-
-
+It goes without saying that we expected **tesla** to be  one of the most frequent word in Musk's tweet, and our interpretation of the word **will** lies in that this verb shows his strong willingness and decisive, goal-oriented character as well as his inclination towards the future sustained by visionary statements. It can be less clear why **amp** is among the most frequent word, therefore we opted for a further explanation.
 
 
 ```{r, echo = FALSE}
@@ -310,8 +307,17 @@ barplot(words,
         las = 2,
         col = rainbow(50))
 ```
+*AMP* 
 
-```{r}
+Amp is a universal collateral token designed to facilitate fast and efficient transfers for any real-world application. When using Amp as collateral, transfers of value are guaranteed and can settle instantly. While the underlying asset reaches final settlement, a process that can take anywhere from seconds to days, Amp is held in escrow by a collateral manager. Once the transaction successfully settles, the Amp collateral is released and made available to collateralize another transfer. Amp exists to serve as universal collateral for anyone and any project. (*Source [(https://docs.amptoken.org/)]* ).
+Besides being a collateral for individuals and DeFi platforms, Amp is used as a collateral for payment networks: Flexa uses Amp to enable instant, fraud-free payments to merchants across its digital payment network. Apps that integrate Flexa stake Amp to ensure all payments can be settled in real-time regardless of the asset or protocol used. Since AMP Token was to be integrated with Tesla's payment rail for crypto, it is understandable why it's been one of the most tweeted words by Elon Musk, being this news shocking the crypto-lovers panorama and the future of Tesla. The news of Tesla about the willing to accept crypto as payments and the investment in over 1.5 BLN USD in Bitcoin  (February 2021), made the price of Bitcoin to skyrocket. On the other hand, a plethora of enviromental activists opposed this decision due to the high levels of electric energy which are used to mine and sustain the crypto network and highlighted the controversial nature of the Tesla CEO's choice: this led Elon Musk to no longer accept payments in Bitcoin. The impact on the crypto-currency value has been devastating has shown in the following graphic showing once again, how much "investors listen to Elon Musk".
+
+image: ![](C:/Users/luigi/OneDrive - Politecnico di Milano/HEC/QuantMethod/Project/projjj/ProjectQuant/events_image.jpg)
+
+
+Here follows a wordcloud which helped us to visualize the most frequent words in Elon Musk's tweets. The higher the word's size displayed, the most frequent the word would appear in his tweets.
+
+```{r, echo = FALSE}
 library(wordcloud)
 w <- sort(rowSums(tdm), decreasing = TRUE)
 set.seed(222)
@@ -337,11 +343,11 @@ wordcloud2(w,
            minSize = 1)
 ```
 
-# Models and Results 
-*da separare nel report*
+### Sentiment scores and density
 
+Based on the following results of the Sentiment Analysis of Elon Musk's tweets, it appears clear that *positive*, *trust* and *anticipation* are the most frequent emotions. This result is perfectly coherent with the visionary Tesla and SpaceX CEO's personality: his hunger for innovative , out-of-the-box solutions; his continuous positive and confident approach towards insurmountable problems such as "taking the human race to Mars", conceiving re-usable rockets disrupting space industry,  as well as "changing the world's concept of driving through electric autonomous driven vehicle" and many others clearly embeds those emotions.
 
-```{r}
+```{r, echo= FALSE}
 library(syuzhet)
 library(lubridate)
 library(ggplot2)
@@ -358,7 +364,7 @@ barplot(colSums(s),
         main = 'Sentiment Scores Tweets')
 ```
 
-```{r}
+```{r, echo=F, eval = FALSE}
 library(devtools) 
 install_github("trinker/sentimentr") 
 
@@ -392,7 +398,16 @@ t = extract_sentiment_terms(txt)
 
 attributes(t)$count
 ```
-```{r}
+
+Another important result is outlined by the following graphs. It shows the density of sentiment: as it can be noticed it follows a normal-like distribution ($\mu = 0.18$, $\sigma = 0.36 $), slightly positevely skewed. This result is line with the previous results, highlighting the positive polarity of the sentiments. Here follows a brief statistical summary of the density plot, followed by the plot itself.
+
+```{r, echo=FALSE}
+summary(senti$sentiment)
+```
+
+
+
+```{r, echo = FALSE}
 #Sentiment density plot
 library(e1071)
 
@@ -403,31 +418,27 @@ filter(sentiment!=0) -> senti
 
 densitySentiments <- density(senti$sentiment) 
 mean(senti$sentiment)
+sd(senti$sentiment)
 skewness(senti$sentiment)
 plot(densitySentiments,main='Density of sentiments') 
 polygon(densitySentiments,col='red')        
 ```
+### Emotions at the sentence level
 
-```{r}
+The following analysis detects the rate of emotion at the sentence level. This method uses a simple dictionary lookup to find emotion words and then compute the rate per sentence. The emotion score ranges between 0 (no emotion used) and 1 (all words used were emotional). Once again, this result is in line with the previous ones, showing how positive emotions such as joy, trust and anticipation are predominant. Please note that the suffix *_negated* indicates the opposite of the reference emotions, which appears to be consistently absent in relation to any emotion.
+
+```{r, echo = FALSE}
 e<-emotion_by(get_sentences(txt),drop.unused.emotions=TRUE)
 plot(e)
 ```
-Try to check if it is possible to ty to assess whether there is an influence in tweets
+## Testing for stationarity 
 
-Our time series data can have a trend or not. It is of the utmost importance to determine how the series is behaving before applying any model to it.
+In this section we show the results obtained when testing for Bitcoin trend stationarity. We recall the hypothesis:
 
-Augmented Dicky Fuller test: it determines how strongly a time series is defined by a trend.
+*Null Hypothesis (H0* : Null hypothesis of the test is that the time series can be represented by a unit root that is not stationary.
+*Alternative Hypothesis (H1)*: Alternative Hypothesis of the test is that the time series is stationary. The following plot, represent our study focus.
 
-Hypothesis:
-
-Null Hypothesis (H0): Null hypothesis of the test is that the time series can be represented by a unit root that is not stationary.
-Alternative Hypothesis (H1): Alternative Hypothesis of the test is that the time series is stationary.
-Why is Stationarity Important?
-For data to be stationary, the statistical properties of a system do not change over time. This does not mean that the values for each data point have to be the same, but the overall behavior of the data should remain constant.
-
-If the data is non-stationary (meaning it has a trend), we need to remove it in order to proceed with the analysis.
-
-```{r}
+```{r, echo = FALSE}
 plot(btc_hist$timestamp,btc_hist$open,
      type='l',col='red',
      xlab = "time (t)",
@@ -435,15 +446,19 @@ plot(btc_hist$timestamp,btc_hist$open,
      main = "Trend signal")
 
 ```
+### Autocorrelation Function
 
-```{r}
+The autocorrelation function (ACF) defines how data points in a time series are related, on average, to the preceding data points (Box, Jenkins, & Reinsel, 1994). In other words, it measures the self-similarity of the signal over different delay times. An autocorrelation plot shows the value of the autocorrelation function (ACF) on the vertical axis. It can range from –1 to 1. We use autocorrelation plot to assess wether the elements of a time series randomly oscilates around zero.
+
+Our first attempt without any transformation gives the following result, which shows consistent non-stationarity.
+```{r, echo = FALSE}
 acf(btc_hist$open,lag.max = length(btc_hist$open),
          xlab = "lag #", ylab = 'ACF', main=' ')
 ```
-Augmented Dickey–Fuller (ADF) t-statistic test for unit root
-Another test we can conduct is the Augmented Dickey–Fuller (ADF) t-statistic test to find if the series has a unit root (a series with a trend line will have a unit root and result in a large p-value).
+We proceed by applying an Augmented Dickey–Fuller (ADF) t-statistic test for unit root: in statistics and econometrics, an augmented Dickey–Fuller test (ADF) tests the null hypothesis that a unit root is present in a time series sample. The alternative hypothesis is different depending on which version of the test is used, but is usually stationarity or trend-stationarity. It is an augmented version of the Dickey–Fuller test for a larger and more complicated set of time series models.
+The augmented Dickey–Fuller (ADF) statistic, used in the test, is a negative number. The more negative it is, the stronger the rejection of the hypothesis that there is a unit root at some level of confidence. Our result clearly shows a non-stationarity due to the high p-value (>0.5). 
 
-```{r}
+```{r, echo = FALSE}
 if(!require(tseries)) install.packages("tseries")
 options(warn=-1)
 library(tseries)
@@ -452,10 +467,9 @@ adf.test(btc_hist$open)
 #data non stationary as high p-value
 ```
 
-try to go from non-stationarity to stationarity: different techniques we use ln
+In order to go from non-stationarity to stationarity different techniques can be used. We first attempt in utilising logaritmic transformation: such transformtion can help to stabilise the variance of a time series. We apply the ADF test, still obtaining a non statistically relevant result, even though the p-value has decreased to 0.46.
 
-Transformations such as logarithms can help to stabilise the variance of a time series. Differencing can help stabilise the mean of a time series by removing changes in the level of a time series, and therefore eliminating (or reducing) trend and seasonality.
-```{r}
+```{r, echo = FALSE}
 btc_hist['log'] = log(btc_hist$open)
 plot(btc_hist$timestamp,btc_hist$log,
      type='l',col='red',
@@ -466,9 +480,10 @@ acf(btc_hist$log,lag.max = length(btc_hist$log),
          xlab = "lag #", ylab = 'ACF', main=' ')
 adf.test(btc_hist$log)
 ```
-diff() function in R Language is used to find the difference between each consecutive pair of elements of a vector.
 
-```{r}
+Differencing log values can help stabilise the mean of a time series by removing changes in the level of a time series, and therefore eliminating (or reducing) trend and seasonality. We attempt to use this transformation obtaining satisfing results. Indeed, the following plot shows how the trend has been removed and stationarity is obtained.
+
+```{r, echo= FALSE}
 diff = diff(btc_hist$open)
 logdiff = diff(btc_hist$log)
 
@@ -480,22 +495,19 @@ plot(btc_hist$timestamp[2:3200],diff,
 acf(diff,lag.max = length(btc_hist$open),
          xlab = "lag #", ylab = 'ACF', main=' ')
 
-plot(btc_hist$timestamp[2:3200],logdiff,
-     type='l',col='red',
-     xlab = "time (t)",
-     ylab = "Y(t)",
-     main = "Trend signal")
-acf(logdiff,lag.max = length(btc_hist$open),
-         xlab = "lag #", ylab = 'ACF', main=' ')
 ```
 
-
-```{r}
+We conduct the ADF test to confirm our results: p-value is now 0.01 (highly significant) and we can assess that the log difference of the elements of the time series result to be non-stationary. 
+```{r, echo = FALSE}
 adf.test(diff)
 adf.test(logdiff)
 
 ```
-Differencing we find non stationary data, in other word, it appears that the daily difference in btc value is random
+ 
+This means that bitcoin volatility is random, not influenced by Elon Musk's tweets. This is a core finding of our study.
+
+Da qui in poi fede guarda tu
+--- 
 
 try to find change points in the data, I use diff for now not sure tho
 
@@ -567,6 +579,8 @@ sum(str_count(elon$tweet, "\\w+"))
 ```
 
 # Conclusion
+
+dfihdfhdhfidf
 
 
 
