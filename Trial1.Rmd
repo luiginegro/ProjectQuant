@@ -258,6 +258,70 @@ btc_hist['tweet'] <- btc_hist$timestamp %in% eloncrypto$date
 
 ```
 
+
+
+```{r}
+library(ggplot2)
+
+#subsetting in order to undersand tweet share
+
+
+elondoge = elon[grepl("doge", elon[["tweet"]]),]
+elonCryptoOnly = elon[grepl("crypto", elon[["tweet"]]),]
+elonBTC = elon[grepl("BTC", elon[["tweet"]]),]
+
+n_doge = length(elondoge$tweet)
+n_onlycrypto = length(elonCryptoOnly$tweet)
+n_BTC = length(elonCryptoOnly$tweet)
+n_totaltweet = n_doge + n_onlycrypto + n_BTC
+
+#vector 
+
+vectorshare = c(n_doge, n_onlycrypto, n_BTC)
+vectorshare= as.data.frame(vectorshare)
+dim(vectorshare)
+colnames(vectorshare) = c("tweet number")
+rownames(vectorshare) = c("doge", "crypto", "BTC")
+
+# piechart or stackbar
+
+
+
+
+
+
+#counting total nlikes, nreplies, nretweet per each keyword to understand where is the maximum activity
+## like
+n_dogelikes = sum(elondoge$nlikes)/n_doge
+n_onlycrptolikes = sum(elonCryptoOnly$nlikes)/n_onlycrypto
+n_BTClike = sum(elonBTC$nlikes)/n_BTC
+##retweet
+n_dogeretweet = sum(elondoge$nretweets)/n_doge
+n_onlycrptoretweet = sum(elonCryptoOnly$nretweets)/n_onlycrypto
+n_BTCretweet = sum(elonBTC$nretweets)/n_BTC
+##reply
+n_dogereply = sum(elondoge$nreplies)/n_doge
+n_onlycrptoreply = sum(elonCryptoOnly$nreplies)/n_onlycrypto
+n_BTClreply= sum(elonBTC$nreplies)/n_BTC
+
+
+
+
+#dataframe activity
+vectoractivity_doge= c(n_dogelikes, n_dogereply, n_dogeretweet)
+vectoractivity_BTC= c(n_BTClike, n_BTClreply, n_BTCretweet)
+vectoractivity_crypto = c(n_onlycrptolikes, n_onlycrptoreply, n_onlycrptoretweet)
+dfactivity = cbind(vectoractivity_doge, vectoractivity_crypto, vectoractivity_BTC)
+dfactivity= as.data.frame(dfactivity)
+rownames(dfactivity) = c("Like", "Replies", "Retweets")
+colnames(dfactivity) = c("Activity Doge", "Activity Crypto", "Activity BTC")
+
+#plotting da capire
+
+
+
+```
+
 ## When Elon Musks tweets, investors listen
 
 Once quantified Elon Musk's influence, it is essential to understand the extent of this influence on the cryptomarket. Which is the width of Bitcoin price volatility once a crypto-related tweets is published? We managed to extract the tweets which only cointained the words *bitcoin* and *crypto* and connected their time-stamp to the Bitcoin market capitalization trend. The pink points on the graphic represent the moment in time when a crpyto-related tweet was published: there is clear evidence suggesting a relationship between the Bitcoin volatility and Musk's trend however, it is still unclear at this stage whether it's Elon Musk's direct influence on Bitcoin price change or the other way round. It cannot be assessed a clear causality relatioship. This issue will be further addressed in this paper.
@@ -376,7 +440,7 @@ library(devtools)
 txt <- elon$tweet
 #txt cleaning
 
-txt <- sapply(txt, function(x) iconv(x, to='UTF-8-MAC', sub='byte'))
+#txt <- sapply(txt, function(x) iconv(x, to='UTF-8-MAC', sub='byte'))
 #for Windows based OS
 txt <- sapply(txt,function(row) iconv(row, "latin1", "ASCII", sub=""))
 #remove punctuation
@@ -432,6 +496,159 @@ The following analysis detects the rate of emotion at the sentence level. This m
 e<-emotion_by(get_sentences(txt),drop.unused.emotions=TRUE)
 plot(e)
 ```
+
+## Subsetting sentiment from Jan 2020 without "AMP" word
+
+```{r}
+if(!require(tm)) install.packages("tm")
+library(tm)
+library(RColorBrewer)
+library(wordcloud)
+
+#subset after Jan 2020
+
+tweet2020 = elon
+tweet2020 = tweet2020[-c(1:2762),]
+
+#eliminate tweet containing "amp" with grepl
+tweet2020 = tweet2020[!grepl("amp", tweet2020[["tweet"]]),]
+
+
+corpus1 <- iconv(tweet2020$tweet)
+corpus1 <- Corpus(VectorSource(corpus1))
+inspect(corpus1[1:6])
+#clean
+corpus1 <- tm_map(corpus1, tolower)
+corpus1<- tm_map(corpus1, removePunctuation)
+corpus1 <- tm_map(corpus1, removeNumbers)
+cleanset1 <- tm_map(corpus1, removeWords, stopwords('english'))
+removeURL1 <- function(x) gsub('http[[:alnum:]]*', '', x)
+cleanset1 <- tm_map(cleanset1, content_transformer(removeURL1))
+inspect(cleanset1[1:10])
+#stemming = reduce to root form
+cleanset1 <- tm_map(cleanset1, stripWhitespace)
+inspect(cleanset1[1:5])
+```
+
+
+
+```{r}
+tdm1 <- TermDocumentMatrix(cleanset1)
+tdm1 <- as.matrix(tdm1)
+tdm1[1:10, 1:20]
+words1 <- rowSums(tdm1)
+words1 <- subset(words1, words1>=100)
+barplot(words1,
+        las = 2,
+        col = rainbow(50))
+
+```
+
+```{r, echo = FALSE}
+library(wordcloud)
+w1 <- sort(rowSums(tdm1), decreasing = TRUE)
+set.seed(222)
+wordcloud(words = names(w1),
+          freq = w1,
+          max.words = 150,
+          random.order = F,
+          min.freq = 5,
+          colors = brewer.pal(8, 'Dark2'),
+          scale = c(5, 0.3),
+          rot.per = 0.7)
+```
+
+```{r}
+if(!require(wordcloud2)) install.packages("wordcloud2")
+library(wordcloud2)
+w1 <- data.frame(names(w1), w1)
+colnames(w1) <- c('word', 'freq')
+wordcloud2(w1,
+           size = 0.7,
+           shape = 'rectangle',
+           rotateRatio = 0.5,
+           minSize = 1)
+```
+### Sentiment scores and density
+
+```{r, echo= FALSE}
+library(syuzhet)
+library(lubridate)
+library(ggplot2)
+library(scales)
+library(reshape2)
+library(dplyr)
+
+s1 <- get_nrc_sentiment(tweet2020$tweet)
+head(s1)
+barplot(colSums(s1),
+        las = 2,
+        col = rainbow(10),
+        ylab = 'Count',
+        main = 'Sentiment Scores Tweets')
+```
+
+```{r, echo=F, results = FALSE}
+library(devtools) 
+#install_github("trinker/sentimentr") 
+
+txt1 <- tweet2020$tweet
+#txt cleaning
+
+#txt <- sapply(txt, function(x) iconv(x, to='UTF-8-MAC', sub='byte'))
+#for Windows based OS
+txt1 <- sapply(txt1,function(row) iconv(row, "latin1", "ASCII", sub=""))
+#remove punctuation
+txt1 = gsub("(RT|via)((?:\\b\\W*@\\w+)+)", "", txt1)
+# remove at people
+txt1 = gsub("@\\w+", "", txt1)
+# remove punctuation
+txt1 = gsub("[[:punct:]]", "", txt1)
+# remove numbers
+txt1 = gsub("[[:digit:]]", "", txt1)
+# remove html links
+txt1 = gsub("http\\w+", "", txt1)
+# remove unnecessary spaces
+txt1 = gsub("[ \t]{2,}", "", txt1)
+txt1 = gsub("^\\s+|\\s+$", "", txt1)
+txt1 = txt1[!is.na(txt1)]
+names(txt1) = NULL
+
+library(sentimentr)
+sentiment_by(txt1) 
+
+t1 = extract_sentiment_terms(txt1) 
+
+
+attributes(t1)$count
+
+```
+
+
+```{r}
+library(e1071)
+
+txt1 %>%
+get_sentences() %>%
+sentiment() %>%
+filter(sentiment!=0) -> senti1
+
+densitySentiments1 <- density(senti1$sentiment) 
+mean(senti1$sentiment)
+sd(senti1$sentiment)
+skewness(senti1$sentiment)
+plot(densitySentiments1,main='Density of sentiments') 
+polygon(densitySentiments1,col='green')  
+```
+
+
+
+```{r}
+e1<-emotion_by(get_sentences(txt1),drop.unused.emotions=TRUE)
+plot(e1)
+```
+
+
 ## Testing for stationarity 
 
 In this section we show the results obtained when testing for Bitcoin trend stationarity. We recall the hypothesis:
