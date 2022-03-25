@@ -258,6 +258,8 @@ btc_hist['tweet'] <- btc_hist$timestamp %in% eloncrypto$date
 
 ```
 
+GRAFICO CHE CONTA QUANTITTA DI TWEET CHE CONTENGONO DETERMINATE KEYWORD CRYPTO-RELATED E PERCENTUALE SUL TOTALE DEI TWEET
+
 ## When Elon Musks tweets, investors listen
 
 Once quantified Elon Musk's influence, it is essential to understand the extent of this influence on the cryptomarket. Which is the width of Bitcoin price volatility once a crypto-related tweets is published? We managed to extract the tweets which only cointained the words *bitcoin* and *crypto* and connected their time-stamp to the Bitcoin market capitalization trend. The pink points on the graphic represent the moment in time when a crpyto-related tweet was published: there is clear evidence suggesting a relationship between the Bitcoin volatility and Musk's trend however, it is still unclear at this stage whether it's Elon Musk's direct influence on Bitcoin price change or the other way round. It cannot be assessed a clear causality relatioship. This issue will be further addressed in this paper.
@@ -432,6 +434,8 @@ The following analysis detects the rate of emotion at the sentence level. This m
 e<-emotion_by(get_sentences(txt),drop.unused.emotions=TRUE)
 plot(e)
 ```
+DO THE SAME WITH A SUBSET CONSIDERING ONLY FROM A SPECIFIC POINT ONWARD AND WITHOUT AMP, compare and see if there is any difference.
+
 ## Testing for stationarity 
 
 In this section we show the results obtained when testing for Bitcoin trend stationarity. We recall the hypothesis:
@@ -447,6 +451,7 @@ plot(btc_hist$timestamp,btc_hist$open,
      main = "Trend signal")
 
 ```
+
 ### Autocorrelation Function
 
 The autocorrelation function (ACF) defines how data points in a time series are related, on average, to the preceding data points (Box, Jenkins, & Reinsel, 1994). In other words, it measures the self-similarity of the signal over different delay times. An autocorrelation plot shows the value of the autocorrelation function (ACF) on the vertical axis. It can range from –1 to 1. We use autocorrelation plot to assess wether the elements of a time series randomly oscilates around zero.
@@ -577,6 +582,16 @@ as.data.frame(cpt_date)
 ```{r}
 library(stringr)
 sum(str_count(elon$tweet, "\\w+"))
+```
+
+```{r}
+library(ggplot2)
+btc_hist %>%
+ggplot(aes(x = timestamp, y = open)) +
+geom_line() + 
+geom_point(data = . %>% filter(tweet == TRUE), color = "deeppink", size = 3) +
+ggtitle("Elon Musk's Tweets and Bitcoin Volatility") +
+theme(plot.title = element_text(hjust = 0.5))
 ```
 
 # Conclusion
