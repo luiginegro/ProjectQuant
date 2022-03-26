@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.3.24)  25 MAR 2022 18:21
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.3.24)  26 MAR 2022 16:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -921,924 +921,619 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ] [2] [3]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 400.
+(Font)              scaled to size 7.0pt on input line 402.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 400.
+(Font)              scaled to size 5.0pt on input line 402.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00092pt on input line 400.
+(Font)              scaled to size 10.00092pt on input line 402.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00064pt on input line 400.
+(Font)              scaled to size 7.00064pt on input line 402.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00046pt on input line 400.
+(Font)              scaled to size 5.00046pt on input line 402.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 400.
+(Font)              scaled to size 9.99893pt on input line 402.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 400.
+(Font)              scaled to size 6.99925pt on input line 402.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 400.
+(Font)              scaled to size 4.99947pt on input line 402.
 [4]
-Overfull \hbox (296.74498pt too wide) in paragraph at lines 510--510
-[]\TU/lmtt/m/n/10 ##                                                                                                                                           tweet[] 
- []
-
-
-Overfull \hbox (296.74498pt too wide) in paragraph at lines 510--510
-[]\TU/lmtt/m/n/10 ## 1 Am not saying that is *necessarily* good or bad, but reality will force us to live with the consequences of our actions  http://t.co/fnXmhUok[] 
- []
-
-
-Overfull \hbox (296.74498pt too wide) in paragraph at lines 510--510
-[]\TU/lmtt/m/n/10 ## 2    Interesting Economist article about how humanity's collective actions have created a fundamentally new geological age -- the Anthropocene.[] 
- []
-
-
-Overfull \hbox (296.74498pt too wide) in paragraph at lines 510--510
-[]\TU/lmtt/m/n/10 ## 3     @om Cool personal essay. It really resonated with me, as I felt the same way after coming very close to dying from malaria ten years ago.[] 
- []
-
-
-Overfull \hbox (296.74498pt too wide) in paragraph at lines 510--510
-[]\TU/lmtt/m/n/10 ## 4         @richardbranson Liked "Screw Business as Usual" a lot. This approach should be taken to heart by all, as it really is the smart move.[] 
- []
-
-
-Overfull \hbox (296.74498pt too wide) in paragraph at lines 510--510
-[]\TU/lmtt/m/n/10 ## 5         @kanyewest Just returned from Haiti. For those who want to help, I recommend donating to MSF, UNICEF and Artists for Peace & Justice.[] 
- []
-
-
-Overfull \hbox (296.74498pt too wide) in paragraph at lines 510--510
-[]\TU/lmtt/m/n/10 ## 6                                                                                                                          @TheOnion So true :)[] 
- []
-
-[5] [6]
 File: Trial1_files/figure-latex/unnamed-chunk-4-1.pdf Graphic file (type pdf)
 <use Trial1_files/figure-latex/unnamed-chunk-4-1.pdf>
+[5]
 File: Trial1_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (type pdf)
 <use Trial1_files/figure-latex/unnamed-chunk-5-1.pdf>
-[7]
+[6]
 File: Trial1_files/figure-latex/unnamed-chunk-6-1.pdf Graphic file (type pdf)
 <use Trial1_files/figure-latex/unnamed-chunk-6-1.pdf>
-[8] [9]
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 596.
+[7]
+File: Trial1_files/figure-latex/unnamed-chunk-7-1.pdf Graphic file (type pdf)
+<use Trial1_files/figure-latex/unnamed-chunk-7-1.pdf>
+File: Trial1_files/figure-latex/unnamed-chunk-7-2.pdf Graphic file (type pdf)
+<use Trial1_files/figure-latex/unnamed-chunk-7-2.pdf>
 
-LaTeX Font Warning: Font shape `TU/lmtt/bx/it' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/sl' tried instead on input line 596.
-
-[10]
-File: Trial1_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/unnamed-chunk-9-1.pdf>
-[11] [12]
-File: Trial1_files/figure-latex/unnamed-chunk-11-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/unnamed-chunk-11-1.pdf>
-
-Underfull \hbox (badness 10000) in paragraph at lines 780--782
+Underfull \hbox (badness 10000) in paragraph at lines 488--490
 [][]
  []
 
+[8] [9]
+File: Trial1_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file (type pdf)
+<use Trial1_files/figure-latex/unnamed-chunk-9-1.pdf>
+[10] [11] [12] [13] [14]
+File: Trial1_files/figure-latex/unnamed-chunk-11-1.pdf Graphic file (type pdf)
+<use Trial1_files/figure-latex/unnamed-chunk-11-1.pdf>
+
+Underfull \hbox (badness 10000) in paragraph at lines 856--858
+[][]
+ []
+
+[15]
 File: events_image.jpg Graphic file (type bmp)
 <events_image.jpg>
 
-Overfull \hbox (32.21495pt too wide) in paragraph at lines 811--812
+Overfull \hbox (32.21495pt too wide) in paragraph at lines 887--888
 []\TU/lmr/m/n/10 image: [] 
  []
 
-[13] [14]
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-[15]
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
 [16]
+Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
+Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
+Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
+Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
+[17]
+Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
+Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
+Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
+Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
+Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
+Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
+Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
+Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
+Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
+Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
+Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
+Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
+Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
+Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
+Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
+Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
+Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
+Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
+Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
+Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
+Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
+Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
+Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
+Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
+Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
+Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
+Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
+Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
+[18]
 File: Trial1_files/figure-latex/unnamed-chunk-12-1.pdf Graphic file (type pdf)
 <use Trial1_files/figure-latex/unnamed-chunk-12-1.pdf>
-[17] [18]
+[19]
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 1139.
+[20]
 File: Trial1_files/figure-latex/unnamed-chunk-14-1.pdf Graphic file (type pdf)
 <use Trial1_files/figure-latex/unnamed-chunk-14-1.pdf>
-
-Overfull \hbox (34.24498pt too wide) in paragraph at lines 1172--1172
+[21]
+Overfull \hbox (34.24498pt too wide) in paragraph at lines 1248--1248
 []\TU/lmtt/m/n/10 ## Warning: Each time `sentiment_by` is run it has to do sentence boundary disambiguation when a[] 
  []
 
 
-Overfull \hbox (60.49498pt too wide) in paragraph at lines 1179--1179
+Overfull \hbox (60.49498pt too wide) in paragraph at lines 1255--1255
 []\TU/lmtt/m/n/10 ## Warning: Each time `extract_sentiment` is run it has to do sentence boundary disambiguation when a[] 
  []
 
 Missing character: There is no 𝜎 (U+1D70E) in font [lmroman10-regular]:mapping=tex-text;!
-[19]
+[22]
 File: Trial1_files/figure-latex/unnamed-chunk-16-1.pdf Graphic file (type pdf)
 <use Trial1_files/figure-latex/unnamed-chunk-16-1.pdf>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1200--1202
+Underfull \hbox (badness 10000) in paragraph at lines 1278--1280
 [][]
  []
 
 File: Trial1_files/figure-latex/unnamed-chunk-17-1.pdf Graphic file (type pdf)
 <use Trial1_files/figure-latex/unnamed-chunk-17-1.pdf>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1213--1216
+Underfull \hbox (badness 10000) in paragraph at lines 1291--1294
 [][]
  []
 
-[20] [21]
+[23] [24]
 Missing character: There is no 👶 (U+1F476) in font [lmmono10-regular]:!
 Missing character: There is no 🏻 (U+1F3FB) in font [lmmono10-regular]:!
-Missing character: There is no ♥ (U+2665) in font [lmmono10-regular]:!
-Missing character: There is no ️ (U+FE0F) in font [lmmono10-regular]:!
-Missing character: There is no ♥ (U+2665) in font [lmmono10-regular]:!
-Missing character: There is no ️ (U+FE0F) in font [lmmono10-regular]:!
-Missing character: There is no ♥ (U+2665) in font [lmmono10-regular]:!
-Missing character: There is no ️ (U+FE0F) in font [lmmono10-regular]:!
-Missing character: There is no ♥ (U+2665) in font [lmmono10-regular]:!
-Missing character: There is no ️ (U+FE0F) in font [lmmono10-regular]:!
-
-Overfull \hbox (238.99498pt too wide) in paragraph at lines 1254--1254
-[]\TU/lmtt/m/n/10 ## [5] @BnOrdhaug @Erdayastronaut I haven’t cross-checked RCS pulses with the MLI dimpling on the video, but it’s most likely the cause[] 
- []
-
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 👶 (U+1F476) in font [lmmono10-regular]:!
-Missing character: There is no 🏻 (U+1F3FB) in font [lmmono10-regular]:!
-Missing character: There is no ♥ (U+2665) in font [lmmono10-regular]:!
-Missing character: There is no ️ (U+FE0F) in font [lmmono10-regular]:!
-Missing character: There is no ♥ (U+2665) in font [lmmono10-regular]:!
-Missing character: There is no ️ (U+FE0F) in font [lmmono10-regular]:!
-Missing character: There is no ♥ (U+2665) in font [lmmono10-regular]:!
-Missing character: There is no ️ (U+FE0F) in font [lmmono10-regular]:!
-Missing character: There is no ♥ (U+2665) in font [lmmono10-regular]:!
-Missing character: There is no ️ (U+FE0F) in font [lmmono10-regular]:!
-
-Overfull \hbox (91.99498pt too wide) in paragraph at lines 1333--1333
-[]\TU/lmtt/m/n/10 ##  [5] bnordhaug erdayastronaut  haven’t crosschecked rcs pulses   mli dimpling   video  ’s  likely  cause[] 
- []
-
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-
-Overfull \hbox (238.99498pt too wide) in paragraph at lines 1333--1333
-[]\TU/lmtt/m/n/10 ##  [7] erdayastronaut since ’s  one main engine  gives pitch  yaw control roll control  provided   nitrogen attitude control thrusters[] 
- []
-
-
-Overfull \hbox (748.24498pt too wide) in paragraph at lines 1333--1333
-[]\TU/lmtt/m/n/10 ##  [8] annerajb waitbutwhy looks like  thin flat round ufo   stick starlink terminal  motors  selfadjust optimal angle  view sky instructions  simply    plug  socket    point  sky  instructions work  either order  training required[] 
- []
-
-Missing character: There is no 🔥 (U+1F525) in font [lmmono10-regular]:!
-Missing character: There is no 🔥 (U+1F525) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-[22]
-Missing character: There is no 👶 (U+1F476) in font [lmmono10-regular]:!
-Missing character: There is no 🏻 (U+1F3FB) in font [lmmono10-regular]:!
-Missing character: There is no ♥ (U+2665) in font [lmmono10-regular]:!
-Missing character: There is no ️ (U+FE0F) in font [lmmono10-regular]:!
-Missing character: There is no ♥ (U+2665) in font [lmmono10-regular]:!
-Missing character: There is no ️ (U+FE0F) in font [lmmono10-regular]:!
-Missing character: There is no ♥ (U+2665) in font [lmmono10-regular]:!
-Missing character: There is no ️ (U+FE0F) in font [lmmono10-regular]:!
-Missing character: There is no ♥ (U+2665) in font [lmmono10-regular]:!
-Missing character: There is no ️ (U+FE0F) in font [lmmono10-regular]:!
-
-Overfull \hbox (44.74498pt too wide) in paragraph at lines 1363--1363
-[]\TU/lmtt/m/n/10 ## [5] bnordhaug erdayastronaut haven’t crosschecked rcs pulses mli dimpling video ’s likely cause[] 
- []
-
-Missing character: There is no 👶 (U+1F476) in font [lmmono10-regular]:!
-Missing character: There is no 🏻 (U+1F3FB) in font [lmmono10-regular]:!
+[25] [26]
 File: Trial1_files/figure-latex/unnamed-chunk-19-1.pdf Graphic file (type pdf)
 <use Trial1_files/figure-latex/unnamed-chunk-19-1.pdf>
-[23]
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-[24]
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-[25]
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-[26]
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-[27] [28] [29]
+[27]
 File: Trial1_files/figure-latex/unnamed-chunk-20-1.pdf Graphic file (type pdf)
 <use Trial1_files/figure-latex/unnamed-chunk-20-1.pdf>
-[30]
+[28]
 File: Trial1_files/figure-latex/unnamed-chunk-22-1.pdf Graphic file (type pdf)
 <use Trial1_files/figure-latex/unnamed-chunk-22-1.pdf>
-[31]
-Overfull \hbox (34.24498pt too wide) in paragraph at lines 1984--1984
+[29]
+Overfull \hbox (34.24498pt too wide) in paragraph at lines 1608--1608
 []\TU/lmtt/m/n/10 ## Warning: Each time `sentiment_by` is run it has to do sentence boundary disambiguation when a[] 
  []
 
 
-Overfull \hbox (60.49498pt too wide) in paragraph at lines 1991--1991
+Overfull \hbox (60.49498pt too wide) in paragraph at lines 1615--1615
 []\TU/lmtt/m/n/10 ## Warning: Each time `extract_sentiment` is run it has to do sentence boundary disambiguation when a[] 
  []
 
-[32]
 File: Trial1_files/figure-latex/unnamed-chunk-24-1.pdf Graphic file (type pdf)
 <use Trial1_files/figure-latex/unnamed-chunk-24-1.pdf>
+[30]
 File: Trial1_files/figure-latex/unnamed-chunk-25-1.pdf Graphic file (type pdf)
 <use Trial1_files/figure-latex/unnamed-chunk-25-1.pdf>
-[33]
+[31]
 File: Trial1_files/figure-latex/unnamed-chunk-26-1.pdf Graphic file (type pdf)
 <use Trial1_files/figure-latex/unnamed-chunk-26-1.pdf>
-[34]
+[32]
 File: Trial1_files/figure-latex/unnamed-chunk-27-1.pdf Graphic file (type pdf)
 <use Trial1_files/figure-latex/unnamed-chunk-27-1.pdf>
 
-Overfull \hbox (56.66885pt too wide) in paragraph at lines 2076--2091
+Overfull \hbox (56.66885pt too wide) in paragraph at lines 1660--1675
 \TU/lmr/m/n/10 stationarity. []
  []
 
-[35]
+[33]
 File: Trial1_files/figure-latex/unnamed-chunk-29-1.pdf Graphic file (type pdf)
 <use Trial1_files/figure-latex/unnamed-chunk-29-1.pdf>
 File: Trial1_files/figure-latex/unnamed-chunk-29-2.pdf Graphic file (type pdf)
 <use Trial1_files/figure-latex/unnamed-chunk-29-2.pdf>
 
-Underfull \hbox (badness 10000) in paragraph at lines 2118--2120
+Underfull \hbox (badness 10000) in paragraph at lines 1693--1695
 [][]
  []
 
-[36] [37]
+[34] [35]
 File: Trial1_files/figure-latex/unnamed-chunk-30-1.pdf Graphic file (type pdf)
 <use Trial1_files/figure-latex/unnamed-chunk-30-1.pdf>
 File: Trial1_files/figure-latex/unnamed-chunk-30-2.pdf Graphic file (type pdf)
 <use Trial1_files/figure-latex/unnamed-chunk-30-2.pdf>
 
-Underfull \hbox (badness 10000) in paragraph at lines 2136--2138
+Underfull \hbox (badness 10000) in paragraph at lines 1711--1713
 [][]
  []
 
-[38] [39] [40]
+[36] [37] [38]
 File: Trial1_files/figure-latex/unnamed-chunk-32-1.pdf Graphic file (type pdf)
 <use Trial1_files/figure-latex/unnamed-chunk-32-1.pdf>
-[41]
-File: Trial1_files/figure-latex/unnamed-chunk-34-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/unnamed-chunk-34-1.pdf>
+File: Trial1_files/figure-latex/unnamed-chunk-33-1.pdf Graphic file (type pdf)
+<use Trial1_files/figure-latex/unnamed-chunk-33-1.pdf>
 
-Underfull \hbox (badness 10000) in paragraph at lines 2231--2234
+Underfull \hbox (badness 10000) in paragraph at lines 1771--1774
 [][]
  []
 
-[42]
-Overfull \hbox (1199.74498pt too wide) in paragraph at lines 2412--2412
-[]\TU/lmtt/m/n/10 ##                                                                                                                                                                                                                                                                                                                       tweet[] 
+[39]
+File: Trial1_files/figure-latex/unnamed-chunk-37-1.pdf Graphic file (type pdf)
+<use Trial1_files/figure-latex/unnamed-chunk-37-1.pdf>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1778--1780
+[][]
  []
 
-
-Overfull \hbox (1199.74498pt too wide) in paragraph at lines 2412--2412
-[]\TU/lmtt/m/n/10 ## 1374                                                                                                                                                                                                                    @ThisIsSandeepG Not true. A friend sent me part of a BTC a few years, but I don’t know where it is.[] 
- []
-
-
-Overfull \hbox (1199.74498pt too wide) in paragraph at lines 2412--2412
-[]\TU/lmtt/m/n/10 ## 1474                                                                                                                                         @DeadlyBananas @MichaelAVaughn Not sure. I let @jack know, but it’s still going. I literally own zero cryptocurrency, apart from .25 BTC that a friend sent me many years ago.[] 
- []
-
-
-Overfull \hbox (1199.74498pt too wide) in paragraph at lines 2412--2412
-[]\TU/lmtt/m/n/10 ## 1489                                                                                        @cheresh @andrestaltz End-to-end encryption encoded at firmware level. Unlikely to be hacked w current computing tech. If it is (and we learn about it), a crypto fix will go out immediately via network-wide firmware update.[] 
- []
-
-
-Overfull \hbox (1199.74498pt too wide) in paragraph at lines 2412--2412
-[]\TU/lmtt/m/n/10 ## 3818                                                                                                                                                                                                                                                                          @DocumentingBTC The dollar is shorting itself[] 
- []
-
-
-Overfull \hbox (1199.74498pt too wide) in paragraph at lines 2412--2412
-[]\TU/lmtt/m/n/10 ## 3889                                                                                                                                                                                                                                                                                        Dogecoin is the people’s crypto[] 
- []
-
-
-Overfull \hbox (1199.74498pt too wide) in paragraph at lines 2412--2412
-[]\TU/lmtt/m/n/10 ## 3937                                                                                                                                                                                                                  @freewalletorg Any crypto wallet that won’t give you your private keys should be avoided at all costs[] 
- []
-
-
-Overfull \hbox (1199.74498pt too wide) in paragraph at lines 2412--2412
-[]\TU/lmtt/m/n/10 ## 4034                                                                                                                                                                                                   To be clear, I strongly believe in crypto, but it can’t drive a massive increase in fossil fuel use, especially coal[] 
- []
-
-
-Overfull \hbox (1199.74498pt too wide) in paragraph at lines 2412--2412
-[]\TU/lmtt/m/n/10 ## 4062 @WhatsupFranks @TeslaGong Currency is already digital! Decentralized crypto is an attempt to wrest power of currency dilution (pernicious form of taxation) &amp; capital controls from governments. That said, I sure hope the cure is better than the disease!  Mars/AI are essential to passing the great filter/s.[] 
- []
-
-
-Overfull \hbox (1199.74498pt too wide) in paragraph at lines 2412--2412
-[]\TU/lmtt/m/n/10 ## 4091                                                                                                                                                                                                                                                                                                   @DocumentingBTC Nice[] 
- []
-
-
-Overfull \hbox (1199.74498pt too wide) in paragraph at lines 2412--2412
-[]\TU/lmtt/m/n/10 ## 4129                                                                                                                                                                                                                                                                                     @BTCTN A new space race has begun![] 
- []
-
-
-Overfull \hbox (1021.24498pt too wide) in paragraph at lines 2412--2412
-[]\TU/lmtt/m/n/10 ## 4530                                                                @ProTheDoge Lots of people I talked to on the production lines at Tesla or building rockets at SpaceX own Doge. They aren’t financial experts or Silicon Valley technologists. That’s why I decided to support Doge –
- []
-
-
-Overfull \hbox (1199.74498pt too wide) in paragraph at lines 2412--2412
-[]\TU/lmtt/m/n/10 ## 4532                 @Filasophical @ShibaInuHodler Out of curiosity, I acquired some ascii hash strings called “Bitcoin, Ethereum &amp; Doge”. That’s it.   As I’ve said before, don’t bet the farm on crypto! True value is building products &amp; providing services to your fellow human beings, not money in any form.[] 
- []
-
-
-Overfull \hbox (1199.74498pt too wide) in paragraph at lines 2412--2412
-[]\TU/lmtt/m/n/10 ## 4541                                                                                                                                                                                                                                                                                       @BillyM2k Plus crypto scams haha[] 
- []
-
-
-Overfull \hbox (1199.74498pt too wide) in paragraph at lines 2412--2412
-[]\TU/lmtt/m/n/10 ## 4591                                                                                                                                                                                                                                           @BTC_Archive @SenSanders Is there anything more tragic than unrequited love?[] 
- []
-
-[43] [44]
-Overfull \hbox (532.99498pt too wide) in paragraph at lines 2412--2412
-[]\TU/lmtt/m/n/10 ##                                                                                                                                                                                     reply_to[] 
- []
-
-Missing character: There is no Ѕ (U+0405) in font [lmmono10-regular]:!
-Missing character: There is no α (U+03B1) in font [lmmono10-regular]:!
-Missing character: There is no и (U+0438) in font [lmmono10-regular]:!
-Missing character: There is no ∂ (U+2202) in font [lmmono10-regular]:!
-Missing character: There is no є (U+0454) in font [lmmono10-regular]:!
-Missing character: There is no є (U+0454) in font [lmmono10-regular]:!
-Missing character: There is no ρ (U+03C1) in font [lmmono10-regular]:!
-Missing character: There is no υ (U+03C5) in font [lmmono10-regular]:!
-Missing character: There is no т (U+0442) in font [lmmono10-regular]:!
-Missing character: There is no т (U+0442) in font [lmmono10-regular]:!
-Missing character: There is no ι (U+03B9) in font [lmmono10-regular]:!
-Missing character: There is no к (U+043A) in font [lmmono10-regular]:!
-Missing character: There is no σ (U+03C3) in font [lmmono10-regular]:!
-Missing character: There is no и (U+0438) in font [lmmono10-regular]:!
-Missing character: There is no ∂ (U+2202) in font [lmmono10-regular]:!
-Missing character: There is no α (U+03B1) in font [lmmono10-regular]:!
-
-Overfull \hbox (493.79498pt too wide) in paragraph at lines 2412--2412
-[]\TU/lmtt/m/n/10 ## 1374                                                                                                   [{'screen_name': 'ThisIsSandeepG', 'name': 'Ѕαи∂єєρ Gυттιкσи∂α', 'id': '2737103354'}][] 
- []
-
-
-Overfull \hbox (532.99498pt too wide) in paragraph at lines 2412--2412
-[]\TU/lmtt/m/n/10 ## 1474                                   [{'screen_name': 'DeadlyBananas', 'name': 'DeadlyBananas', 'id': '52927487'}, {'screen_name': 'MichaelAVaughn', 'name': 'Michael', 'id': '29011468'}][] 
- []
-
-
-Overfull \hbox (532.99498pt too wide) in paragraph at lines 2412--2412
-[]\TU/lmtt/m/n/10 ## 1489                                  [{'screen_name': 'cheresh', 'name': 'Evgeny Chereshnev', 'id': '37188059'}, {'screen_name': 'andrestaltz', 'name': 'André Staltz', 'id': '460451827'}][] 
- []
-
-Missing character: There is no 📄 (U+1F4C4) in font [lmmono10-regular]:!
-
-Overfull \hbox (525.29498pt too wide) in paragraph at lines 2412--2412
-[]\TU/lmtt/m/n/10 ## 3818                                                                                      [{'screen_name': 'DocumentingBTC', 'name': 'Documenting Bitcoin 📄', 'id': '1337780902680809474'}][] 
- []
-
-
-Overfull \hbox (532.99498pt too wide) in paragraph at lines 2412--2412
-[]\TU/lmtt/m/n/10 ## 3889                                                                                                                                                                                      [][] 
- []
-
-
-Overfull \hbox (532.99498pt too wide) in paragraph at lines 2412--2412
-[]\TU/lmtt/m/n/10 ## 3937                                                                                         [{'screen_name': 'freewalletorg', 'name': 'Freewallet - Web & Crypto App', 'id': '4853921117'}][] 
- []
-
-
-Overfull \hbox (532.99498pt too wide) in paragraph at lines 2412--2412
-[]\TU/lmtt/m/n/10 ## 4034                                                                                                                                                                                      [][] 
- []
-
-Missing character: There is no 🇦 (U+1F1E6) in font [lmmono10-regular]:!
-Missing character: There is no 🇺 (U+1F1FA) in font [lmmono10-regular]:!
-Missing character: There is no 🦘 (U+1F998) in font [lmmono10-regular]:!
-Missing character: There is no 🤖 (U+1F916) in font [lmmono10-regular]:!
-Missing character: There is no 🚕 (U+1F695) in font [lmmono10-regular]:!
-
-Overfull \hbox (504.99498pt too wide) in paragraph at lines 2412--2412
-[]\TU/lmtt/m/n/10 ## 4062 [{'screen_name': 'WhatsupFranks', 'name': 'Franks&Beans', 'id': '724771370131824641'}, {'screen_name': 'TeslaGong', 'name': 'Tesla in the Gong 🇦🇺🦘🤖🚕', 'id': '1008296232261783552'}][] 
- []
-
-Missing character: There is no 📄 (U+1F4C4) in font [lmmono10-regular]:!
-
-Overfull \hbox (525.29498pt too wide) in paragraph at lines 2412--2412
-[]\TU/lmtt/m/n/10 ## 4091                                                                                      [{'screen_name': 'DocumentingBTC', 'name': 'Documenting Bitcoin 📄', 'id': '1337780902680809474'}][] 
- []
-
-
-Overfull \hbox (532.99498pt too wide) in paragraph at lines 2412--2412
-[]\TU/lmtt/m/n/10 ## 4129                                                                                                                  [{'screen_name': 'BTCTN', 'name': 'Bitcoin News', 'id': '3367334171'}][] 
- []
-
-
-Overfull \hbox (532.99498pt too wide) in paragraph at lines 2412--2412
-[]\TU/lmtt/m/n/10 ## 4530                                                                                            [{'screen_name': 'ProTheDoge', 'name': 'SlumDOGE Millionaire', 'id': '1358176095850229761'}][] 
- []
-
-Missing character: There is no ⚡ (U+26A1) in font [lmmono10-regular]:!
-Missing character: There is no ️ (U+FE0F) in font [lmmono10-regular]:!
-Missing character: There is no 🔋 (U+1F50B) in font [lmmono10-regular]:!
-Missing character: There is no 🚀 (U+1F680) in font [lmmono10-regular]:!
-
-Overfull \hbox (509.89497pt too wide) in paragraph at lines 2412--2412
-[]\TU/lmtt/m/n/10 ## 4532    [{'screen_name': 'Filasophical', 'name': 'Salif Cybertruck or Bust ⚡️🔋🚀', 'id': '964889226'}, {'screen_name': 'ShibaInuHodler', 'name': 'Shiba Inu', 'id': '1411587179986489346'}][] 
- []
-
-
-Overfull \hbox (532.99498pt too wide) in paragraph at lines 2412--2412
-[]\TU/lmtt/m/n/10 ## 4541                                                                                                          [{'screen_name': 'BillyM2k', 'name': 'Shibetoshi Nakamoto', 'id': '30699048'}][] 
- []
-
-Missing character: There is no 🗄 (U+1F5C4) in font [lmmono10-regular]:!
-Missing character: There is no 🚀 (U+1F680) in font [lmmono10-regular]:!
-Missing character: There is no 🌔 (U+1F314) in font [lmmono10-regular]:!
-
-Overfull \hbox (515.14497pt too wide) in paragraph at lines 2412--2412
-[]\TU/lmtt/m/n/10 ## 4591                [{'screen_name': 'BTC_Archive', 'name': 'Bitcoin Archive 🗄🚀🌔', 'id': '970994516357472257'}, {'screen_name': 'SenSanders', 'name': 'Bernie Sanders', 'id': '29442313'}][] 
- []
-
-[45]
+[40] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59] [60] [61] [62] [63] [64] [65] [66] [67] [68] [69] [70] [71] [72] [73] [74] [75] [76] [77] [78] [79] [80] [81] [82]
 File: Trial1_files/figure-latex/unnamed-chunk-38-1.pdf Graphic file (type pdf)
 <use Trial1_files/figure-latex/unnamed-chunk-38-1.pdf>
+File: Trial1_files/figure-latex/unnamed-chunk-38-2.pdf Graphic file (type pdf)
+<use Trial1_files/figure-latex/unnamed-chunk-38-2.pdf>
+File: Trial1_files/figure-latex/unnamed-chunk-38-3.pdf Graphic file (type pdf)
+<use Trial1_files/figure-latex/unnamed-chunk-38-3.pdf>
 
-Underfull \hbox (badness 10000) in paragraph at lines 2437--2439
+Underfull \hbox (badness 10000) in paragraph at lines 4083--4086
 [][]
  []
 
-[46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59] [60] [61] [62] [63] [64] [65] [66] [67] [68] [69] [70] [71] [72] [73] [74] [75] [76] [77] [78] [79] [80] [81] [82] [83] [84] [85] [86] [87] [88]
+
+Underfull \hbox (badness 10000) in paragraph at lines 4083--4086
+[]
+ []
+
+[83] [84] [85]
 File: Trial1_files/figure-latex/unnamed-chunk-39-1.pdf Graphic file (type pdf)
 <use Trial1_files/figure-latex/unnamed-chunk-39-1.pdf>
-[89]
-File: Trial1_files/figure-latex/unnamed-chunk-39-2.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/unnamed-chunk-39-2.pdf>
-File: Trial1_files/figure-latex/unnamed-chunk-39-3.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/unnamed-chunk-39-3.pdf>
-[90]
-File: Trial1_files/figure-latex/unnamed-chunk-40-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/unnamed-chunk-40-1.pdf>
-[91] [92]
-Overfull \hbox (1115.74498pt too wide) in paragraph at lines 5186--5186
+[86] [87]
+Overfull \hbox (1115.74498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ##                                                                                                                                                                                                                                                                                                       tweet[] 
  []
 
 
-Overfull \hbox (1115.74498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (1115.74498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 2292                                                                                                                                                                                                                                                       Dogecoin value may vary  https://t.co/UWerAhPv63[] 
  []
 
 
-Overfull \hbox (1115.74498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (1115.74498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 3887                                                                                                                                                                                                                                                                           No highs, no lows, only Doge[] 
  []
 
 
-Overfull \hbox (1115.74498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (1115.74498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 3889                                                                                                                                                                                                                                                                        Dogecoin is the people’s crypto[] 
  []
 
 
-Overfull \hbox (1115.74498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (1115.74498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 3892                                                                                                                                                                                                                                                                                                   Doge[] 
  []
 
 
-Overfull \hbox (1115.74498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (1115.74498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 3920                                                                                                                                                                                                                                                                        @gtera27 Doge is underestimated[] 
  []
 
 
-Overfull \hbox (1115.74498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (1115.74498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 3931                                                                                                                                                                                                                                          Bought some Dogecoin for lil X, so he can be a toddler hodler[] 
  []
 
-[93]
-Overfull \hbox (1115.74498pt too wide) in paragraph at lines 5186--5186
+
+Overfull \hbox (1115.74498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 3956                                                                                                                                                                                                                             @RationalEtienne An acceptable percentage. Doge is much more concentrated.[] 
  []
 
 
-Overfull \hbox (1115.74498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (1115.74498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 3957                                                                                                                                                                    If major Dogecoin holders sell most of their coins, it will get my full support. Too much concentration is the only real issue imo.[] 
  []
 
 
-Overfull \hbox (1115.74498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (1115.74498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 3989                                                                                                                                                                                                                                   @dogecoinww @MattWallace888 @CorinnaKopf You raise a good point haha[] 
  []
 
 
-Overfull \hbox (1115.74498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (1115.74498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4032                                                                                                                                                                                                                Working with Doge devs to improve system transaction efficiency. Potentially promising.[] 
  []
 
 
-Overfull \hbox (1115.74498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (1115.74498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4048                                                                                                                                                                                                                                                                      Do you want Tesla to accept Doge?[] 
  []
 
 
-Overfull \hbox (1115.74498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (1115.74498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4055                                                                                                                                                                                                                                                    @heydave7 Yeah, I haven’t &amp; won’t sell any Doge[] 
  []
 
 
-Overfull \hbox (1115.74498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (1115.74498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4056                                                                                                                                                                                                                    @heydave7 A longtime Tesla supporter gave me the Doge dollar sticker at Giga Berlin[] 
  []
 
 Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
 Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
 
-Overfull \hbox (1100.34499pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (1100.34499pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4063                                                                                                                                                                                                                                                              @xSharknado @DogecoinRise @TeslaGong 🤣🤣[] 
  []
 
 
-Overfull \hbox (1115.74498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (1115.74498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4064                                                                                                                                                                                                                                           @DogecoinRise @TeslaGong Es wurde mir in deutschland gegeben[] 
  []
 
 
-Overfull \hbox (1115.74498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (1115.74498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4068                                                                                                                                                                                                                                          How much is that Doge in the window?  https://t.co/bxTkWOr50V[] 
  []
 
+[88]
 Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
 Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
 
-Overfull \hbox (1100.34499pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (1100.34499pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4096                                                                                                                                                          @hiddin2urleft @greg16676935420 @blockfolio @BillyM2k @itsALLrisky @GloryDoge @DogecoinRise @ItsDogeCoin @DogeEducation @Investments_CEO 🤣🤣[] 
  []
 
 
-Overfull \hbox (1115.74498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (1115.74498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4159                                                                                                                                                                                  Baby Doge, doo, doo, doo, doo, doo, Baby Doge, doo, doo, doo, doo, doo, Baby Doge, doo, doo, doo, doo, doo, Baby Doge[] 
  []
 
 
-Overfull \hbox (1115.74498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (1115.74498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4163                                                                                                                                                                                                                                                             Release the Doge!  https://t.co/9bXCWQLIhu[] 
  []
 
 
-Overfull \hbox (1115.74498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (1115.74498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4325                                                                                                                                                                                                                                                                                        @Dogeshade Deep[] 
  []
 
 Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
 Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
 
-Overfull \hbox (1100.34499pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (1100.34499pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4337                                                                                                                                                                                                                                                                     @SirWoofOfDoge @WholeMarsBlog 🤣🤣[] 
  []
 
 
-Overfull \hbox (1115.74498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (1115.74498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4358                                                                                                                                                                                                            @BillyM2k Super important for Doge fees to drop to make things like buying movie tix viable[] 
  []
 
 
-Overfull \hbox (1115.74498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (1115.74498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4495                                                                                                                                                                                                                                    @BillyM2k If I send you 2 Doge, will you promise to send me 1 Doge?[] 
  []
 
 
-Overfull \hbox (937.24498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (937.24498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4530                                                @ProTheDoge Lots of people I talked to on the production lines at Tesla or building rockets at SpaceX own Doge. They aren’t financial experts or Silicon Valley technologists. That’s why I decided to support Doge –
  []
 
 
-Overfull \hbox (1115.74498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (1115.74498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4532 @Filasophical @ShibaInuHodler Out of curiosity, I acquired some ascii hash strings called “Bitcoin, Ethereum &amp; Doge”. That’s it.   As I’ve said before, don’t bet the farm on crypto! True value is building products &amp; providing services to your fellow human beings, not money in any form.[] 
  []
 
 Missing character: There is no 💯 (U+1F4AF) in font [lmmono10-regular]:!
 
-Overfull \hbox (1108.04498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (1108.04498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4533                                                                                                                                                                                                                                                        @BillyM2k @TeslaGong @mishaboar @DogecoinFdn 💯[] 
  []
 
 
-Overfull \hbox (1115.74498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (1115.74498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4535                                                             @itsALLrisky @TeslaGong @mishaboar @DogecoinFdn Possibly. Bitcoin was conceived at a time of relatively low bandwidth &amp; high latency. If both continue to improve substantially, we will reach a point when no second layer is needed.[] 
  []
 
 
-Overfull \hbox (1115.74498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (1115.74498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4537                                            @TeslaGong @mishaboar @DogecoinFdn Not recently. What matters imo is lowering fees, decreasing block time &amp; increasing block size. A single layer network with exchanges as de facto layer 2 seems like the simplest solution for a medium of exchange.[] 
  []
 
 
-Overfull \hbox (1115.74498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (1115.74498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4542                                                                                                                                                                                               @mishaboar @DogecoinFdn Neither Jared, nor me, nor anyone I know has anything to do with this foundation[] 
  []
 
 
-Overfull \hbox (1115.74498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (1115.74498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4608                                                                                                                                                                                               @BillyM2k @jack @gladstein @rahilla @farokh @samkazemian @TheSmarmyBum @ethereum That’s why I’m pro Doge[] 
  []
 
 
-Overfull \hbox (800.74498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (800.74498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4727                @blueskykites @Grimezsz @WholeMarsBlog @SpaceXMR @musky_meme @CovelloMassimo @SpaceX @Kristennetten @EliBurton_ @Erdayastronaut @28delayslater @TeslaAndDoge @bevedoni @TeslaHype @OwenSparks_ @RationalEtienne It’s true –
  []
 
-[94]
-Overfull \hbox (70.99498pt too wide) in paragraph at lines 5186--5186
+[89]
+Overfull \hbox (70.99498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ##                                                                                                 urls[] 
  []
 
 
-Overfull \hbox (70.99498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (70.99498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 2292 ['https://www.theonion.com/bitcoin-plunge-reveals-possible-vulnerabilities-in-craz-1821134169'][] 
  []
 
 
-Overfull \hbox (70.99498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (70.99498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 3887                                                                                              [][] 
  []
 
 
-Overfull \hbox (70.99498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (70.99498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 3889                                                                                              [][] 
  []
 
 
-Overfull \hbox (70.99498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (70.99498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 3892                                                                                              [][] 
  []
 
 
-Overfull \hbox (70.99498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (70.99498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 3920                                                                                              [][] 
  []
 
 
-Overfull \hbox (70.99498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (70.99498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 3931                                                                                              [][] 
  []
 
 
-Overfull \hbox (70.99498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (70.99498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 3956                                                                                              [][] 
  []
 
 
-Overfull \hbox (70.99498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (70.99498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 3957                                                                                              [][] 
  []
 
 
-Overfull \hbox (70.99498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (70.99498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 3989                                                                                              [][] 
  []
 
 
-Overfull \hbox (70.99498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (70.99498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4032                                                                                              [][] 
  []
 
 
-Overfull \hbox (70.99498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (70.99498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4048                                                                                              [][] 
  []
 
 
-Overfull \hbox (70.99498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (70.99498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4055                                                                                              [][] 
  []
 
 
-Overfull \hbox (70.99498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (70.99498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4056                                                                                              [][] 
  []
 
 
-Overfull \hbox (70.99498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (70.99498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4063                                                                                              [][] 
  []
 
 
-Overfull \hbox (70.99498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (70.99498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4064                                                                                              [][] 
  []
 
 
-Overfull \hbox (70.99498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (70.99498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4068                                                                                              [][] 
  []
 
-[95]
-Overfull \hbox (70.99498pt too wide) in paragraph at lines 5186--5186
+
+Overfull \hbox (70.99498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4096                                                                                              [][] 
  []
 
 
-Overfull \hbox (70.99498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (70.99498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4159                                                                                              [][] 
  []
 
 
-Overfull \hbox (70.99498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (70.99498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4163                                                                                              [][] 
  []
 
 
-Overfull \hbox (70.99498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (70.99498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4325                                                                                              [][] 
  []
 
 
-Overfull \hbox (70.99498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (70.99498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4337                                                                                              [][] 
  []
 
 
-Overfull \hbox (70.99498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (70.99498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4358                                                                                              [][] 
  []
 
 
-Overfull \hbox (70.99498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (70.99498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4495                                                                                              [][] 
  []
 
 
-Overfull \hbox (70.99498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (70.99498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4530                                                                                              [][] 
  []
 
 
-Overfull \hbox (70.99498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (70.99498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4532                                                                                              [][] 
  []
 
 
-Overfull \hbox (70.99498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (70.99498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4533                                                                                              [][] 
  []
 
-
-Overfull \hbox (70.99498pt too wide) in paragraph at lines 5186--5186
+[90]
+Overfull \hbox (70.99498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4535                                                                                              [][] 
  []
 
 
-Overfull \hbox (70.99498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (70.99498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4537                                                                                              [][] 
  []
 
 
-Overfull \hbox (70.99498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (70.99498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4542                                                                                              [][] 
  []
 
 
-Overfull \hbox (70.99498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (70.99498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4608                                                                                              [][] 
  []
 
 
-Overfull \hbox (70.99498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (70.99498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4727                                                                                              [][] 
  []
 
-[96] [97]
-Overfull \hbox (6649.24498pt too wide) in paragraph at lines 5186--5186
+[91]
+Overfull \hbox (6649.24498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ##                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  reply_to[] 
  []
 
 
-Overfull \hbox (6649.24498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (6649.24498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 2292                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   [][] 
  []
 
 
-Overfull \hbox (6649.24498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (6649.24498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 3887                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   [][] 
  []
 
 
-Overfull \hbox (6649.24498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (6649.24498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 3889                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   [][] 
  []
 
 
-Overfull \hbox (6649.24498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (6649.24498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 3892                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   [][] 
  []
 
 
-Overfull \hbox (6649.24498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (6649.24498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 3920                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   [{'screen_name': 'gtera27', 'name': 'Greg M', 'id': '1348138843'}][] 
  []
 
 
-Overfull \hbox (6649.24498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (6649.24498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 3931                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   [][] 
  []
 
-
-Overfull \hbox (6649.24498pt too wide) in paragraph at lines 5186--5186
+[92]
+Overfull \hbox (6649.24498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 3956                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                [{'screen_name': 'RationalEtienne', 'name': 'Pope of Muskanity', 'id': '2241150253'}][] 
  []
 
 
-Overfull \hbox (6649.24498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (6649.24498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 3957                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   [][] 
  []
 
 
-Overfull \hbox (6649.24498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (6649.24498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 3989                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            [{'screen_name': 'dogecoinww', 'name': 'Dogecoinworldwide', 'id': '1352795347089678336'}, {'screen_name': 'MattWallace888', 'name': 'Matt Wallace', 'id': '805532293951606785'}, {'screen_name': 'CorinnaKopf', 'name': 'pouty girl', 'id': '240884573'}][] 
  []
 
 
-Overfull \hbox (6649.24498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (6649.24498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4032                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   [][] 
  []
 
 
-Overfull \hbox (6649.24498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (6649.24498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4048                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   [][] 
  []
 
 
-Overfull \hbox (6649.24498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (6649.24498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4055                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  [{'screen_name': 'heydave7', 'name': 'Dave Lee', 'id': '29893444'}][] 
  []
 
 
-Overfull \hbox (6649.24498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (6649.24498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4056                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  [{'screen_name': 'heydave7', 'name': 'Dave Lee', 'id': '29893444'}][] 
  []
 
@@ -1849,7 +1544,7 @@ Missing character: There is no 🦘 (U+1F998) in font [lmmono10-regular]:!
 Missing character: There is no 🤖 (U+1F916) in font [lmmono10-regular]:!
 Missing character: There is no 🚕 (U+1F695) in font [lmmono10-regular]:!
 
-Overfull \hbox (6613.54498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (6613.54498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4063                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     [{'screen_name': 'xSharknado', 'name': 'xShark', 'id': '2628762563'}, {'screen_name': 'DogecoinRise', 'name': 'Dogecoin Rise 🚀', 'id': '1345576584204353543'}, {'screen_name': 'TeslaGong', 'name': 'Tesla in the Gong 🇦🇺🦘🤖🚕', 'id': '1008296232261783552'}][] 
  []
 
@@ -1860,12 +1555,12 @@ Missing character: There is no 🦘 (U+1F998) in font [lmmono10-regular]:!
 Missing character: There is no 🤖 (U+1F916) in font [lmmono10-regular]:!
 Missing character: There is no 🚕 (U+1F695) in font [lmmono10-regular]:!
 
-Overfull \hbox (6613.54498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (6613.54498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4064                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          [{'screen_name': 'DogecoinRise', 'name': 'Dogecoin Rise 🚀', 'id': '1345576584204353543'}, {'screen_name': 'TeslaGong', 'name': 'Tesla in the Gong 🇦🇺🦘🤖🚕', 'id': '1008296232261783552'}][] 
  []
 
 
-Overfull \hbox (6649.24498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (6649.24498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4068                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   [][] 
  []
 
@@ -1877,42 +1572,42 @@ Missing character: There is no ️ (U+FE0F) in font [lmmono10-regular]:!
 Missing character: There is no 🚀 (U+1F680) in font [lmmono10-regular]:!
 Missing character: There is no 📚 (U+1F4DA) in font [lmmono10-regular]:!
 
-Overfull \hbox (6608.29498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (6608.29498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4096                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   [{'screen_name': 'hiddin2urleft', 'name': 'r/dogecoin', 'id': '1291985029'}, {'screen_name': 'greg16676935420', 'name': 'greg', 'id': '1356434353623093249'}, {'screen_name': 'BillyM2k', 'name': 'Shibetoshi Nakamoto', 'id': '30699048'}, {'screen_name': 'itsALLrisky', 'name': '💸💸💸', 'id': '1061349266545885185'}, {'screen_name': 'GloryDoge', 'name': 'TheÐogeGlory | ⬆️', 'id': '1362137952470462469'}, {'screen_name': 'DogecoinRise', 'name': 'Dogecoin Rise 🚀', 'id': '1345576584204353543'}, {'screen_name': 'DogeEducation', 'name': 'Doge Education 📚', 'id': '527921841'}, {'screen_name': 'Investments_CEO', 'name': 'Dogecoin', 'id': '1362987750312599552'}][] 
  []
 
 
-Overfull \hbox (6649.24498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (6649.24498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4159                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   [][] 
  []
 
 
-Overfull \hbox (6649.24498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (6649.24498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4163                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   [][] 
  []
 
 
-Overfull \hbox (6649.24498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (6649.24498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4325                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     [{'screen_name': 'Dogeshade', 'name': 'Mr Shades', 'id': '1242090927323258882'}][] 
  []
 
 
-Overfull \hbox (6649.24498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (6649.24498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4337                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          [{'screen_name': 'SirWoofOfDoge', 'name': 'TheWoofOfÐogeStreet', 'id': '1279882965162565635'}, {'screen_name': 'WholeMarsBlog', 'name': 'Whole Mars Catalog', 'id': '1263491240336769026'}][] 
  []
 
 
-Overfull \hbox (6649.24498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (6649.24498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4358                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       [{'screen_name': 'BillyM2k', 'name': 'Shibetoshi Nakamoto', 'id': '30699048'}][] 
  []
 
 
-Overfull \hbox (6649.24498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (6649.24498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4495                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       [{'screen_name': 'BillyM2k', 'name': 'Shibetoshi Nakamoto', 'id': '30699048'}][] 
  []
 
 
-Overfull \hbox (6649.24498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (6649.24498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4530                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         [{'screen_name': 'ProTheDoge', 'name': 'SlumDOGE Millionaire', 'id': '1358176095850229761'}][] 
  []
 
@@ -1921,7 +1616,7 @@ Missing character: There is no ️ (U+FE0F) in font [lmmono10-regular]:!
 Missing character: There is no 🔋 (U+1F50B) in font [lmmono10-regular]:!
 Missing character: There is no 🚀 (U+1F680) in font [lmmono10-regular]:!
 
-Overfull \hbox (6626.14497pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (6626.14497pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4532                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 [{'screen_name': 'Filasophical', 'name': 'Salif Cybertruck or Bust ⚡️🔋🚀', 'id': '964889226'}, {'screen_name': 'ShibaInuHodler', 'name': 'Shiba Inu', 'id': '1411587179986489346'}][] 
  []
 
@@ -1931,7 +1626,7 @@ Missing character: There is no 🦘 (U+1F998) in font [lmmono10-regular]:!
 Missing character: There is no 🤖 (U+1F916) in font [lmmono10-regular]:!
 Missing character: There is no 🚕 (U+1F695) in font [lmmono10-regular]:!
 
-Overfull \hbox (6621.24498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (6621.24498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4533                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   [{'screen_name': 'BillyM2k', 'name': 'Shibetoshi Nakamoto', 'id': '30699048'}, {'screen_name': 'TeslaGong', 'name': 'Tesla in the Gong 🇦🇺🦘🤖🚕', 'id': '1008296232261783552'}, {'screen_name': 'mishaboar', 'name': 'Mishaboar', 'id': '1385271926852104193'}, {'screen_name': 'DogecoinFdn', 'name': 'Dogecoin Foundation', 'id': '2586748687'}][] 
  []
 
@@ -1944,7 +1639,7 @@ Missing character: There is no 🦘 (U+1F998) in font [lmmono10-regular]:!
 Missing character: There is no 🤖 (U+1F916) in font [lmmono10-regular]:!
 Missing character: There is no 🚕 (U+1F695) in font [lmmono10-regular]:!
 
-Overfull \hbox (6598.14497pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (6598.14497pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4535                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  [{'screen_name': 'itsALLrisky', 'name': '💸💸💸', 'id': '1061349266545885185'}, {'screen_name': 'TeslaGong', 'name': 'Tesla in the Gong 🇦🇺🦘🤖🚕', 'id': '1008296232261783552'}, {'screen_name': 'mishaboar', 'name': 'Mishaboar', 'id': '1385271926852104193'}, {'screen_name': 'DogecoinFdn', 'name': 'Dogecoin Foundation', 'id': '2586748687'}][] 
  []
 
@@ -1954,12 +1649,12 @@ Missing character: There is no 🦘 (U+1F998) in font [lmmono10-regular]:!
 Missing character: There is no 🤖 (U+1F916) in font [lmmono10-regular]:!
 Missing character: There is no 🚕 (U+1F695) in font [lmmono10-regular]:!
 
-Overfull \hbox (6621.24498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (6621.24498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4537                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 [{'screen_name': 'TeslaGong', 'name': 'Tesla in the Gong 🇦🇺🦘🤖🚕', 'id': '1008296232261783552'}, {'screen_name': 'mishaboar', 'name': 'Mishaboar', 'id': '1385271926852104193'}, {'screen_name': 'DogecoinFdn', 'name': 'Dogecoin Foundation', 'id': '2586748687'}][] 
  []
 
 
-Overfull \hbox (6649.24498pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (6649.24498pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4542                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  [{'screen_name': 'mishaboar', 'name': 'Mishaboar', 'id': '1385271926852104193'}, {'screen_name': 'DogecoinFdn', 'name': 'Dogecoin Foundation', 'id': '2586748687'}][] 
  []
 
@@ -1972,7 +1667,7 @@ Missing character: There is no ᵐ (U+1D50) in font [lmmono10-regular]:!
 Missing character: There is no 🎙 (U+1F399) in font [lmmono10-regular]:!
 Missing character: There is no 🎙 (U+1F399) in font [lmmono10-regular]:!
 
-Overfull \hbox (6616.345pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (6616.345pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4608                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              [{'screen_name': 'BillyM2k', 'name': 'Shibetoshi Nakamoto', 'id': '30699048'}, {'screen_name': 'jack', 'name': 'jack⚡️', 'id': '12'}, {'screen_name': 'gladstein', 'name': 'Alex Gladstein 🌋 ⚡', 'id': '19721574'}, {'screen_name': 'rahilla', 'name': 'rahilla.eth', 'id': '15393162'}, {'screen_name': 'farokh', 'name': 'FAROKHᵍᵐ (🎙,🎙)', 'id': '3369243892'}, {'screen_name': 'samkazemian', 'name': 'Sam Kazemian (¤, ¤)', 'id': '3265756934'}, {'screen_name': 'TheSmarmyBum', 'name': 'Justin Taylor', 'id': '16689451'}, {'screen_name': 'ethereum', 'name': 'Ethereum', 'id': '2312333412'}][] 
  []
 
@@ -1996,18 +1691,18 @@ Missing character: There is no 🐶 (U+1F436) in font [lmmono10-regular]:!
 Missing character: There is no 🐶 (U+1F436) in font [lmmono10-regular]:!
 Missing character: There is no 🌎 (U+1F30E) in font [lmmono10-regular]:!
 
-Overfull \hbox (6573.645pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (6573.645pt too wide) in paragraph at lines 4451--4451
 []\TU/lmtt/m/n/10 ## 4727 [{'screen_name': 'blueskykites', 'name': 'Gary Mark • Blue Sky Kites', 'id': '87101095'}, {'screen_name': 'Grimezsz', 'name': '𝔊𝔯𝔦𝔪𝔢𝔰 (⌛️,⏳) ᚷᚱᛁᛗᛖᛋ', 'id': '276540738'}, {'screen_name': 'WholeMarsBlog', 'name': 'Whole Mars Catalog', 'id': '1263491240336769026'}, {'screen_name': 'SpaceXMR', 'name': 'r/SpaceXMasterrace', 'id': '1004697063974633472'}, {'screen_name': 'musky_meme', 'name': 'Musky Memes', 'id': '1288744062590173184'}, {'screen_name': 'CovelloMassimo', 'name': 'Thank you for flying with SpaceX', 'id': '543971421'}, {'screen_name': 'SpaceX', 'name': 'SpaceX', 'id': '34743251'}, {'screen_name': 'Kristennetten', 'name': '•K10•✨', 'id': '985686123123949568'}, {'screen_name': 'EliBurton_', 'name': 'Eli Burton', 'id': '1060049746713182208'}, {'screen_name': 'Erdayastronaut', 'name': 'Everyday Astronaut', 'id': '3167257102'}, {'screen_name': '28delayslater', 'name': '🐶Earl of FrunkPuppy 🐶', 'id': '998140573008695296'}, {'screen_name': 'TeslaAndDoge', 'name': 'Tesla and Doge', 'id': '1336616210767642627'}, {'screen_name': 'bevedoni', 'name': 'Doniyor', 'id': '1908616248'}, {'screen_name': 'TeslaHype', 'name': 'Tesla Hype', 'id': '1311506622821400581'}, {'screen_name': 'OwenSparks_', 'name': 'Owen Sparks 🌎', 'id': '829829626180599808'}, {'screen_name': 'RationalEtienne', 'name': 'Pope of Muskanity', 'id': '2241150253'}][] 
  []
 
-[98]
-File: Trial1_files/figure-latex/unnamed-chunk-41-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/unnamed-chunk-41-1.pdf>
-[99] [100]
+[93]
+File: Trial1_files/figure-latex/unnamed-chunk-40-1.pdf Graphic file (type pdf)
+<use Trial1_files/figure-latex/unnamed-chunk-40-1.pdf>
+[94]
 
-LaTeX Warning: Empty bibliography on input line 5259.
+LaTeX Warning: Empty bibliography on input line 4504.
 
-[101] (./Trial1.aux)
+[95] (./Trial1.aux)
 Package rerunfilecheck Info: File `Trial1.out' has not changed.
 (rerunfilecheck)             Checksum: 68E4B96E913EE81F1BAE2D0646472229;4075.
 Package logreq Info: Writing requests to 'Trial1.run.xml'.
@@ -2015,12 +1710,12 @@ Package logreq Info: Writing requests to 'Trial1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24258 strings out of 478179
- 466742 string characters out of 5853461
- 1817701 words of memory out of 5000000
- 44576 multiletter control sequences out of 15000+600000
- 475702 words of font info for 80 fonts, out of 8000000 for 9000
+ 24267 strings out of 478179
+ 467412 string characters out of 5853461
+ 1722697 words of memory out of 5000000
+ 44587 multiletter control sequences out of 15000+600000
+ 475686 words of font info for 78 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  86i,6n,121p,1369b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Trial1.pdf (101 pages).
+Output written on Trial1.pdf (95 pages).

@@ -95,7 +95,7 @@ If the data is non-stationary (meaning it has a trend), we need to remove it in 
 As can be seen in the summary table below, Elon Musk's influnece has grown widely over the years. In 10 years, **number of replies** per tweet has grown up to more than 3 million, **number of retweets** up to more than 4 million and **number of likes** up to the astonishing numbers of more than 50 million. As of December 31st 2021, Elon Musk's follower amounted to 71.5 mln, which means a very high coverage of  $72,2%$. 
 
 
-```{r, echo = FALSE}
+```{r, echo = FALSE,  results=FALSE}
 if(!require(dplyr)) install.packages("dplyr")
 if(!require(tidyverse)) install.packages("tidyverse")
 if(!require(readxl)) install.packages("readxl")
@@ -105,7 +105,7 @@ library(tidyverse)
 #library(readxl)
 ```
 
-```{r, echo = FALSE}
+```{r, echo = FALSE,  results=FALSE}
 elon =  read.csv("elon.csv")
 dim(elon)
 head(elon)
@@ -164,7 +164,7 @@ likes_year= likes_year[-c(12), ]
 ```
 
 
-```{r, echo = FALSE}
+```{r, echo = FALSE,  results=FALSE}
 
 Replies = nreplies_year$nreplies
 Likes =  likes_year$nlikes
@@ -239,7 +239,7 @@ ggplot(data = nreplies_year, aes(x = yr, y = nreplies)) +
 
 ### Activty of crypto-related tweets 
 
-```{r}
+```{r, echo = FALSE}
 library(ggplot2)
 
 #subsetting in order to undersand tweet share
@@ -263,7 +263,7 @@ colnames(vectorshare) = c("tweetcount")
 rownames(vectorshare) = c("doge", "crypto", "BTC")
 # piechart or stackbar
 
-ggplot(data = vectorshare, aes(x = vectorshare$tweetcount, y = rownames(vectorshare))) + 
+ggplot(data = vectorshare, aes(x = tweetcount, y = rownames(vectorshare))) + 
   geom_bar(stat = "identity", width = 0.5, position = "dodge", fill = "darkorange", color = "black") + 
   xlab("Year") +
   ylab("Number of likes")  +
@@ -511,7 +511,7 @@ attributes(t)$count
 
 Another important result is outlined by the following graphs. It shows the density of sentiment: as it can be noticed it follows a normal-like distribution ($\mu = 0.18$, $\sigma = 0.36 $), slightly positevely skewed. This result is line with the previous results, highlighting the positive polarity of the sentiments. Here follows a brief statistical summary of the density plot, followed by the plot itself.
 
-
+MIGHT BE INTERESTING TO SEE THE DESCRIPTIVE STATISTIC VALUE IN A TABLE
 
 ```{r, echo = FALSE}
 #Sentiment density plot
@@ -542,7 +542,7 @@ DO THE SAME WITH A SUBSET CONSIDERING ONLY FROM A SPECIFIC POINT ONWARD AND WITH
 
 ## Subsetting sentiment from Jan 2020 without "AMP" word
 
-```{r}
+```{r, echo=FALSE, results=FALSE}
 if(!require(tm)) install.packages("tm")
 library(tm)
 library(RColorBrewer)
@@ -575,7 +575,7 @@ inspect(cleanset1[1:5])
 
 
 
-```{r}
+```{r, echo=FALSE}
 tdm1 <- TermDocumentMatrix(cleanset1)
 tdm1 <- as.matrix(tdm1)
 tdm1[1:10, 1:20]
@@ -592,7 +592,7 @@ ggplot(data=words1, aes(x=reorder(names, words1), y=words1)) +
   theme_minimal()
 ```
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, warning=FALSE}
 library(wordcloud)
 w1 <- sort(rowSums(tdm1), decreasing = TRUE)
 set.seed(222)
@@ -606,7 +606,7 @@ wordcloud(words = names(w1),
           rot.per = 0.7)
 ```
 
-```{r}
+```{r, echo=FALSE}
 if(!require(wordcloud2)) install.packages("wordcloud2")
 library(wordcloud2)
 w1 <- data.frame(names(w1), w1)
@@ -679,7 +679,7 @@ attributes(t1)$count
 ```
 
 
-```{r}
+```{r, echo=FALSE}
 library(e1071)
 
 txt1 %>%
@@ -697,7 +697,7 @@ polygon(densitySentiments1,col='green')
 
 
 
-```{r}
+```{r, echo=FALSE}
 e1<-emotion_by(get_sentences(txt1),drop.unused.emotions=TRUE)
 plot(e1)
 ```
@@ -727,14 +727,14 @@ plot(btc_hist$timestamp,btc_hist$open,
 The autocorrelation function (ACF) defines how data points in a time series are related, on average, to the preceding data points (Box, Jenkins, & Reinsel, 1994). In other words, it measures the self-similarity of the signal over different delay times. An autocorrelation plot shows the value of the autocorrelation function (ACF) on the vertical axis. It can range from –1 to 1. We use autocorrelation plot to assess wether the elements of a time series randomly oscilates around zero.
 
 Our first attempt without any transformation gives the following result, which shows consistent non-stationarity.
-```{r, echo = FALSE}
+```{r, echo = FALSE, results=FALSE}
 acf(btc_hist$open,lag.max = length(btc_hist$open),
          xlab = "lag #", ylab = 'ACF', main=' ')
 ```
 We proceed by applying an Augmented Dickey–Fuller (ADF) t-statistic test for unit root: in statistics and econometrics, an augmented Dickey–Fuller test (ADF) tests the null hypothesis that a unit root is present in a time series sample. The alternative hypothesis is different depending on which version of the test is used, but is usually stationarity or trend-stationarity. It is an augmented version of the Dickey–Fuller test for a larger and more complicated set of time series models.
 The augmented Dickey–Fuller (ADF) statistic, used in the test, is a negative number. The more negative it is, the stronger the rejection of the hypothesis that there is a unit root at some level of confidence. Our result clearly shows a non-stationarity due to the high p-value (>0.5). 
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, results=FALSE}
 if(!require(tseries)) install.packages("tseries")
 options(warn=-1)
 library(tseries)
@@ -787,7 +787,7 @@ Da qui in poi fede guarda tu
 
 try to find change points in the data, I use diff for now not sure tho
 
-```{r}
+```{r, echo=FALSE, results=FALSE}
 if(!require(changepoint)) install.packages("changepoint")
 library(changepoint)
 library(tidyverse)
@@ -797,11 +797,9 @@ m_binseg <- cpt.mean(diff, penalty = "BIC", method = "BinSeg", Q = 15)
 plot(m_binseg, type = "l", xlab = "Index", cpt.width = 4)
 ```
 
-```{r}
-cpts(m_binseg) 
-```
 
-```{r}
+
+```{r, echo=FALSE}
 #all the changes happen from 2500 onwards approx, try to subset plot
 m_binseg <- cpt.mean(diff[2500:3199], penalty = "BIC", method = "BinSeg", Q = 15)
 plot(m_binseg, type = "l", xlab = "Index", cpt.width = 4)
@@ -810,16 +808,11 @@ plot(m_binseg, type = "l", xlab = "Index", cpt.width = 4)
 tried with differend methods (segmented neighbour and PELT, but Binseg most effective): 
 
 
-```{r}
-cpts(m_binseg)
-
-```
-
 
 
 Those were only taking into consideration the mean, let's see the results for mean and variance all together
 
-```{r}
+```{r, echo=FALSE, results=FALSE}
 #transform changepoints in dates
 #we just sum it from the first day
 
@@ -828,20 +821,22 @@ tweet_date = btc_hist %>% filter(tweet == TRUE) %>% select(timestamp)
 ```
 
 
-```{r}
+```{r, echo=FALSE, results=FALSE}
 library(stringr)
 sum(str_count(elon$tweet, "\\w+"))
 ```
 
-```{r}
+```{r, echo=FALSE, results=FALSE}
 eloncrypto <- elon[grepl("crypto", elon[["tweet"]]) | grepl("BTC", elon[["tweet"]]),]
 as.data.frame(eloncrypto)
 cpt_date <- format(as.POSIXct(cpt_date,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
 cpt_date <- as.Date(as.character(cpt_date), format='%m/%d/%Y')
 
 btc_hist['breakpoint'] <- btc_hist$timestamp %in% cpt_date
+```
 
 
+```{r, echo=FALSE}
 library(ggplot2)
 colors <- c("tweets" = "deeppink",  "breaking points" = "blue")
 btc_hist[2750:3200,] %>%
@@ -858,7 +853,7 @@ theme_minimal()
 ```
 Do the same with Doge
 
-```{r}
+```{r, echo=FALSE}
 doge <- crypto_list(only_active=TRUE)
 doge <- subset(doge, doge$slug == "dogecoin")
 doge_hist <- crypto_history(doge, limit=1, start_date="20200101", end_date="20220131")
@@ -887,14 +882,14 @@ acf(dogelogdiff,lag.max = length(doge_hist$timestamp),
 adf.test(dogelogdiff)
 ```
 
-```{r}
+```{r, echo=FALSE, results=FALSE}
 doge_m_binseg <- cpt.mean(dogelogdiff, penalty = "None", method = "BinSeg", Q = 15)
 plot(doge_m_binseg, type = "l", xlab = "Index", cpt.width = 4)
 ```
 
 
 
-```{r}
+```{r, echo=FALSE}
 doge_cpt_date = doge_hist$timestamp[1] + cpts(doge_m_binseg) 
 doge_cpt_date <- format(as.POSIXct(doge_cpt_date,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
 doge_cpt_date <- as.Date(as.character(doge_cpt_date), format='%m/%d/%Y')
