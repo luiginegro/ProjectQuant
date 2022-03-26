@@ -18,6 +18,7 @@ When Elon Musk speaks, bitcoin investors listen. The Tesla chief executive’s o
 
 # Literature review
 
+citazione 1
 
 # Introduction
 
@@ -208,7 +209,8 @@ ggplot(data = likes_year, aes(x = yr, y = nlikes)) +
   xlab("Year") +
   ylab("Number of likes")  +
   ggtitle("Likes per year") +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme_minimal()
 
 ```
 
@@ -218,7 +220,8 @@ ggplot(data =retweet_year, aes(x = yr, y = nretweets), color ="darkorange") +
   xlab("Year") +
   ylab("Number of retweets") +  
    ggtitle("Retweets per year") +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme_minimal()
 ```
 
 
@@ -228,7 +231,8 @@ ggplot(data = nreplies_year, aes(x = yr, y = nreplies)) +
   xlab("Year") +
   ylab("Number of replies")  +  
    ggtitle("Replies per year") +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme_minimal()
 ```
 
 
@@ -264,7 +268,9 @@ ggplot(data = vectorshare, aes(x = vectorshare$tweetcount, y = rownames(vectorsh
   xlab("Year") +
   ylab("Number of likes")  +
   ggtitle("Likes per year") +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme_minimal()
+
 
 #counting total nlikes, nreplies, nretweet per each keyword to understand where is the maximum activity
 ## like
@@ -303,7 +309,8 @@ colnames(dfactivity) = c("Likes", "Replies", "Retweets", "Total")
 dfactivity %>%
   gather(key, value, -Total) %>% 
   ggplot(aes(x=Total, y=value, fill = key)) +
-    geom_col(position = "dodge")
+  geom_col(position = "dodge") +
+  theme_minimal()
 ```
 
 Comment
@@ -353,8 +360,9 @@ ggplot(aes(x = timestamp, y = open)) +
 geom_line() + 
 geom_point(data = . %>% filter(tweet == TRUE), color = "deeppink", size = 3) +
 ggtitle("Elon Musk's Tweets and Bitcoin Volatility") +
-theme(plot.title = element_text(hjust = 0.5))
-```
+theme(plot.title = element_text(hjust = 0.5)) +
+  theme_minimal()
+``` 
 
 
 ## Sentiment Analysis
@@ -391,10 +399,16 @@ tdm <- TermDocumentMatrix(cleanset)
 tdm <- as.matrix(tdm)
 tdm[1:10, 1:20]
 words <- rowSums(tdm)
-words <- subset(words, words>=100)
-barplot(words,
-        las = 2,
-        col = rainbow(50))
+words <- subset(words, words>=120)
+words <- as.data.frame(words)
+words$names <- rownames(words)
+
+ggplot(data=words, aes(x=reorder(names, words), y=words)) +
+  geom_bar(stat="identity", aes(fill=words)) +
+  theme(axis.text.x=element_text(angle=45, hjust=1)) +
+  scale_fill_gradient2(low = "blue", high = "darkblue") +
+  coord_flip() +
+  theme_minimal()
 ```
 *AMP* 
 
@@ -446,11 +460,18 @@ library(dplyr)
 
 s <- get_nrc_sentiment(elon$tweet)
 head(s)
-barplot(colSums(s),
-        las = 2,
-        col = rainbow(10),
-        ylab = 'Count',
-        main = 'Sentiment Scores Tweets')
+
+s_graph <- colSums(s)
+s_graph <- as.data.frame(s_graph)
+s_graph$emotions <- rownames(s_graph)
+s_graph$count <- s_graph$s_graph
+ggplot(data=s_graph, aes(x=reorder(emotions, count), y=count)) +
+  geom_bar(stat="identity", aes(fill=count)) +
+  theme(axis.text.x=element_text(angle=45, hjust=1)) +
+  scale_fill_gradient2(low = "yellow", high = "red") +
+  coord_flip() +
+  labs(title="Sentiment Scores Tweets",y = "Count", x="emotions") +
+  theme_minimal()
 ```
 
 ```{r, echo=F, results = FALSE}
@@ -560,10 +581,15 @@ tdm1 <- as.matrix(tdm1)
 tdm1[1:10, 1:20]
 words1 <- rowSums(tdm1)
 words1 <- subset(words1, words1>=60)
-barplot(words1,
-        las = 2,
-        col = rainbow(50))
+words1 <- as.data.frame(words1)
+words1$names <- rownames(words1)
 
+ggplot(data=words1, aes(x=reorder(names, words1), y=words1)) +
+  geom_bar(stat="identity", aes(fill=words1)) +
+  theme(axis.text.x=element_text(angle=45, hjust=1)) +
+  scale_fill_gradient2(low = "blue", high = "darkblue") +
+  coord_flip() +
+  theme_minimal()
 ```
 
 ```{r, echo = FALSE}
@@ -603,11 +629,17 @@ library(dplyr)
 
 s1 <- get_nrc_sentiment(tweet2020$tweet)
 head(s1)
-barplot(colSums(s1),
-        las = 2,
-        col = rainbow(10),
-        ylab = 'Count',
-        main = 'Sentiment Scores Tweets')
+s1_graph <- colSums(s1)
+s1_graph <- as.data.frame(s1_graph)
+s1_graph$emotions <- rownames(s1_graph)
+s1_graph$count <- s1_graph$s1_graph
+ggplot(data=s1_graph, aes(x=reorder(emotions, count), y=count)) +
+  geom_bar(stat="identity", aes(fill=count)) +
+  theme(axis.text.x=element_text(angle=45, hjust=1)) +
+  scale_fill_gradient2(low = "yellow", high = "red") +
+  coord_flip() +
+  labs(title="Sentiment Scores Tweets",y = "Count", x="emotions") +
+  theme_minimal()
 ```
 
 ```{r, echo=F, results = FALSE}
@@ -821,7 +853,8 @@ ggtitle("Elon Musk's Tweets and Breaking Points") +
 theme(plot.title = element_text(hjust = 0.5)) +
 labs(x = "timestamp",
          y = "BTC value",
-         color = "Legend") + scale_color_manual(values = colors)
+         color = "Legend") + scale_color_manual(values = colors) +
+theme_minimal()
 ```
 Do the same with Doge
 
@@ -884,7 +917,8 @@ ggtitle("Elon Musk's Tweets and Breaking Points") +
 theme(plot.title = element_text(hjust = 0.5)) +
 labs(x = "timestamp",
          y = "DOGE value",
-         color = "Legend") + scale_color_manual(values = colorsD)
+         color = "Legend") + scale_color_manual(values = colorsD) +
+theme_minimal()
 ```
 
 
