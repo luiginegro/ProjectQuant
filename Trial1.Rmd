@@ -853,17 +853,23 @@ theme_minimal()
 ```
 Do the same with Doge
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, results=FALSE}
 doge <- crypto_list(only_active=TRUE)
 doge <- subset(doge, doge$slug == "dogecoin")
 doge_hist <- crypto_history(doge, limit=1, start_date="20200101", end_date="20220131")
 
 library(stringr)
+```
 
+
+```{r, echo=FALSE, results=FALSE}
 as.data.frame(doge_hist)
 doge_hist$timestamp <- format(as.POSIXct(doge_hist$timestamp,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
 doge_hist$timestamp <- as.Date(as.character(doge_hist$timestamp), format='%m/%d/%Y')
+```
 
+
+```{r, echo=FALSE}
 plot(doge_hist$timestamp,doge_hist$open,
      type='l',col='red',
      xlab = "time (t)",
@@ -889,7 +895,7 @@ plot(doge_m_binseg, type = "l", xlab = "Index", cpt.width = 4)
 
 
 
-```{r, echo=FALSE}
+```{r, echo=FALSE,results=FALSE}
 doge_cpt_date = doge_hist$timestamp[1] + cpts(doge_m_binseg) 
 doge_cpt_date <- format(as.POSIXct(doge_cpt_date,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
 doge_cpt_date <- as.Date(as.character(doge_cpt_date), format='%m/%d/%Y')
@@ -901,7 +907,10 @@ as.data.frame(dogecrypto)
 dogecrypto$date <- format(as.POSIXct(dogecrypto$date,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
 dogecrypto$date <- as.Date(as.character(dogecrypto$date), format='%m/%d/%Y')
 doge_hist['tweet'] <- doge_hist$timestamp %in% dogecrypto$date
+```
 
+
+```{r, echo=FALSE}
 colorsD <- c("tweets" = "green",  "breaking points" = "orange")
 doge_hist[300:760,] %>%
 ggplot(aes(x = timestamp, y = open)) +
