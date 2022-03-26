@@ -241,9 +241,9 @@ library(ggplot2)
 #subsetting in order to undersand tweet share
 
 
-elondoge = elon[grepl("doge", elon[["tweet"]]),]
-elonCryptoOnly = elon[grepl("crypto", elon[["tweet"]]),]
-elonBTC = elon[grepl("BTC", elon[["tweet"]]),]
+elondoge = elon[grepl("dogecoin", elon[["tweet"]]) | grepl("Doge", elon[["tweet"]]) | grepl("doge", elon[["tweet"]]),]
+elonCryptoOnly = elon[grepl("crypto", elon[["tweet"]]) | grepl("Crypto", elon[["tweet"]]) | grepl("cryptos", elon[["tweet"]]),]
+elonBTC = elon[grepl("BTC", elon[["tweet"]])| grepl("Bitcoin", elon[["tweet"]])| grepl("bitcoin", elon[["tweet"]]),]
 
 n_doge = length(elondoge$tweet)
 n_onlycrypto = length(elonCryptoOnly$tweet)
@@ -255,30 +255,34 @@ n_totaltweet = n_doge + n_onlycrypto + n_BTC
 vectorshare = c(n_doge, n_onlycrypto, n_BTC)
 vectorshare= as.data.frame(vectorshare)
 dim(vectorshare)
-colnames(vectorshare) = c("tweet number")
+colnames(vectorshare) = c("tweetcount")
 rownames(vectorshare) = c("doge", "crypto", "BTC")
-
 # piechart or stackbar
 
-
-
-
-
+ggplot(data = vectorshare, aes(x = vectorshare$tweetcount, y = rownames(vectorshare))) + 
+  geom_bar(stat = "identity", width = 0.5, position = "dodge", fill = "darkorange", color = "black") + 
+  xlab("Year") +
+  ylab("Number of likes")  +
+  ggtitle("Likes per year") +
+  theme(plot.title = element_text(hjust = 0.5))
 
 #counting total nlikes, nreplies, nretweet per each keyword to understand where is the maximum activity
 ## like
-n_dogelikes = sum(elondoge$nlikes)/n_doge
-n_onlycrptolikes = sum(elonCryptoOnly$nlikes)/n_onlycrypto
-n_BTClike = sum(elonBTC$nlikes)/n_BTC
+n_dogelikes = mean(elondoge$nlikes)
+n_onlycrptolikes = mean(elonCryptoOnly$nlikes)
+n_BTClike = mean(elonBTC$nlikes)
+n_totallike = mean(elon$nlikes)
 ##retweet
-n_dogeretweet = sum(elondoge$nretweets)/n_doge
-n_onlycrptoretweet = sum(elonCryptoOnly$nretweets)/n_onlycrypto
-n_BTCretweet = sum(elonBTC$nretweets)/n_BTC
-##reply
-n_dogereply = sum(elondoge$nreplies)/n_doge
-n_onlycrptoreply = sum(elonCryptoOnly$nreplies)/n_onlycrypto
-n_BTClreply= sum(elonBTC$nreplies)/n_BTC
+n_dogeretweet = mean(elondoge$nretweets)
+n_onlycrptoretweet = mean(elonCryptoOnly$nretweets)
+n_BTCretweet = mean(elonBTC$nretweets)
+n_totalretweet = mean(elon$nretweets)
 
+##reply
+n_dogereply = mean(elondoge$nreplies)
+n_onlycrptoreply = mean(elonCryptoOnly$nreplies)
+n_BTClreply= mean(elonBTC$nreplies)
+n_totalreply = mean(elon$nreplies)
 
 
 
@@ -286,15 +290,20 @@ n_BTClreply= sum(elonBTC$nreplies)/n_BTC
 vectoractivity_doge= c(n_dogelikes, n_dogereply, n_dogeretweet)
 vectoractivity_BTC= c(n_BTClike, n_BTClreply, n_BTCretweet)
 vectoractivity_crypto = c(n_onlycrptolikes, n_onlycrptoreply, n_onlycrptoretweet)
-dfactivity = cbind(vectoractivity_doge, vectoractivity_crypto, vectoractivity_BTC)
-dfactivity= as.data.frame(dfactivity)
-rownames(dfactivity) = c("Like", "Replies", "Retweets")
-colnames(dfactivity) = c("Activity Doge", "Activity Crypto", "Activity BTC")
+vectoractivity_total = c(n_totallike, n_totalreply, n_totalretweet)
+dfactivity = cbind(vectoractivity_doge, vectoractivity_crypto, vectoractivity_BTC, vectoractivity_total)
+dfactivity = t(dfactivity)
+dfactivity = as.data.frame(dfactivity)
+dfactivity$crypto = c("ActivityDoge", "ActivityCrypto", "ActivityBTC", "TotalActivity")
+rownames(dfactivity) = c("ActivityDoge", "ActivityCrypto", "ActivityBTC", "TotalActivity")
+colnames(dfactivity) = c("Likes", "Replies", "Retweets", "Total")
 
 #plotting da capire
 
-
-
+dfactivity %>%
+  gather(key, value, -Total) %>% 
+  ggplot(aes(x=Total, y=value, fill = key)) +
+    geom_col(position = "dodge")
 ```
 
 Comment
