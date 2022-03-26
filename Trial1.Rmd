@@ -10,6 +10,7 @@ output:
     latex_engine: xelatex
 --- 
 
+
 *Wordcount as of 26/03*: 5610
 
 # Abstract
@@ -421,7 +422,7 @@ image: ![](events_image.jpg)
 
 Here follows a wordcloud which helped us to visualize the most frequent words in Elon Musk's tweets. The higher the word's size displayed, the most frequent the word would appear in his tweets.
 
-```{r, echo = FALSE, results=FALSE}
+```{r, echo = FALSE, results=FALSE, warning = FALSE}
 library(wordcloud)
 w <- sort(rowSums(tdm), decreasing = TRUE)
 set.seed(222)
@@ -435,7 +436,7 @@ wordcloud(words = names(w),
           rot.per = 0.7)
 ```
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, warning = FALSE}
 if(!require(wordcloud2)) install.packages("wordcloud2")
 library(wordcloud2)
 w <- data.frame(names(w), w)
