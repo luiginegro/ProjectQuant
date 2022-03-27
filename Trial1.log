@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.3.24)  27 MAR 2022 18:51
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.3.24)  27 MAR 2022 19:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -919,111 +919,33 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 115.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-] [2] [3] [4]
+] [2]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 423.
+(Font)              scaled to size 7.0pt on input line 293.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 423.
+(Font)              scaled to size 5.0pt on input line 293.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00092pt on input line 423.
+(Font)              scaled to size 10.00092pt on input line 293.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00064pt on input line 423.
+(Font)              scaled to size 7.00064pt on input line 293.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00046pt on input line 423.
+(Font)              scaled to size 5.00046pt on input line 293.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 423.
+(Font)              scaled to size 9.99893pt on input line 293.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 423.
+(Font)              scaled to size 6.99925pt on input line 293.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 423.
-File: Trial1_files/figure-latex/fi1s-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/fi1s-1.pdf>
-File: Trial1_files/figure-latex/fig2-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/fig2-1.pdf>
-File: Trial1_files/figure-latex/fig3-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/fig3-1.pdf>
-[5] [6] [7] [8]
-File: Trial1_files/figure-latex/fig4-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/fig4-1.pdf>
-[9]
-File: events_image.jpg Graphic file (type bmp)
-<events_image.jpg>
-
-Overfull \hbox (32.21495pt too wide) in paragraph at lines 536--537
-[]\TU/lmr/m/n/10 image: [] 
- []
-
-File: Trial1_files/figure-latex/fig5-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/fig5-1.pdf>
-File: Trial1_files/figure-latex/fig6-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/fig6-1.pdf>
-Missing character: There is no 𝜎 (U+1D70E) in font [lmroman10-regular]:mapping=tex-text;!
-[10] [11] [12]
-File: Trial1_files/figure-latex/fig7-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/fig7-1.pdf>
-File: Trial1_files/figure-latex/fig8-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/fig8-1.pdf>
-[13] [14]
-File: Trial1_files/figure-latex/fig9-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/fig9-1.pdf>
-File: Trial1_files/figure-latex/fig10-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/fig10-1.pdf>
-File: Trial1_files/figure-latex/fig11-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/fig11-1.pdf>
-Missing character: There is no 𝜎 (U+1D70E) in font [lmroman10-regular]:mapping=tex-text;!
-[15] [16] [17]
-File: Trial1_files/figure-latex/fig12-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/fig12-1.pdf>
-File: Trial1_files/figure-latex/fig13-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/fig13-1.pdf>
-[18] [19]
-File: Trial1_files/figure-latex/fig14-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/fig14-1.pdf>
-
-Overfull \hbox (56.67766pt too wide) in paragraph at lines 732--747
-\TU/lmr/m/n/10 stationarity. []
- []
-
-File: Trial1_files/figure-latex/fig15-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/fig15-1.pdf>
-File: Trial1_files/figure-latex/fig16-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/fig16-1.pdf>
-[20] [21]
-File: Trial1_files/figure-latex/include==FALSE-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/include==FALSE-1.pdf>
-[22]
-File: Trial1_files/figure-latex/fig17-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/fig17-1.pdf>
-[23]
-File: Trial1_files/figure-latex/fig25-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/fig25-1.pdf>
-File: Trial1_files/figure-latex/fig19-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/fig19-1.pdf>
-File: Trial1_files/figure-latex/fig20-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/fig20-1.pdf>
-File: Trial1_files/figure-latex/fig21-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/fig21-1.pdf>
-[24] [25] [26] [27] [28]
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 902.
-[29]
-
-LaTeX Warning: Empty bibliography on input line 934.
-
-[30] (./Trial1.aux)
-Package rerunfilecheck Info: File `Trial1.out' has not changed.
-(rerunfilecheck)             Checksum: 1955B2335312FE51F3F0681E226D6B1C;4493.
-Package logreq Info: Writing requests to 'Trial1.run.xml'.
-\openout1 = `Trial1.run.xml'.
-
- ) 
+(Font)              scaled to size 4.99947pt on input line 293.
+! Undefined control sequence.
+l.293 i.e.~\(polarity= \Tweets
+                               with Positive Sentiment / \Tweets with Negati... 
 Here is how much of TeX's memory you used:
- 24224 strings out of 478179
- 462548 string characters out of 5853461
- 1340269 words of memory out of 5000000
- 44550 multiletter control sequences out of 15000+600000
- 475694 words of font info for 79 fonts, out of 8000000 for 9000
+ 24017 strings out of 478179
+ 455001 string characters out of 5853461
+ 1341289 words of memory out of 5000000
+ 44380 multiletter control sequences out of 15000+600000
+ 475662 words of font info for 75 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  86i,6n,121p,739b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Trial1.pdf (30 pages).
+Output written on Trial1.pdf (2 pages).
