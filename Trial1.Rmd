@@ -827,8 +827,8 @@ m_binseg <- cpt.mean(logdiff, penalty = "BIC", method = "BinSeg", Q = 15)
 
 plot(m_binseg, type = "l", xlab = "Index", cpt.width = 4)
 
-#all the changes happen from 2500 onwards approx, try to subset plot
-m_binseg <- cpt.mean(logdiff[2500:3199], penalty = "BIC", method = "BinSeg", Q = 15)
+#all the changes happen from 2750 onwards approx, try to subset plot
+m_binseg <- cpt.mean(logdiff[2750:3199], penalty = "None", method = "BinSeg", Q = 15)
 ```
 
 
@@ -848,7 +848,7 @@ Those were only taking into consideration the mean, let's see the results for me
 #transform changepoints in dates
 #we just sum it from the first day
 
-cpt_date = btc_hist$timestamp[2499] + cpts(m_binseg) 
+cpt_date = btc_hist$timestamp[2749] + cpts(m_binseg) 
 tweet_date = btc_hist %>% filter(tweet == TRUE) %>% select(timestamp)
 ```
 
@@ -864,6 +864,21 @@ btc_hist['breakpoint'] <- btc_hist$timestamp %in% cpt_date
 
 In the chart below a deep investigation regarding the potential linkage between Bitcoin volatility and Musk's tweet has been conducted. In blue the *breaking points* are highlighted, which are points in time where the average value of the Bitcoin price undergoes a sudden change. In purple we find highlighted when the crypto-related *tweets* were published. As we can notice, there is no correspondence or correlation of the two variables: we cannot state that Musk's tweets influence Bitcoin volatility, which is in-line with our previous result of non-stationarity.
 
+```{r fig25, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig25}Elon Musk's Tweets on Cryptos and LogBTC's Changing Points Dates"}
+
+colors <- c("tweets" = "steelblue",  "breakingpoints" = "red")
+btc_hist[2750:3200,] %>%
+ggplot(aes(x = timestamp, y = open)) + geom_line() +
+geom_point(data = . %>% filter(tweet == TRUE), aes(color = "tweets"), size = 3) +
+geom_point(data = . %>% filter(breakpoint == TRUE), aes(color = "breakingpoints"), size = 3) + 
+ggtitle("Elon Musk's Tweets and Breaking Points") +
+theme(plot.title = element_text(hjust = 0.5)) +
+labs(x = "timestamp",
+         y = "BTC value",
+         color = "Legend") + scale_color_manual(values = colors) +
+theme_minimal()
+
+```
 
 
 <<<<<<< HEAD
@@ -948,19 +963,6 @@ theme_minimal()
 
 
 
-```{r fig25, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig25}Elon Musk's Tweets on Dogecoin and LogDoge's Changing Points Dates"}
-
-
-colors <- c("tweets" = "green",  "breaking points" = "orange")
-prova = btc_hist[2750:3200,] %>% filter(breakpoint == TRUE)
-btc_hist[2750:3200,] %>%
-ggplot(aes(x = timestamp, y = open)) +
-labs(x = "timestamp",
-         y = "DOGE value",
-         color = "Legend") + scale_color_manual(values = colorsD) +
-geom_line() + 
-geom_point(data = prova, aes(color ="tweets"), size = 3)
-```
 
 # Conclusion
 
