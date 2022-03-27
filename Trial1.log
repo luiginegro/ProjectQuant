@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.3.24)  26 MAR 2022 17:06
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.3.24)  26 MAR 2022 20:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -919,27 +919,26 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 115.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-] [2] [3]
+] [2] [3] [4]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 402.
+(Font)              scaled to size 7.0pt on input line 424.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 402.
+(Font)              scaled to size 5.0pt on input line 424.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00092pt on input line 402.
+(Font)              scaled to size 10.00092pt on input line 424.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00064pt on input line 402.
+(Font)              scaled to size 7.00064pt on input line 424.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00046pt on input line 402.
+(Font)              scaled to size 5.00046pt on input line 424.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 402.
+(Font)              scaled to size 9.99893pt on input line 424.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 402.
+(Font)              scaled to size 6.99925pt on input line 424.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 402.
-[4]
+(Font)              scaled to size 4.99947pt on input line 424.
+[5]
 File: Trial1_files/figure-latex/unnamed-chunk-4-1.pdf Graphic file (type pdf)
 <use Trial1_files/figure-latex/unnamed-chunk-4-1.pdf>
-[5]
 File: Trial1_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (type pdf)
 <use Trial1_files/figure-latex/unnamed-chunk-5-1.pdf>
 [6]
@@ -951,7 +950,7 @@ File: Trial1_files/figure-latex/unnamed-chunk-7-1.pdf Graphic file (type pdf)
 File: Trial1_files/figure-latex/unnamed-chunk-7-2.pdf Graphic file (type pdf)
 <use Trial1_files/figure-latex/unnamed-chunk-7-2.pdf>
 
-Underfull \hbox (badness 10000) in paragraph at lines 488--490
+Underfull \hbox (badness 10000) in paragraph at lines 522--524
 [][]
  []
 
@@ -962,7 +961,7 @@ File: Trial1_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file (type pdf)
 File: Trial1_files/figure-latex/unnamed-chunk-11-1.pdf Graphic file (type pdf)
 <use Trial1_files/figure-latex/unnamed-chunk-11-1.pdf>
 
-Underfull \hbox (badness 10000) in paragraph at lines 856--858
+Underfull \hbox (badness 10000) in paragraph at lines 887--889
 [][]
  []
 
@@ -970,196 +969,166 @@ Underfull \hbox (badness 10000) in paragraph at lines 856--858
 File: events_image.jpg Graphic file (type bmp)
 <events_image.jpg>
 
-Overfull \hbox (32.21495pt too wide) in paragraph at lines 887--888
+Overfull \hbox (32.21495pt too wide) in paragraph at lines 918--919
 []\TU/lmr/m/n/10 image: [] 
  []
 
-[16]
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-[17]
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-Missing character: There is no 🤣 (U+1F923) in font [lmmono10-regular]:!
-[18]
 File: Trial1_files/figure-latex/unnamed-chunk-12-1.pdf Graphic file (type pdf)
 <use Trial1_files/figure-latex/unnamed-chunk-12-1.pdf>
-[19]
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 1139.
-[20]
+[16] [17]
 File: Trial1_files/figure-latex/unnamed-chunk-14-1.pdf Graphic file (type pdf)
 <use Trial1_files/figure-latex/unnamed-chunk-14-1.pdf>
-[21]
-Overfull \hbox (34.24498pt too wide) in paragraph at lines 1248--1248
+[18]
+Overfull \hbox (34.24498pt too wide) in paragraph at lines 1018--1018
 []\TU/lmtt/m/n/10 ## Warning: Each time `sentiment_by` is run it has to do sentence boundary disambiguation when a[] 
  []
 
 
-Overfull \hbox (60.49498pt too wide) in paragraph at lines 1255--1255
+Overfull \hbox (60.49498pt too wide) in paragraph at lines 1025--1025
 []\TU/lmtt/m/n/10 ## Warning: Each time `extract_sentiment` is run it has to do sentence boundary disambiguation when a[] 
  []
 
 Missing character: There is no 𝜎 (U+1D70E) in font [lmroman10-regular]:mapping=tex-text;!
-[22]
-File: Trial1_files/figure-latex/unnamed-chunk-16-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/unnamed-chunk-16-1.pdf>
-
-Underfull \hbox (badness 10000) in paragraph at lines 1278--1280
-[][]
- []
-
 File: Trial1_files/figure-latex/unnamed-chunk-17-1.pdf Graphic file (type pdf)
 <use Trial1_files/figure-latex/unnamed-chunk-17-1.pdf>
+[19]
+File: Trial1_files/figure-latex/unnamed-chunk-18-1.pdf Graphic file (type pdf)
+<use Trial1_files/figure-latex/unnamed-chunk-18-1.pdf>
+[20]
+Missing character: There is no 👶 (U+1F476) in font [lmmono10-regular]:!
+Missing character: There is no 🏻 (U+1F3FB) in font [lmmono10-regular]:!
+[21] [22] [23]
+File: Trial1_files/figure-latex/unnamed-chunk-20-1.pdf Graphic file (type pdf)
+<use Trial1_files/figure-latex/unnamed-chunk-20-1.pdf>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1291--1294
+Underfull \hbox (badness 10000) in paragraph at lines 1349--1355
 [][]
  []
 
-[23] [24]
-Missing character: There is no 👶 (U+1F476) in font [lmmono10-regular]:!
-Missing character: There is no 🏻 (U+1F3FB) in font [lmmono10-regular]:!
-[25] [26]
-File: Trial1_files/figure-latex/unnamed-chunk-19-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/unnamed-chunk-19-1.pdf>
-[27]
-File: Trial1_files/figure-latex/unnamed-chunk-20-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/unnamed-chunk-20-1.pdf>
-[28]
-File: Trial1_files/figure-latex/unnamed-chunk-22-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/unnamed-chunk-22-1.pdf>
-[29]
-Overfull \hbox (34.24498pt too wide) in paragraph at lines 1608--1608
+[24]
+File: Trial1_files/figure-latex/unnamed-chunk-21-1.pdf Graphic file (type pdf)
+<use Trial1_files/figure-latex/unnamed-chunk-21-1.pdf>
+[25]
+File: Trial1_files/figure-latex/unnamed-chunk-23-1.pdf Graphic file (type pdf)
+<use Trial1_files/figure-latex/unnamed-chunk-23-1.pdf>
+[26]
+Overfull \hbox (34.24498pt too wide) in paragraph at lines 1383--1383
 []\TU/lmtt/m/n/10 ## Warning: Each time `sentiment_by` is run it has to do sentence boundary disambiguation when a[] 
  []
 
 
-Overfull \hbox (60.49498pt too wide) in paragraph at lines 1615--1615
+Overfull \hbox (60.49498pt too wide) in paragraph at lines 1390--1390
 []\TU/lmtt/m/n/10 ## Warning: Each time `extract_sentiment` is run it has to do sentence boundary disambiguation when a[] 
  []
 
-File: Trial1_files/figure-latex/unnamed-chunk-24-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/unnamed-chunk-24-1.pdf>
-[30]
-File: Trial1_files/figure-latex/unnamed-chunk-25-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/unnamed-chunk-25-1.pdf>
-[31]
+Missing character: There is no 𝜎 (U+1D70E) in font [lmroman10-regular]:mapping=tex-text;!
 File: Trial1_files/figure-latex/unnamed-chunk-26-1.pdf Graphic file (type pdf)
 <use Trial1_files/figure-latex/unnamed-chunk-26-1.pdf>
-[32]
+
+Underfull \hbox (badness 10000) in paragraph at lines 1415--1429
+[][]
+ []
+
+[27]
 File: Trial1_files/figure-latex/unnamed-chunk-27-1.pdf Graphic file (type pdf)
 <use Trial1_files/figure-latex/unnamed-chunk-27-1.pdf>
+[28]
+File: Trial1_files/figure-latex/unnamed-chunk-28-1.pdf Graphic file (type pdf)
+<use Trial1_files/figure-latex/unnamed-chunk-28-1.pdf>
+[29]
+File: Trial1_files/figure-latex/unnamed-chunk-29-1.pdf Graphic file (type pdf)
+<use Trial1_files/figure-latex/unnamed-chunk-29-1.pdf>
 
-Overfull \hbox (56.66885pt too wide) in paragraph at lines 1660--1675
+Overfull \hbox (56.66885pt too wide) in paragraph at lines 1459--1474
 \TU/lmr/m/n/10 stationarity. []
  []
 
-[33]
-File: Trial1_files/figure-latex/unnamed-chunk-29-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/unnamed-chunk-29-1.pdf>
-File: Trial1_files/figure-latex/unnamed-chunk-29-2.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/unnamed-chunk-29-2.pdf>
+[30]
+File: Trial1_files/figure-latex/unnamed-chunk-31-1.pdf Graphic file (type pdf)
+<use Trial1_files/figure-latex/unnamed-chunk-31-1.pdf>
+File: Trial1_files/figure-latex/unnamed-chunk-31-2.pdf Graphic file (type pdf)
+<use Trial1_files/figure-latex/unnamed-chunk-31-2.pdf>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1693--1695
+Underfull \hbox (badness 10000) in paragraph at lines 1492--1494
 [][]
  []
 
-[34] [35]
-File: Trial1_files/figure-latex/unnamed-chunk-30-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/unnamed-chunk-30-1.pdf>
-File: Trial1_files/figure-latex/unnamed-chunk-30-2.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/unnamed-chunk-30-2.pdf>
-
-Underfull \hbox (badness 10000) in paragraph at lines 1711--1713
-[][]
- []
-
-[36] [37] [38]
+[31] [32]
 File: Trial1_files/figure-latex/unnamed-chunk-32-1.pdf Graphic file (type pdf)
 <use Trial1_files/figure-latex/unnamed-chunk-32-1.pdf>
-File: Trial1_files/figure-latex/unnamed-chunk-33-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/unnamed-chunk-33-1.pdf>
+File: Trial1_files/figure-latex/unnamed-chunk-32-2.pdf Graphic file (type pdf)
+<use Trial1_files/figure-latex/unnamed-chunk-32-2.pdf>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1771--1774
+Underfull \hbox (badness 10000) in paragraph at lines 1510--1512
 [][]
  []
 
-[39]
-File: Trial1_files/figure-latex/unnamed-chunk-37-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/unnamed-chunk-37-1.pdf>
+[33] [34] [35]
+File: Trial1_files/figure-latex/unnamed-chunk-34-1.pdf Graphic file (type pdf)
+<use Trial1_files/figure-latex/unnamed-chunk-34-1.pdf>
+File: Trial1_files/figure-latex/unnamed-chunk-35-1.pdf Graphic file (type pdf)
+<use Trial1_files/figure-latex/unnamed-chunk-35-1.pdf>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1778--1780
+Underfull \hbox (badness 10000) in paragraph at lines 1566--1569
 [][]
  []
 
-[40]
-File: Trial1_files/figure-latex/unnamed-chunk-40-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/unnamed-chunk-40-1.pdf>
-File: Trial1_files/figure-latex/unnamed-chunk-40-2.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/unnamed-chunk-40-2.pdf>
-File: Trial1_files/figure-latex/unnamed-chunk-40-3.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/unnamed-chunk-40-3.pdf>
+[36]
+File: Trial1_files/figure-latex/unnamed-chunk-38-1.pdf Graphic file (type pdf)
+<use Trial1_files/figure-latex/unnamed-chunk-38-1.pdf>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1789--1792
+Underfull \hbox (badness 10000) in paragraph at lines 1583--1590
+[][]
+ []
+
+[37]
+File: Trial1_files/figure-latex/unnamed-chunk-41-1.pdf Graphic file (type pdf)
+<use Trial1_files/figure-latex/unnamed-chunk-41-1.pdf>
+File: Trial1_files/figure-latex/unnamed-chunk-41-2.pdf Graphic file (type pdf)
+<use Trial1_files/figure-latex/unnamed-chunk-41-2.pdf>
+File: Trial1_files/figure-latex/unnamed-chunk-41-3.pdf Graphic file (type pdf)
+<use Trial1_files/figure-latex/unnamed-chunk-41-3.pdf>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1599--1602
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1789--1792
+Underfull \hbox (badness 10000) in paragraph at lines 1599--1602
 []
  []
 
-[41] [42] [43]
-File: Trial1_files/figure-latex/unnamed-chunk-41-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/unnamed-chunk-41-1.pdf>
-[44]
-File: Trial1_files/figure-latex/unnamed-chunk-43-1.pdf Graphic file (type pdf)
-<use Trial1_files/figure-latex/unnamed-chunk-43-1.pdf>
-[45] [46]
+[38] [39] [40]
+File: Trial1_files/figure-latex/unnamed-chunk-42-1.pdf Graphic file (type pdf)
+<use Trial1_files/figure-latex/unnamed-chunk-42-1.pdf>
 
-LaTeX Warning: Empty bibliography on input line 1855.
+Underfull \hbox (badness 10000) in paragraph at lines 1612--1616
+[][]
+ []
 
-[47] (./Trial1.aux)
+[41]
+File: Trial1_files/figure-latex/unnamed-chunk-44-1.pdf Graphic file (type pdf)
+<use Trial1_files/figure-latex/unnamed-chunk-44-1.pdf>
+[42] [43]
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 1666.
+
+LaTeX Warning: Empty bibliography on input line 1698.
+
+[44] (./Trial1.aux)
 Package rerunfilecheck Info: File `Trial1.out' has not changed.
-(rerunfilecheck)             Checksum: 68E4B96E913EE81F1BAE2D0646472229;4075.
+(rerunfilecheck)             Checksum: 1955B2335312FE51F3F0681E226D6B1C;4493.
 Package logreq Info: Writing requests to 'Trial1.run.xml'.
 \openout1 = `Trial1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24267 strings out of 478179
- 467412 string characters out of 5853461
- 1339697 words of memory out of 5000000
- 44587 multiletter control sequences out of 15000+600000
+ 24268 strings out of 478179
+ 467477 string characters out of 5853461
+ 1339216 words of memory out of 5000000
+ 44588 multiletter control sequences out of 15000+600000
  475686 words of font info for 78 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  86i,6n,121p,739b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Trial1.pdf (47 pages).
+Output written on Trial1.pdf (44 pages).

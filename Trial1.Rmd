@@ -883,13 +883,8 @@ theme_minimal()
 ```
 <<<<<<< HEAD
 Our findings are strenghtened by the confirming the previous result and considerations for the Dogecoin cryptocurrency. We proceed in the same way as before, analzying the trend signal and moving from non-stationarity towards stationarity, as it can be seen in the results below.
-```{r, echo=FALSE}
-library(crypto2)
-=======
-Do the same with Doge
-
 ```{r, echo=FALSE, results=FALSE}
->>>>>>> fb0b3084ea2a8a542893d8333262c76cc563e1e0
+library(crypto2)
 doge <- crypto_list(only_active=TRUE)
 doge <- subset(doge, doge$slug == "dogecoin")
 doge_hist <- crypto_history(doge, limit=1, start_date="20200101", end_date="20220131")
@@ -963,7 +958,7 @@ theme_minimal()
 
 # Conclusion
 
-We have extracted a total of 4787 tweets containing 68676 words from Elon Musk's twitter profile: we investigate the impact of 26 Twitter events by Elon Musk on the trading volume  and price of the cryptocurrencies he comments on. Firstly we conducted a popularity analysis, where the influencing power of the Tesla CEO's can be seen skyrocketing throughout the years, especially after year 2016. A sentiment approach has been adopted into investigating his activity-related emotions, with an overall positive range of emotions  associated to it, as well as a frequency analysis on the most used words and polarity analysis (Model I). A subset of the focus period has been investigated in a second model (Model II), namely considering tweets published from January 2020 and eliminating the most used word in the Model I (*amp*). Coherent results has been found, with a slight change in the emotions due to a late-stage of Musk's popularity, with a more self-conscious, critical and mature audience. Finally, we have investigated potential linkages between Musk's crypto-related tweets and Bitcoin volatility comparing *when* those tweets were published to critical *breaking points* in the currency value: no linkage has been found, assessing the randomness of the Bitcoin trend. Our result has been confirmed by applying the same investigation to Dogecoin. 
+We have extracted a total of 4787 tweets containing 68676 words from Elon Musk's twitter profile: we investigate the impact of 26 Twitter events by Elon Musk on the trading volume  and price of the cryptocurrencies he comments on. Firstly we conducted a popularity analysis, where the influencing power of the Tesla CEO's can be seen skyrocketing throughout the years, especially after year 2016. A sentiment approach has been adopted into investigating his activity-related emotions, with an overall positive range of emotions  associated to it, as well as a frequency analysis on the most used words and polarity analysis (Model I). A subset of the focus period has been investigated in a second model (Model II), namely considering tweets published from January 2020 and eliminating the most used word in the Model I (*amp*). Coherent results has been found, with a slight change in the emotions due to a late-stage of Musk's popularity, with a more self-conscious, critical and mature audience. Finally, we have investigated potential linkages between Musk's crypto-related tweets and Bitcoin volatility comparing *when* those tweets were published to critical *breaking points* in the currency value: no clear linkage has been found, assessing the randomness of the Bitcoin trend. Our result has been similar by applying the same investigation to Dogecoin. 
 
 This study contributed to the existing available knowledge on information aggregation on the internet, particularly by so-called influencers in social networks. It also serves as a foundation for assessing the impact of extremely prominent people's views on bitcoin and financial markets. The findings give market participants a better foundation for determining the importance of certain tweets. Investors may use this knowledge to design an alternative investment plan, regulators could assess the necessity for market intervention, and influencers could better understand the consequences of their actions on Twitter.
 
