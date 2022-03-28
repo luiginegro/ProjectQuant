@@ -2,7 +2,7 @@
 title: "Does Elon Musk's tweets influence Bitcoin market value? : A sentiment anaylsis approach"
 author: "Beatrice Stocco - Federico Piazza - Luigi Negro"
 date: "04/04/2022"
-bibliography: referencesProject.bib
+bibliography: ./referencesProject.bib
 always_allow_html: true
 output:
   pdf_document:
@@ -10,14 +10,11 @@ output:
     latex_engine: xelatex
 --- 
 
-```{r, include=FALSE}
-options(tinytex.verbose = TRUE)
-```
-
 *Wordcount as of 26/03*: 5610
 
 # Abstract
 
+[@abdiMarketImpactGovernmentb]
 Elon Musk, one of the world's wealthiest people, is regarded as a technical visionary with a social media following of over 79 million followers on Twitter. He uses his social media presence to discuss a variety of topics, including cryptocurrency such as Bitcoin and Dogecoin. We examine how Musk's Twitter engagement influences short-term cryptocurrency price and volume using an event study approach. After examining 4787 tweets containing 68676 words, posted from December 2011 to January 2021, and rigorously controlling other determinants, we found that the tone of the world’s wealthiest person can drive the Bitcoin market. In addition, Musk is likely to use positive words in his tweets, with “trust” and “anticipation” as the most frequent sentiments expressed. This results are also confirmed by applying the same sentiment approach on a different temporal subset of Tesla CEO's tweets (starting from January 2020, when Musk's popularity unquestionably gained momentum). However, we did not find evidence to support linkage between Musk’s sentiments and Bitcoin volatility. Our results are strenghtened by similar findings when analyzing  Dogecoin trend: in both cases we confront the timestamp of Bitcoin or Doge-related tweets and key breaking points (i.e. sudden movements of the average currency value) showing the absence of evidence to support the linkage between Musk’s sentiments and the Bitcoin (Dogecoin) volatility. 
 
 
@@ -25,7 +22,7 @@ Elon Musk, one of the world's wealthiest people, is regarded as a technical visi
 
 One of the most useful social media platform to conduct data mining on is Twitter. It comes to no surprise the fact that its top users, i.e. the most followed ones, are celebrities and mass media companies. [Kwak,  Lee,  Park,  &  Moon,  2010] Such a result is further supported by a finding by Kwak et al.(2010), according to whom the level of reciprocity on Twitter following is as low as 22.1%. This is the reason why most of the research activities are carried out using data coming from Twitter.
 
-The first data mining activities were conducted around 2013 with the scope of highlighting how Twitter played a central role in spreading awareness after a natural disaster occured.[cit]. Further steps involved using Twitter's data to predict the happening of those same phenomena [@songSentimentAwareContextualModel2021]; weakly supervised and Online learning of word models for classification to detect disaster reporting tweets[2018]}. Similar analyses have been performed to forecast political election's results [[@hubertyCanWeVote2015]]] and are now being applied to the cryptocurrency and stock markets.
+The first data mining activities were conducted around 2013 with the scope of highlighting how Twitter played a central role in spreading awareness after a natural disaster occured.[cit]. Further steps involved using Twitter's data to predict the happening of those same phenomena []; weakly supervised and Online learning of word models for classification to detect disaster reporting tweets[2018]. Similar analyses have been performed to forecast political election's results [[]]] and are now being applied to the cryptocurrency and stock markets.
 
 In particular, at the base of these predictions is a well tested hypothesis according to which investors are not rational, despite what classical theories have been arguing[Fama 1970]. Behavioural researchers have indeed shown that the market is driven by investor's psychology. [De Longhi et al, 1990] referred to the strategies followed by noise traiders as positive-feedback strategies, that are reflected in the tendency of buying stocks when prices are increasing and selling them when they are decreasing, following a so-called herd behaviour. Such a trend cannot be reverted, despite the presence of rational investors who could potentially trade against noise traders. A similar strategy has proven to be ineffective for different reasons. The two most relevant according to Shiller [2003] are represented by short-selling constraints and risk aversion of the investors themselves. 
 On the bright side, rational arbitrageurs can still exploit this condition of theirs to their advantage: they can indeed anticipate the trend, contributing to an even higher effect in price change.  
