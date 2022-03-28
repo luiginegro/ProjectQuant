@@ -80,7 +80,7 @@
       <file>Trial1.bcf</file>
     </requires>
     <requires type="editable">
-      <file>allreferences.bib</file>
+      <file>./referencesProject.bib</file>
     </requires>
   </external>
 </requests>

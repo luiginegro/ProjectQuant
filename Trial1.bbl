@@ -16,5 +16,71 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{abdiMarketImpactGovernmentb}{article}{}
+      \name{author}{5}{}{%
+        {{hash=1af38c0b9a01ca0229f49fe6b601a76f}{%
+           family={Abdi},
+           familyi={A\bibinitperiod},
+           given={Farshid},
+           giveni={F\bibinitperiod}}}%
+        {{hash=feda17409b2a7a55de63078b79bcd368}{%
+           family={Kormanyos},
+           familyi={K\bibinitperiod},
+           given={Emily},
+           giveni={E\bibinitperiod}}}%
+        {{hash=545c476a8cf8f1fc2e029a3b99da679d}{%
+           family={Pelizzon},
+           familyi={P\bibinitperiod},
+           given={Loriana},
+           giveni={L\bibinitperiod}}}%
+        {{hash=d28a75398f89902f04f9c3d47aa25785}{%
+           family={Getmansky},
+           familyi={G\bibinitperiod},
+           given={Mila},
+           giveni={M\bibinitperiod}}}%
+        {{hash=97d5ff32d595e42b132a3349bb9c30a4}{%
+           family={Simon},
+           familyi={S\bibinitperiod},
+           given={Zorka},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{6129d0b3ef0c59fee88eaf8e35535d91}
+      \strng{fullhash}{b4a9b31e5b74314c62525e0e9b039356}
+      \strng{bibnamehash}{6129d0b3ef0c59fee88eaf8e35535d91}
+      \strng{authorbibnamehash}{6129d0b3ef0c59fee88eaf8e35535d91}
+      \strng{authornamehash}{6129d0b3ef0c59fee88eaf8e35535d91}
+      \strng{authorfullhash}{b4a9b31e5b74314c62525e0e9b039356}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We propose the ``President reacts to news'' channel of stock returns by studying the financial market impact of the Twitter account of the 45th president of the United States, Donald Trump. We use machine learning algorithms to classify topic and textual sentiment of 1,400 economy-related tweets to investigate whether they contain relevant information for financial markets. Analyzing high-frequency data, we find that after controlling for past market movements, most tweets are reactive and predictable, rather than novel and informative. The exceptions are tweet topics where the president has direct policy authority and his negative sentiment could adversely a{$\carriagereturn$}ect economic outcomes.}
+      \field{langid}{english}
+      \field{title}{Market {{Impact}} of {{Government Communication}}: {{The Case}} of {{Presidential Tweets}}}
+      \field{pages}{86}
+      \range{pages}{1}
+      \verb{file}
+      \verb C\:\\Users\\User\\Zotero\\storage\\KILZMT5V\\Abdi et al. - Market Impact of Government Communication The Cas.pdf
+      \endverb
+    \endentry
+    \entry{TwitterMoodPredicts}{misc}{}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{https://reader.elsevier.com/reader/sd/pii/S187775031100007X?token=33FB398EF7ECE8810D6A66AACEA44FD47F25010A044DFEC6C071E54D3CAAA7B24026ACCF088F6770AF04E32B2E79F9A8\&originRegion=us-east-1\&originCreation=20220325011257}
+      \field{langid}{english}
+      \field{title}{Twitter Mood Predicts the Stock Market | {{Elsevier Enhanced Reader}}}
+      \verb{doi}
+      \verb 10.1016/j.jocs.2010.12.007
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\User\\Zotero\\storage\\7FAC6FMX\\Twitter mood predicts the stock market Elsevier .pdf;C\:\\Users\\User\\Zotero\\storage\\IXS4IKZJ\\S187775031100007X.html
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
 
