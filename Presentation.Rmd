@@ -34,62 +34,78 @@ image: ![](C:/Users/luigi/OneDrive - Politecnico di Milano/HEC/QuantMethod/Proje
 image: ![](C:/Users/luigi/OneDrive - Politecnico di Milano/HEC/QuantMethod/Project/projjj/ProjectQuant/events_image.jpg)
 
 
-## Dive deep into data
+## EDA: Popularity
 
-Exploiting twitter APIs, Tesla's CEO tweets from 2011 to 2021 were extracted. A dataframe has been built with number of *retweets*, *likes* and *replies* per year in order to understand the growing trend of Elon Musk's popularity and therefore its influence. 
+Exploiting twitter APIs, Tesla's CEO tweets from 2011 to 2021 were extracted. The following variables were used as proxy to investigate Elon Musks's growing popularity: number of *retweets*, number of *likes* and number of *replies* per year, together with a comparison with the total tweets activity. Results are shown in the following chart:
 
-```{r,echo=FALSE}
-library(dplyr)
-table = cbind(retweet_year, nreplies_year$nreplies, likes_year$nlikes)
-table
-colnames(table)= c("Year", "Retweets", "Replies", "Likes")
-table
-```
+```{r fi1s, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig1}Elon's twitter interaction over time"}
+#plot
+tweets <- ggplot(data = tweets_year, aes(x = yr, y = tweet)) + 
+  geom_bar(stat = "identity", width = 0.5, position = "dodge", fill = "purple", color = "black") + 
+  xlab("Year") +
+  ylab("Number of tweets")  +
+  ggtitle("Tweets per year") +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme_minimal()
 
-
-## Slide 2
-
-As we can see there is an increasing trend throughout the years in Elon Musks's popularity, as the numbers of likes, retweeets and replies increased by a factor of 18 in 10 years.
-
-
-```{r, echo=FALSE}
-library(ggplot2)
-par(mfrow=c(3,1))
-
-ggplot(data = likes_year, aes(x = yr, y = nlikes)) + 
+likes <- ggplot(data = likes_year, aes(x = yr, y = nlikes)) + 
   geom_bar(stat = "identity", width = 0.5, position = "dodge", fill = "darkorange", color = "black") + 
   xlab("Year") +
   ylab("Number of likes")  +
-  labs(fill = "Isic Code")  +  
-  theme_minimal() + 
-  scale_fill_brewer(direction = -1)
+  ggtitle("Likes per year") +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme_minimal()
 
-ggplot(data =retweet_year, aes(x = yr, y = nretweets), color ="darkorange") + 
+retweets <- ggplot(data =retweet_year, aes(x = yr, y = nretweets), color ="darkorange") + 
   geom_bar(stat = "identity", width = 0.5, position = "dodge", fill = "dark green", color = "black") + 
   xlab("Year") +
   ylab("Number of retweets") +  
-  theme_minimal() + 
-  scale_fill_brewer(direction = -1)
+   ggtitle("Retweets per year") +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme_minimal()
 
-
-ggplot(data = nreplies_year, aes(x = yr, y = nreplies)) + 
+replies <- ggplot(data = nreplies_year, aes(x = yr, y = nreplies)) + 
   geom_bar(stat = "identity", width = 0.5, position = "dodge", fill ="dark red", color ="black") + 
   xlab("Year") +
   ylab("Number of replies")  +  
-  theme_minimal() + 
-  scale_fill_brewer(direction = -1)
+   ggtitle("Replies per year") +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme_minimal()
+
+ggarrange(tweets, likes, retweets, replies, 
+          ncol = 2, nrow = 2)
+
 ```
 
 
-## Slide with Bullets
-Subsetting the tweets in the ones containing crpyo and bitcoin and connecting them to the bitcoin value trend we obtain: 
+## Crypto-related tweets
 
-```{r, echo = FALSE}
-library(ggplot2)
+Consequently, we compare how Elon Musk's audience react to different type of tweets containing respectevely words related only to *dogecoin*, *Bitcoin* and *cypto*. The same proxies as before have been used.
+
+
+```{r fig2, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig2}Crypto-related content interaction"}
+#plotting 
+
+dfactivity %>%
+  gather(key, value, -Total) %>% 
+  ggplot(aes(x=Total, y=value, fill = key)) +
+  geom_col(position = "dodge") +
+  theme_minimal()
+```
+
+
+## Bitcoin trend
+
+Which is the width of Bitcoin price volatility once a crypto-related tweets is published? We managed to extract the tweets which only cointained the words *bitcoin* and *crypto* and connected their time-stamp to the Bitcoin market capitalization trend. The pink points on the graphic represent the moment in time when a crpyto-related tweet was published
+
+```{r fig3, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig3}BTC price compared with crypto-related tweets' date"}
 btc_hist %>%
 ggplot(aes(x = timestamp, y = open)) +
-  geom_line() + 
-  geom_point(data = . %>% filter(tweet == TRUE), color = "deeppink", size = 3)
+geom_line() + 
+geom_point(data = . %>% filter(tweet == TRUE), color = "deeppink", size = 3) +
+ggtitle("Elon Musk's Tweets and Bitcoin Volatility") +
+theme(plot.title = element_text(hjust = 0.5)) +
+  theme_minimal()
 
 ```
 
