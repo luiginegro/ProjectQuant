@@ -3,10 +3,44 @@ title: "Does Elon Musk's tweets influence Bitcoin market value? : A sentiment an
 output: beamer_presentation
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
 
+```{r load-packages, include=FALSE}
+if(!require(dplyr)) install.packages("dplyr")
+if(!require(tidyverse)) install.packages("tidyverse")
+if(!require(readxl)) install.packages("readxl")
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+if(!require(hrbrthemes)) install.packages("hrbrthemes")
+library(hrbrthemes)
+#install.packages("ggthemes")
+library(ggthemes)
+#library(readxl)
+library(tidyr)
+library(crypto2)
+library(lubridate)
+library(stringr)
+if(!require(tm)) install.packages("tm")
+library(tm)
+library(RColorBrewer)
+library(wordcloud)
+if(!require(wordcloud2)) install.packages("wordcloud2")
+library(wordcloud2)
+library(syuzhet)
+library(scales)
+library(reshape2)
+library(devtools) 
+library(sentimentr)
+library(e1071)
+library(gridExtra)
+if(!require(tseries)) install.packages("tseries")
+options(warn=-1)
+library(tseries)
+if(!require(changepoint)) install.packages("changepoint")
+library(changepoint)
+library(ggpubr)
+
+```
 ## Agenda
 
 - Literature Review
@@ -38,8 +72,87 @@ image: ![](C:/Users/luigi/OneDrive - Politecnico di Milano/HEC/QuantMethod/Proje
 
 Exploiting twitter APIs, Tesla's CEO tweets from 2011 to 2021 were extracted. The following variables were used as proxy to investigate Elon Musks's growing popularity: number of *retweets*, number of *likes* and number of *replies* per year, together with a comparison with the total tweets activity. Results are shown in the following chart:
 
-```{r fi1s, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig1}Elon's twitter interaction over time"}
+```{r, echo=FALSE}
+elon =  read.csv("elon.csv")
+dim(elon)
+head(elon)
+
+#create a dataset for analysing popularity
+
+popularity = as.data.frame(cbind(elon$tweet, elon$nlikes, elon$nreplies, elon$nretweets, elon$date))
+#change the col names
+colnames(popularity) = c("tweet", "nlikes","nreplies", "nretweets", "date")
+
+#Showing summaries of each variable
+
+#install.packages("hrbrthemes")
+
+popularity$date <- format(as.POSIXct(popularity$date,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
+ 
+
+popularity$date <- as.Date(as.character(popularity$date), format='%m/%d/%Y')
+popularity$nreplies= as.numeric(popularity$nreplies)
+popularity$nretweets= as.numeric(popularity$nretweets)
+popularity$nlikes= as.numeric(popularity$nlikes)
+
+
+#grouping by year 
+
+tweets_year<- popularity %>%
+mutate(dates = as.Date(popularity$date)) %>%
+mutate(yr = format(dates, '%Y')) %>%
+group_by(yr) %>%
+summarise(tweet=n())
+
+likes_year <- popularity %>%
+mutate(dates = as.Date(popularity$date)) %>%
+mutate(yr = format(dates, '%Y')) %>%
+group_by(yr) %>%
+summarise(nlikes=sum(nlikes))
+
+retweet_year <- popularity %>%
+mutate(dates = as.Date(popularity$date)) %>%
+mutate(yr = format(dates, '%Y')) %>%
+group_by(yr) %>%
+summarise(nretweets = sum(nretweets))
+
+nreplies_year <- popularity %>%
+mutate(dates = as.Date(popularity$date)) %>%
+mutate(yr = format(dates, '%Y')) %>%
+group_by(yr) %>%
+summarise(nreplies = sum(nreplies))
+
+#removing year 2022 
+
+nreplies_year= nreplies_year[-c(12), ]
+retweet_year= retweet_year[-c(12), ]
+likes_year= likes_year[-c(12), ]
+tweets_year = tweets_year[-c(12), ]
+
+
+
+Replies = nreplies_year$nreplies
+Likes =  likes_year$nlikes
+Retweets = retweet_year$nretweets
+summary(cbind(Replies, Retweets, Likes))
+
+#numeric 
+
+nreplies_year$nreplies= as.numeric(nreplies_year$nreplies)
+nreplies_year$yr= as.numeric(nreplies_year$yr)
+
+retweet_year$yr = as.numeric(retweet_year$yr)
+retweet_year$nretweets = as.numeric(retweet_year$nretweets)
+
+likes_year$yr = as.numeric(likes_year$yr)
+likes_year$nlikes = as.numeric(likes_year$nlikes)
+
+tweets_year$yr = as.numeric(tweets_year$yr)
+tweets_year$tweet = as.numeric(tweets_year$tweet)
+
 #plot
+
+library(ggplot2)
 tweets <- ggplot(data = tweets_year, aes(x = yr, y = tweet)) + 
   geom_bar(stat = "identity", width = 0.5, position = "dodge", fill = "purple", color = "black") + 
   xlab("Year") +
@@ -83,8 +196,60 @@ ggarrange(tweets, likes, retweets, replies,
 Consequently, we compare how Elon Musk's audience react to different type of tweets containing respectevely words related only to *dogecoin*, *Bitcoin* and *cypto*. The same proxies as before have been used.
 
 
-```{r fig2, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig2}Crypto-related content interaction"}
-#plotting 
+```{r, echo=FALSE}
+#subsetting in order to undersand tweet share
+
+
+elondoge = elon[grepl("dogecoin", elon[["tweet"]]) | grepl("Doge", elon[["tweet"]]) | grepl("doge", elon[["tweet"]]),]
+elonCryptoOnly = elon[grepl("crypto", elon[["tweet"]]) | grepl("Crypto", elon[["tweet"]]) | grepl("cryptos", elon[["tweet"]]),]
+elonBTC = elon[grepl("BTC", elon[["tweet"]])| grepl("Bitcoin", elon[["tweet"]])| grepl("bitcoin", elon[["tweet"]]),]
+
+n_doge = length(elondoge$tweet)
+n_onlycrypto = length(elonCryptoOnly$tweet)
+n_BTC = length(elonCryptoOnly$tweet)
+n_totaltweet = n_doge + n_onlycrypto + n_BTC
+
+#vector 
+
+vectorshare = c(n_doge, n_onlycrypto, n_BTC)
+vectorshare= as.data.frame(vectorshare)
+dim(vectorshare)
+colnames(vectorshare) = c("tweetcount")
+rownames(vectorshare) = c("doge", "crypto", "BTC")
+
+#counting total nlikes, nreplies, nretweet per each keyword to understand where is the maximum activity
+## like
+n_dogelikes = mean(elondoge$nlikes)
+n_onlycrptolikes = mean(elonCryptoOnly$nlikes)
+n_BTClike = mean(elonBTC$nlikes)
+n_totallike = mean(elon$nlikes)
+##retweet
+n_dogeretweet = mean(elondoge$nretweets)
+n_onlycrptoretweet = mean(elonCryptoOnly$nretweets)
+n_BTCretweet = mean(elonBTC$nretweets)
+n_totalretweet = mean(elon$nretweets)
+
+##reply
+n_dogereply = mean(elondoge$nreplies)
+n_onlycrptoreply = mean(elonCryptoOnly$nreplies)
+n_BTClreply= mean(elonBTC$nreplies)
+n_totalreply = mean(elon$nreplies)
+
+
+
+#dataframe activity
+vectoractivity_doge= c(n_dogelikes, n_dogereply, n_dogeretweet)
+vectoractivity_BTC= c(n_BTClike, n_BTClreply, n_BTCretweet)
+vectoractivity_crypto = c(n_onlycrptolikes, n_onlycrptoreply, n_onlycrptoretweet)
+vectoractivity_total = c(n_totallike, n_totalreply, n_totalretweet)
+dfactivity = cbind(vectoractivity_doge, vectoractivity_crypto, vectoractivity_BTC, vectoractivity_total)
+dfactivity = t(dfactivity)
+dfactivity = as.data.frame(dfactivity)
+dfactivity$crypto = c("ActivityDoge", "ActivityCrypto", "ActivityBTC", "TotalActivity")
+rownames(dfactivity) = c("ActivityDoge", "ActivityCrypto", "ActivityBTC", "TotalActivity")
+colnames(dfactivity) = c("Likes", "Replies", "Retweets", "Total")
+
+
 
 dfactivity %>%
   gather(key, value, -Total) %>% 
@@ -96,9 +261,31 @@ dfactivity %>%
 
 ## Bitcoin trend
 
-Which is the width of Bitcoin price volatility once a crypto-related tweets is published? We managed to extract the tweets which only cointained the words *bitcoin* and *crypto* and connected their time-stamp to the Bitcoin market capitalization trend. The pink points on the graphic represent the moment in time when a crpyto-related tweet was published
+Which is the width of Bitcoin price volatility once a crypto-related tweets is published? We managed to extract the tweets which only cointained the words *bitcoin* and *crypto* and connected their time-stamp to the Bitcoin market capitalization trend. The pink points on the graphic represent the moment in time when a crpyto-related tweet was published.
 
-```{r fig3, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig3}BTC price compared with crypto-related tweets' date"}
+Can we infere something? Maybe..
+
+```{r, echo=FALSE}
+# install.packages("devtools")
+#devtools::install_github("sstoeckl/crypto2", force=TRUE)
+
+#take daily hist of BTC
+coins <- crypto_list(only_active=TRUE)
+btc_hist <- crypto_history(coins, limit=1, start_date="20110101", end_date="20220131")
+
+as.data.frame(btc_hist)
+btc_hist$timestamp <- format(as.POSIXct(btc_hist$timestamp,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
+btc_hist$timestamp <- as.Date(as.character(btc_hist$timestamp), format='%m/%d/%Y')
+
+
+#subset tweets keeping those that contains ("bitcoin","crypto")
+eloncrypto <- elon[grepl("crypto", elon[["tweet"]]) | grepl("BTC", elon[["tweet"]]),]
+as.data.frame(eloncrypto)
+eloncrypto$date <- format(as.POSIXct(eloncrypto$date,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
+eloncrypto$date <- as.Date(as.character(eloncrypto$date), format='%m/%d/%Y')
+btc_hist['tweet'] <- btc_hist$timestamp %in% eloncrypto$date
+
+
 btc_hist %>%
 ggplot(aes(x = timestamp, y = open)) +
 geom_line() + 
@@ -108,17 +295,286 @@ theme(plot.title = element_text(hjust = 0.5)) +
   theme_minimal()
 
 ```
+## Sentiment Analysis
+
+Once quantified Elon Musk's influence, it is essential to understand the extent of this influence on the cryptomarket. We will try to answer the following questions:
+
+- Which are the sentiments expressed by Elon Musk's tweets?
+- Which are the most frequent words?
+- Which is the polarity of this sentiments?
+
+We will use two subsets and consequently two models:
+
+\item Model I: investigation conducted on the entire dataset containing all Elon Musk's tweets from 2011 to 2021.
+
+   \begin{itemize} : 
+       \item bullet 1
+       \item bullet 2
+   \end{itemize}
+
+\item Model II: investigation conducted on a subset according to the following criteria:
+   \begin{itemize}
+       \item Temporal subset: we select the tweets published from January 2020 on, in order to assess results related to a maturity-stage Elon Musk's popularity
+       \item Most frequent word removal: we removed the most frequent word *AMP* resulted from **Model I**
+   \end{itemize}
 
 
-## Slide with R Output
+This will be the first step to gather more information in order to assess whether the previous chart could actually show a link betweeen Bitcoin's volatility and Musk's tweets
 
-```{r cars, echo = TRUE}
-summary(cars)
+
+## Sentiment analysis
+
+While the market may interpret Musk's tweets about Tesla as “accurate news”, his tweets about cryptocurrency at least to some degree represent moods or personal sentiment. In this slide we show the nature of this sentiments, the most frequent words and the emotions associated to them for each of the models.
+
+
+```{r, echo=FALSE}
+#!all the code will be needed for the presentation, therefore i write all the lines so to use the plot at the end
+
+## MODEL 1
+
+corpus <- iconv(elon$tweet)
+corpus <- Corpus(VectorSource(corpus))
+inspect(corpus[1:5])
+#clean
+corpus <- tm_map(corpus, tolower)
+corpus <- tm_map(corpus, removePunctuation)
+corpus <- tm_map(corpus, removeNumbers)
+cleanset <- tm_map(corpus, removeWords, stopwords('english'))
+removeURL <- function(x) gsub('http[[:alnum:]]*', '', x)
+cleanset <- tm_map(cleanset, content_transformer(removeURL))
+inspect(cleanset[1:10])
+#stemming = reduce to root form
+cleanset <- tm_map(cleanset, stripWhitespace)
+inspect(cleanset[1:5])
+
+tdm <- TermDocumentMatrix(cleanset)
+tdm <- as.matrix(tdm)
+tdm[1:10, 1:20]
+words <- rowSums(tdm)
+words <- subset(words, words>=120)
+words <- as.data.frame(words)
+words$names <- rownames(words)
+
+#scores and density
+s <- get_nrc_sentiment(elon$tweet)
+head(s)
+
+s_graph <- colSums(s)
+s_graph <- as.data.frame(s_graph)
+s_graph$emotions <- rownames(s_graph)
+s_graph$count <- s_graph$s_graph
+
+#sentiment
+#install_github("trinker/sentimentr") 
+
+txt <- elon$tweet
+#txt cleaning
+
+#txt <- sapply(txt, function(x) iconv(x, to='UTF-8-MAC', sub='byte'))
+#for Windows based OS
+txt <- sapply(txt,function(row) iconv(row, "latin1", "ASCII", sub=""))
+#remove punctuation
+txt = gsub("(RT|via)((?:\\b\\W*@\\w+)+)", "", txt)
+# remove at people
+txt = gsub("@\\w+", "", txt)
+# remove punctuation
+txt = gsub("[[:punct:]]", "", txt)
+# remove numbers
+txt = gsub("[[:digit:]]", "", txt)
+# remove html links
+txt = gsub("http\\w+", "", txt)
+# remove unnecessary spaces
+txt = gsub("[ \t]{2,}", "", txt)
+txt = gsub("^\\s+|\\s+$", "", txt)
+txt = txt[!is.na(txt)]
+names(txt) = NULL
+
+
+sentiment_by(txt) 
+
+t = extract_sentiment_terms(txt) 
+
+
+attributes(t)$count
+
+#density plot
+txt %>%
+get_sentences() %>%
+sentiment() %>%
+filter(sentiment!=0) -> senti
+
+#summary statistics model I
+densitySentiments <- density(senti$sentiment) 
+meanSentiTot= mean(senti$sentiment)
+sdSentiTot= sd(senti$sentiment)
+skewnessSentiTot= skewness(senti$sentiment)
+kurtosisSentiTot= kurtosis(senti$sentiment)
+IQR = IQR(senti$sentiment)
+
+#table statistics model I
+summarizeStatSenti = c(meanSentiTot, sdSentiTot, IQR, skewnessSentiTot, kurtosisSentiTot)
+summarizeStatSenti = data.frame((summarizeStatSenti))
+rownames(summarizeStatSenti) = c("Mean", "Sd", "IQR", "Skewness", "Kurtosis")
+colnames(summarizeStatSenti) = "Statistical summary sentiment"
+summarizeStatSenti
+
+
+
+## MODEL 2 
+tweet2020 = elon
+tweet2020 = tweet2020[-c(1:2762),]
+
+#eliminate tweet containing "amp" with grepl
+tweet2020 = tweet2020[!grepl("amp", tweet2020[["tweet"]]),]
+
+
+corpus1 <- iconv(tweet2020$tweet)
+corpus1 <- Corpus(VectorSource(corpus1))
+inspect(corpus1[1:6])
+#clean
+corpus1 <- tm_map(corpus1, tolower)
+corpus1<- tm_map(corpus1, removePunctuation)
+corpus1 <- tm_map(corpus1, removeNumbers)
+cleanset1 <- tm_map(corpus1, removeWords, stopwords('english'))
+removeURL1 <- function(x) gsub('http[[:alnum:]]*', '', x)
+cleanset1 <- tm_map(cleanset1, content_transformer(removeURL1))
+inspect(cleanset1[1:10])
+#stemming = reduce to root form
+cleanset1 <- tm_map(cleanset1, stripWhitespace)
+inspect(cleanset1[1:5])
+
+#words
+
+tdm1 <- TermDocumentMatrix(cleanset1)
+tdm1 <- as.matrix(tdm1)
+tdm1[1:10, 1:20]
+words1 <- rowSums(tdm1)
+words1 <- subset(words1, words1>=60)
+words1 <- as.data.frame(words1)
+words1$names <- rownames(words1)
+
+
+#density 
+s1 <- get_nrc_sentiment(tweet2020$tweet)
+head(s1)
+s1_graph <- colSums(s1)
+s1_graph <- as.data.frame(s1_graph)
+s1_graph$emotions <- rownames(s1_graph)
+s1_graph$count <- s1_graph$s1_graph
+
+
+txt1 <- tweet2020$tweet
+#txt cleaning
+
+#txt <- sapply(txt, function(x) iconv(x, to='UTF-8-MAC', sub='byte'))
+#for Windows based OS
+txt1 <- sapply(txt1,function(row) iconv(row, "latin1", "ASCII", sub=""))
+#remove punctuation
+txt1 = gsub("(RT|via)((?:\\b\\W*@\\w+)+)", "", txt1)
+# remove at people
+txt1 = gsub("@\\w+", "", txt1)
+# remove punctuation
+txt1 = gsub("[[:punct:]]", "", txt1)
+# remove numbers
+txt1 = gsub("[[:digit:]]", "", txt1)
+# remove html links
+txt1 = gsub("http\\w+", "", txt1)
+# remove unnecessary spaces
+txt1 = gsub("[ \t]{2,}", "", txt1)
+txt1 = gsub("^\\s+|\\s+$", "", txt1)
+txt1 = txt1[!is.na(txt1)]
+names(txt1) = NULL
+
+sentiment_by(txt1) 
+
+t1 = extract_sentiment_terms(txt1) 
+
+
+attributes(t1)$count
+
+#txt 
+
+txt1 %>%
+get_sentences() %>%
+sentiment() %>%
+filter(sentiment!=0) -> senti1
+
+#stastiical summary model II
+
+densitySentiments1 <- density(senti1$sentiment) 
+meanSentiTot1= mean(senti1$sentiment)
+sdSentiTot1= sd(senti1$sentiment)
+skewnessSentiTot1= skewness(senti1$sentiment)
+kurtosisSentiTot1= kurtosis(senti1$sentiment)
+IQR1 = IQR(senti1$sentiment)
+summarizeStatSenti1 = c(meanSentiTot1, sdSentiTot1, IQR1, skewnessSentiTot1, kurtosisSentiTot1)
+summarizeStatSenti1 = data.frame(summarizeStatSenti1)
+rownames(summarizeStatSenti1) = c("Mean", "Sd", "IQR", "Skewness", "Kurtosis")
+colnames(summarizeStatSenti1) = "Statistical summary sentiment"
+summarizeStatSenti2 = bind_cols(summarizeStatSenti1, summarizeStatSenti)
+colnames(summarizeStatSenti2) = c("Sentiment model I", "Sentiment model II")
+summarizeStatSenti2
 ```
 
-## Slide with Plot
 
-```{r pressure}
-plot(pressure)
+```{r, echo=FALSE}
+#plot most used words two models
+
+sentiwords1 <- ggplot(data=words, aes(x=reorder(names, words), y=words)) +
+  labs(y = "Words", x = "Count", title = "Word frequency Model I") +
+  geom_bar(stat="identity", aes(fill=words)) +
+  theme(axis.text.x=element_text(angle=45, hjust=1)) +
+  scale_fill_gradient2(low = "blue", high = "darkblue") +
+  coord_flip() +
+  theme_minimal()
+
+sentiwords2 <-ggplot(data=words1, aes(x=reorder(names, words1), y=words1)) +
+  geom_bar(stat="identity", aes(fill=words1)) +
+  theme(axis.text.x=element_text(angle=45, hjust=1)) +
+  scale_fill_gradient2(low = "blue", high = "darkblue") +
+  coord_flip() +
+  theme_minimal()
+
+ggarrange(sentiwords1, sentiwords2, ncol =2, nrow = 1)
+
+
+
 ```
+## Plots code
+```{r}
+# plot emotions 
+
+
+e<-emotion_by(get_sentences(txt),drop.unused.emotions=TRUE)
+plot(e)
+
+e1<-emotion_by(get_sentences(txt1),drop.unused.emotions=TRUE)
+plot(e1)
+
+
+```
+
+## Sentiment scores and density
+
+Based on the following results of the Sentiment Analysis of Elon Musk's tweets, it appears clear that *positive*, *trust* and *anticipation* are the most frequent emotions
+
+```{r fig6, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig6}Sentiment scores of Elon's tweets"}
+ggplot(data=s_graph, aes(x=reorder(emotions, count), y=count)) +
+  geom_bar(stat="identity", aes(fill=count)) +
+  theme(axis.text.x=element_text(angle=45, hjust=1)) +
+  scale_fill_gradient2(low = "yellow", high = "red") +
+  coord_flip() +
+  labs(title="Sentiment Scores Tweets",y = "Count", x="emotions") +
+  theme_minimal()
+
+```
+
+
+
+
+
+
+
+
+
 
