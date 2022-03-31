@@ -367,7 +367,7 @@ ggplot(data = vectorshare, aes(x = tweetcount, y = rownames(vectorshare))) +
 ```
 
 
-```{r fig2, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig2}Crypto-related content interaction"}
+```{r fig2, echo=FALSE, fig.width=3.5,fig.height=3,fig.cap="\\label{fig:fig2}Crypto-related content interaction"}
 #plotting 
 
 dfactivity %>%
@@ -405,7 +405,7 @@ btc_hist['tweet'] <- btc_hist$timestamp %in% eloncrypto$date
 
 Once quantified Elon Musk's influence, it is essential to understand the extent of this influence on the cryptomarket. Which is the width of Bitcoin price volatility once a crypto-related tweets is published? We managed to extract the tweets which only cointained the words *bitcoin* and *crypto* and connected their time-stamp to the Bitcoin market capitalization trend. The pink points on the graphic represent the moment in time when a crpyto-related tweet was published: there is clear evidence suggesting a relationship between the Bitcoin volatility and Musk's trend however, it is still unclear at this stage whether it's Elon Musk's direct influence on Bitcoin price change or the other way round. It cannot be assessed a clear causality relatioship. This issue will be further addressed in this paper.
 
-```{r fig3, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig3}BTC price compared with crypto-related tweets' date"}
+```{r fig3, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig3}BTC price compared with crypto-related tweets' date", include=FALSE}
 btc_hist %>%
 ggplot(aes(x = timestamp, y = open)) +
 geom_line() + 
@@ -452,7 +452,7 @@ words$names <- rownames(words)
 ```
 
 
-```{r fig4, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig4}Word Frequency,"}
+```{r fig4, echo=FALSE, fig.width=4,fig.height=4.5,fig.cap="\\label{fig:fig4}Word Frequency,"}
 ggplot(data=words, aes(x=reorder(names, words), y=words)) +
   labs(y = "Words", x = "Count", title = "Word frequency") +
   geom_bar(stat="identity", aes(fill=words)) +
@@ -466,12 +466,9 @@ ggplot(data=words, aes(x=reorder(names, words), y=words)) +
 Amp is a universal collateral token designed to facilitate fast and efficient transfers for any real-world application. When using Amp as collateral, transfers of value are guaranteed and can settle instantly. While the underlying asset reaches final settlement, a process that can take anywhere from seconds to days, Amp is held in escrow by a collateral manager. Once the transaction successfully settles, the Amp collateral is released and made available to collateralize another transfer. Amp exists to serve as universal collateral for anyone and any project. (*Source [(https://docs.amptoken.org/)]* ).
 Besides being a collateral for individuals and DeFi platforms, Amp is used as a collateral for payment networks: Flexa uses Amp to enable instant, fraud-free payments to merchants across its digital payment network. Apps that integrate Flexa stake Amp to ensure all payments can be settled in real-time regardless of the asset or protocol used. Since AMP Token was to be integrated with Tesla's payment rail for crypto, it is understandable why it's been one of the most tweeted words by Elon Musk, being this news shocking the crypto-lovers panorama and the future of Tesla. The news of Tesla about the willing to accept crypto as payments and the investment in over 1.5 BLN USD in Bitcoin  (February 2021), made the price of Bitcoin to skyrocket. On the other hand, a plethora of enviromental activists opposed this decision due to the high levels of electric energy which are used to mine and sustain the crypto network and highlighted the controversial nature of the Tesla CEO's choice: this led Elon Musk to no longer accept payments in Bitcoin. The impact on the crypto-currency value has been devastating has shown in the following graphic showing once again, how much "investors listen to Elon Musk".
 
-image: ![](events_image.jpg)
-
-
 Here follows a wordcloud which helped us to visualize the most frequent words in Elon Musk's tweets. The higher the word's size displayed, the most frequent the word would appear in his tweets.
 
-```{r fig5, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig5}Wordcloud of most commons words"}
+```{r fig5, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig5}Wordcloud of most commons words", include=FALSE}
 w <- sort(rowSums(tdm), decreasing = TRUE)
 set.seed(222)
 wordcloud(words = names(w),
@@ -509,7 +506,7 @@ s_graph$count <- s_graph$s_graph
 ```
 
 
-```{r fig6, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig6}Sentiment scores of Elon's tweets"}
+```{r fig6, echo=FALSE, fig.width=3.5,fig.height=3,fig.cap="\\label{fig:fig6}Sentiment scores of Elon's tweets"}
 ggplot(data=s_graph, aes(x=reorder(emotions, count), y=count)) +
   geom_bar(stat="identity", aes(fill=count)) +
   theme(axis.text.x=element_text(angle=45, hjust=1)) +
@@ -581,7 +578,7 @@ summarizeStatSenti
 
 
 
-```{r fig7, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig7}density of polarity scores"}
+```{r fig7, echo=FALSE, fig.width=3.5,fig.height=3,fig.cap="\\label{fig:fig7}density of polarity scores"}
 plot(densitySentiments,main='Density of sentiments') 
 polygon(densitySentiments,col='red')        
 ```
@@ -591,7 +588,7 @@ polygon(densitySentiments,col='red')
 
 The following analysis detects the rate of emotion at the sentence level. This method uses a simple dictionary lookup to find emotion words and then compute the rate per sentence. The emotion score ranges between 0 (no emotion used) and 1 (all words used were emotional). Once again, this result is in line with the previous ones, showing how positive emotions such as joy, trust and anticipation are predominant. Please note that the suffix *_negated* indicates the opposite of the reference emotions, which appears to be consistently absent in relation to any emotion.
 
-```{r fig8, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig8}plot of Emotions"}
+```{r fig8, echo=FALSE, fig.width=3.5,fig.height=3,fig.cap="\\label{fig:fig8}plot of Emotions"}
 
 e<-emotion_by(get_sentences(txt),drop.unused.emotions=TRUE)
 plot(e)
@@ -642,7 +639,7 @@ words1$names <- rownames(words1)
 ```
 
 
-```{r fig9, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig9}Sentiment scores of Elon's tweets resampled"}
+```{r fig9, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig9}Sentiment scores of Elon's tweets resampled", include=FALSE}
 ggplot(data=words1, aes(x=reorder(names, words1), y=words1)) +
   geom_bar(stat="identity", aes(fill=words1)) +
   theme(axis.text.x=element_text(angle=45, hjust=1)) +
@@ -652,10 +649,12 @@ ggplot(data=words1, aes(x=reorder(names, words1), y=words1)) +
 ```
 This primary result is in line with the previous ones, once again the two most used words are *tesla*, *will* and *spacex*. The frequency of each word is compared in the chart above.
 We proceed displaying a wordcloud, in order to have an eye-friendly visualization of the word frequency in this new subset of data.
-
-```{r fig10, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig10}Wordcloud of Elon's tweets resampled"}
+```{r, include=FALSE}
 w1 <- sort(rowSums(tdm1), decreasing = TRUE)
 set.seed(222)
+```
+
+```{r fig10, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig10}Wordcloud of Elon's tweets resampled"}
 wordcloud(words = names(w1),
           freq = w1,
           max.words = 150,
@@ -690,7 +689,7 @@ s1_graph$count <- s1_graph$s1_graph
 ```
 
 
-```{r fig11, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig11}Sentiment Score of Elon's tweets resampled"}
+```{r fig11, echo=FALSE, fig.width=3.5,fig.height=3,fig.cap="\\label{fig:fig11}Sentiment Score of Elon's tweets resampled", include=FALSE}
 ggplot(data=s1_graph, aes(x=reorder(emotions, count), y=count)) +
   geom_bar(stat="identity", aes(fill=count)) +
   theme(axis.text.x=element_text(angle=45, hjust=1)) +
@@ -760,14 +759,14 @@ summarizeStatSenti2
 ```
 
 
-```{r fig12, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig12}Polarity Density of Elon's tweets resampled"}
+```{r fig12, echo=FALSE, fig.width=3.5,fig.height=3,fig.cap="\\label{fig:fig12}Polarity Density of Elon's tweets resampled"}
 plot(densitySentiments1,main='Density of sentiments') 
 polygon(densitySentiments1,col='green')  
 ```
 The chart below shows an overall overlapping with the previous result. Still positive sentiment of *anticipation*, *joy* and *trust* are the most frequent. However, the sentiment of *trust* is more volatile, and there is a slight decrease in the negative sentiment of *fear*. This slight but still relevant change can be interpreted in a different context than the one of model I: the audience has become more educated and informed about the phenomenon of crypto-currencies as well as more critical towards the Tesla CEO's tweets, who sometimes has been accused more intensively of market manipulation (however without losing popularity or positive appeal). In conclusion,  the Muskanian audience still listen to him and trust him, simply with more critical sense which makes the *trust* sentiment to be more volatile and the *fear* sentiment lower.
 
 
-```{r fig13, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig13}Emotion's Plot of Elon's tweets resampled"}
+```{r fig13, echo=FALSE, fig.width=3.5,fig.height=3,fig.cap="\\label{fig:fig13}Emotion's Plot of Elon's tweets resampled"}
 e1<-emotion_by(get_sentences(txt1),drop.unused.emotions=TRUE)
 plot(e1)
 ```
@@ -787,7 +786,7 @@ In this section we show the results obtained when testing for Bitcoin trend stat
 The autocorrelation function (ACF) defines how data points in a time series are related, on average, to the preceding data points (Box, Jenkins, & Reinsel, 1994). In other words, it measures the self-similarity of the signal over different delay times. An autocorrelation plot shows the value of the autocorrelation function (ACF) on the vertical axis. It can range from –1 to 1. We use autocorrelation plot to assess wether the elements of a time series randomly oscilates around zero.
 
 Our first attempt without any transformation gives the following result, which shows consistent non-stationarity.
-```{r fig14, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig14}Bitcoin's trend and ACF function"}
+```{r fig14, echo=FALSE, fig.width=6,fig.height=6,fig.cap="\\label{fig:fig14}Bitcoin's trend and ACF function"}
 par(mfrow=c(2,1))
 plot(btc_hist$timestamp,btc_hist$open,
      type='l',col='red',
@@ -807,7 +806,7 @@ adf.test(btc_hist$open)
 
 In order to go from non-stationarity to stationarity different techniques can be used. We first attempt in utilising logaritmic transformation: such transformtion can help to stabilise the variance of a time series. We apply the ADF test, still obtaining a non statistically relevant result, even though the p-value has decreased to 0.46.
 
-```{r fig15, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig15}LogBitcoin's trend and ACF function"}
+```{r fig15, echo=FALSE, fig.width=6,fig.height=6,fig.cap="\\label{fig:fig15}LogBitcoin's trend and ACF function"}
 par(mfrow=c(2,1))
 btc_hist['log'] = log(btc_hist$open)
 plot(btc_hist$timestamp,btc_hist$log,
@@ -841,12 +840,8 @@ adf.test(logdiff)
 
 ```
  
-This means that bitcoin volatility is random, not influenced by Elon Musk's tweets. This is a core finding of our study.
-
- 
-
-try to find change points in the data, I use diff for now not sure tho
-
+This means that bitcoin volatility is random, not influenced by Elon Musk's tweets. By being able to use a time-series without stationarity, it might be possible through some techniques to further investigate if, in a time-series trajectory with no trend, there are some specific changes in mean in specific timestamps.
+To do that we try to identify "change points" in our data. By doing taht we obtain a set of timestamps from which the variance of the time-series trajectory changed. By obtaining those timestamps and confront it with elon musks' tweet regardind crypto, it is possible to try  
 ```{r, include==FALSE}
 
 m_binseg <- cpt.mean(logdiff, penalty = "BIC", method = "BinSeg", Q = 15)
@@ -863,12 +858,9 @@ m_binseg <- cpt.mean(logdiff[2750:3199], penalty = "None", method = "BinSeg", Q 
 plot(m_binseg, type = "l", xlab = "Index", cpt.width = 4)
 
 ```
-tried with differend methods (segmented neighbour and PELT, but Binseg most effective): 
 
 
 
-
-Those were only taking into consideration the mean, let's see the results for mean and variance all together
 
 ```{r, include = FALSE}
 #transform changepoints in dates
@@ -888,7 +880,9 @@ cpt_date <- as.Date(as.character(cpt_date), format='%m/%d/%Y')
 btc_hist['breakpoint'] <- btc_hist$timestamp %in% cpt_date
 ```
 
-In the chart below a deep investigation regarding the potential linkage between Bitcoin volatility and Musk's tweet has been conducted. In blue the *breaking points* are highlighted, which are points in time where the average value of the Bitcoin price undergoes a sudden change. In purple we find highlighted when the crypto-related *tweets* were published. As we can notice, there is no correspondence or correlation of the two variables: we cannot state that Musk's tweets influence Bitcoin volatility, which is in-line with our previous result of non-stationarity.
+In the chart below a deep investigation regarding the potential linkage between Bitcoin volatility and Musk's tweet has been conducted. In blue the *breaking points* are highlighted, which are points in time where the mean a variable undergoes a significant change.
+The breaking points method is broadly used in literature and comprises a variety of different methods.
+In purple we find highlighted when the crypto-related *tweets* were published. As we can notice, there is no correspondence or correlation of the two variables: we cannot state that Musk's tweets influence Bitcoin volatility, which is in-line with our previous result of non-stationarity.
 
 ```{r fig25, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig25}Elon Musk's Tweets on Cryptos and LogBTC's Changing Points Dates"}
 

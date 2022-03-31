@@ -2,11 +2,12 @@
 title: "Positive or negative influence"
 author: "Luigi Negro, Federico Piazza, Beatrice Stocco"
 date: '2022-03-22'
-output: 
-  html_document: 
+  bibliography: referencesProject.bib
+always_allow_html: true
+output:
+  pdf_document:
     citation_package: biblatex
-    toc: yes
-    bibliography: projectQuant.bib
+    latex_engine: xelatex
 ---
 
 ```{r setup, include=FALSE}
