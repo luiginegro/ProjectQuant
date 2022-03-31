@@ -592,7 +592,8 @@ ggarrange(sentiwords1, sentiwords2, ncol =2, nrow = 1)
 ```
 
 ## Plots code
-[L'IDEA è DI METTER I DUE GRAFICI DEI SENTIMENTI scores INSIEME QUI]
+
+
 ```{r}
 # plot emotions 
 
