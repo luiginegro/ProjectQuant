@@ -1,64 +1,31 @@
-\frametitle{Stationarity}
-\protect\hypertarget{stationarity-1}{}
-Once stated the non-stationarity of the two trends, we managed to
-investigate and locate \emph{breaking points} where the average mean of
-the cryptocurrency's value undergoes sudden change as well as display
-the time stamp of Elon Musk's crypto-related tweets. The two plots below
-show those features on the Bitcoin and Dogecoin trends, respectevely.
+\frametitle{Result}
+\protect\hypertarget{result}{}
+Satisfying results have been achieved on a \emph{logdiff()}
+transformation of the trend: the difference between two consecutive
+values, in \emph{log} terms.
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# bitcoin }
+Bitcoin's ADF test results are shown below:
 
-\NormalTok{BTC\_TREND\_BR}\OtherTok{=} \FunctionTok{plot}\NormalTok{(btc\_hist}\SpecialCharTok{$}\NormalTok{timestamp[}\DecValTok{2}\SpecialCharTok{:}\DecValTok{3200}\NormalTok{],logdiff,}
-     \AttributeTok{type=}\StringTok{\textquotesingle{}l\textquotesingle{}}\NormalTok{,}\AttributeTok{col=}\StringTok{\textquotesingle{}red\textquotesingle{}}\NormalTok{,}
-     \AttributeTok{xlab =} \StringTok{"time (t)"}\NormalTok{,}
-     \AttributeTok{ylab =} \StringTok{"Y(t)"}\NormalTok{,}
-     \AttributeTok{main =} \StringTok{"Trend signal"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+\includegraphics{Presentation_files/figure-beamer/unnamed-chunk-11-1.pdf}
+\includegraphics{Presentation_files/figure-beamer/unnamed-chunk-11-2.pdf}
+\includegraphics{Presentation_files/figure-beamer/unnamed-chunk-11-3.pdf}
 
-\includegraphics{Presentation_files/figure-beamer/unnamed-chunk-9-1.pdf}
+Dogecoin's ADF test results are shown below:
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{acf}\NormalTok{(logdiff,}\AttributeTok{lag.max =} \FunctionTok{length}\NormalTok{(btc\_hist}\SpecialCharTok{$}\NormalTok{open),}
-         \AttributeTok{xlab =} \StringTok{"lag \#"}\NormalTok{, }\AttributeTok{ylab =} \StringTok{\textquotesingle{}ACF\textquotesingle{}}\NormalTok{, }\AttributeTok{main=}\StringTok{\textquotesingle{} \textquotesingle{}}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+\begin{verbatim}
+## > Scraping historical crypto data
+\end{verbatim}
 
-\includegraphics{Presentation_files/figure-beamer/unnamed-chunk-9-2.pdf}
+\begin{verbatim}
+##
+\end{verbatim}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\#dogecoin}
+\begin{verbatim}
+## > Processing historical crypto data
+\end{verbatim}
 
+\begin{verbatim}
+##
+\end{verbatim}
 
-\NormalTok{doge\_TREND\_BR }\OtherTok{=} \FunctionTok{plot}\NormalTok{(doge\_hist}\SpecialCharTok{$}\NormalTok{timestamp[}\DecValTok{2}\SpecialCharTok{:}\DecValTok{760}\NormalTok{],dogelogdiff,}
-     \AttributeTok{type=}\StringTok{\textquotesingle{}l\textquotesingle{}}\NormalTok{,}\AttributeTok{col=}\StringTok{\textquotesingle{}red\textquotesingle{}}\NormalTok{,}
-     \AttributeTok{xlab =} \StringTok{"time (t)"}\NormalTok{,}
-     \AttributeTok{ylab =} \StringTok{"Y(t)"}\NormalTok{,}
-     \AttributeTok{main =} \StringTok{"Trend signal"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics{Presentation_files/figure-beamer/unnamed-chunk-9-3.pdf}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{acf}\NormalTok{(dogelogdiff,}\AttributeTok{lag.max =} \FunctionTok{length}\NormalTok{(doge\_hist}\SpecialCharTok{$}\NormalTok{timestamp),}
-         \AttributeTok{xlab =} \StringTok{"lag \#"}\NormalTok{, }\AttributeTok{ylab =} \StringTok{\textquotesingle{}ACF\textquotesingle{}}\NormalTok{, }\AttributeTok{main=}\StringTok{\textquotesingle{} \textquotesingle{}}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics{Presentation_files/figure-beamer/unnamed-chunk-9-4.pdf}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# one next to the other}
-
-\FunctionTok{ggarrange}\NormalTok{(BTC\_TREND\_BR, doge\_TREND\_BR, }\AttributeTok{nrow =}\DecValTok{2}\NormalTok{, }\AttributeTok{ncol=}\DecValTok{1}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics{Presentation_files/figure-beamer/unnamed-chunk-9-5.pdf}
+\includegraphics{Presentation_files/figure-beamer/unnamed-chunk-12-1.pdf}

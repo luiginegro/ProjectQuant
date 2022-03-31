@@ -1,0 +1,29 @@
+---
+title: " Elon Musk's tweets influence Bitcoin market value? : A sentiment anaylsis approach"
+output:
+  beamer_presentation:
+    slide_level: 2
+    latex_engine: xelatex
+---
+## Elon Musk's tweets make Bitcoin price skyrocket
+
+" Bitcoin’s structure is very ingenious. The paper money disappears, and crypto-currencies are a much better way to transfer values than a piece of paper, that’s for sure "
+
+""I think bitcoin is on the verge of getting broad acceptance by conventional finance people"
+
+## Elon's tweet making BTC skyrocket...
+
+\begin{center}
+\includegraphics[scale = 0.2]{imageBitcoinMask.jpg}
+\end{center}
+
+
+## ..as well as going down
+\begin{center}
+\includegraphics[scale = 0.2]{notTesla.jpg}
+\end{center}
+
+## Indeed
+\begin{center}
+\includegraphics[scale = 0.3]{events_image.jpg}
+\end{center}

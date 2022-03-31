@@ -1,11 +1,11 @@
 ---
 title: "Does Elon Musk's tweets influence Bitcoin market value? : A sentiment anaylsis approach"
+author: "Beatrice Stocco - Federico Piazza - Luigi Negro"
+date: "04/04/2022"
 output:
   beamer_presentation:
     slide_level: 2
     latex_engine: xelatex
-    
-
 ---
 
 
@@ -57,15 +57,12 @@ library(ggpubr)
 
 ## Agenda
 
-- **Literature Review and Conceptual Background** 
+- **Conceptual Background** 
 - Explanatory Data Analysis
 - Sentiment Analysis
 - Testing for Stationarity
 - Conclusion
 
-
-
-## Literature review
 
 
 ## Conceptual background 
@@ -87,18 +84,25 @@ Our work is based on the following conceptual fundamentals:
 
 ""I think bitcoin is on the verge of getting broad acceptance by conventional finance people"
 
-image: ![](imageBitcoinMask.jpg)
+## Elon's tweet making BTC skyrocket...
 
+\begin{center}
+\includegraphics[scale = 0.2]{imageBitcoinMask.jpg}
+\end{center}
 
 
 ## ..as well as going down
 
-image: ![](notTesla.jpg)
-
+\begin{center}
+\includegraphics[scale = 0.2]{notTesla.jpg}
+\end{center}
 
 ## Indeed
 
-image: ![](events_image.jpg)
+\begin{center}
+\includegraphics[scale = 0.3]{events_image.jpg}
+\end{center}
+
 
 ## Agenda
 
@@ -191,7 +195,11 @@ tweets_year$yr = as.numeric(tweets_year$yr)
 tweets_year$tweet = as.numeric(tweets_year$tweet)
 
 #plot
+```
 
+## Graph
+
+```{r, echo=FALSE}
 library(ggplot2)
 tweets <- ggplot(data = tweets_year, aes(x = yr, y = tweet)) + 
   geom_bar(stat = "identity", width = 0.5, position = "dodge", fill = "purple", color = "black") + 
@@ -288,9 +296,11 @@ dfactivity = as.data.frame(dfactivity)
 dfactivity$crypto = c("ActivityDoge", "ActivityCrypto", "ActivityBTC", "TotalActivity")
 rownames(dfactivity) = c("ActivityDoge", "ActivityCrypto", "ActivityBTC", "TotalActivity")
 colnames(dfactivity) = c("Likes", "Replies", "Retweets", "Total")
+```
 
+## Crypto-related tweets are more popular
 
-
+```{r, echo=FALSE}
 dfactivity %>%
   gather(key, value, -Total) %>% 
   ggplot(aes(x=Total, y=value, fill = key)) +
@@ -324,8 +334,11 @@ as.data.frame(eloncrypto)
 eloncrypto$date <- format(as.POSIXct(eloncrypto$date,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
 eloncrypto$date <- as.Date(as.character(eloncrypto$date), format='%m/%d/%Y')
 btc_hist['tweet'] <- btc_hist$timestamp %in% eloncrypto$date
+```
 
+## Maybe not?
 
+```{r, echo=FALSE}
 btc_hist %>%
 ggplot(aes(x = timestamp, y = open)) +
 geom_line() + 
@@ -355,12 +368,6 @@ Once quantified Elon Musk's influence, it is essential to understand the extent 
 We will use two subsets and consequently two models:
 \begin{itemize}
   \item Model I: investigation conducted on the entire dataset containing all Elon Musk's tweets from 2011 to 2021.
-
-   \begin{itemize} 
-       \item bullet 1
-       \item bullet 2
-   \end{itemize}
-
   \item Model II: investigation conducted on a subset according to the following criteria:
    \begin{itemize}
        \item Temporal subset: we select the tweets published from January 2020 on, in order to assess results related to a maturity-stage Elon Musk's popularity
@@ -593,16 +600,20 @@ ggarrange(sentiwords1, sentiwords2, ncol =2, nrow = 1)
 
 ## Plots code
 [L'IDEA Ã¨ DI METTER I DUE GRAFICI DEI SENTIMENTI scores INSIEME QUI]
-```{r}
+```{r, include = FALSE}
 # plot emotions 
 
 
 e<-emotion_by(get_sentences(txt),drop.unused.emotions=TRUE)
-plot(e)
+
 
 e1<-emotion_by(get_sentences(txt1),drop.unused.emotions=TRUE)
-plot(e1)
+```
 
+
+```{r, echo=FALSE}
+plot(e1)
+plot(e)
 ggarrange(e,e1,ncol=2, nrow=1)
 ```
 
@@ -610,7 +621,7 @@ ggarrange(e,e1,ncol=2, nrow=1)
 
 Based on the following results of the Sentiment Analysis of Elon Musk's tweets, it appears clear that *positive*, *trust* and *anticipation* are the most frequent emotions
 
-```{r fig6, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig6}Sentiment scores of Elon's tweets"}
+```{r fig6, echo=FALSE, fig.width=3.5,fig.height=3,fig.cap="\\label{fig:fig6}Sentiment scores of Elon's tweets"}
 ggplot(data=s_graph, aes(x=reorder(emotions, count), y=count)) +
   geom_bar(stat="identity", aes(fill=count)) +
   theme(axis.text.x=element_text(angle=45, hjust=1)) +
@@ -708,7 +719,7 @@ dogelogdiff = diff(log(doge_hist$open))
 
 Once stated the non-stationarity of the two trends, we managed to investigate and locate *breaking points* where the average mean of the cryptocurrency's value undergoes sudden change as well as display the time stamp of Elon Musk's crypto-related tweets. The two plots below show those features on the Bitcoin and Dogecoin trends, respectevely.
 
-```{r}
+```{r, echo=FALSE}
 # bitcoin 
 
 BTC_TREND_BR= plot(btc_hist$timestamp[2:3200],logdiff,
@@ -737,7 +748,7 @@ ggarrange(BTC_TREND_BR, doge_TREND_BR, nrow =2, ncol=1)
 ## Agenda
 
 - Literature Review and Conceptual Background
-- **Explanatory Data Analysis**
+- Explanatory Data Analysis
 - Sentiment Analysis
 - Testing for Stationarity
 - **Conclusion**
@@ -749,12 +760,6 @@ We have extracted a total of 4787 tweets containing 68676 words from Elon Muskâ€
 Two models:
 \begin{itemize}
   \item Model I: investigation conducted on the entire dataset containing all Elon Musk's tweets from 2011 to 2021.
-
-   \begin{itemize} 
-       \item bullet 1
-       \item bullet 2
-   \end{itemize}
-
   \item Model II: investigation conducted on a subset according to the following criteria:
    \begin{itemize}
        \item Temporal subset: we select the tweets published from January 2020 on, in order to assess results related to a maturity-stage Elon Musk's popularity
@@ -762,7 +767,7 @@ Two models:
    \end{itemize}
 \end{itemize}
 
-Investigations:
+## Investigations:
 
 - Popularity assessment
 - Sentiment analysis
@@ -776,7 +781,5 @@ Key conclusions:
 - No linkage can be found in its tweet activity and crypto-currency (Bitcoin and Doge) volatility 
 
 ## Annex ? 
-
-\end{frame}
 
 
