@@ -602,11 +602,6 @@ ggarrange(sentiwords1, sentiwords2, ncol =2, nrow = 1)
 <<<<<<< HEAD
 [L'IDEA è DI METTER I DUE GRAFICI DEI SENTIMENTI scores INSIEME QUI]
 ```{r, include = FALSE}
-=======
-
-
-```{r}
->>>>>>> 83f1370ed5d956d463d74e04fe339f979ffc03d5
 # plot emotions 
 
 
