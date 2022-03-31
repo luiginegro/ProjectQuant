@@ -114,7 +114,7 @@ Our work is based on the following conceptual fundamentals:
 
 ## EDA: Popularity
 
-Exploiting twitter APIs, Tesla's CEO tweets from 2011 to 2021 were extracted. The following variables were used as proxy to investigate Elon Musks's growing popularity: number of *retweets*, number of *likes* and number of *replies* per year, together with a comparison with the total tweets activity. Results are shown in the following chart:
+Exploiting twitter APIs, Tesla's CEO tweets from 2011 to 2021 were extracted. The following variables were used as proxy to investigate Elon Musks's growing popularity: number of *retweets*, number of *likes* and number of *replies* per year, together with a comparison with the total tweets activity. Results are shown in the following chart: ok
 
 ```{r, include=FALSE}
 elon =  read.csv("elon.csv")
@@ -599,8 +599,14 @@ ggarrange(sentiwords1, sentiwords2, ncol =2, nrow = 1)
 ```
 
 ## Plots code
+<<<<<<< HEAD
 [L'IDEA è DI METTER I DUE GRAFICI DEI SENTIMENTI scores INSIEME QUI]
 ```{r, include = FALSE}
+=======
+
+
+```{r}
+>>>>>>> 83f1370ed5d956d463d74e04fe339f979ffc03d5
 # plot emotions 
 
 
