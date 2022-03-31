@@ -49,7 +49,7 @@ library(ggpubr)
 
 ## Agenda
 
-- Literature Review and Conceptual Background
+- Conceptual Background and Research Questions 
 - Explanatory Data Analysis
 - Sentiment Analysis
 - Testing for Stationarity 
@@ -57,7 +57,7 @@ library(ggpubr)
 
 ## Agenda
 
-- **Conceptual Background** 
+- **Conceptual Background and Research Questions** 
 - Explanatory Data Analysis
 - Sentiment Analysis
 - Testing for Stationarity
@@ -69,20 +69,27 @@ library(ggpubr)
 
 Our work is based on the following conceptual fundamentals:
 
-- “Prices fully represent all available information,” according to the efficient market hypothesis (EMH) (Fama,
-1970).
+- Individuals tweets' have tangible impact on stock market returns. *(Kinyua et. al, 2021)*
 
-- The adaptive markets hypothesis (AMH), a variant of the EMH, claims that the degree to which information is represented in prices is determined by market conditions as well as the quantity and characteristics of market participants: market effiency is context-dependent.
+- Emotions have been proved to be key drivers in the process of investing. *(Philippas et al., 2019)*
 
-- Signaling theory: a signal must usually be coupled with direct or indirect expenses in order to be trustworthy or credible (Connelly et al., 2011). 
+- Twitter can be used as a predictor of real world landscape. *(Huaye and Yasuaki, 2015)*
 
+
+## Research questions
+
+*RQ1*: DO Elon Musk’s cryptocurrency-related tweets sentiments  have an effect on the pricing and trading volume of cryptocurrency?
+
+*RQ2*: Do sentiments and polarity of Musk’s cryptocurrency-related tweets differs by considering different time-frames and currencies
+
+*RQ3*: Is there a linkage between changes in Bitcoin prices and Elon Musk's crpyto-related tweets?
 
 
 ## Elon Musk's tweets make Bitcoin price skyrocket
 
 " Bitcoin’s structure is very ingenious. The paper money disappears, and crypto-currencies are a much better way to transfer values than a piece of paper, that’s for sure "
 
-""I think bitcoin is on the verge of getting broad acceptance by conventional finance people"
+"I think bitcoin is on the verge of getting broad acceptance by conventional finance people"
 
 ## Elon's tweet making BTC skyrocket...
 
@@ -114,7 +121,7 @@ Our work is based on the following conceptual fundamentals:
 
 ## EDA: Popularity
 
-Exploiting twitter APIs, Tesla's CEO tweets from 2011 to 2021 were extracted. The following variables were used as proxy to investigate Elon Musks's growing popularity: number of *retweets*, number of *likes* and number of *replies* per year, together with a comparison with the total tweets activity. Results are shown in the following chart: ok
+Exploiting twitter APIs, Tesla's CEO tweets from 2011 to 2021 were extracted. The following variables were used as proxy to investigate Elon Musks's growing popularity: number of *retweets*, number of *likes* and number of *replies* per year, together with a comparison with the total tweets activity. Results are shown in the following chart:
 
 ```{r, include=FALSE}
 elon =  read.csv("elon.csv")
@@ -197,7 +204,7 @@ tweets_year$tweet = as.numeric(tweets_year$tweet)
 #plot
 ```
 
-## Graph
+## EDA: Popularity
 
 ```{r, echo=FALSE}
 library(ggplot2)
@@ -298,7 +305,7 @@ rownames(dfactivity) = c("ActivityDoge", "ActivityCrypto", "ActivityBTC", "Total
 colnames(dfactivity) = c("Likes", "Replies", "Retweets", "Total")
 ```
 
-## Crypto-related tweets are more popular
+## Crypto-related tweets 
 
 ```{r, echo=FALSE}
 dfactivity %>%
@@ -348,9 +355,10 @@ theme(plot.title = element_text(hjust = 0.5)) +
   theme_minimal()
 
 ```
+
 ## Agenda
 
-- Literature Review and Conceptual Background
+- Conceptual Background and Research Questions
 - Explanatory Data Analysis
 - **Sentiment Analysis**
 - Testing for Stationarity
@@ -598,9 +606,8 @@ ggarrange(sentiwords1, sentiwords2, ncol =2, nrow = 1)
 
 ```
 
-## Plots code
-<<<<<<< HEAD
-[L'IDEA è DI METTER I DUE GRAFICI DEI SENTIMENTI scores INSIEME QUI]
+## Emotions
+
 ```{r, include = FALSE}
 # plot emotions 
 
@@ -635,7 +642,7 @@ ggplot(data=s_graph, aes(x=reorder(emotions, count), y=count)) +
 
 ## Agenda
 
-- Literature Review and Conceptual Background
+- Conceptual Background and Research Questions
 - Explanatory Data Analysis
 - Sentiment Analysis
 - **Testing for Stationarity**
@@ -748,7 +755,7 @@ ggarrange(BTC_TREND_BR, doge_TREND_BR, nrow =2, ncol=1)
 
 ## Agenda
 
-- Literature Review and Conceptual Background
+- Conceptual Background and Research Questions
 - Explanatory Data Analysis
 - Sentiment Analysis
 - Testing for Stationarity
@@ -768,7 +775,7 @@ Two models:
    \end{itemize}
 \end{itemize}
 
-## Investigations:
+## Conclusion
 
 - Popularity assessment
 - Sentiment analysis
@@ -781,6 +788,6 @@ Key conclusions:
 - Its sentiments are overall positive, full of confidence and boldness
 - No linkage can be found in its tweet activity and crypto-currency (Bitcoin and Doge) volatility 
 
-## Annex ? 
+
 
 
