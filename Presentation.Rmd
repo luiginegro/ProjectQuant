@@ -379,19 +379,14 @@ We will use two subsets and consequently two models:
   \item Model II: investigation conducted on a subset according to the following criteria:
    \begin{itemize}
        \item Temporal subset: we select the tweets published from January 2020 on, in order to assess results related to a maturity-stage Elon Musk's popularity
-       \item Most frequent word removal: we removed the most frequent word *AMP* resulted from **Model I**
+       \item Most frequent word removal: we removed the most frequent word "AMP" resulted from Model I.
    \end{itemize}
 \end{itemize}
-
-This will be the first step to gather more information in order to assess whether the previous chart could actually show a link betweeen Bitcoin's volatility and Musk's tweets
 
 
 ## Sentiment analysis
 
 While the market may interpret Musk's tweets about Tesla as “accurate news”, his tweets about cryptocurrency at least to some degree represent moods or personal sentiment. In this slide we show the nature of this sentiments, the most frequent words and the emotions associated to them for each of the models.
-
-[L'IDEA E' DI METTERE I DUE GRAFICI DELLE MOST FREQUENT WORD INSIEME IN QUESTA SLIDE]
-
 ```{r, include=FALSE}
 #!all the code will be needed for the presentation, therefore i write all the lines so to use the plot at the end
 
@@ -581,7 +576,6 @@ colnames(summarizeStatSenti2) = c("Sentiment model I", "Sentiment model II")
 summarizeStatSenti2
 ```
 
-
 ```{r, echo=FALSE}
 #plot most used words two models
 
@@ -606,24 +600,22 @@ ggarrange(sentiwords1, sentiwords2, ncol =2, nrow = 1)
 
 ```
 
-## Emotions
-
+## Emotions Model I
 ```{r, include = FALSE}
-# plot emotions 
-
-
 e<-emotion_by(get_sentences(txt),drop.unused.emotions=TRUE)
-
-
 e1<-emotion_by(get_sentences(txt1),drop.unused.emotions=TRUE)
 ```
 
+```{r, echo=FALSE}
+plot(e)
+```
+
+## Emotions Model II 
 
 ```{r, echo=FALSE}
 plot(e1)
-plot(e)
-ggarrange(e,e1,ncol=2, nrow=1)
 ```
+
 
 ## Sentiment scores and density
 
@@ -650,7 +642,6 @@ ggplot(data=s_graph, aes(x=reorder(emotions, count), y=count)) +
 
 
 ## Stationarity 
-
 In this section we show the results obtained when testing for Bitcoin and Dogecoin trend stationarity. We recall the hypothesis:
 
 *Null Hypothesis (H0* : Null hypothesis of the test is that the time series can be represented by a unit root that is not stationary.
