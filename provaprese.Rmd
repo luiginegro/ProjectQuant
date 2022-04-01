@@ -93,22 +93,20 @@ Our work is based on the following conceptual fundamentals:
 
 ## Elon's tweet making BTC skyrocket...
 
-\begin{figure}
-\includegraphics[scale = 0.2]{imageBitcoinMask.jpg}
-\end{figure}
+
+![](imageBitcoinMask.jpg){height=90%}
 
 
 ## ..as well as going down
 
-\begin{figure}
-\includegraphics[scale = 0.2]{notTesla.jpg}
-\end{figure}
+
+![](notTesla.jpg){height=90%}
+
 
 ## Indeed
 
-\begin{figure}
-\includegraphics[scale = 0.3]{events_image.jpg}
-\end{figure}
+![](events_image.jpg)
+
 
 
 ## Agenda
