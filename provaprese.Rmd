@@ -119,7 +119,8 @@ Our work is based on the following conceptual fundamentals:
 
 ## EDA: Popularity
 
-Exploiting twitter APIs, Tesla's CEO tweets from 2011 to 2021 were extracted. The following variables were used as proxy to investigate Elon Musks's growing popularity: number of *retweets*, number of *likes* and number of *replies* per year, together with a comparison with the total tweets activity. Results are shown in the following chart:
+Exploiting twitter APIs, Tesla's CEO tweets from 2011 to 2021 were extracted. 
+The following variables were used as proxy to investigate Elon Musks's growing popularity: number of *retweets*, number of *likes* and number of *replies* per year, together with a comparison with the total tweets activity. Results are shown in the following chart:
 
 ```{r, include=FALSE}
 elon =  read.csv("elon.csv")
