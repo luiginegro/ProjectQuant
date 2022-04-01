@@ -1,0 +1,1055 @@
+---
+title: "Does Elon Musk's tweets influence Bitcoin market value? : A sentiment anaylsis approach"
+author: "Beatrice Stocco - Federico Piazza - Luigi Negro"
+date: "04/04/2022"
+bibliography: ./referencesProjectcom.bib
+always_allow_html: true
+output:
+  pdf_document:
+    citation_package: biblatex
+    latex_engine: xelatex
+--- 
+
+*Wordcount as of 26/03*: 5610
+
+# Abstract
+
+Elon Musk, one of the world's wealthiest people, is regarded as a technical visionary with a social media following of over 79 million followers on Twitter. 
+This paper aims at examining how Musk's Twitter engagement influences short-term cryptocurrency price and volume using an event study approach. After examining 4787 tweets containing 68676 words, posted from December 2011 to January 2021 we found that Musk is likely to use positive words in his tweets, with “trust” and “anticipation” as the most frequent sentiments expressed. This results are also confirmed by applying the same sentiment approach on a different temporal subset of Tesla CEO's tweets (starting from January 2020, when Musk's popularity unquestionably gained momentum). However, we did not find evidence to support linkage between Musk’s sentiments and Bitcoin volatility.  
+
+# Literature review
+
+
+Data and text mining has assumed a critical role in recent years, and Twitter, thanks to its easily accessible API has played a crucial part.
+
+The first data mining activities were conducted around 2013 with the scope of highlighting how Twitter played a central role in spreading awareness after a natural disaster occured[@gunawongSocialNetworkReactions2013]. Similar analyses have been performed to forecast political election's results[@hubertyCanWeVote2015] and are now being applied to the cryptocurrency and stock markets.
+
+[@noferUsingTwitterPredict_2015] found evidence that follower-weighted social mood levels can predict share returns, even though this was not true if simple aggregation of mood states was performed. Indeed, they hypothesized the reason behind such a behavior could be explained in light of emotional contagion, according to which individuals influence each other based on their active network. In 2019[@guInformationalRoleSocial2020a] another research was conducted in this field and it was observed that relevant information could be found on Twitter, in particular regarding analyst recommendation changes, target price changes, quarterly earnings surprises and IPO opening prices. Besides this conclusion, that was in line with other papers, they also studied another factor with relevant implications in terms of stock return quality of predictions. Specifically, they found that Twitter sentiment analysis constituted a stronger predictor for smaller firms, i.e. firms less covered by analysts.
+Last but not least,@porshnevCouldEmotionalMarkers2016 studied the contribution of emotional makers to the ARMAX-GARCH model and demonstrated they provided both a smaller BIC and improved likelihood function.
+
+# Sentiment analysis
+
+Some of the text mining techniques include classification and clustering, sentiment analysis and natural language processing. The latter represents a broader technique that performs different types of analysis, namely summarization, part of speech tagging, text categorization and sentiment analysis.
+
+Particularly relevant to our research is the latter, as emotions have been proved to be key drivers in the process of investing. "Sentiment analysis is a series of methods, techniques, and tools about detecting and extracting subjective information, such as opinion and attitudes, from language."[@mantylaEvolutionSentimentAnalysis2018] It has historically focused on  polarity, meaning the positivity or negativity expressed in a text, but is now moving to a more accurate detection of different emotions (frustration, joy, anger, sadness, excitement).
+
+The first paper using sentiment analysis dates back to 1940, where opinions on various public issues were investigated. A similar analysis was performed a couple years later on countries that mostly suffered during WW2.
+But it is not until the early 21st century that more and more papers were published. In 2010 Sitaram Asur and Bernardo A. Huberman used data from Twitter to build a linear regression model to predict box-office revenues of movies in advance of their release. The predictor used was rate of chatter, but they highlighted how a sentiment analysis improved predictions after a movie was released. In particular, they constructed a sentiment analysis classifier to distinguish positive, negative or neutral texts. They then created two factors: Subjectivity and Polarity. With the first they were able to confirm their hypothesis, according to which "there were more sentiments discovered in tweets for the weeks after release, than in the pre-release week". The polarity factor, i.e. polarity= Tweets with Positive Sentiment divided by Tweets with Negative Sentiment was used to correlate positive sentiments with revenue increases.
+
+In 2012 Younggue Bae,Hongchul Lee examined the positive or negative influence of popular twitterers on the sentiment of audience. They started out by selecting 13 popular users and for each of them they identifies their audience, i.e. those people "who reply to, mention, or retweet about the popular user".[@baeSentimentAnalysisTwitter2012a] Using lexicon-based sentiment analysis they were able to divide the audience into two groups: those who are in favour and those who are against the popular user. They then proceeded on investigating the relationship between the user sentiment and his audience one. The results showed a general positive correlation between the two, meaning that positive Tweets of a popular user were followed by positive retweets and viceversa. 
+Last but not least, they investigated the relationship between real-world landscape and influence of popular users and found a strong casuality correlation. This too appears to be an important result: Twitter can be used as a predictor of real world landscape.
+
+# Introduction
+
+On January 29, 2021, Elon Musk, at that time the richest person in the world unexpectedly changed the bio1 of his Twitter account to #bitcoin. The price of Bitcoin rose from about 32,000\$  to over 38,000\$ in a matter of hours, increasing the asset’s market capitalization by 111 billion \$ The relevance of Musk's tweets for financial markets has already become apparent in other contexts. Musk’s endorsement of the encrypted messaging service Signal led to investors purchasing the unrelated Signal Advance stock, increasing the latter’s market valuation from 55\$ million  to over 3\$ billion. These events clearly show the impact that leadership in social networks can have on financial markets and the decision-making behavior of (individual) investors.
+While the market may read Musk's tweets on Tesla as "true news," his tweets regarding cryptocurrency reflect moods or personal sentiment, which have been shown to influence financial market pricing ([@TwitterMoodPredicts]).
+
+Musk's tweets appear to effect the cryptocurrency market, regardless of whether they are meant in fun or in earnest, which is our incentive to look into the topic further and analyse its consequences. While Musk is far from the only public figure to speak out on social media regarding cryptocurrency or financial markets, he is undoubtedly one of the most influential.
+In strategic contacts between prominent individuals such as managers, journalists, or financial analysts and stakeholder groups, social media plays a key role [@HowStrategicLeaders].  Strategic leaders' social media activities, on the other hand, can generate a lot of ambiguity. For example, it may be difficult to tell whether a message is simply expressing a mood or conveying specific company-related information.
+It could be hard to ascertain whether a message is merely expressing a mood or conveying specific company-related information. Furthermore, stakeholders may be overwhelmed with irrelevant information that diverts their attention away from the main concerns [@songSentimentAwareContextualModel2021]. 
+Several research have looked into the relationship between cryptocurrency markets and social media activity, particularly on Twitter. Short-term Bitcoin liquidity is increased by an increase in the number of Bitcoin-related tweets [@FullArticleHow], the number of Bitcoin-related tweets can explain Bitcoin trading volume and returns (Philippas et al., 2019; Shen et al., 2019), and Twitter sentiment can predict cryptocurrency returns (Philippas et al., 2019). 
+While several studies have looked into the impact of individual tweets on stock market returns (such as  [@bransHisThumbEffect2020], relating to stock market-related tweets by Donald Trump), to our knowledge, very few researchers have examined into the impact of individual tweets on cryptocurrency returns and trading volume.
+
+This research seeks to analyse the sentiment of one of the world's most powerful persons' social media activities and on if and how this affects cryptocurrency price levels.   
+
+
+## Research questions
+
+We raise the following research questions to address the issue of effciency in cryptocurrency markets and the attention their participants devote to influencers since Elon Musk and other influential individuals are likely to continue publicly commenting on cryptocurrency for the foreseeable future.
+
+
+*RQ1: DO Elon Musk’s cryptocurrency-related tweets sentiments  have an effect on the pricing and trading volume of cryptocurrency?*
+
+The answer to this issue can reveal whether tweets can be considered quality signals in general or whether the market effects seen were purely coincidental. Second, the AMH predicts that a cryptocurrency that is less efficient or liquid will be more affected by Musk's tweets.
+
+*RQ2: Do sentiments and polarity of Musk’s cryptocurrency-related tweets differs by considering different time-frames and currencies?*
+
+By answering these two study questions, we will be able to measure and better understand the impact of social media influencers on cryptocurrency markets, as well as draw some implications about how to interpret future events.
+
+*RQ3: Is there a linkage between changes in trend of Bitcoin prices and Elon Musk's crypto-related tweets?*
+
+In other words, can an Elon Musks' tweet significantly change the mean trend of Bitcoin?
+
+# Data and methods 
+
+## Popularity analysis 
+
+The analysis is based on tweets by Elon Musk (twitter.com/elonmusk) between Jan 2011 to 2022. A data extraction has been conducted via python since some of its functions were more suitable for our purposes. The code used can be seen in the **Annex** section. Our dataframe resulted in total of 4787 tweets containing 68676 words over a time-span of 10 years.
+As stated in the previous section, popularity and influence are critical factors to be assessed from market participants in order to assign a certain degree of reliability to the information they receive. That's why a first investigation has been conducted in this direction. Elon Musk's influence has been skyrocketing throughout the years, mainly due to the achievements linked  to his companies (namely Space X and Tesla) proving wrong many opponents who considered his goals too ambitious to be reached. 
+We used three proxies to quantify his popularity: namely, the *numbers of likes*, *number of replies* and *number of retweets* on Musk's tweets. These variables has been grouped by year in order to identify the trend clearly.
+
+## Crypto-related tweets
+
+In a second step, a subset of the total population of tweets was made, in order to extract only tweets containing the word *bitcoin* **and** *cypto* so to direct our focus to Musk's influence on cryptomarkets Bitcoin-related. Exploiting the embedded time-stamp of these peculiar type of tweets, it could be possible to visualize in time when his tweets (events of interest) were located in respect to the Bitcoin market capitalization trend. 
+
+## Sentiment Analysis
+
+Once obtained these data, they represented the input for our models: Sentiment Analysis and Polarization analysis were conducted, supported by wordclouds (in order to determine which were the most tweeted words). Through score assignment it has been possible to detect which were the most frequent sentiments in Musks's tweets, as well as the duration of these emotions. The results obtained through this first model helped us to understand the gradient of emotions provoked by Tesla CEO's tweets and therefore assessing those as drivers to his popularity and eventually his influence on cryptomarkets.  This approach has been applied to a subset of Musk's tweets obtained by the following criteria: all the tweets starting from January  2020 and not containing the word *AMP*. We believe that removing the most frequent tweeted word and looking at a more recent timespan would strengthen our study highlighting any peculiar differences or similarities among the two datasets.
+
+## Testing for stationarity 
+
+Finally, we wanted to investigate the presence of linkages between Elon Musk's sentiment and Bitcoin volatility: to do that we dirstly tried to erase the intrinsic trend of Bitcoin so to be able to find any potential changepoints in a stationary time-series trajectory. We repeated the same process for Dogecoin.
+end.
+
+**Why is Stationarity Important?**
+
+Stationarity can be defined in precise mathematical terms, but for our purpose we mean a flat looking series, without trend, constant variance over time, a constant autocorrelation structure over time and no periodic fluctuations (seasonality).
+For data to be stationary, the statistical properties of a system do not change over time. This does not mean that the values for each data point have to be the same, but the overall behavior of the data should remain constant.
+If the data is non-stationary (meaning it has a trend), we need to remove it in order to proceed with the analysis. Various tecniques can be used to solve the issue of non-stationarity: after some attempts, the most succesful one has been to rely on the *log difference* of time values in Bitcoin price. 
+
+### From non-stationarity to stationarity
+
+Once obtained significant p-values assessing the non-stationarity of the selected time series, we try to achieve a stationary trend by doing a log difference among two subsequent values in the cryptocurrency value obtaining satisfying results. 
+Eventually, we confront key breaking points where the average value undergoes a relevant change between two time points and the timestamp of the crypto-related Musk's tweet in order to visualize any linkages between the two phoenomena.
+
+
+# Results
+
+## Elon Musk's influence
+
+As can be seen in the summary table below, Elon Musk's influnece has grown widely over the years. In 10 years, **number of replies** per tweet has grown up to more than 3 million, **number of retweets** up to more than 4 million and **number of likes** up to the astonishing numbers of more than 50 million. As of December 31st 2021, Elon Musk's follower amounted to 71.5 mln, which means a very high coverage of  $72,2%$. 
+
+
+```{r load-packages, include=FALSE}
+if(!require(dplyr)) install.packages("dplyr")
+if(!require(tidyverse)) install.packages("tidyverse")
+if(!require(readxl)) install.packages("readxl")
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+if(!require(hrbrthemes)) install.packages("hrbrthemes")
+library(hrbrthemes)
+#install.packages("ggthemes")
+library(ggthemes)
+#library(readxl)
+library(tidyr)
+library(crypto2)
+library(lubridate)
+library(stringr)
+if(!require(tm)) install.packages("tm")
+library(tm)
+library(RColorBrewer)
+library(wordcloud)
+if(!require(wordcloud2)) install.packages("wordcloud2")
+library(wordcloud2)
+library(syuzhet)
+library(scales)
+library(reshape2)
+library(devtools) 
+library(sentimentr)
+library(e1071)
+library(gridExtra)
+if(!require(tseries)) install.packages("tseries")
+options(warn=-1)
+library(tseries)
+if(!require(changepoint)) install.packages("changepoint")
+library(changepoint)
+library(ggpubr)
+
+```
+
+```{r, include = FALSE}
+elon =  read.csv("elon.csv")
+dim(elon)
+head(elon)
+
+#create a dataset for analysing popularity
+
+popularity = as.data.frame(cbind(elon$tweet, elon$nlikes, elon$nreplies, elon$nretweets, elon$date))
+#change the col names
+colnames(popularity) = c("tweet", "nlikes","nreplies", "nretweets", "date")
+
+#Showing summaries of each variable
+
+#install.packages("hrbrthemes")
+
+popularity$date <- format(as.POSIXct(popularity$date,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
+ 
+
+popularity$date <- as.Date(as.character(popularity$date), format='%m/%d/%Y')
+popularity$nreplies= as.numeric(popularity$nreplies)
+popularity$nretweets= as.numeric(popularity$nretweets)
+popularity$nlikes= as.numeric(popularity$nlikes)
+
+
+#grouping by year 
+
+tweets_year<- popularity %>%
+mutate(dates = as.Date(popularity$date)) %>%
+mutate(yr = format(dates, '%Y')) %>%
+group_by(yr) %>%
+summarise(tweet=n())
+
+likes_year <- popularity %>%
+mutate(dates = as.Date(popularity$date)) %>%
+mutate(yr = format(dates, '%Y')) %>%
+group_by(yr) %>%
+summarise(nlikes=sum(nlikes))
+
+retweet_year <- popularity %>%
+mutate(dates = as.Date(popularity$date)) %>%
+mutate(yr = format(dates, '%Y')) %>%
+group_by(yr) %>%
+summarise(nretweets = sum(nretweets))
+
+nreplies_year <- popularity %>%
+mutate(dates = as.Date(popularity$date)) %>%
+mutate(yr = format(dates, '%Y')) %>%
+group_by(yr) %>%
+summarise(nreplies = sum(nreplies))
+
+#removing year 2022 
+
+nreplies_year= nreplies_year[-c(12), ]
+retweet_year= retweet_year[-c(12), ]
+likes_year= likes_year[-c(12), ]
+tweets_year = tweets_year[-c(12), ]
+
+
+```
+
+
+```{r, include = FALSE}
+
+Replies = nreplies_year$nreplies
+Likes =  likes_year$nlikes
+Retweets = retweet_year$nretweets
+summary(cbind(Replies, Retweets, Likes))
+```
+
+We can visually understand the exponential trend in the growing popularity of Tesla CEO's. It comes as no surprise that when *"Elon Musk speaks, investors listen"*. His influence derives from his large audience, prone to process the majority of the information coming from him as good quality information, influencing their (financial) decision-making process.
+
+```{r, include = FALSE}
+#numeric 
+
+nreplies_year$nreplies= as.numeric(nreplies_year$nreplies)
+nreplies_year$yr= as.numeric(nreplies_year$yr)
+
+retweet_year$yr = as.numeric(retweet_year$yr)
+retweet_year$nretweets = as.numeric(retweet_year$nretweets)
+
+likes_year$yr = as.numeric(likes_year$yr)
+likes_year$nlikes = as.numeric(likes_year$nlikes)
+
+tweets_year$yr = as.numeric(tweets_year$yr)
+tweets_year$tweet = as.numeric(tweets_year$tweet)
+
+```
+
+
+```{r fi1s, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig1}Elon's twitter interaction over time"}
+#plot
+tweets <- ggplot(data = tweets_year, aes(x = yr, y = tweet)) + 
+  geom_bar(stat = "identity", width = 0.5, position = "dodge", fill = "black", color = "black") + 
+  xlab("Year") +
+  ylab("Number of tweets")  +
+  ggtitle("Tweets per year") +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme_minimal()
+
+likes <- ggplot(data = likes_year, aes(x = yr, y = nlikes)) + 
+  geom_bar(stat = "identity", width = 0.5, position = "dodge", fill = "black", color = "black") + 
+  xlab("Year") +
+  ylab("Number of likes")  +
+  ggtitle("Likes per year") +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme_minimal()
+
+retweets <- ggplot(data =retweet_year, aes(x = yr, y = nretweets), color ="darkorange") + 
+  geom_bar(stat = "identity", width = 0.5, position = "dodge", fill = "black", color = "black") + 
+  xlab("Year") +
+  ylab("Number of retweets") +  
+   ggtitle("Retweets per year") +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme_minimal()
+
+replies <- ggplot(data = nreplies_year, aes(x = yr, y = nreplies)) + 
+  geom_bar(stat = "identity", width = 0.5, position = "dodge", fill ="black", color ="black") + 
+  xlab("Year") +
+  ylab("Number of replies")  +  
+   ggtitle("Replies per year") +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme_minimal()
+
+ggarrange(tweets, likes, retweets, replies, 
+          ncol = 2, nrow = 2)
+
+```
+
+
+
+
+
+### Activty of crypto-related tweets 
+
+In this section we want to compare how Elon Musk's audience react to different type of tweets containing respectevely words related only to *dogecoin*, *Bitcoin* and *cypto*. As in the first section, we use the *number of likes*, *number of retweets* and *number of replies* as proxy to popularity and high network activity more generally. The first two categories are the most popular, and between the two BTC-related tweets generate slightly more interaction, coherently with the central importance that Bitcoin has in the crypto scenario. 
+
+```{r, include=FALSE}
+#subsetting in order to undersand tweet share
+
+
+elondoge = elon[grepl("dogecoin", elon[["tweet"]]) | grepl("Doge", elon[["tweet"]]) | grepl("doge", elon[["tweet"]]),]
+elonCryptoOnly = elon[grepl("crypto", elon[["tweet"]]) | grepl("Crypto", elon[["tweet"]]) | grepl("cryptos", elon[["tweet"]]),]
+elonBTC = elon[grepl("BTC", elon[["tweet"]])| grepl("Bitcoin", elon[["tweet"]])| grepl("bitcoin", elon[["tweet"]]),]
+
+n_doge = length(elondoge$tweet)
+n_onlycrypto = length(elonCryptoOnly$tweet)
+n_BTC = length(elonCryptoOnly$tweet)
+n_totaltweet = n_doge + n_onlycrypto + n_BTC
+
+#vector 
+
+vectorshare = c(n_doge, n_onlycrypto, n_BTC)
+vectorshare= as.data.frame(vectorshare)
+dim(vectorshare)
+colnames(vectorshare) = c("tweetcount")
+rownames(vectorshare) = c("doge", "crypto", "BTC")
+
+#counting total nlikes, nreplies, nretweet per each keyword to understand where is the maximum activity
+## like
+n_dogelikes = mean(elondoge$nlikes)
+n_onlycrptolikes = mean(elonCryptoOnly$nlikes)
+n_BTClike = mean(elonBTC$nlikes)
+n_totallike = mean(elon$nlikes)
+##retweet
+n_dogeretweet = mean(elondoge$nretweets)
+n_onlycrptoretweet = mean(elonCryptoOnly$nretweets)
+n_BTCretweet = mean(elonBTC$nretweets)
+n_totalretweet = mean(elon$nretweets)
+
+##reply
+n_dogereply = mean(elondoge$nreplies)
+n_onlycrptoreply = mean(elonCryptoOnly$nreplies)
+n_BTClreply= mean(elonBTC$nreplies)
+n_totalreply = mean(elon$nreplies)
+
+
+
+#dataframe activity
+vectoractivity_doge= c(n_dogelikes, n_dogereply, n_dogeretweet)
+vectoractivity_BTC= c(n_BTClike, n_BTClreply, n_BTCretweet)
+vectoractivity_crypto = c(n_onlycrptolikes, n_onlycrptoreply, n_onlycrptoretweet)
+vectoractivity_total = c(n_totallike, n_totalreply, n_totalretweet)
+dfactivity = cbind(vectoractivity_doge, vectoractivity_crypto, vectoractivity_BTC, vectoractivity_total)
+dfactivity = t(dfactivity)
+dfactivity = as.data.frame(dfactivity)
+dfactivity$crypto = c("ActivityDoge", "ActivityCrypto", "ActivityBTC", "TotalActivity")
+rownames(dfactivity) = c("ActivityDoge", "ActivityCrypto", "ActivityBTC", "TotalActivity")
+colnames(dfactivity) = c("Likes", "Replies", "Retweets", "Total")
+
+
+
+ggplot(data = vectorshare, aes(x = tweetcount, y = rownames(vectorshare))) + 
+  geom_bar(stat = "identity", width = 0.5, position = "dodge", fill = "darkorange", color = "black") + 
+  xlab("Year") +
+  ylab("Number of likes")  +
+  ggtitle("Likes per year") +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme_minimal()
+```
+
+
+```{r fig2, echo=FALSE, fig.width=7,fig.height=3,fig.cap="\\label{fig:fig2}Crypto-related content interaction"}
+#plotting 
+
+dfactivity %>%
+  gather(key, value, -Total) %>% 
+  ggplot(aes(x=Total, y=value, fill = key)) +
+  geom_col(position = "dodge") +
+  coord_flip() +
+  theme_minimal()
+```
+
+
+```{r, include = FALSE}
+# install.packages("devtools")
+#devtools::install_github("sstoeckl/crypto2", force=TRUE)
+
+#take daily hist of BTC
+coins <- crypto_list(only_active=TRUE)
+btc_hist <- crypto_history(coins, limit=1, start_date="20110101", end_date="20220131")
+
+as.data.frame(btc_hist)
+btc_hist$timestamp <- format(as.POSIXct(btc_hist$timestamp,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
+btc_hist$timestamp <- as.Date(as.character(btc_hist$timestamp), format='%m/%d/%Y')
+
+
+#subset tweets keeping those that contains ("bitcoin","crypto")
+eloncrypto <- elon[grepl("crypto", elon[["tweet"]]) | grepl("BTC", elon[["tweet"]]),]
+as.data.frame(eloncrypto)
+eloncrypto$date <- format(as.POSIXct(eloncrypto$date,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
+eloncrypto$date <- as.Date(as.character(eloncrypto$date), format='%m/%d/%Y')
+btc_hist['tweet'] <- btc_hist$timestamp %in% eloncrypto$date
+
+```
+
+
+
+```{r fig200, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig200}BTC price compared with crypto-related tweets' date", include=FALSE}
+btc_hist %>%
+ggplot(aes(x = timestamp, y = open)) +
+geom_line() + 
+geom_point(data = . %>% filter(tweet == TRUE), color = "deeppink", size = 3) +
+ggtitle("Elon Musk's Tweets and Bitcoin Volatility") +
+theme(plot.title = element_text(hjust = 0.5)) +
+theme_minimal()
+``` 
+
+
+## Sentiment Analysis : Model I
+
+While the market may interpret Musk's tweets about Tesla as “accurate news”, his tweets about cryptocurrency at least to some degree represent moods or personal sentiment. In this section we want to further analyze the nature of this sentiments, the most frequent words and the emotions associated to them.
+
+```{r, include = FALSE}
+corpus <- iconv(elon$tweet)
+corpus <- Corpus(VectorSource(corpus))
+inspect(corpus[1:5])
+#clean
+corpus <- tm_map(corpus, tolower)
+corpus <- tm_map(corpus, removePunctuation)
+corpus <- tm_map(corpus, removeNumbers)
+cleanset <- tm_map(corpus, removeWords, stopwords('english'))
+removeURL <- function(x) gsub('http[[:alnum:]]*', '', x)
+cleanset <- tm_map(cleanset, content_transformer(removeURL))
+inspect(cleanset[1:10])
+#stemming = reduce to root form
+cleanset <- tm_map(cleanset, stripWhitespace)
+inspect(cleanset[1:5])
+```
+The graph below shows the most used word and their frequency.
+It appears that the three most used words are *amp*, *tesla* and *will*. We find the presence of more than 600 words for the firsts two, while more than 500 words for the latter.
+It goes without saying that we expected **tesla** to be  one of the most frequent word in Musk's tweet, and our interpretation of the word **will** lies in that this verb shows his strong willingness and decisive, goal-oriented character as well as his inclination towards the future sustained by visionary statements. It can be less clear why **amp** is among the most frequent word, therefore we opted for a further explanation.
+
+
+```{r, include = FALSE}
+tdm <- TermDocumentMatrix(cleanset)
+tdm <- as.matrix(tdm)
+tdm[1:10, 1:20]
+words <- rowSums(tdm)
+words <- subset(words, words>=120)
+words <- as.data.frame(words)
+words$names <- rownames(words)
+```
+
+
+```{r fig3, echo=FALSE, fig.align="center", fig.width=4,fig.height=4.5,fig.cap="\\label{fig:fig3}Word Frequency,"}
+ggplot(data=words, aes(x=reorder(names, words), y=words)) +
+  labs(y = "Words", x = "Count", title = "Word frequency") +
+  geom_bar(stat="identity", aes(fill=words)) +
+  theme(axis.text.x=element_text(angle=45, hjust=1)) +
+  scale_fill_gradient2(low = "grey", high = "black") +
+  coord_flip() +
+  theme_minimal()
+```
+*AMP* 
+
+Amp is a universal collateral token designed to facilitate fast and efficient transfers for any real-world application. When using Amp as collateral, transfers of value are guaranteed and can settle instantly. While the underlying asset reaches final settlement, a process that can take anywhere from seconds to days, Amp is held in escrow by a collateral manager. Once the transaction successfully settles, the Amp collateral is released and made available to collateralize another transfer. Amp exists to serve as universal collateral for anyone and any project. (*Source [(https://docs.amptoken.org/)]* ).
+Besides being a collateral for individuals and DeFi platforms, Amp is used as a collateral for payment networks: Flexa uses Amp to enable instant, fraud-free payments to merchants across its digital payment network. Apps that integrate Flexa stake Amp to ensure all payments can be settled in real-time regardless of the asset or protocol used. Since AMP Token was to be integrated with Tesla's payment rail for crypto, it is understandable why it's been one of the most tweeted words by Elon Musk, being this news shocking the crypto-lovers panorama and the future of Tesla. The news of Tesla about the willing to accept crypto as payments and the investment in over 1.5 BLN USD in Bitcoin  (February 2021), made the price of Bitcoin to skyrocket. On the other hand, a plethora of enviromental activists opposed this decision due to the high levels of electric energy which are used to mine and sustain the crypto network and highlighted the controversial nature of the Tesla CEO's choice: this led Elon Musk to no longer accept payments in Bitcoin. The impact on the crypto-currency value has been devastating has shown in the following graphic showing once again, how much "investors listen to Elon Musk".
+
+Here follows a wordcloud which helped us to visualize the most frequent words in Elon Musk's tweets. The higher the word's size displayed, the most frequent the word would appear in his tweets.
+
+```{r fig55, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig55}Wordcloud of most commons words", include=FALSE}
+w <- sort(rowSums(tdm), decreasing = TRUE)
+set.seed(222)
+wordcloud(words = names(w),
+          freq = w,
+          max.words = 150,
+          random.order = F,
+          min.freq = 5,
+          colors = brewer.pal(25, 'Dark2'),
+          scale = c(5, 0.3),
+          rot.per = 0.7)
+```
+
+```{r, include=FALSE}
+w <- data.frame(names(w), w)
+colnames(w) <- c('word', 'freq')
+wordcloud2(w,
+           size = 0.7,
+           shape = 'rectangle',
+           rotateRatio = 0.5,
+           minSize = 1)
+```
+
+### Sentiment scores and density
+
+Based on the following results of the Sentiment Analysis of Elon Musk's tweets, it appears clear that *positive*, *trust* and *anticipation* are the most frequent emotions. This result is perfectly coherent with the visionary Tesla and SpaceX CEO's personality: his hunger for innovative , out-of-the-box solutions; his continuous positive and confident approach towards insurmountable problems such as "taking the human race to Mars", conceiving re-usable rockets disrupting space industry,  as well as "changing the world's concept of driving through electric autonomous driven vehicle" and many others clearly embeds those emotions.
+
+```{r, include= FALSE}
+s <- get_nrc_sentiment(elon$tweet)
+head(s)
+
+s_graph <- colSums(s)
+s_graph <- as.data.frame(s_graph)
+s_graph$emotions <- rownames(s_graph)
+s_graph$count <- s_graph$s_graph
+```
+
+
+```{r fig4, echo=FALSE, fig.align="center", fig.width=3.5,fig.height=3,fig.cap="\\label{fig:fig4}Sentiment scores of Elon's tweets"}
+ggplot(data=s_graph, aes(x=reorder(emotions, count), y=count)) +
+  geom_bar(stat="identity", aes(fill=count)) +
+  theme(axis.text.x=element_text(angle=45, hjust=1)) +
+  scale_fill_gradient2(low = "white", high = "black") +
+  coord_flip() +
+  labs(title="Sentiment Scores Tweets",y = "Count", x="emotions") +
+  theme_minimal()
+```
+
+```{r, include = FALSE}
+
+#install_github("trinker/sentimentr") 
+
+txt <- elon$tweet
+#txt cleaning
+
+#txt <- sapply(txt, function(x) iconv(x, to='UTF-8-MAC', sub='byte'))
+#for Windows based OS
+txt <- sapply(txt,function(row) iconv(row, "latin1", "ASCII", sub=""))
+#remove punctuation
+txt = gsub("(RT|via)((?:\\b\\W*@\\w+)+)", "", txt)
+# remove at people
+txt = gsub("@\\w+", "", txt)
+# remove punctuation
+txt = gsub("[[:punct:]]", "", txt)
+# remove numbers
+txt = gsub("[[:digit:]]", "", txt)
+# remove html links
+txt = gsub("http\\w+", "", txt)
+# remove unnecessary spaces
+txt = gsub("[ \t]{2,}", "", txt)
+txt = gsub("^\\s+|\\s+$", "", txt)
+txt = txt[!is.na(txt)]
+names(txt) = NULL
+
+
+sentiment_by(txt) 
+
+t = extract_sentiment_terms(txt) 
+
+
+attributes(t)$count
+```
+
+Another important result is outlined by the following graphs. It shows the density of sentiment: as it can be noticed it follows a normal-like distribution ($\mu = 0.18$, $\sigma = 0.36 $), slightly positevely skewed. This result is line with the previous results, highlighting the positive polarity of the sentiments. Here follows a brief statistical summary of the density plot, followed by the plot itself.
+
+```{r, echo = FALSE}
+#Sentiment density plot
+
+
+txt %>%
+get_sentences() %>%
+sentiment() %>%
+filter(sentiment!=0) -> senti
+
+#statistic summary
+densitySentiments <- density(senti$sentiment) 
+meanSentiTot= mean(senti$sentiment)
+sdSentiTot= sd(senti$sentiment)
+skewnessSentiTot= skewness(senti$sentiment)
+kurtosisSentiTot= kurtosis(senti$sentiment)
+IQR = IQR(senti$sentiment)
+summarizeStatSenti = c(meanSentiTot, sdSentiTot, IQR, skewnessSentiTot, kurtosisSentiTot)
+summarizeStatSenti = data.frame((summarizeStatSenti))
+rownames(summarizeStatSenti) = c("Mean", "Sd", "IQR", "Skewness", "Kurtosis")
+colnames(summarizeStatSenti) = "Statistical summary sentiment"
+summarizeStatSenti
+```
+
+
+
+```{r fig7, echo=FALSE, fig.width=3.5,fig.height=3,fig.cap="\\label{fig:fig7}density of polarity scores"}
+plot(densitySentiments,main='Density of sentiments') 
+polygon(densitySentiments,col='red')        
+```
+
+
+### Emotions at the sentence level
+
+The following analysis detects the rate of emotion at the sentence level. This method uses a simple dictionary lookup to find emotion words and then compute the rate per sentence. The emotion score ranges between 0 (no emotion used) and 1 (all words used were emotional). Once again, this result is in line with the previous ones, showing how positive emotions such as joy, trust and anticipation are predominant. Please note that the suffix *_negated* indicates the opposite of the reference emotions, which appears to be consistently absent in relation to any emotion.
+
+```{r fig8, echo=FALSE, fig.width=3.5,fig.height=3,fig.cap="\\label{fig:fig8}plot of Emotions"}
+
+e<-emotion_by(get_sentences(txt),drop.unused.emotions=TRUE)
+plot(e)
+```
+
+
+## Subsetting sentiment from Jan 2020 without "AMP" word: Sentiment model II
+
+Once obtained solid result for the entire dataset of tweets ranging from year 2011 to 2021, it is interesting to compare those with new results coming from a subset of the selected time frame. We believe it is an interesting way to assess our results' coherence and a further investigation into the "popular" period of Elon Musk. Furthermore we believe the most used word, i.e *AMP*, should be removed in order to assess whether the absence of this word could influence the final output.
+In a programatic approach, we apply the same methods, codes and considerations of the previous section on a different subset of data.  
+
+```{r, include=FALSE}
+
+#subset after Jan 2020
+
+tweet2020 = elon
+tweet2020 = tweet2020[-c(1:2762),]
+
+#eliminate tweet containing "amp" with grepl
+tweet2020 = tweet2020[!grepl("amp", tweet2020[["tweet"]]),]
+
+
+corpus1 <- iconv(tweet2020$tweet)
+corpus1 <- Corpus(VectorSource(corpus1))
+inspect(corpus1[1:6])
+#clean
+corpus1 <- tm_map(corpus1, tolower)
+corpus1<- tm_map(corpus1, removePunctuation)
+corpus1 <- tm_map(corpus1, removeNumbers)
+cleanset1 <- tm_map(corpus1, removeWords, stopwords('english'))
+removeURL1 <- function(x) gsub('http[[:alnum:]]*', '', x)
+cleanset1 <- tm_map(cleanset1, content_transformer(removeURL1))
+inspect(cleanset1[1:10])
+#stemming = reduce to root form
+cleanset1 <- tm_map(cleanset1, stripWhitespace)
+inspect(cleanset1[1:5])
+```
+
+
+```{r, include=FALSE}
+tdm1 <- TermDocumentMatrix(cleanset1)
+tdm1 <- as.matrix(tdm1)
+tdm1[1:10, 1:20]
+words1 <- rowSums(tdm1)
+words1 <- subset(words1, words1>=60)
+words1 <- as.data.frame(words1)
+words1$names <- rownames(words1)
+```
+
+
+```{r fig9, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig9}Sentiment scores of Elon's tweets resampled", include=FALSE}
+ggplot(data=words1, aes(x=reorder(names, words1), y=words1)) +
+  geom_bar(stat="identity", aes(fill=words1)) +
+  theme(axis.text.x=element_text(angle=45, hjust=1)) +
+  scale_fill_gradient2(low = "blue", high = "darkblue") +
+  coord_flip() +
+  theme_minimal()
+```
+This primary result is in line with the previous ones, once again the two most used words are *tesla*, *will* and *spacex*. The frequency of each word is compared in the chart above.
+We proceed displaying a wordcloud, in order to have an eye-friendly visualization of the word frequency in this new subset of data.
+```{r, include=FALSE}
+w1 <- sort(rowSums(tdm1), decreasing = TRUE)
+set.seed(22)
+```
+
+```{r fig10, echo=FALSE, fig.align="center",fig.width=5,fig.height=3.7,fig.cap="\\label{fig:fig10}Wordcloud of Elon's tweets resampled"}
+wordcloud(words = names(w1),
+          freq = w1,
+          max.words = 150,
+          random.order = F,
+          min.freq = 5,
+          colors = brewer.pal(8, 'Dark2'),
+          scale = c(5, 0.3),
+          rot.per = 0.7)
+```
+
+```{r, include=FALSE}
+
+w1 <- data.frame(names(w1), w1)
+colnames(w1) <- c('word', 'freq')
+wordcloud2(w1,
+           size = 0.7,
+           shape = 'rectangle',
+           rotateRatio = 0.5,
+           minSize = 1)
+```
+### Sentiment scores and density
+
+Consistently with the previous results, the *Muskanian* influence is still positive with the most frequent sentiments of *positive*, *anticipation* and *trust*. 
+
+```{r, include= FALSE}
+s1 <- get_nrc_sentiment(tweet2020$tweet)
+head(s1)
+s1_graph <- colSums(s1)
+s1_graph <- as.data.frame(s1_graph)
+s1_graph$emotions <- rownames(s1_graph)
+s1_graph$count <- s1_graph$s1_graph
+```
+
+
+```{r fig11, echo=FALSE, fig.width=3.5,fig.height=3,fig.cap="\\label{fig:fig11}Sentiment Score of Elon's tweets resampled", include=FALSE}
+ggplot(data=s1_graph, aes(x=reorder(emotions, count), y=count)) +
+  geom_bar(stat="identity", aes(fill=count)) +
+  theme(axis.text.x=element_text(angle=45, hjust=1)) +
+  scale_fill_gradient2(low = "yellow", high = "red") +
+  coord_flip() +
+  labs(title="Sentiment Scores Tweets",y = "Count", x="emotions") +
+  theme_minimal()
+```
+
+```{r, include=FALSE}
+#install_github("trinker/sentimentr") 
+
+txt1 <- tweet2020$tweet
+#txt cleaning
+
+#txt <- sapply(txt, function(x) iconv(x, to='UTF-8-MAC', sub='byte'))
+#for Windows based OS
+txt1 <- sapply(txt1,function(row) iconv(row, "latin1", "ASCII", sub=""))
+#remove punctuation
+txt1 = gsub("(RT|via)((?:\\b\\W*@\\w+)+)", "", txt1)
+# remove at people
+txt1 = gsub("@\\w+", "", txt1)
+# remove punctuation
+txt1 = gsub("[[:punct:]]", "", txt1)
+# remove numbers
+txt1 = gsub("[[:digit:]]", "", txt1)
+# remove html links
+txt1 = gsub("http\\w+", "", txt1)
+# remove unnecessary spaces
+txt1 = gsub("[ \t]{2,}", "", txt1)
+txt1 = gsub("^\\s+|\\s+$", "", txt1)
+txt1 = txt1[!is.na(txt1)]
+names(txt1) = NULL
+
+sentiment_by(txt1) 
+
+t1 = extract_sentiment_terms(txt1) 
+
+
+attributes(t1)$count
+
+```
+The density of sentiment is slightly different from the first one: as it can be noticed it still follows a normal-like distribution ($\mu = 0.19$, $\sigma = 0.39 $), slightly positevely skewed. This result is line with the previous results, stating the even more positive polarity of the sentiments in the new timeframe. A brief statistical summary of the new density plot compared to the previous one is displayed. A new density plot can be found in the chart below.
+
+```{r, echo=FALSE}
+
+txt1 %>%
+get_sentences() %>%
+sentiment() %>%
+filter(sentiment!=0) -> senti1
+
+#statistic summary
+densitySentiments1 <- density(senti1$sentiment) 
+meanSentiTot1= mean(senti1$sentiment)
+sdSentiTot1= sd(senti1$sentiment)
+skewnessSentiTot1= skewness(senti1$sentiment)
+kurtosisSentiTot1= kurtosis(senti1$sentiment)
+IQR1 = IQR(senti1$sentiment)
+summarizeStatSenti1 = c(meanSentiTot1, sdSentiTot1, IQR1, skewnessSentiTot1, kurtosisSentiTot1)
+summarizeStatSenti1 = data.frame(summarizeStatSenti1)
+rownames(summarizeStatSenti1) = c("Mean", "Sd", "IQR", "Skewness", "Kurtosis")
+colnames(summarizeStatSenti1) = "Statistical summary sentiment"
+summarizeStatSenti2 = bind_cols(summarizeStatSenti1, summarizeStatSenti)
+colnames(summarizeStatSenti2) = c("Sentiment model I", "Sentiment model II")
+summarizeStatSenti2
+
+```
+
+
+```{r fig12, echo=FALSE, fig.width=3.5,fig.height=3,fig.cap="\\label{fig:fig12}Polarity Density of Elon's tweets resampled"}
+plot(densitySentiments1,main='Density of sentiments') 
+polygon(densitySentiments1,col='green')  
+```
+The chart below shows an overall overlapping with the previous result. Still positive sentiment of *anticipation*, *joy* and *trust* are the most frequent. However, the sentiment of *trust* is more volatile, and there is a slight decrease in the negative sentiment of *fear*. This slight but still relevant change can be interpreted in a different context than the one of model I: the audience has become more educated and informed about the phenomenon of crypto-currencies as well as more critical towards the Tesla CEO's tweets, who sometimes has been accused more intensively of market manipulation (however without losing popularity or positive appeal). In conclusion,  the Muskanian audience still listen to him and trust him, simply with more critical sense which makes the *trust* sentiment to be more volatile and the *fear* sentiment lower.
+
+
+```{r fig13, echo=FALSE, fig.width=3.5,fig.height=3,fig.cap="\\label{fig:fig13}Emotion's Plot of Elon's tweets resampled"}
+e1<-emotion_by(get_sentences(txt1),drop.unused.emotions=TRUE)
+plot(e1)
+```
+
+
+
+## Testing for stationarity 
+
+
+
+We applied an Augmented Dickey–Fuller (ADF) t-statistic test for unit root: in statistics and econometrics, an augmented Dickey–Fuller test (ADF) tests the null hypothesis that a unit root is present in a time series sample. The alternative hypothesis is different depending on which version of the test is used, but is usually stationarity or trend-stationarity. It is an augmented version of the Dickey–Fuller test for a larger and more complicated set of time series models.
+The augmented Dickey–Fuller (ADF) statistic, used in the test, is a negative number. The more negative it is, the stronger the rejection of the hypothesis that there is a unit root at some level of confidence. Our result clearly shows a non-stationarity due to the high p-value (>0.5). 
+
+```{r, include = FALSE}
+adf.test(btc_hist$open)
+#data non stationary as high p-value
+```
+
+
+```{r include=FALSE}
+par(mfrow=c(2,1))
+plot(btc_hist$timestamp,btc_hist$open,
+     type='l',col='red',
+     xlab = "time (t)",
+     ylab = "Y(t)",
+     main = "Trend signal")
+acf(btc_hist$open,lag.max = length(btc_hist$open),
+         xlab = "lag #", ylab = 'ACF', main=' ')
+```
+
+```{r include=FALSE}
+par(mfrow=c(2,1))
+btc_hist['log'] = log(btc_hist$open)
+plot(btc_hist$timestamp,btc_hist$log,
+     type='l',col='red',
+     xlab = "time (t)",
+     ylab = "Y(t)",
+     main = "Trend signal")
+acf(btc_hist$log,lag.max = length(btc_hist$log),
+         xlab = "lag #", ylab = 'ACF', main=' ')
+```
+
+
+
+Differencing log values can help stabilise the mean of a time series by removing changes in the level of a time series, and therefore eliminating (or reducing) trend and seasonality. We attempt to use this transformation obtaining satisfing results. Indeed, the following plot shows how the trend has been removed and stationarity is obtained.
+
+```{r fig16, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig16}Differences of LogBitcoin's trend and ACF function"}
+
+par(mfrow=c(2,1))
+logdiff = diff(btc_hist$log)
+
+plot(btc_hist$timestamp[2:3200],logdiff,
+     type='l',col='red',
+     xlab = "time (t)",
+     ylab = "Y(t)",
+     main = "Trend signal")
+acf(logdiff,lag.max = length(btc_hist$open),
+         xlab = "lag #", ylab = 'ACF', main=' ')
+
+```
+
+
+```{r, include = FALSE}
+adf.test(logdiff)
+
+```
+ 
+By being able to use a time-series without stationarity, it might be possible through some techniques to further investigate if, in a time-series trajectory with no trend, there are some specific changes in mean in specific timestamps.
+To do that we try to identify "change points" in our data. By doing taht we obtain a set of timestamps from which the variance of the time-series trajectory changed.[@SurveyMethodsTime] By obtaining those timestamps and confront it with elon musks' tweet regardind crypto, it is possible to try to assess whether there is any linkage between the two.
+
+```{r, echo = FALSE, include=FALSE}
+
+m_binseg <- cpt.mean(logdiff, penalty = "BIC", method = "BinSeg", Q = 15)
+
+plot(m_binseg, type = "l", xlab = "Index", cpt.width = 4)
+#all the changes happen from 2750 onwards approx, try to subset plot
+m_binseg <- cpt.mean(logdiff[2750:3199], penalty = "None", method = "BinSeg", Q = 15)
+```
+
+
+
+```{r fig17, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig17}Changepoints in LogBitcoin Differences"}
+plot(m_binseg, type = "l", xlab = "Index", cpt.width = 4)
+
+```
+
+
+
+
+```{r, include = FALSE}
+#transform changepoints in dates
+#we just sum it from the first day
+
+cpt_date = btc_hist$timestamp[2749] + cpts(m_binseg) 
+tweet_date = btc_hist %>% filter(tweet == TRUE) %>% select(timestamp)
+```
+
+
+```{r, include = FALSE}
+eloncrypto <- elon[grepl("crypto", elon[["tweet"]]) | grepl("BTC", elon[["tweet"]]),]
+as.data.frame(eloncrypto)
+cpt_date <- format(as.POSIXct(cpt_date,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
+cpt_date <- as.Date(as.character(cpt_date), format='%m/%d/%Y')
+
+btc_hist['breakpoint'] <- btc_hist$timestamp %in% cpt_date
+```
+
+In the chart below a deep investigation regarding the potential linkage between Bitcoin volatility and Musk's tweet has been conducted. In blue the *breaking points* are highlighted, which are points in time where the mean a variable undergoes a significant change.
+The breaking points method is broadly used in literature and comprises a variety of different methods.
+In purple we find highlighted when the crypto-related *tweets* were published. As we can notice, there is no correspondence or correlation of the two variables: we cannot state that Musk's tweets influence Bitcoin volatility, which is in-line with our previous result of non-stationarity.
+
+```{r fig25, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig25}Elon Musk's Tweets on Cryptos and LogBTC's Changing Points Dates"}
+
+colors <- c("tweets" = "steelblue",  "breakingpoints" = "red")
+btc_hist[2750:3200,] %>%
+ggplot(aes(x = timestamp, y = open)) + geom_line() +
+geom_point(data = . %>% filter(tweet == TRUE), aes(color = "tweets"), size = 3) +
+geom_point(data = . %>% filter(breakpoint == TRUE), aes(color = "breakingpoints"), size = 3) + 
+ggtitle("Elon Musk's Tweets and Breaking Points") +
+theme(plot.title = element_text(hjust = 0.5)) +
+labs(x = "timestamp",
+         y = "BTC value",
+         color = "Legend") + scale_color_manual(values = colors) +
+theme_minimal()
+
+```
+
+
+Our findings are strenghtened by the confirming the previous result and considerations for the Dogecoin cryptocurrency. We proceed in the same way as before, analzying the trend signal and moving from non-stationarity towards stationarity, as it can be seen in the results below.
+```{r, include=FALSE}
+doge <- crypto_list(only_active=TRUE)
+doge <- subset(doge, doge$slug == "dogecoin")
+doge_hist <- crypto_history(doge, limit=1, start_date="20200101", end_date="20220131")
+```
+
+
+```{r, include=FALSE}
+as.data.frame(doge_hist)
+doge_hist$timestamp <- format(as.POSIXct(doge_hist$timestamp,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
+doge_hist$timestamp <- as.Date(as.character(doge_hist$timestamp), format='%m/%d/%Y')
+```
+
+
+```{r, include=FALSE}
+
+par(mfrow=c(2,3))
+plot(doge_hist$timestamp,doge_hist$open,
+     type='l',col='red',
+     xlab = "time (t)",
+     ylab = "Y(t)",
+     main = "Trend signal")
+acf(doge_hist$open,lag.max = length(doge_hist$timestamp),
+         xlab = "lag #", ylab = 'ACF', main=' ')
+
+dogelogdiff = diff(log(doge_hist$open))
+
+plot(doge_hist$timestamp[2:760],dogelogdiff,
+     type='l',col='red',
+     xlab = "time (t)",
+     ylab = "Y(t)",
+     main = "Trend signal")
+acf(dogelogdiff,lag.max = length(doge_hist$timestamp),
+         xlab = "lag #", ylab = 'ACF', main=' ')
+```
+
+```{r, include=FALSE}
+doge_m_binseg <- cpt.mean(dogelogdiff, penalty = "None", method = "BinSeg", Q = 15)
+```
+
+
+
+The breaking points versus tweet timestamp analysis on Dogecoin currency confirms and strenghten our findings: there is no trivial linkage between Musk's tweet and the crypto-currency volatility.
+
+```{r, include=FALSE}
+doge_cpt_date = doge_hist$timestamp[1] + cpts(doge_m_binseg) 
+doge_cpt_date <- format(as.POSIXct(doge_cpt_date,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
+doge_cpt_date <- as.Date(as.character(doge_cpt_date), format='%m/%d/%Y')
+
+doge_hist['breakpoint'] <- doge_hist$timestamp %in% doge_cpt_date
+
+dogecrypto <- elon[grepl("Doge", elon[["tweet"]]) | grepl("dogecoin", elon[["tweet"]]),]
+as.data.frame(dogecrypto)
+dogecrypto$date <- format(as.POSIXct(dogecrypto$date,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
+dogecrypto$date <- as.Date(as.character(dogecrypto$date), format='%m/%d/%Y')
+doge_hist['tweet'] <- doge_hist$timestamp %in% dogecrypto$date
+```
+
+
+```{r fig21, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig21}Elon Musk's Tweets on Dogecoin and LogDoge's Changing Points Dates"}
+colorsD <- c("tweets" = "green",  "breaking points" = "orange")
+doge_hist[300:760,] %>%
+ggplot(aes(x = timestamp, y = open)) +
+geom_line() + 
+geom_point(data = . %>% filter(tweet == TRUE), aes(color = "tweets"), size = 3) +
+geom_point(data = . %>% filter(breakpoint == TRUE), aes(color = "breaking points"), size = 3) +  
+ggtitle("Elon Musk's Tweets and Breaking Points") +
+theme(plot.title = element_text(hjust = 0.5)) +
+labs(x = "timestamp",
+         y = "DOGE value",
+         color = "Legend") + scale_color_manual(values = colorsD) +
+theme_minimal()
+```
+
+
+
+
+# Conclusion
+
+We have extracted a total of 4787 tweets containing 68676 words from Elon Musk's twitter profile: we investigate the impact of 26 Twitter events by Elon Musk on the trading volume  and price of the cryptocurrencies he comments on. Firstly we conducted a popularity analysis, where the influencing power of the Tesla CEO's can be seen skyrocketing throughout the years, especially after year 2016. A sentiment approach has been adopted into investigating his activity-related emotions, with an overall positive range of emotions  associated to it, as well as a frequency analysis on the most used words and polarity analysis (Model I). A subset of the focus period has been investigated in a second model (Model II), namely considering tweets published from January 2020 and eliminating the most used word in the Model I (*amp*). Coherent results has been found, with a slight change in the emotions due to a late-stage of Musk's popularity, with a more self-conscious, critical and mature audience. Finally, we have investigated potential linkages between Musk's crypto-related tweets and Bitcoin volatility comparing *when* those tweets were published to critical *breaking points* in the currency value: no clear linkage has been found, assessing the randomness of the Bitcoin trend. Our result has been similar by applying the same investigation to Dogecoin. 
+
+This study contributed to the existing available knowledge on information aggregation on the internet, particularly by so-called influencers in social networks. It also serves as a foundation for assessing the impact of extremely prominent people's views on bitcoin and financial markets. The findings give market participants a better foundation for determining the importance of certain tweets. Investors may use this knowledge to design an alternative investment plan, regulators could assess the necessity for market intervention, and influencers could better understand the consequences of their actions on Twitter.
+
+
+# Annex
+
+```{r fig14, echo=FALSE, fig.width=6,fig.height=6,fig.cap="\\label{fig:fig14}Bitcoin's trend and ACF function"}
+par(mfrow=c(2,1))
+plot(btc_hist$timestamp,btc_hist$open,
+     type='l',col='red',
+     xlab = "time (t)",
+     ylab = "Y(t)",
+     main = "Trend signal")
+acf(btc_hist$open,lag.max = length(btc_hist$open),
+         xlab = "lag #", ylab = 'ACF', main=' ')
+```
+
+```{r fig15, echo=FALSE, fig.width=6,fig.height=6,fig.cap="\\label{fig:fig15}LogBitcoin's trend and ACF function"}
+par(mfrow=c(2,1))
+btc_hist['log'] = log(btc_hist$open)
+plot(btc_hist$timestamp,btc_hist$log,
+     type='l',col='red',
+     xlab = "time (t)",
+     ylab = "Y(t)",
+     main = "Trend signal")
+acf(btc_hist$log,lag.max = length(btc_hist$log),
+         xlab = "lag #", ylab = 'ACF', main=' ')
+```
+
+```{r fig19, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig19}Doge and Diff LogDoge trend with its respective ACF"}
+
+par(mfrow=c(2,3))
+plot(doge_hist$timestamp,doge_hist$open,
+     type='l',col='red',
+     xlab = "time (t)",
+     ylab = "Y(t)",
+     main = "Trend signal")
+acf(doge_hist$open,lag.max = length(doge_hist$timestamp),
+         xlab = "lag #", ylab = 'ACF', main=' ')
+
+dogelogdiff = diff(log(doge_hist$open))
+
+plot(doge_hist$timestamp[2:760],dogelogdiff,
+     type='l',col='red',
+     xlab = "time (t)",
+     ylab = "Y(t)",
+     main = "Trend signal")
+acf(dogelogdiff,lag.max = length(doge_hist$timestamp),
+         xlab = "lag #", ylab = 'ACF', main=' ')
+```
+
+```{r fig20, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig20}Change point in differences of LogDoge"}
+plot(doge_m_binseg, type = "l", xlab = "Index", cpt.width = 4)
+```
+
+
+```{r, echo = FALSE, eval=FALSE }
+#Python code to extract Elon Musks's tweets via Twitter API#
+
+import twint
+import datetime
+
+def delist(x):
+    df = x[0]
+    for i in range(1, len(x)):
+        df = df.append(x[i])
+    return df
+
+def ElonPaginated():
+    data = []
+    start = datetime.datetime.strptime("2011-01-01", "%Y-%m-%d")
+    end = datetime.datetime.strptime("2022-02-01", "%Y-%m-%d")
+    date_generated = [start + datetime.timedelta(days=x) for x in range(0, (end - start).days)]
+    date_generated = date_generated[::7]
+    date_generated = [date_obj.strftime("%Y-%m-%d") for date_obj in date_generated]
+    for i in range(0, len(date_generated) - 1):
+        c = twint.Config()
+        c.Username = "elonmusk"
+        c.Since = date_generated[i]
+        c.Until = date_generated[i + 1]
+        c.Pandas = True
+        twint.run.Search(c)
+        Tweets_df = twint.storage.panda.Tweets_df
+        if Tweets_df.empty:
+            pass
+        else: data.append((Tweets_df))
+    return data
+
+data = ElonPaginated()
+data = delist(data)
+print(data)
+data.to_csv('/Users/federicopiazza/Desktop/MONTREAL/QM/elon.csv')
+```
+
+
+
+
