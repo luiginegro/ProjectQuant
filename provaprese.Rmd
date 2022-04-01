@@ -345,7 +345,7 @@ btc_hist['tweet'] <- btc_hist$timestamp %in% eloncrypto$date
 ## Maybe not?
 
 ```{r, echo=FALSE}
-btc_hist %>%
+btc_hist[1500:3200,] %>%
 ggplot(aes(x = timestamp, y = open)) +
 geom_line() + 
 geom_point(data = . %>% filter(tweet == TRUE), color = "deeppink", size = 3) +
@@ -372,6 +372,8 @@ Once quantified Elon Musk's influence, it is essential to understand the extent 
 - Which are the most frequent words?
 - Which is the polarity of this sentiments?
 
+## Modelisation
+
 We will use two subsets and consequently two models:
 \begin{itemize}
   \item Model I: investigation conducted on the entire dataset containing all Elon Musk's tweets from 2011 to 2021.
@@ -389,7 +391,6 @@ This will be the first step to gather more information in order to assess whethe
 
 While the market may interpret Musk's tweets about Tesla as “accurate news”, his tweets about cryptocurrency at least to some degree represent moods or personal sentiment. In this slide we show the nature of this sentiments, the most frequent words and the emotions associated to them for each of the models.
 
-[L'IDEA E' DI METTERE I DUE GRAFICI DELLE MOST FREQUENT WORD INSIEME IN QUESTA SLIDE]
 
 ```{r, include=FALSE}
 #!all the code will be needed for the presentation, therefore i write all the lines so to use the plot at the end
@@ -581,7 +582,7 @@ summarizeStatSenti2
 ```
 
 
-```{r, echo=FALSE}
+```{r fig56, echo=FALSE, fig.width=7,fig.height=4}
 #plot most used words two models
 
 sentiwords1 <- ggplot(data=words, aes(x=reorder(names, words), y=words)) +
@@ -605,24 +606,7 @@ ggarrange(sentiwords1, sentiwords2, ncol =2, nrow = 1)
 
 ```
 
-## Emotions
 
-```{r, include = FALSE}
-# plot emotions 
-
-
-e<-emotion_by(get_sentences(txt),drop.unused.emotions=TRUE)
-
-
-e1<-emotion_by(get_sentences(txt1),drop.unused.emotions=TRUE)
-```
-
-
-```{r, echo=FALSE}
-plot(e1)
-plot(e)
-ggarrange(e,e1,ncol=2, nrow=1)
-```
 
 ## Sentiment scores and density
 
@@ -634,7 +618,7 @@ ggplot(data=s_graph, aes(x=reorder(emotions, count), y=count)) +
   theme(axis.text.x=element_text(angle=45, hjust=1)) +
   scale_fill_gradient2(low = "yellow", high = "red") +
   coord_flip() +
-  labs(title="Sentiment Scores Tweets",y = "Count", x="emotions") +
+  labs(title="Sentiment Scores Tweets", x="emotions") +
   theme_minimal()
 
 ```
@@ -659,11 +643,8 @@ We perform an augmented Dickey–Fuller test (ADF) to test the null hypothesis t
 
 ## Result 
 
-Satisfying results have been achieved on a *logdiff()* transformation of the trend: the difference between two consecutive values, in *log* terms.
-
-Bitcoin's ADF test results are shown below:
-
-```{r, echo = FALSE}
+Satisfying results have been achieved on a *logdiff* transformation of the trend: the difference between two consecutive values, in *log* terms.
+```{r, include=FALSE, echo = FALSE}
 #Bitcoin
 par(mfrow=c(2,1))
 plot(btc_hist$timestamp,btc_hist$open,
@@ -683,10 +664,10 @@ plot(btc_hist$timestamp,btc_hist$log,
      main = "Trend signal")
 acf(btc_hist$log,lag.max = length(btc_hist$log),
          xlab = "lag #", ylab = 'ACF', main=' ')
+```
 
 
-
-
+```{r fig66, echo = FALSE}
 par(mfrow=c(2,1))
 logdiff = diff(btc_hist$log)
 
@@ -699,9 +680,8 @@ acf(logdiff,lag.max = length(btc_hist$open),
          xlab = "lag #", ylab = 'ACF', main=' ')
 ```
 
-Dogecoin's ADF test results are shown below:
 
-```{r, echo =FALSE}
+```{r, include =FALSE}
 #dogecoin
 
 doge <- crypto_list(only_active=TRUE)
@@ -722,11 +702,18 @@ dogelogdiff = diff(log(doge_hist$open))
 ```
 
  
-## Stationarity
+## Breaking Points
 
-Once stated the non-stationarity of the two trends, we managed to investigate and locate *breaking points* where the average mean of the cryptocurrency's value undergoes sudden change as well as display the time stamp of Elon Musk's crypto-related tweets. The two plots below show those features on the Bitcoin and Dogecoin trends, respectevely.
+```{r, include=FALSE}
+m_binseg <- cpt.mean(logdiff[2750:3199], penalty = "None", method = "BinSeg", Q = 15)
+```
 
-```{r, echo=FALSE}
+```{r fig17, echo=FALSE, fig.width=6,fig.height=5,fig.cap="\\label{fig:fig17}Changepoints in LogBitcoin Differences"}
+plot(m_binseg, type = "l", xlab = "Index", cpt.width = 4)
+```
+
+
+```{r, include=FALSE}
 # bitcoin 
 
 BTC_TREND_BR= plot(btc_hist$timestamp[2:3200],logdiff,
@@ -751,6 +738,75 @@ acf(dogelogdiff,lag.max = length(doge_hist$timestamp),
 
 ggarrange(BTC_TREND_BR, doge_TREND_BR, nrow =2, ncol=1)
 ```
+
+## Tweets and Breakpoints Timestamp Bitcoin
+
+```{r, include=FALSE}
+cpt_date = btc_hist$timestamp[2749] + cpts(m_binseg) 
+tweet_date = btc_hist %>% filter(tweet == TRUE) %>% select(timestamp)
+eloncrypto <- elon[grepl("crypto", elon[["tweet"]]) | grepl("BTC", elon[["tweet"]]),]
+as.data.frame(eloncrypto)
+cpt_date <- format(as.POSIXct(cpt_date,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
+cpt_date <- as.Date(as.character(cpt_date), format='%m/%d/%Y')
+
+btc_hist['breakpoint'] <- btc_hist$timestamp %in% cpt_date
+```
+
+
+```{r fig25, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig25}Elon Musk's Tweets on Cryptos and LogBTC's Changing Points Dates"}
+
+colors <- c("tweets" = "steelblue",  "breakingpoints" = "red")
+btc_hist[2750:3200,] %>%
+ggplot(aes(x = timestamp, y = open)) + geom_line() +
+geom_point(data = . %>% filter(tweet == TRUE), aes(color = "tweets"), size = 3) +
+geom_point(data = . %>% filter(breakpoint == TRUE), aes(color = "breakingpoints"), size = 3) + 
+ggtitle("Elon Musk's Tweets and Breaking Points") +
+theme(plot.title = element_text(hjust = 0.5)) +
+labs(x = "timestamp",
+         y = "BTC value",
+         color = "Legend") + scale_color_manual(values = colors) +
+theme_minimal()
+
+```
+
+## Tweets and Breakpoints Timestamp Dogecoin
+
+
+```{r, include=FALSE}
+as.data.frame(btc_hist)
+doge_hist$timestamp <- format(as.POSIXct(doge_hist$timestamp,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
+doge_hist$timestamp <- as.Date(as.character(doge_hist$timestamp), format='%m/%d/%Y')
+doge_m_binseg <- cpt.mean(dogelogdiff, penalty = "None", method = "BinSeg", Q = 15)
+
+doge_cpt_date = doge_hist$timestamp[1] + cpts(doge_m_binseg) 
+doge_cpt_date <- format(as.POSIXct(doge_cpt_date,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
+doge_cpt_date <- as.Date(as.character(doge_cpt_date), format='%m/%d/%Y')
+
+doge_hist['breakpoint'] <- doge_hist$timestamp %in% doge_cpt_date
+
+dogecrypto <- elon[grepl("Doge", elon[["tweet"]]) | grepl("dogecoin", elon[["tweet"]]),]
+as.data.frame(dogecrypto)
+dogecrypto$date <- format(as.POSIXct(dogecrypto$date,format="%Y-%m-%d %H:%M:%OS"),format='%m/%d/%Y')
+dogecrypto$date <- as.Date(as.character(dogecrypto$date), format='%m/%d/%Y')
+doge_hist['tweet'] <- doge_hist$timestamp %in% dogecrypto$date
+```
+
+
+```{r fig21, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig21}Elon Musk's Tweets on Dogecoin and LogDoge's Changing Points Dates"}
+colorsD <- c("tweets" = "green",  "breaking points" = "orange")
+doge_hist[300:760,] %>%
+ggplot(aes(x = timestamp, y = open)) +
+geom_line() + 
+geom_point(data = . %>% filter(tweet == TRUE), aes(color = "tweets"), size = 3) +
+geom_point(data = . %>% filter(breakpoint == TRUE), aes(color = "breaking points"), size = 3) +  
+ggtitle("Elon Musk's Tweets and Breaking Points") +
+theme(plot.title = element_text(hjust = 0.5)) +
+labs(x = "timestamp",
+         y = "DOGE value",
+         color = "Legend") + scale_color_manual(values = colorsD) +
+theme_minimal()
+```
+
 
 ## Agenda
 
