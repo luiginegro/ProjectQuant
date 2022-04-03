@@ -247,7 +247,7 @@ ggarrange(tweets, likes, retweets, replies,
 
 ## Crypto-related tweets
 
-Consequently, we compare how Elon Musk's audience react to different type of tweets containing respectevely words related only to *dogecoin*, *Bitcoin* and *cypto*. The same proxies as before have been used.
+Consequently, we compare how Elon Musk's audience react to different type of tweets containing respectevely words related only to *dogecoin*, *Bitcoin* and *crypto*. The same proxies as before have been used.
 
 
 ```{r, include=FALSE}
@@ -594,6 +594,7 @@ sentiwords1 <- ggplot(data=words, aes(x=reorder(names, words), y=words)) +
   theme_minimal()
 
 sentiwords2 <-ggplot(data=words1, aes(x=reorder(names, words1), y=words1)) +
+    labs(y = "Words", x = "Count", title = "Word frequency Model II") +
   geom_bar(stat="identity", aes(fill=words1)) +
   theme(axis.text.x=element_text(angle=45, hjust=1)) +
   scale_fill_gradient2(low = "blue", high = "darkblue") +
@@ -612,8 +613,8 @@ ggarrange(sentiwords1, sentiwords2, ncol =2, nrow = 1)
 
 Based on the following results of the Sentiment Analysis of Elon Musk's tweets, it appears clear that *positive*, *trust* and *anticipation* are the most frequent emotions
 
-```{r fig6, echo=FALSE, fig.width=3.5,fig.height=3,fig.cap="\\label{fig:fig6}Sentiment scores of Elon's tweets"}
-ggplot(data=s_graph, aes(x=reorder(emotions, count), y=count)) +
+```{r fig6, echo=FALSE, fig.width=7,fig.height=3,fig.cap="\\label{fig:fig6}Sentiment scores of Elon's tweets"}
+scores1 <- ggplot(data=s_graph, aes(x=reorder(emotions, count), y=count)) +
   geom_bar(stat="identity", aes(fill=count)) +
   theme(axis.text.x=element_text(angle=45, hjust=1)) +
   scale_fill_gradient2(low = "yellow", high = "red") +
@@ -621,7 +622,38 @@ ggplot(data=s_graph, aes(x=reorder(emotions, count), y=count)) +
   labs(title="Sentiment Scores Tweets", x="emotions") +
   theme_minimal()
 
+scores2 <- ggplot(data=s1_graph, aes(x=reorder(emotions, count), y=count)) +
+  geom_bar(stat="identity", aes(fill=count)) +
+  theme(axis.text.x=element_text(angle=45, hjust=1)) +
+  scale_fill_gradient2(low = "yellow", high = "red") +
+  coord_flip() +
+  labs(title="Sentiment Scores Tweets", x="emotions") +
+  theme_minimal()
+
+ggarrange(scores1, scores2, ncol =2, nrow = 1)
+
 ```
+
+## Polarity Scores
+
+```{r fig7, echo=FALSE, fig.width=7,fig.height=3,fig.cap="\\label{fig:fig7}density of polarity scores"}
+par(mfrow=c(1,2))
+plot(densitySentiments,main='Density of sentiments Model I') 
+mtext("Mean = 0.1824", side=3)
+polygon(densitySentiments,col='red')
+plot(densitySentiments1,main='Density of sentiments Model II') 
+mtext("Mean = 0.1981", side=3)
+polygon(densitySentiments1,col='green') 
+```
+
+
+## Emotions
+
+```{r, echo=FALSE}
+e1<-emotion_by(get_sentences(txt1),drop.unused.emotions=TRUE)
+plot(e1)
+```
+
 
 ## Agenda
 

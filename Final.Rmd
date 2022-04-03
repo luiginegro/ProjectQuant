@@ -8,6 +8,8 @@ output:
   pdf_document:
     citation_package: biblatex
     latex_engine: xelatex
+header-includes:
+  - \usepackage[nottoc]{tocbibind}    
 --- 
 
 *Wordcount as of 26/03*: 5610
@@ -951,6 +953,7 @@ theme_minimal()
 ```
 
 
+\pagebreak
 
 
 # Conclusion
@@ -959,8 +962,14 @@ We have extracted a total of 4787 tweets containing 68676 words from Elon Musk's
 
 This study contributed to the existing available knowledge on information aggregation on the internet, particularly by so-called influencers in social networks. It also serves as a foundation for assessing the impact of extremely prominent people's views on bitcoin and financial markets. The findings give market participants a better foundation for determining the importance of certain tweets. Investors may use this knowledge to design an alternative investment plan, regulators could assess the necessity for market intervention, and influencers could better understand the consequences of their actions on Twitter.
 
+\pagebreak
+
 
 # Annex
+
+
+
+
 
 ```{r fig14, echo=FALSE, fig.width=6,fig.height=6,fig.cap="\\label{fig:fig14}Bitcoin's trend and ACF function"}
 par(mfrow=c(2,1))
@@ -1011,7 +1020,6 @@ acf(dogelogdiff,lag.max = length(doge_hist$timestamp),
 plot(doge_m_binseg, type = "l", xlab = "Index", cpt.width = 4)
 ```
 
-
 ```{r, echo = FALSE, eval=FALSE }
 #Python code to extract Elon Musks's tweets via Twitter API#
 
@@ -1051,5 +1059,7 @@ data.to_csv('/Users/federicopiazza/Desktop/MONTREAL/QM/elon.csv')
 ```
 
 
+\pagebreak
 
 
+\listoffigures
