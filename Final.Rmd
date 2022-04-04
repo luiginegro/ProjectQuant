@@ -8,6 +8,8 @@ output:
   pdf_document:
     citation_package: biblatex
     latex_engine: xelatex
+header-includes:
+  - \usepackage[nottoc]{tocbibind}    
 --- 
 
 *Wordcount as of 26/03*: 5610
@@ -24,7 +26,7 @@ Data and text mining has assumed a critical role in recent years, and Twitter, t
 
 The first data mining activities were conducted around 2013 with the scope of highlighting how Twitter played a central role in spreading awareness after a natural disaster occured[@gunawongSocialNetworkReactions2013]. Similar analyses have been performed to forecast political election's results[@hubertyCanWeVote2015] and are now being applied to the cryptocurrency and stock markets.
 
-[@noferUsingTwitterPredict_2015] found evidence that follower-weighted social mood levels can predict share returns, even though this was not true if simple aggregation of mood states was performed. Indeed, they hypothesized the reason behind such a behavior could be explained in light of emotional contagion, according to which individuals influence each other based on their active network. In 2019[@guInformationalRoleSocial2020a] another research was conducted in this field and it was observed that relevant information could be found on Twitter, in particular regarding analyst recommendation changes, target price changes, quarterly earnings surprises and IPO opening prices. Besides this conclusion, that was in line with other papers, they also studied another factor with relevant implications in terms of stock return quality of predictions. Specifically, they found that Twitter sentiment analysis constituted a stronger predictor for smaller firms, i.e. firms less covered by analysts.
+[@TwitterMoodPredicts]Studies found evidence that follower-weighted social mood levels can predict share returns, even though this was not true if simple aggregation of mood states was performed. Indeed, they hypothesized the reason behind such a behavior could be explained in light of emotional contagion, according to which individuals influence each other based on their active network. In 2019[@guInformationalRoleSocial2020a] another research was conducted in this field and it was observed that relevant information could be found on Twitter, in particular regarding analyst recommendation changes, target price changes, quarterly earnings surprises and IPO opening prices. Besides this conclusion, that was in line with other papers, they also studied another factor with relevant implications in terms of stock return quality of predictions. Specifically, they found that Twitter sentiment analysis constituted a stronger predictor for smaller firms, i.e. firms less covered by analysts.
 Last but not least,@porshnevCouldEmotionalMarkers2016 studied the contribution of emotional makers to the ARMAX-GARCH model and demonstrated they provided both a smaller BIC and improved likelihood function.
 
 # Sentiment analysis
@@ -86,6 +88,8 @@ In a second step, a subset of the total population of tweets was made, in order 
 
 Once obtained these data, they represented the input for our models: Sentiment Analysis and Polarization analysis were conducted, supported by wordclouds (in order to determine which were the most tweeted words). Through score assignment it has been possible to detect which were the most frequent sentiments in Musks's tweets, as well as the duration of these emotions. The results obtained through this first model helped us to understand the gradient of emotions provoked by Tesla CEO's tweets and therefore assessing those as drivers to his popularity and eventually his influence on cryptomarkets.  This approach has been applied to a subset of Musk's tweets obtained by the following criteria: all the tweets starting from January  2020 and not containing the word *AMP*. We believe that removing the most frequent tweeted word and looking at a more recent timespan would strengthen our study highlighting any peculiar differences or similarities among the two datasets.
 
+\pagebreak
+
 ## Testing for stationarity 
 
 Finally, we wanted to investigate the presence of linkages between Elon Musk's sentiment and Bitcoin volatility: to do that we dirstly tried to erase the intrinsic trend of Bitcoin so to be able to find any potential changepoints in a stationary time-series trajectory. We repeated the same process for Dogecoin.
@@ -145,7 +149,8 @@ library(tseries)
 if(!require(changepoint)) install.packages("changepoint")
 library(changepoint)
 library(ggpubr)
-
+remotes::install_github("haozhu233/kableExtra")
+library(kableExtra)
 ```
 
 ```{r, include = FALSE}
@@ -353,10 +358,11 @@ ggplot(data = vectorshare, aes(x = tweetcount, y = rownames(vectorshare))) +
 #plotting 
 
 dfactivity %>%
-  gather(key, value, -Total) %>% 
-  ggplot(aes(x=Total, y=value, fill = key)) +
+  gather(variable, value, -Total) %>% 
+  ggplot(aes(x=Total, y=value, fill = variable)) +
   geom_col(position = "dodge") +
   coord_flip() +
+  scale_fill_grey() +
   theme_minimal()
 ```
 
@@ -432,13 +438,12 @@ words$names <- rownames(words)
 ```
 
 
-```{r fig3, echo=FALSE, fig.align="center", fig.width=4,fig.height=4.5,fig.cap="\\label{fig:fig3}Word Frequency,"}
+```{r fig3, echo=FALSE, fig.align="center", fig.width=7,fig.height=4,fig.cap="\\label{fig:fig3}Word Frequency,"}
 ggplot(data=words, aes(x=reorder(names, words), y=words)) +
   labs(y = "Words", x = "Count", title = "Word frequency") +
   geom_bar(stat="identity", aes(fill=words)) +
   theme(axis.text.x=element_text(angle=45, hjust=1)) +
   scale_fill_gradient2(low = "grey", high = "black") +
-  coord_flip() +
   theme_minimal()
 ```
 *AMP* 
@@ -486,7 +491,7 @@ s_graph$count <- s_graph$s_graph
 ```
 
 
-```{r fig4, echo=FALSE, fig.align="center", fig.width=3.5,fig.height=3,fig.cap="\\label{fig:fig4}Sentiment scores of Elon's tweets"}
+```{r fig4, echo=FALSE, fig.align="center", fig.width=7,fig.height=3,fig.cap="\\label{fig:fig4}Sentiment scores of Elon's tweets"}
 ggplot(data=s_graph, aes(x=reorder(emotions, count), y=count)) +
   geom_bar(stat="identity", aes(fill=count)) +
   theme(axis.text.x=element_text(angle=45, hjust=1)) +
@@ -533,7 +538,7 @@ attributes(t)$count
 
 Another important result is outlined by the following graphs. It shows the density of sentiment: as it can be noticed it follows a normal-like distribution ($\mu = 0.18$, $\sigma = 0.36 $), slightly positevely skewed. This result is line with the previous results, highlighting the positive polarity of the sentiments. Here follows a brief statistical summary of the density plot, followed by the plot itself.
 
-```{r, echo = FALSE}
+```{r, include = FALSE}
 #Sentiment density plot
 
 
@@ -558,17 +563,18 @@ summarizeStatSenti
 
 
 
-```{r fig7, echo=FALSE, fig.width=3.5,fig.height=3,fig.cap="\\label{fig:fig7}density of polarity scores"}
+```{r fig7, include=FALSE, fig.width=3.5,fig.height=3,fig.cap="\\label{fig:fig7}density of polarity scores"}
 plot(densitySentiments,main='Density of sentiments') 
 polygon(densitySentiments,col='red')        
 ```
+\pagebreak
 
 
 ### Emotions at the sentence level
 
 The following analysis detects the rate of emotion at the sentence level. This method uses a simple dictionary lookup to find emotion words and then compute the rate per sentence. The emotion score ranges between 0 (no emotion used) and 1 (all words used were emotional). Once again, this result is in line with the previous ones, showing how positive emotions such as joy, trust and anticipation are predominant. Please note that the suffix *_negated* indicates the opposite of the reference emotions, which appears to be consistently absent in relation to any emotion.
 
-```{r fig8, echo=FALSE, fig.width=3.5,fig.height=3,fig.cap="\\label{fig:fig8}plot of Emotions"}
+```{r fig8, include=FALSE, fig.width=3.5,fig.height=3,fig.cap="\\label{fig:fig8}plot of Emotions"}
 
 e<-emotion_by(get_sentences(txt),drop.unused.emotions=TRUE)
 plot(e)
@@ -628,7 +634,7 @@ ggplot(data=words1, aes(x=reorder(names, words1), y=words1)) +
   theme_minimal()
 ```
 This primary result is in line with the previous ones, once again the two most used words are *tesla*, *will* and *spacex*. The frequency of each word is compared in the chart above.
-We proceed displaying a wordcloud, in order to have an eye-friendly visualization of the word frequency in this new subset of data.
+
 ```{r, include=FALSE}
 w1 <- sort(rowSums(tdm1), decreasing = TRUE)
 set.seed(22)
@@ -714,7 +720,7 @@ attributes(t1)$count
 ```
 The density of sentiment is slightly different from the first one: as it can be noticed it still follows a normal-like distribution ($\mu = 0.19$, $\sigma = 0.39 $), slightly positevely skewed. This result is line with the previous results, stating the even more positive polarity of the sentiments in the new timeframe. A brief statistical summary of the new density plot compared to the previous one is displayed. A new density plot can be found in the chart below.
 
-```{r, echo=FALSE}
+```{r, include=FALSE}
 
 txt1 %>%
 get_sentences() %>%
@@ -738,15 +744,22 @@ summarizeStatSenti2
 
 ```
 
+```{r fig100, echo=FALSE, fig.cap="\\label{fig:fig100}Models' Descriptive StatisticsTable"}
+knitr::kable(summarizeStatSenti2, caption = "Models' Descriptive Statistics") %>% 
+     kable_classic(full_width = T, html_font = "Cambria")
+```
 
-```{r fig12, echo=FALSE, fig.width=3.5,fig.height=3,fig.cap="\\label{fig:fig12}Polarity Density of Elon's tweets resampled"}
-plot(densitySentiments1,main='Density of sentiments') 
-polygon(densitySentiments1,col='green')  
+```{r fig12, echo=FALSE, fig.width=7,fig.height=3,fig.cap="\\label{fig:fig12}Polarity Density of Elon's tweets resampled"}
+par(mfrow=c(1,2))
+plot(densitySentiments,main='Density of sentiments Model I') 
+polygon(densitySentiments,col='white')
+plot(densitySentiments1,main='Density of sentiments Model II') 
+polygon(densitySentiments1,col='grey') 
 ```
 The chart below shows an overall overlapping with the previous result. Still positive sentiment of *anticipation*, *joy* and *trust* are the most frequent. However, the sentiment of *trust* is more volatile, and there is a slight decrease in the negative sentiment of *fear*. This slight but still relevant change can be interpreted in a different context than the one of model I: the audience has become more educated and informed about the phenomenon of crypto-currencies as well as more critical towards the Tesla CEO's tweets, who sometimes has been accused more intensively of market manipulation (however without losing popularity or positive appeal). In conclusion,  the Muskanian audience still listen to him and trust him, simply with more critical sense which makes the *trust* sentiment to be more volatile and the *fear* sentiment lower.
 
 
-```{r fig13, echo=FALSE, fig.width=3.5,fig.height=3,fig.cap="\\label{fig:fig13}Emotion's Plot of Elon's tweets resampled"}
+```{r fig13, echo=FALSE, fig.width=7,fig.height=4,fig.cap="\\label{fig:fig13}Emotion's Plot of Elon's tweets resampled"}
 e1<-emotion_by(get_sentences(txt1),drop.unused.emotions=TRUE)
 plot(e1)
 ```
@@ -793,7 +806,7 @@ acf(btc_hist$log,lag.max = length(btc_hist$log),
 
 Differencing log values can help stabilise the mean of a time series by removing changes in the level of a time series, and therefore eliminating (or reducing) trend and seasonality. We attempt to use this transformation obtaining satisfing results. Indeed, the following plot shows how the trend has been removed and stationarity is obtained.
 
-```{r fig16, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig16}Differences of LogBitcoin's trend and ACF function"}
+```{r fig16, echo=FALSE, fig.width=7,fig.height=5,fig.cap="\\label{fig:fig16}Differences of LogBitcoin's trend and ACF function"}
 
 par(mfrow=c(2,1))
 logdiff = diff(btc_hist$log)
@@ -828,7 +841,7 @@ m_binseg <- cpt.mean(logdiff[2750:3199], penalty = "None", method = "BinSeg", Q 
 
 
 
-```{r fig17, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig17}Changepoints in LogBitcoin Differences"}
+```{r fig17, echo=FALSE, fig.width=7,fig.height=4,fig.cap="\\label{fig:fig17}Changepoints in LogBitcoin Differences"}
 plot(m_binseg, type = "l", xlab = "Index", cpt.width = 4)
 
 ```
@@ -858,7 +871,7 @@ In the chart below a deep investigation regarding the potential linkage between 
 The breaking points method is broadly used in literature and comprises a variety of different methods.
 In purple we find highlighted when the crypto-related *tweets* were published. As we can notice, there is no correspondence or correlation of the two variables: we cannot state that Musk's tweets influence Bitcoin volatility, which is in-line with our previous result of non-stationarity.
 
-```{r fig25, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig25}Elon Musk's Tweets on Cryptos and LogBTC's Changing Points Dates"}
+```{r fig25, echo=FALSE, fig.width=7,fig.height=5,fig.cap="\\label{fig:fig25}Elon Musk's Tweets on Cryptos and LogBTC's Changing Points Dates"}
 
 colors <- c("tweets" = "steelblue",  "breakingpoints" = "red")
 btc_hist[2750:3200,] %>%
@@ -935,7 +948,7 @@ doge_hist['tweet'] <- doge_hist$timestamp %in% dogecrypto$date
 ```
 
 
-```{r fig21, echo=FALSE, fig.width=7,fig.height=6,fig.cap="\\label{fig:fig21}Elon Musk's Tweets on Dogecoin and LogDoge's Changing Points Dates"}
+```{r fig21, echo=FALSE, fig.width=7,fig.height=5,fig.cap="\\label{fig:fig21}Elon Musk's Tweets on Dogecoin and LogDoge's Changing Points Dates"}
 colorsD <- c("tweets" = "green",  "breaking points" = "orange")
 doge_hist[300:760,] %>%
 ggplot(aes(x = timestamp, y = open)) +
@@ -951,6 +964,7 @@ theme_minimal()
 ```
 
 
+\pagebreak
 
 
 # Conclusion
@@ -959,8 +973,14 @@ We have extracted a total of 4787 tweets containing 68676 words from Elon Musk's
 
 This study contributed to the existing available knowledge on information aggregation on the internet, particularly by so-called influencers in social networks. It also serves as a foundation for assessing the impact of extremely prominent people's views on bitcoin and financial markets. The findings give market participants a better foundation for determining the importance of certain tweets. Investors may use this knowledge to design an alternative investment plan, regulators could assess the necessity for market intervention, and influencers could better understand the consequences of their actions on Twitter.
 
+\pagebreak
+
 
 # Annex
+
+
+
+
 
 ```{r fig14, echo=FALSE, fig.width=6,fig.height=6,fig.cap="\\label{fig:fig14}Bitcoin's trend and ACF function"}
 par(mfrow=c(2,1))
@@ -1011,7 +1031,6 @@ acf(dogelogdiff,lag.max = length(doge_hist$timestamp),
 plot(doge_m_binseg, type = "l", xlab = "Index", cpt.width = 4)
 ```
 
-
 ```{r, echo = FALSE, eval=FALSE }
 #Python code to extract Elon Musks's tweets via Twitter API#
 
@@ -1051,5 +1070,10 @@ data.to_csv('/Users/federicopiazza/Desktop/MONTREAL/QM/elon.csv')
 ```
 
 
+\pagebreak
 
+
+\listoffigures
+
+\pagebreak
 

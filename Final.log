@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.3.29)  1 APR 2022 13:51
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.3.29)  3 APR 2022 15:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -323,75 +323,215 @@ Package graphics Info: Driver file: xetex.def on input line 107.
 )
 \Gin@req@height=\dimen163
 \Gin@req@width=\dimen164
+) (/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/latex/tocbibind/tocbibind.sty
+Package: tocbibind 2010/10/13 v1.5k extra ToC listings
+Package tocbibind Info: The document has section divisions on input line 50.
+
+Package tocbibind Note: Using section or other style headings.
+
+) (/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen165
+\lightrulewidth=\dimen166
+\cmidrulewidth=\dimen167
+\belowrulesep=\dimen168
+\belowbottomsep=\dimen169
+\aboverulesep=\dimen170
+\abovetopsep=\dimen171
+\cmidrulesep=\dimen172
+\cmidrulekern=\dimen173
+\defaultaddspace=\dimen174
+\@cmidla=\count303
+\@cmidlb=\count304
+\@aboverulesep=\dimen175
+\@belowrulesep=\dimen176
+\@thisruleclass=\count305
+\@lastruleclass=\count306
+\@thisrulewidth=\dimen177
+) (/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
+\LTleft=\skip53
+\LTright=\skip54
+\LTpre=\skip55
+\LTpost=\skip56
+\LTchunksize=\count307
+\LTcapwidth=\dimen178
+\LT@head=\box54
+\LT@firsthead=\box55
+\LT@foot=\box56
+\LT@lastfoot=\box57
+\LT@gbox=\box58
+\LT@cols=\count308
+\LT@rows=\count309
+\c@LT@tables=\count310
+\c@LT@chunks=\count311
+\LT@p@ftn=\toks23
+) (/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/latex/tools/array.sty
+Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen179
+\ar@mcellbox=\box59
+\extrarowheight=\dimen180
+\NC@list=\toks24
+\extratabsurround=\skip57
+\backup@length=\skip58
+\ar@cellbox=\box60
+) (/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip59
+\multirow@cntb=\count312
+\multirow@dima=\skip60
+\bigstrutjot=\dimen181
+) (/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen182
+\WF@size=\dimen183
+\c@WF@wrappedlines=\count313
+\WF@box=\box61
+\WF@everypar=\toks25
+Package: wrapfig 2003/01/31  v 3.6
+) (/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count314
+\float@exts=\toks26
+\float@box=\box62
+\@float@everytoks=\toks27
+\@floatcapt=\box63
+) (/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
+\everycr=\toks28
+\minrowclearance=\skip61
+) (/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+(/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: dvipdfm (xetex) on input line 98.
+) (/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/latex/tabu/tabu.sty
+Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
+(/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box64
+\sift@deathcycles=\count315
+\@vwid@loff=\dimen184
+\@vwid@roff=\dimen185
+)
+\c@taburow=\count316
+\tabu@nbcols=\count317
+\tabu@cnt=\count318
+\tabu@Xcol=\count319
+\tabu@alloc=\count320
+\tabu@nested=\count321
+\tabu@target=\dimen186
+\tabu@spreadtarget=\dimen187
+\tabu@naturalX=\dimen188
+\tabucolX=\dimen189
+\tabu@Xsum=\dimen190
+\extrarowdepth=\dimen191
+\abovetabulinesep=\dimen192
+\belowtabulinesep=\dimen193
+\tabustrutrule=\dimen194
+\tabu@thebody=\toks29
+\tabu@footnotes=\toks30
+\tabu@box=\box65
+\tabu@arstrutbox=\box66
+\tabu@hleads=\box67
+\tabu@vleads=\box68
+\tabu@cellskip=\skip62
+) (/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/latex/threeparttable/threeparttable.sty
+Package: threeparttable 2003/06/13  v 3.0
+\@tempboxb=\box69
+) (/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/latex/threeparttablex/threeparttablex.sty
+Package: threeparttablex 2013/07/23 v0.3 by daleif
+(/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+(/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\TPTL@width=\skip63
+) (/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box70
+\UL@hyphenbox=\box71
+\UL@skip=\skip64
+\UL@hook=\toks31
+\UL@height=\dimen195
+\UL@pe=\count322
+\UL@pixel=\dimen196
+\ULC@box=\box72
+Package: ulem 2019/11/18
+\ULdepth=\dimen197
+) (/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen198
+\c@nlinenum=\count323
+\TeXr@lab=\toks32
 ) (/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2022/02/02 v3.17 programmable bibliographies (PK/MW)
 (/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count303
+\etb@tempcnta=\count324
 ) (/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count304
+\lrq@indent=\count325
 (/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 )) (/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\c@tabx@nest=\count305
-\c@listtotal=\count306
-\c@listcount=\count307
-\c@liststart=\count308
-\c@liststop=\count309
-\c@citecount=\count310
-\c@citetotal=\count311
-\c@multicitecount=\count312
-\c@multicitetotal=\count313
-\c@instcount=\count314
-\c@maxnames=\count315
-\c@minnames=\count316
-\c@maxitems=\count317
-\c@minitems=\count318
-\c@citecounter=\count319
-\c@maxcitecounter=\count320
-\c@savedcitecounter=\count321
-\c@uniquelist=\count322
-\c@uniquename=\count323
-\c@refsection=\count324
-\c@refsegment=\count325
-\c@maxextratitle=\count326
-\c@maxextratitleyear=\count327
-\c@maxextraname=\count328
-\c@maxextradate=\count329
-\c@maxextraalpha=\count330
-\c@abbrvpenalty=\count331
-\c@highnamepenalty=\count332
-\c@lownamepenalty=\count333
-\c@maxparens=\count334
-\c@parenlevel=\count335
-\blx@tempcnta=\count336
-\blx@tempcntb=\count337
-\blx@tempcntc=\count338
-\c@blx@maxsection=\count339
-\c@blx@maxsegment@0=\count340
-\blx@notetype=\count341
-\blx@parenlevel@text=\count342
-\blx@parenlevel@foot=\count343
-\c@blx@sectionciteorder@0=\count344
-\blx@entrysetcounter=\count345
-\blx@biblioinstance=\count346
-\labelnumberwidth=\skip53
-\labelalphawidth=\skip54
-\biblabelsep=\skip55
-\bibitemsep=\skip56
-\bibnamesep=\skip57
-\bibinitsep=\skip58
-\bibparsep=\skip59
-\bibhang=\skip60
+\c@tabx@nest=\count326
+\c@listtotal=\count327
+\c@listcount=\count328
+\c@liststart=\count329
+\c@liststop=\count330
+\c@citecount=\count331
+\c@citetotal=\count332
+\c@multicitecount=\count333
+\c@multicitetotal=\count334
+\c@instcount=\count335
+\c@maxnames=\count336
+\c@minnames=\count337
+\c@maxitems=\count338
+\c@minitems=\count339
+\c@citecounter=\count340
+\c@maxcitecounter=\count341
+\c@savedcitecounter=\count342
+\c@uniquelist=\count343
+\c@uniquename=\count344
+\c@refsection=\count345
+\c@refsegment=\count346
+\c@maxextratitle=\count347
+\c@maxextratitleyear=\count348
+\c@maxextraname=\count349
+\c@maxextradate=\count350
+\c@maxextraalpha=\count351
+\c@abbrvpenalty=\count352
+\c@highnamepenalty=\count353
+\c@lownamepenalty=\count354
+\c@maxparens=\count355
+\c@parenlevel=\count356
+\blx@tempcnta=\count357
+\blx@tempcntb=\count358
+\blx@tempcntc=\count359
+\c@blx@maxsection=\count360
+\c@blx@maxsegment@0=\count361
+\blx@notetype=\count362
+\blx@parenlevel@text=\count363
+\blx@parenlevel@foot=\count364
+\c@blx@sectionciteorder@0=\count365
+\blx@entrysetcounter=\count366
+\blx@biblioinstance=\count367
+\labelnumberwidth=\skip65
+\labelalphawidth=\skip66
+\biblabelsep=\skip67
+\bibitemsep=\skip68
+\bibnamesep=\skip69
+\bibinitsep=\skip70
+\bibparsep=\skip71
+\bibhang=\skip72
 \blx@bcfin=\read2
 \blx@bcfout=\write3
 \blx@langwohyphens=\language3
-\c@mincomprange=\count347
-\c@maxcomprange=\count348
-\c@mincompwidth=\count349
+\c@mincomprange=\count368
+\c@maxcomprange=\count369
+\c@mincompwidth=\count370
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 (/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/latex/biblatex/blx-dm.def
@@ -399,88 +539,88 @@ File: blx-dm.def 2022/02/02 v3.17 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count350
-\c@savedafterword=\count351
-\c@annotator=\count352
-\c@savedannotator=\count353
-\c@author=\count354
-\c@savedauthor=\count355
-\c@bookauthor=\count356
-\c@savedbookauthor=\count357
-\c@commentator=\count358
-\c@savedcommentator=\count359
-\c@editor=\count360
-\c@savededitor=\count361
-\c@editora=\count362
-\c@savededitora=\count363
-\c@editorb=\count364
-\c@savededitorb=\count365
-\c@editorc=\count366
-\c@savededitorc=\count367
-\c@foreword=\count368
-\c@savedforeword=\count369
-\c@holder=\count370
-\c@savedholder=\count371
-\c@introduction=\count372
-\c@savedintroduction=\count373
-\c@namea=\count374
-\c@savednamea=\count375
-\c@nameb=\count376
-\c@savednameb=\count377
-\c@namec=\count378
-\c@savednamec=\count379
-\c@translator=\count380
-\c@savedtranslator=\count381
-\c@shortauthor=\count382
-\c@savedshortauthor=\count383
-\c@shorteditor=\count384
-\c@savedshorteditor=\count385
-\c@labelname=\count386
-\c@savedlabelname=\count387
-\c@institution=\count388
-\c@savedinstitution=\count389
-\c@lista=\count390
-\c@savedlista=\count391
-\c@listb=\count392
-\c@savedlistb=\count393
-\c@listc=\count394
-\c@savedlistc=\count395
-\c@listd=\count396
-\c@savedlistd=\count397
-\c@liste=\count398
-\c@savedliste=\count399
-\c@listf=\count400
-\c@savedlistf=\count401
-\c@location=\count402
-\c@savedlocation=\count403
-\c@organization=\count404
-\c@savedorganization=\count405
-\c@origlocation=\count406
-\c@savedoriglocation=\count407
-\c@origpublisher=\count408
-\c@savedorigpublisher=\count409
-\c@publisher=\count410
-\c@savedpublisher=\count411
-\c@language=\count412
-\c@savedlanguage=\count413
-\c@origlanguage=\count414
-\c@savedoriglanguage=\count415
-\c@pageref=\count416
-\c@savedpageref=\count417
-\shorthandwidth=\skip61
-\shortjournalwidth=\skip62
-\shortserieswidth=\skip63
-\shorttitlewidth=\skip64
-\shortauthorwidth=\skip65
-\shorteditorwidth=\skip66
-\locallabelnumberwidth=\skip67
-\locallabelalphawidth=\skip68
-\localshorthandwidth=\skip69
-\localshortjournalwidth=\skip70
-\localshortserieswidth=\skip71
-\localshorttitlewidth=\skip72
-\localshortauthorwidth=\skip73
-\localshorteditorwidth=\skip74
+\c@afterword=\count371
+\c@savedafterword=\count372
+\c@annotator=\count373
+\c@savedannotator=\count374
+\c@author=\count375
+\c@savedauthor=\count376
+\c@bookauthor=\count377
+\c@savedbookauthor=\count378
+\c@commentator=\count379
+\c@savedcommentator=\count380
+\c@editor=\count381
+\c@savededitor=\count382
+\c@editora=\count383
+\c@savededitora=\count384
+\c@editorb=\count385
+\c@savededitorb=\count386
+\c@editorc=\count387
+\c@savededitorc=\count388
+\c@foreword=\count389
+\c@savedforeword=\count390
+\c@holder=\count391
+\c@savedholder=\count392
+\c@introduction=\count393
+\c@savedintroduction=\count394
+\c@namea=\count395
+\c@savednamea=\count396
+\c@nameb=\count397
+\c@savednameb=\count398
+\c@namec=\count399
+\c@savednamec=\count400
+\c@translator=\count401
+\c@savedtranslator=\count402
+\c@shortauthor=\count403
+\c@savedshortauthor=\count404
+\c@shorteditor=\count405
+\c@savedshorteditor=\count406
+\c@labelname=\count407
+\c@savedlabelname=\count408
+\c@institution=\count409
+\c@savedinstitution=\count410
+\c@lista=\count411
+\c@savedlista=\count412
+\c@listb=\count413
+\c@savedlistb=\count414
+\c@listc=\count415
+\c@savedlistc=\count416
+\c@listd=\count417
+\c@savedlistd=\count418
+\c@liste=\count419
+\c@savedliste=\count420
+\c@listf=\count421
+\c@savedlistf=\count422
+\c@location=\count423
+\c@savedlocation=\count424
+\c@organization=\count425
+\c@savedorganization=\count426
+\c@origlocation=\count427
+\c@savedoriglocation=\count428
+\c@origpublisher=\count429
+\c@savedorigpublisher=\count430
+\c@publisher=\count431
+\c@savedpublisher=\count432
+\c@language=\count433
+\c@savedlanguage=\count434
+\c@origlanguage=\count435
+\c@savedoriglanguage=\count436
+\c@pageref=\count437
+\c@savedpageref=\count438
+\shorthandwidth=\skip73
+\shortjournalwidth=\skip74
+\shortserieswidth=\skip75
+\shorttitlewidth=\skip76
+\shortauthorwidth=\skip77
+\shorteditorwidth=\skip78
+\locallabelnumberwidth=\skip79
+\locallabelalphawidth=\skip80
+\localshorthandwidth=\skip81
+\localshortjournalwidth=\skip82
+\localshortserieswidth=\skip83
+\localshorttitlewidth=\skip84
+\localshortauthorwidth=\skip85
+\localshorteditorwidth=\skip86
 Package biblatex Info: Trying to load enhanced support for Unicode engines...
 Package biblatex Info: ... file 'blx-unicode.def' found.
 (/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/latex/biblatex/blx-unicode.def)
@@ -493,19 +633,19 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
 (/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2022/02/02 v3.17 biblatex compatibility (PK/MW)
-\c@textcitecount=\count418
-\c@textcitetotal=\count419
-\c@textcitemaxnames=\count420
-\c@biburlbigbreakpenalty=\count421
-\c@biburlbreakpenalty=\count422
-\c@biburlnumpenalty=\count423
-\c@biburlucpenalty=\count424
-\c@biburllcpenalty=\count425
+\c@textcitecount=\count439
+\c@textcitetotal=\count440
+\c@textcitemaxnames=\count441
+\c@biburlbigbreakpenalty=\count442
+\c@biburlbreakpenalty=\count443
+\c@biburlnumpenalty=\count444
+\c@biburlucpenalty=\count445
+\c@biburllcpenalty=\count446
 \biburlbigskip=\muskip19
 \biburlnumskip=\muskip20
 \biburlucskip=\muskip21
 \biburllcskip=\muskip22
-\c@smartand=\count426
+\c@smartand=\count447
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
@@ -515,8 +655,8 @@ Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
 (/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2022/02/02 v3.17 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count427
-\c@bbx:relatedtotal=\count428
+\c@bbx:relatedcount=\count448
+\c@bbx:relatedtotal=\count449
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
@@ -549,8 +689,8 @@ Package biblatex Info: ... and expl3
 (/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
 Package: blx-case-expl3 2022/02/02 v3.17 expl3 case changing code for biblatex
 ))
-\@quotelevel=\count429
-\@quotereset=\count430
+\@quotelevel=\count450
+\@quotereset=\count451
 (./Final.aux
 
 LaTeX Warning: Label `fig:fig3' multiply defined.
@@ -564,40 +704,40 @@ LaTeX Warning: Label `fig:fig10' multiply defined.
 )
 \openout1 = `Final.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 73.
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 88.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 73.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 88.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 73.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 88.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 73.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 88.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 73.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 88.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 73.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 88.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 73.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 88.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -623,7 +763,7 @@ Package fontspec Info: Font family 'latinmodern-math.otf(0)' created for font
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 73.
+(Font)              scaled to size 10.0pt on input line 88.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -655,15 +795,15 @@ Package fontspec Info: Font family 'latinmodern-math.otf(1)' created for font
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 73.
+(Font)              scaled to size 10.0pt on input line 88.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 73.
+(Font)              `operators' in the math version `normal' on input line 88.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input line 73.
+(Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input line 88.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 73.
+(Font)              `operators' in the math version `bold' on input line 88.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on input line 73.
+(Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on input line 88.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -742,13 +882,13 @@ Package fontspec Info: Font family 'latinmodern-math.otf(2)' created for font
 (fontspec)             \fontdimen 21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 73.
+(Font)              `symbols' in the math version `normal' on input line 88.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on input line 73.
+(Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on input line 88.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 73.
+(Font)              `symbols' in the math version `bold' on input line 88.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on input line 73.
+(Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on input line 88.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -809,14 +949,14 @@ Package fontspec Info: Font family 'latinmodern-math.otf(3)' created for font
 (fontspec)             =6.0pt\relax \fontdimen 13\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 73.
+(Font)              `largesymbols' in the math version `normal' on input line 88.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on input line 73.
+(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on input line 88.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 73.
+(Font)              `largesymbols' in the math version `bold' on input line 88.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on input line 73.
-Package hyperref Info: Link coloring OFF on input line 73.
+(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on input line 88.
+Package hyperref Info: Link coloring OFF on input line 88.
 (/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 (/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
@@ -824,11 +964,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count431
+\c@section@level=\count452
 )
-LaTeX Info: Redefining \ref on input line 73.
-LaTeX Info: Redefining \pageref on input line 73.
-LaTeX Info: Redefining \nameref on input line 73.
+LaTeX Info: Redefining \ref on input line 88.
+LaTeX Info: Redefining \pageref on input line 88.
+LaTeX Info: Redefining \nameref on input line 88.
 (./Final.out) (./Final.out)
 \@outlinefile=\write4
 \openout4 = `Final.out'.
@@ -880,92 +1020,75 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Final.bbl' found.
-(./Final.bbl
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                noferUsingTwitterPredict_2015
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-)
-Package biblatex Info: Reference section=0 on input line 73.
-Package biblatex Info: Reference segment=0 on input line 73.
+(./Final.bbl)
+Package biblatex Info: Reference section=0 on input line 88.
+Package biblatex Info: Reference segment=0 on input line 88.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 75.
+(Font)              scaled to size 12.0pt on input line 90.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 75.
+(Font)              scaled to size 8.0pt on input line 90.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 75.
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 75.
+(Font)              scaled to size 6.0pt on input line 90.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 90.
 (/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 12.0011pt on input line 75.
+(Font)              scaled to size 12.0011pt on input line 90.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.00073pt on input line 75.
+(Font)              scaled to size 8.00073pt on input line 90.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00055pt on input line 75.
+(Font)              scaled to size 6.00055pt on input line 90.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 11.99872pt on input line 75.
+(Font)              scaled to size 11.99872pt on input line 90.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 75.
+(Font)              scaled to size 7.99915pt on input line 90.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 75.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 75.
+(Font)              scaled to size 5.99936pt on input line 90.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 90.
 (/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 75.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 90.
 (/Users/federicopiazza/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
+) [1
 
-LaTeX Warning: Citation 'noferUsingTwitterPredict_2015' on page 1 undefined on input line 109.
-
-[1
-
-] [2] [3]
+] [2] [3] [4]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 367.
+(Font)              scaled to size 7.0pt on input line 384.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 367.
+(Font)              scaled to size 5.0pt on input line 384.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00092pt on input line 367.
+(Font)              scaled to size 10.00092pt on input line 384.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00064pt on input line 367.
+(Font)              scaled to size 7.00064pt on input line 384.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00046pt on input line 367.
+(Font)              scaled to size 5.00046pt on input line 384.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 367.
+(Font)              scaled to size 9.99893pt on input line 384.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 367.
+(Font)              scaled to size 6.99925pt on input line 384.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 367.
-[4]
+(Font)              scaled to size 4.99947pt on input line 384.
 File: Final_files/figure-latex/fi1s-1.pdf Graphic file (type pdf)
 <use Final_files/figure-latex/fi1s-1.pdf>
 File: Final_files/figure-latex/fig2-1.pdf Graphic file (type pdf)
 <use Final_files/figure-latex/fig2-1.pdf>
-[5]
+[5] [6]
 File: Final_files/figure-latex/fig3-1.pdf Graphic file (type pdf)
 <use Final_files/figure-latex/fig3-1.pdf>
-[6] [7]
+[7]
 File: Final_files/figure-latex/fig4-1.pdf Graphic file (type pdf)
 <use Final_files/figure-latex/fig4-1.pdf>
 Missing character: There is no 𝜎 (U+1D70E) in font [lmroman10-regular]:mapping=tex-text;!
-File: Final_files/figure-latex/fig7-1.pdf Graphic file (type pdf)
-<use Final_files/figure-latex/fig7-1.pdf>
-File: Final_files/figure-latex/fig8-1.pdf Graphic file (type pdf)
-<use Final_files/figure-latex/fig8-1.pdf>
-[8] [9]
+[8]
 File: Final_files/figure-latex/fig10-1.pdf Graphic file (type pdf)
 <use Final_files/figure-latex/fig10-1.pdf>
 Missing character: There is no 𝜎 (U+1D70E) in font [lmroman10-regular]:mapping=tex-text;!
-[10]
 File: Final_files/figure-latex/fig12-1.pdf Graphic file (type pdf)
 <use Final_files/figure-latex/fig12-1.pdf>
+[9] [10]
 File: Final_files/figure-latex/fig13-1.pdf Graphic file (type pdf)
 <use Final_files/figure-latex/fig13-1.pdf>
 [11]
@@ -973,9 +1096,9 @@ File: Final_files/figure-latex/fig16-1.pdf Graphic file (type pdf)
 <use Final_files/figure-latex/fig16-1.pdf>
 File: Final_files/figure-latex/fig17-1.pdf Graphic file (type pdf)
 <use Final_files/figure-latex/fig17-1.pdf>
-[12] [13]
 File: Final_files/figure-latex/fig25-1.pdf Graphic file (type pdf)
 <use Final_files/figure-latex/fig25-1.pdf>
+[12] [13]
 File: Final_files/figure-latex/fig21-1.pdf Graphic file (type pdf)
 <use Final_files/figure-latex/fig21-1.pdf>
 [14] [15]
@@ -987,43 +1110,47 @@ File: Final_files/figure-latex/fig19-1.pdf Graphic file (type pdf)
 <use Final_files/figure-latex/fig19-1.pdf>
 File: Final_files/figure-latex/fig20-1.pdf Graphic file (type pdf)
 <use Final_files/figure-latex/fig20-1.pdf>
+[16] [17] [18] [19] (./Final.lof)
+\tf@lof=\write5
+\openout5 = `Final.lof'.
 
-Overfull \hbox (103.62498pt too wide) in paragraph at lines 759--759
+[20]
+Overfull \hbox (103.62498pt too wide) in paragraph at lines 771--771
 []\TU/lmr/m/it/10 A Survey of Methods for Time Series Change Point Detection | SpringerLink\TU/lmr/m/n/10 . https://link.springer.com/article/10.1007/s10115-
  []
 
 
-Overfull \hbox (305.02495pt too wide) in paragraph at lines 759--759
+Overfull \hbox (305.02495pt too wide) in paragraph at lines 771--771
 \TU/lmr/m/n/10 https://www.tandfonline.com/doi/full/10.1080/07421222.2018.1440774?casa_token=jhD9FYEi67AAAAAA%3Ac3L7PnLvjmsV66ykgsxL5Ombnj6lBOBq7chNFOHNcsUT-
  []
 
 
-Underfull \hbox (badness 2376) in paragraph at lines 759--759
+Underfull \hbox (badness 2376) in paragraph at lines 771--771
 []\TU/lmr/m/it/10 How Do Strategic Leaders Engage with Social Media? A Theoretical Framework for Re-
  []
 
 
-Overfull \hbox (76.12498pt too wide) in paragraph at lines 759--759
+Overfull \hbox (76.12498pt too wide) in paragraph at lines 771--771
 \TU/lmr/m/n/10 https://onlinelibrary.wiley.com/doi/full/10.1002/smj.3156?casa_token=U5BvO6XCr6cAAAAA%3AJ4_2Bp27XlJ8rcI-
  []
 
-[16] [17] [18] [19] [20] [21] (./Final.aux)
+[21] (./Final.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Final.out' has not changed.
-(rerunfilecheck)             Checksum: 40DD8D386341620B5D0AC842F298C576;3755.
+(rerunfilecheck)             Checksum: F3B71E83A4632A06792614F8A6A65E67;3882.
 Package logreq Info: Writing requests to 'Final.run.xml'.
 \openout1 = `Final.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23944 strings out of 478179
- 459557 string characters out of 5853461
- 1326413 words of memory out of 5000000
- 44287 multiletter control sequences out of 15000+600000
- 475686 words of font info for 78 fonts, out of 8000000 for 9000
+ 25780 strings out of 478179
+ 490452 string characters out of 5853461
+ 1357493 words of memory out of 5000000
+ 46055 multiletter control sequences out of 15000+600000
+ 475784 words of font info for 78 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 86i,6n,121p,1592b,4944s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 86i,15n,121p,1592b,4944s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on Final.pdf (21 pages).

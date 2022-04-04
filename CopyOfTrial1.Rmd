@@ -8,6 +8,8 @@ output:
   pdf_document:
     citation_package: biblatex
     latex_engine: xelatex
+header-includes:
+  - \usepackage[nottoc]{tocbibind}
 --- 
 
 *Wordcount as of 26/03*: 5610
