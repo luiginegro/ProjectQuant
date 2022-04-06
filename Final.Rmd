@@ -8,38 +8,23 @@ output:
   pdf_document:
     citation_package: biblatex
     latex_engine: xelatex
+toc: true
 header-includes:
   - \usepackage[nottoc]{tocbibind}    
 --- 
+\pagebreak
 
-*Wordcount as of 26/03*: 5610
+\listoffigures
+
+\pagebreak
+
 
 # Abstract
 
 Elon Musk, one of the world's wealthiest people, is regarded as a technical visionary with a social media following of over 79 million followers on Twitter. 
 This paper aims at examining how Musk's Twitter engagement influences short-term cryptocurrency price and volume using an event study approach. After examining 4787 tweets containing 68676 words, posted from December 2011 to January 2021 we found that Musk is likely to use positive words in his tweets, with “trust” and “anticipation” as the most frequent sentiments expressed. This results are also confirmed by applying the same sentiment approach on a different temporal subset of Tesla CEO's tweets (starting from January 2020, when Musk's popularity unquestionably gained momentum). However, we did not find evidence to support linkage between Musk’s sentiments and Bitcoin volatility.  
 
-# Literature review
-
-
-Data and text mining has assumed a critical role in recent years, and Twitter, thanks to its easily accessible API has played a crucial part.
-
-The first data mining activities were conducted around 2013 with the scope of highlighting how Twitter played a central role in spreading awareness after a natural disaster occured[@gunawongSocialNetworkReactions2013]. Similar analyses have been performed to forecast political election's results[@hubertyCanWeVote2015] and are now being applied to the cryptocurrency and stock markets.
-
-[@TwitterMoodPredicts]Studies found evidence that follower-weighted social mood levels can predict share returns, even though this was not true if simple aggregation of mood states was performed. Indeed, they hypothesized the reason behind such a behavior could be explained in light of emotional contagion, according to which individuals influence each other based on their active network. In 2019[@guInformationalRoleSocial2020a] another research was conducted in this field and it was observed that relevant information could be found on Twitter, in particular regarding analyst recommendation changes, target price changes, quarterly earnings surprises and IPO opening prices. Besides this conclusion, that was in line with other papers, they also studied another factor with relevant implications in terms of stock return quality of predictions. Specifically, they found that Twitter sentiment analysis constituted a stronger predictor for smaller firms, i.e. firms less covered by analysts.
-Last but not least,@porshnevCouldEmotionalMarkers2016 studied the contribution of emotional makers to the ARMAX-GARCH model and demonstrated they provided both a smaller BIC and improved likelihood function.
-
-# Sentiment analysis
-
-Some of the text mining techniques include classification and clustering, sentiment analysis and natural language processing. The latter represents a broader technique that performs different types of analysis, namely summarization, part of speech tagging, text categorization and sentiment analysis.
-
-Particularly relevant to our research is the latter, as emotions have been proved to be key drivers in the process of investing. "Sentiment analysis is a series of methods, techniques, and tools about detecting and extracting subjective information, such as opinion and attitudes, from language."[@mantylaEvolutionSentimentAnalysis2018] It has historically focused on  polarity, meaning the positivity or negativity expressed in a text, but is now moving to a more accurate detection of different emotions (frustration, joy, anger, sadness, excitement).
-
-The first paper using sentiment analysis dates back to 1940, where opinions on various public issues were investigated. A similar analysis was performed a couple years later on countries that mostly suffered during WW2.
-But it is not until the early 21st century that more and more papers were published. In 2010 Sitaram Asur and Bernardo A. Huberman used data from Twitter to build a linear regression model to predict box-office revenues of movies in advance of their release. The predictor used was rate of chatter, but they highlighted how a sentiment analysis improved predictions after a movie was released. In particular, they constructed a sentiment analysis classifier to distinguish positive, negative or neutral texts. They then created two factors: Subjectivity and Polarity. With the first they were able to confirm their hypothesis, according to which "there were more sentiments discovered in tweets for the weeks after release, than in the pre-release week". The polarity factor, i.e. polarity= Tweets with Positive Sentiment divided by Tweets with Negative Sentiment was used to correlate positive sentiments with revenue increases.
-
-In 2012 Younggue Bae,Hongchul Lee examined the positive or negative influence of popular twitterers on the sentiment of audience. They started out by selecting 13 popular users and for each of them they identifies their audience, i.e. those people "who reply to, mention, or retweet about the popular user".[@baeSentimentAnalysisTwitter2012a] Using lexicon-based sentiment analysis they were able to divide the audience into two groups: those who are in favour and those who are against the popular user. They then proceeded on investigating the relationship between the user sentiment and his audience one. The results showed a general positive correlation between the two, meaning that positive Tweets of a popular user were followed by positive retweets and viceversa. 
-Last but not least, they investigated the relationship between real-world landscape and influence of popular users and found a strong casuality correlation. This too appears to be an important result: Twitter can be used as a predictor of real world landscape.
+\pagebreak
 
 # Introduction
 
@@ -54,13 +39,43 @@ While several studies have looked into the impact of individual tweets on stock 
 
 This research seeks to analyse the sentiment of one of the world's most powerful persons' social media activities and on if and how this affects cryptocurrency price levels.   
 
+\pagebreak
+
+
+# Literature review
+
+
+Data and text mining has assumed a critical role in recent years, and Twitter, thanks to its easily accessible API has played a crucial part.
+
+The first data mining activities were conducted around 2013 with the scope of highlighting how Twitter played a central role in spreading awareness after a natural disaster occured[@gunawongSocialNetworkReactions2013]. Similar analyses have been performed to forecast political election's results[@hubertyCanWeVote2015] and are now being applied to the cryptocurrency and stock markets.
+
+[@TwitterMoodPredicts]Studies found evidence that follower-weighted social mood levels can predict share returns, even though this was not true if simple aggregation of mood states was performed. Indeed, they hypothesized the reason behind such a behavior could be explained in light of emotional contagion, according to which individuals influence each other based on their active network. In 2019[@guInformationalRoleSocial2020a] another research was conducted in this field and it was observed that relevant information could be found on Twitter, in particular regarding analyst recommendation changes, target price changes, quarterly earnings surprises and IPO opening prices. Besides this conclusion, that was in line with other papers, they also studied another factor with relevant implications in terms of stock return quality of predictions. Specifically, they found that Twitter sentiment analysis constituted a stronger predictor for smaller firms, i.e. firms less covered by analysts.
+Last but not least,@porshnevCouldEmotionalMarkers2016 studied the contribution of emotional makers to the ARMAX-GARCH model and demonstrated they provided both a smaller BIC and improved likelihood function.
+
+\pagebreak
+
+
+# Sentiment analysis
+
+Some of the text mining techniques include classification and clustering, sentiment analysis and natural language processing. The latter represents a broader technique that performs different types of analysis, namely summarization, part of speech tagging, text categorization and sentiment analysis.
+
+Particularly relevant to our research is the latter, as emotions have been proved to be key drivers in the process of investing. "Sentiment analysis is a series of methods, techniques, and tools about detecting and extracting subjective information, such as opinion and attitudes, from language."[@mantylaEvolutionSentimentAnalysis2018] It has historically focused on  polarity, meaning the positivity or negativity expressed in a text, but is now moving to a more accurate detection of different emotions (frustration, joy, anger, sadness, excitement).
+
+The first paper using sentiment analysis dates back to 1940, where opinions on various public issues were investigated. A similar analysis was performed a couple years later on countries that mostly suffered during WW2.
+But it is not until the early 21st century that more and more papers were published. In 2010 Sitaram Asur and Bernardo A. Huberman used data from Twitter to build a linear regression model to predict box-office revenues of movies in advance of their release. The predictor used was rate of chatter, but they highlighted how a sentiment analysis improved predictions after a movie was released. In particular, they constructed a sentiment analysis classifier to distinguish positive, negative or neutral texts. They then created two factors: Subjectivity and Polarity. With the first they were able to confirm their hypothesis, according to which "there were more sentiments discovered in tweets for the weeks after release, than in the pre-release week". The polarity factor, i.e. polarity= Tweets with Positive Sentiment divided by Tweets with Negative Sentiment was used to correlate positive sentiments with revenue increases.
+
+In 2012 Younggue Bae,Hongchul Lee examined the positive or negative influence of popular twitterers on the sentiment of audience. They started out by selecting 13 popular users and for each of them they identifies their audience, i.e. those people "who reply to, mention, or retweet about the popular user".[@baeSentimentAnalysisTwitter2012a] Using lexicon-based sentiment analysis they were able to divide the audience into two groups: those who are in favour and those who are against the popular user. They then proceeded on investigating the relationship between the user sentiment and his audience one. The results showed a general positive correlation between the two, meaning that positive Tweets of a popular user were followed by positive retweets and viceversa. 
+Last but not least, they investigated the relationship between real-world landscape and influence of popular users and found a strong casuality correlation. This too appears to be an important result: Twitter can be used as a predictor of real world landscape.
+
+
+
 
 ## Research questions
 
 We raise the following research questions to address the issue of effciency in cryptocurrency markets and the attention their participants devote to influencers since Elon Musk and other influential individuals are likely to continue publicly commenting on cryptocurrency for the foreseeable future.
 
 
-*RQ1: DO Elon Musk’s cryptocurrency-related tweets sentiments  have an effect on the pricing and trading volume of cryptocurrency?*
+*RQ1: What is the polarity and the most-used emotions in Elon Musk's tweets?*
 
 The answer to this issue can reveal whether tweets can be considered quality signals in general or whether the market effects seen were purely coincidental. Second, the AMH predicts that a cryptocurrency that is less efficient or liquid will be more affected by Musk's tweets.
 
@@ -71,6 +86,9 @@ By answering these two study questions, we will be able to measure and better un
 *RQ3: Is there a linkage between changes in trend of Bitcoin prices and Elon Musk's crypto-related tweets?*
 
 In other words, can an Elon Musks' tweet significantly change the mean trend of Bitcoin?
+
+\pagebreak
+
 
 # Data and methods 
 
@@ -105,6 +123,9 @@ If the data is non-stationary (meaning it has a trend), we need to remove it in 
 
 Once obtained significant p-values assessing the non-stationarity of the selected time series, we try to achieve a stationary trend by doing a log difference among two subsequent values in the cryptocurrency value obtaining satisfying results. 
 Eventually, we confront key breaking points where the average value undergoes a relevant change between two time points and the timestamp of the crypto-related Musk's tweet in order to visualize any linkages between the two phoenomena.
+
+\pagebreak
+
 
 
 # Results
@@ -749,14 +770,15 @@ knitr::kable(summarizeStatSenti2, caption = "Models' Descriptive Statistics") %>
      kable_classic(full_width = T, html_font = "Cambria")
 ```
 
-```{r fig12, echo=FALSE, fig.width=7,fig.height=3,fig.cap="\\label{fig:fig12}Polarity Density of Elon's tweets resampled"}
+```{r fig12, include=FALSE, fig.width=7,fig.height=3,fig.cap="\\label{fig:fig12}Polarity Density of Elon's tweets resampled"}
 par(mfrow=c(1,2))
 plot(densitySentiments,main='Density of sentiments Model I') 
 polygon(densitySentiments,col='white')
 plot(densitySentiments1,main='Density of sentiments Model II') 
 polygon(densitySentiments1,col='grey') 
 ```
-The chart below shows an overall overlapping with the previous result. Still positive sentiment of *anticipation*, *joy* and *trust* are the most frequent. However, the sentiment of *trust* is more volatile, and there is a slight decrease in the negative sentiment of *fear*. This slight but still relevant change can be interpreted in a different context than the one of model I: the audience has become more educated and informed about the phenomenon of crypto-currencies as well as more critical towards the Tesla CEO's tweets, who sometimes has been accused more intensively of market manipulation (however without losing popularity or positive appeal). In conclusion,  the Muskanian audience still listen to him and trust him, simply with more critical sense which makes the *trust* sentiment to be more volatile and the *fear* sentiment lower.
+
+The chart below represent di overall emotion scores throughout time for model II and shows an overall overlapping with the previous result. Still positive sentiment of *anticipation*, *joy* and *trust* are the most frequent. However, the sentiment of *trust* is more volatile, and there is a slight decrease in the negative sentiment of *fear*. This slight but still relevant change can be interpreted in a different context than the one of model I: the audience has become more educated and informed about the phenomenon of crypto-currencies as well as more critical towards the Tesla CEO's tweets, who sometimes has been accused more intensively of market manipulation (however without losing popularity or positive appeal). In conclusion,  the Muskanian audience still listen to him and trust him, simply with more critical sense which makes the *trust* sentiment to be more volatile and the *fear* sentiment lower.
 
 
 ```{r fig13, echo=FALSE, fig.width=7,fig.height=4,fig.cap="\\label{fig:fig13}Emotion's Plot of Elon's tweets resampled"}
@@ -827,6 +849,8 @@ adf.test(logdiff)
 
 ```
  
+## Use of breaking points
+
 By being able to use a time-series without stationarity, it might be possible through some techniques to further investigate if, in a time-series trajectory with no trend, there are some specific changes in mean in specific timestamps.
 To do that we try to identify "change points" in our data. By doing taht we obtain a set of timestamps from which the variance of the time-series trajectory changed.[@SurveyMethodsTime] By obtaining those timestamps and confront it with elon musks' tweet regardind crypto, it is possible to try to assess whether there is any linkage between the two.
 
@@ -978,7 +1002,7 @@ This study contributed to the existing available knowledge on information aggreg
 
 # Annex
 
-
+##Graphs not included in the main text
 
 
 
@@ -1073,7 +1097,5 @@ data.to_csv('/Users/federicopiazza/Desktop/MONTREAL/QM/elon.csv')
 \pagebreak
 
 
-\listoffigures
 
-\pagebreak
 
