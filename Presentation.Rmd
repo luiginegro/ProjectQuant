@@ -762,7 +762,7 @@ Two models:
   \item Model II: investigation conducted on a subset according to the following criteria:
    \begin{itemize}
        \item Temporal subset: we select the tweets published from January 2020 on, in order to assess results related to a maturity-stage Elon Musk's popularity
-       \item Most frequent word removal: we removed the most frequent word "AMP" resulted from Model I
+       \item Most frequent word removal: we removed the most frequent word *AMP* resulted from **Model I**
    \end{itemize}
 \end{itemize}
 

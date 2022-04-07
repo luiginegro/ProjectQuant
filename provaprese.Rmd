@@ -78,7 +78,7 @@ Our work is based on the following conceptual fundamentals:
 
 ## Research questions
 
-*RQ1*: DO Elon Musk’s cryptocurrency-related tweets sentiments  have an effect on the pricing and trading volume of cryptocurrency?
+*RQ1*: What is the polarity and the most-used emotions in Elon Musk's tweets?
 
 *RQ2*: Do sentiments and polarity of Musk’s cryptocurrency-related tweets differs by considering different time-frames and currencies
 
@@ -668,7 +668,7 @@ plot(e1)
 
 In this section we show the results obtained when testing for Bitcoin and Dogecoin trend stationarity. We recall the hypothesis:
 
-*Null Hypothesis (H0* : Null hypothesis of the test is that the time series can be represented by a unit root that is not stationary.
+*Null Hypothesis (H0)* : Null hypothesis of the test is that the time series can be represented by a unit root that is not stationary.
 *Alternative Hypothesis (H1)*: Alternative Hypothesis of the test is that the time series is stationary. The following plot, represent our study focus.
 
 We perform an augmented Dickey–Fuller test (ADF) to test the null hypothesis that a unit root is present in a time series sample. In our case Bitcoin Sample and Dogecoin sample, respectevely.
